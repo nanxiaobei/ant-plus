@@ -1,0 +1,28 @@
+// Input
+.ant-plus-input.ant-plus-input-with-count {
+  display: flex;
+  .ant-input {
+    flex: 0 0 100%;
+    &[disabled] + .input-counter {
+      display: none;
+    }
+  }
+  .input-counter {
+    position: relative;
+    top: 1px;
+    right: 2px;
+    height: 30px;
+    padding-left: 8px;
+    padding-right: 8px;
+    color: #ddd;
+    font-size: 12px;
+    line-height: 30px;
+    white-space: nowrap;
+    background: #fff;
+    border-radius: 0 3px 3px 0;
+    transform: translateX(-100%);
+    &.over-max {
+      color: #f5222d;
+    }
+  }
+}
