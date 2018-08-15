@@ -1,28 +1,38 @@
 // Input
-.ant-plus-input.ant-plus-input-with-count {
+.input:global(.input-with-count) {
   display: flex;
-  .ant-input {
-    flex: 0 0 100%;
-    &[disabled] + .input-counter {
-      display: none;
+  align-items: flex-end;
+  :global {
+    .count {
+      display: inline-block;
+      height: 20px;
+      margin-right: -4px;
+      padding-left: 8px;
+      color: #ddd;
+      font-size: 12px;
+      line-height: 20px;
+      background: #fff;
+      transform: scale(.95);
+      &.red {
+        color: #f5222d;
+      }
     }
-  }
-  .input-counter {
-    position: relative;
-    top: 1px;
-    right: 2px;
-    height: 30px;
-    padding-left: 8px;
-    padding-right: 8px;
-    color: #ddd;
-    font-size: 12px;
-    line-height: 30px;
-    white-space: nowrap;
-    background: #fff;
-    border-radius: 0 3px 3px 0;
-    transform: translateX(-100%);
-    &.over-max {
-      color: #f5222d;
+    input {
+      &:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 100px #fff inset;
+      }
+      &[disabled] + .count {
+        display: none;
+      }
+    }
+    textarea + .count {
+      position: relative;
+      right: 6px;
+      bottom: 4px;
+      padding-right: 4px;
+      white-space: nowrap;
+      border-bottom-right-radius: 4px;
+      transform: translateX(-100%);
     }
   }
 }
