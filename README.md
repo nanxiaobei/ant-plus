@@ -1,4 +1,4 @@
-# Ant Plus
+# Ant Plus [![npm version](https://img.shields.io/npm/v/antx.svg?style=flat-square)](https://www.npmjs.com/package/antx) [![GitHub](https://img.shields.io/github/license/nanxiaobei/ant-plus.svg?style=flat-square)](https://github.com/nanxiaobei/ant-plus/blob/master/LICENSE) [![npm downloads](https://img.shields.io/npm/dt/antx.svg?style=flat-square)](http://www.npmtrends.com/antx)
 
 Enhanced Ant Design Form
 
@@ -6,12 +6,12 @@ Enhanced Ant Design Form
 
 Install with yarn:
 
-```shell
+```bash
 yarn add antx
 ```
 
-Or with npm:
+or with npm:
 
-```shell
+```bash
 npm install antx
 ```
