@@ -2,7 +2,7 @@
 
 Enhanced Ant Design Form
 
-## Install
+## Installation
 
 Install with yarn:
 
