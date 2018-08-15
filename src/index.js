@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import * as Ant from 'antd';
-import { input } from './AntPlus.scss';
+import './index.scss';
 
 const CANT_EMPTY = '不得为空';
 const WRONG_TYPE = '格式有误';
@@ -198,7 +198,7 @@ class Input extends Ant.Input {
     super(props);
     const { max } = props;
     if (typeof max === 'number') {
-      this.countClass = 'input-with-count';
+      this.countClass = 'ant-plus-input-with-count';
       this.onChange = this.onChangeWithCount;
       const { value } = props;
       this.state = {
@@ -234,7 +234,7 @@ class Input extends Ant.Input {
     } = this.props;
 
     return (
-      <div className={[input, this.countClass].join(' ')}>
+      <div className={['ant-plus-input', this.countClass].join(' ')}>
         {textarea === true ? (
           <Fragment>
             <Ant.Input.TextArea
