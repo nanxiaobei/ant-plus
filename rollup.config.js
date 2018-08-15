@@ -18,7 +18,7 @@ if (env === 'es' || env === 'cjs') {
       insert: true,
     }),
     babel({
-      plugins: ['external-helpers'],
+      exclude: 'node_modules/**',
     }),
   );
 }
@@ -26,10 +26,10 @@ if (env === 'es' || env === 'cjs') {
 if (env === 'development' || env === 'production') {
   config.output = {
     format: 'umd',
-    name: 'Retalk',
+    name: 'ant-plus',
     globals: {
       react: 'react',
-      antDesign: 'antd',
+      antDeisgn: 'antd',
     },
   };
   config.plugins.push(
@@ -39,7 +39,6 @@ if (env === 'development' || env === 'production') {
     }),
     babel({
       exclude: 'node_modules/**',
-      plugins: ['external-helpers'],
     }),
     replace({
       'process.env.NODE_ENV': JSON.stringify(env),

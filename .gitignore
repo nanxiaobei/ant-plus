@@ -1,10 +1,12 @@
 .git
 .idea
 
-/node_modules
-/dist
-/lib
-/es
+node_modules
+dist
+lib
+es
+coverage
 
 package-lock.json
 yarn.lock
+yarn-error.log
