@@ -1,6 +1,6 @@
 {
   "name": "antx",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Enhanced Ant Design Form",
   "keywords": [
     "react",
@@ -30,23 +30,22 @@
     "build:umd:min": "cross-env BABEL_ENV=es NODE_ENV=production rollup -c -o dist/ant-plus.min.js",
     "build": "npm run clean && npm run build:commonjs && npm run build:es && npm run build:umd && npm run build:umd:min"
   },
-  "dependencies": {
-    "antd": "^3.6.2",
-    "react": "^16.4.0"
+  "peerDependencies": {
+    "antd": "^3.8.1",
+    "react": "^16.4.2"
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
+    "@babel/core": "^7.0.0-beta.51",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-rc.1",
+    "@babel/plugin-transform-react-jsx": "^7.0.0-rc.1",
+    "@babel/preset-env": "^7.0.0-beta.51",
+    "babel-core": "^7.0.0-0",
     "babel-eslint": "^8.2.3",
-    "babel-plugin-external-helpers": "^6.22.0",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-plugin-transform-react-jsx": "^6.24.1",
-    "babel-preset-env": "^1.7.0",
     "cross-env": "^5.1.6",
     "eslint": "^4.19.1",
     "rimraf": "^2.6.2",
     "rollup": "^0.60.1",
-    "rollup-plugin-babel": "^3.0.4",
+    "rollup-plugin-babel": "^4.0.0-beta.5",
     "rollup-plugin-node-resolve": "^3.3.0",
     "rollup-plugin-replace": "^2.0.0",
     "rollup-plugin-sass": "^0.8.0",
