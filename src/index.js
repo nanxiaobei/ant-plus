@@ -645,6 +645,5 @@ export {
   Transfer,
   Cascader,
   TreeSelect,
-  // Others
   Upload,
 };
