@@ -2,32 +2,82 @@ import React, { Fragment } from 'react';
 import * as Ant from 'antd';
 import './index.scss';
 
-const CANT_EMPTY = '不得为空';
-const WRONG_TYPE = '格式有误';
-const fieldRules = {
-  required: label => ({ required: true, message: `${label}${CANT_EMPTY}` }),
-  string: label => ({ type: 'string', whitespace: true, message: `${label}${WRONG_TYPE}` }),
-  number: label => ({ pattern: /^\d+$/, whitespace: true, message: `${label}${WRONG_TYPE}` }),
-  numAll: label => ({ pattern: /^-?\d+$/, whitespace: true, message: `${label}${WRONG_TYPE}` }),
-  array: label => ({ type: 'array', message: `${label}需为数组` }),
-  email: () => ({ type: 'email', whitespace: true, message: `邮件地址${WRONG_TYPE}` }),
-  max: num => ({ max: num, message: `不得超过 ${num} 个字` }),
-  // 手机号
-  phone: () => ({ pattern: /^1[3456789]\d{9}$/, whitespace: true, message: `手机号${WRONG_TYPE}` }),
-  // 身份证
-  id: () => ({ pattern: /^\d+x?$/i, whitespace: true, message: `身份证${WRONG_TYPE}` }),
+let formConfig = {
+  // placeholder
+  inputPlaceholder: '请输入',
+  selectPlaceholder: '请选择',
+  // rules message
+  requiredMessage: '{label}不得为空',
+  typeMessage: '{label}格式有误',
+  maxMessage: '不得超过 {num} 个字',
+  minMessage: '不得少于 {num} 个字',
+};
+const fieldRules = (rule, label) => {
+  const [requiredPreMsg, requiredSufMsg] = formConfig.requiredMessage.split('{label}');
+  const [typePreMsg, typeSufMsg] = formConfig.typeMessage.split('{label}');
+  const [maxPreMsg, maxSufMsg] = formConfig.maxMessage.split('{num}');
+  const [minPreMsg, minSufMsg] = formConfig.minMessage.split('{num}');
+  const rules = {
+    required: {
+      required: true,
+      message: `${requiredPreMsg}${label}${requiredSufMsg}`,
+    },
+    string: {
+      type: 'string',
+      whitespace: true,
+      message: `${typePreMsg}${label}${typeSufMsg}`,
+    },
+    number: {
+      pattern: /^\d+$/,
+      whitespace: true,
+      message: `${typePreMsg}${label}${typeSufMsg}`,
+    },
+    numAll: {
+      pattern: /^-?\d+$/,
+      whitespace: true,
+      message: `${typePreMsg}${label}${typeSufMsg}`,
+    },
+    array: {
+      type: 'array',
+      message: `${typePreMsg}${label}${typeSufMsg}`,
+    },
+    email: {
+      type: 'email',
+      whitespace: true,
+      message: `${typePreMsg}${label}${typeSufMsg}`,
+    },
+    phone: {
+      pattern: /^1[3456789]\d{9}$/,
+      whitespace: true,
+      message: `${typePreMsg}${label}${typeSufMsg}`,
+    },
+    id: {
+      pattern: /^\d+x?$/i,
+      whitespace: true,
+      message: `${typePreMsg}${label}${typeSufMsg}`,
+    },
+    max: {
+      max: label,
+      message: `${maxPreMsg}${label}${maxSufMsg}`,
+    },
+    min: {
+      min: label,
+      message: `${minPreMsg}${label}${minSufMsg}`,
+    },
+  };
+  return rules[rule];
 };
 
 /**
  * createRules - 根据表单域简写 `rules` 属性生成完整验证规则 (配合 AntPlus.Form 组件使用)
  */
-const createRules = (rules, label) => rules.map(rule => {
+const createRules = (label, rules) => rules.map(rule => {
   if (typeof rule !== 'string') return rule;
-  // e.g. "number"
-  if (!rule.includes('=')) return fieldRules[rule](label || '');
+  // e.g. "required"
+  if (!rule.includes('=')) return fieldRules(rule, label || '');
   // e.g. "max=5"
-  const [key, val] = rule.split('=');
-  return fieldRules[key](+val);
+  const [numRule, num] = rule.split('=');
+  return fieldRules(numRule, +num);
 });
 
 const selectList = ['Select', 'Cascader', 'TreeSelect'];
@@ -40,11 +90,14 @@ const createField = (field, label, disabledFields, id) => {
   let fieldProps = field.props;
   // 若 msg (placeholder) 值为 `full`，进行转义
   if (
-    fieldProps.msg !== undefined && field.type.displayName !== undefined &&
+    fieldProps.msg !== undefined &&
     (fieldProps.msg === 'short' || fieldProps.msg === 'full')
   ) {
+    if (field.type.displayName === undefined) {
+      throw new Error('`msg` prop is not allowed for a non `antx` component');
+    }
     const isSelect = selectList.includes(field.type.displayName.split('.')[1]);
-    const shortMsg = isSelect ? '请选择' : '请输入';
+    const shortMsg = isSelect ? formConfig.selectPlaceholder : formConfig.inputPlaceholder;
     const msg = fieldProps.msg === 'short' ? shortMsg : `${shortMsg}${label || ''}`;
     fieldProps = { ...fieldProps, msg };
   }
@@ -105,7 +158,11 @@ class Form extends Ant.Form {
 
 Form.displayName = 'AntPlus.Form';
 Form.defaultProps = undefined;
-
+// 设置信息
+Form.setConfig = config => {
+  formConfig = { ...formConfig, ...config };
+};
+// 渲染节点
 Form.renderNodes = (form, data, disabledFields, formColon) => nodes => {
   if (typeof nodes === 'undefined' || typeof nodes === 'string' || typeof nodes === 'boolean') {
     return nodes;
@@ -156,9 +213,10 @@ Form.renderNodes = (form, data, disabledFields, formColon) => nodes => {
       hidden: except,
       // getValueProps, validate,
     };
-    Object.keys(options).forEach(key => {
-      if (options[key] === undefined) delete options[key];
-    });
+    Object.keys(options)
+      .forEach(key => {
+        if (options[key] === undefined) delete options[key];
+      });
 
     return (
       <Ant.Form.Item
@@ -168,7 +226,7 @@ Form.renderNodes = (form, data, disabledFields, formColon) => nodes => {
       >
         {Form.createItems(before)}
         {form.getFieldDecorator(id, {
-          rules: createRules(rules, label),
+          rules: createRules(label, rules),
           validateTrigger: validateTrigger || rules.includes('phone') ? 'onBlur' : 'onChange',
           initialValue: initialValue || data[id],
           ...options,
