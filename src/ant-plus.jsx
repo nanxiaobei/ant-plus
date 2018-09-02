@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import * as Ant from 'antd';
-import './index.scss';
+import './ant-plus.scss';
 
 let formConfig = {
   // placeholder

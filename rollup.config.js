@@ -6,7 +6,7 @@ import { uglify } from 'rollup-plugin-uglify';
 
 const env = process.env.NODE_ENV;
 const config = {
-  input: 'src/index.jsx',
+  input: 'src/ant-plus.jsx',
   external: ['react', 'antd'],
   plugins: [],
 };
