@@ -4,7 +4,7 @@ export default {
   src: './mdx',
   dest: './docs',
   base: '/ant-plus',
-  title: '🚀 Ant Plus',
+  title: 'Ant Plus',
   description: 'Enhanced Ant Design Form',
   codeSandbox: false,
   plugins: [
