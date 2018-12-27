@@ -1,68 +1,68 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import * as Ant from 'antd';
-import './ant-plus.scss';
+import './AntPlus.scss';
 
 let formConfig = {
-  // placeholder
+  // Placeholder
   inputPlaceholder: '请输入',
   selectPlaceholder: '请选择',
-  // rules message
+  // Rule messages
   requiredMessage: '{label}不得为空',
   typeMessage: '{label}格式有误',
   maxMessage: '不得超过 {num} 个字',
   minMessage: '不得少于 {num} 个字',
 };
 const fieldRules = (rule, label) => {
-  const [requiredPreMsg, requiredSufMsg] = formConfig.requiredMessage.split('{label}');
-  const [typePreMsg, typeSufMsg] = formConfig.typeMessage.split('{label}');
-  const [maxPreMsg, maxSufMsg] = formConfig.maxMessage.split('{num}');
-  const [minPreMsg, minSufMsg] = formConfig.minMessage.split('{num}');
+  const [requiredBefore, requiredAfter] = formConfig.requiredMessage.split('{label}');
+  const [typeBefore, typeAfter] = formConfig.typeMessage.split('{label}');
+  const [maxBefore, maxAfter] = formConfig.maxMessage.split('{num}');
+  const [minBefore, minAfter] = formConfig.minMessage.split('{num}');
   const rules = {
     required: {
       required: true,
-      message: `${requiredPreMsg}${label}${requiredSufMsg}`,
+      message: `${requiredBefore}${label}${requiredAfter}`,
     },
     string: {
       type: 'string',
       whitespace: true,
-      message: `${typePreMsg}${label}${typeSufMsg}`,
+      message: `${typeBefore}${label}${typeAfter}`,
     },
     number: {
       pattern: /^\d+$/,
       whitespace: true,
-      message: `${typePreMsg}${label}${typeSufMsg}`,
+      message: `${typeBefore}${label}${typeAfter}`,
     },
     numAll: {
       pattern: /^-?\d+$/,
       whitespace: true,
-      message: `${typePreMsg}${label}${typeSufMsg}`,
+      message: `${typeBefore}${label}${typeAfter}`,
     },
     array: {
       type: 'array',
-      message: `${typePreMsg}${label}${typeSufMsg}`,
+      message: `${typeBefore}${label}${typeAfter}`,
     },
     email: {
       type: 'email',
       whitespace: true,
-      message: `${typePreMsg}${label}${typeSufMsg}`,
+      message: `${typeBefore}${label}${typeAfter}`,
+    },
+    max: {
+      max: label,
+      message: `${maxBefore}${label}${maxAfter}`,
+    },
+    min: {
+      min: label,
+      message: `${minBefore}${label}${minAfter}`,
     },
     phone: {
       pattern: /^1[3456789]\d{9}$/,
       whitespace: true,
-      message: `${typePreMsg}${label}${typeSufMsg}`,
+      message: `${typeBefore}${label}${typeAfter}`,
     },
     id: {
       pattern: /^\d+x?$/i,
       whitespace: true,
-      message: `${typePreMsg}${label}${typeSufMsg}`,
-    },
-    max: {
-      max: label,
-      message: `${maxPreMsg}${label}${maxSufMsg}`,
-    },
-    min: {
-      min: label,
-      message: `${minPreMsg}${label}${minSufMsg}`,
+      message: `${typeBefore}${label}${typeAfter}`,
     },
   };
   return rules[rule];
@@ -71,14 +71,15 @@ const fieldRules = (rule, label) => {
 /**
  * createRules - 根据表单域简写 `rules` 属性生成完整验证规则 (配合 AntPlus.Form 组件使用)
  */
-const createRules = (label, rules) => rules.map(rule => {
-  if (typeof rule !== 'string') return rule;
-  // e.g. "required"
-  if (!rule.includes('=')) return fieldRules(rule, label || '');
-  // e.g. "max=5"
-  const [numRule, num] = rule.split('=');
-  return fieldRules(numRule, +num);
-});
+const createRules = (label, rules) =>
+  rules.map((rule) => {
+    if (typeof rule !== 'string') return rule;
+    // e.g. "required"
+    if (!rule.includes('=')) return fieldRules(rule, label || '');
+    // e.g. "max=5"
+    const [numRule, num] = rule.split('=');
+    return fieldRules(numRule, Number(num));
+  });
 
 const selectList = ['Select', 'Cascader', 'TreeSelect'];
 
@@ -86,24 +87,25 @@ const selectList = ['Select', 'Cascader', 'TreeSelect'];
  * createField - 格式化 AntPlus.Form 下的表单域
  */
 const createField = (field, label, disabledFields, id) => {
-  if (field.props.msg === undefined && disabledFields === undefined) return field;
+  if (!field.props.msg && !disabledFields) return field;
   let fieldProps = field.props;
   // 若 msg (placeholder) 值为 `full`，进行转义
-  if (
-    fieldProps.msg !== undefined &&
-    (fieldProps.msg === 'short' || fieldProps.msg === 'full')
-  ) {
+  if (fieldProps.msg !== undefined && (fieldProps.msg === 'short' || fieldProps.msg === 'full')) {
     if (field.type.displayName === undefined) {
-      throw new Error('`msg` prop is not allowed for a non `antx` component');
+      throw new Error('`msg` prop is not allowed for a non `AntPlus` component');
     }
-    const isSelect = selectList.includes(field.type.displayName.split('.')[1]);
+    const { displayName } = field.type;
+    const isSelect = selectList.includes(
+      typeof displayName === 'string' && displayName.split('.')[1],
+    );
     const shortMsg = isSelect ? formConfig.selectPlaceholder : formConfig.inputPlaceholder;
     const msg = fieldProps.msg === 'short' ? shortMsg : `${shortMsg}${label || ''}`;
     fieldProps = { ...fieldProps, msg };
   }
   // 若 disabledFields 值为 `all`、或为数组且包含当前表单域 `id`，添加 `disabled`
   if (
-    disabledFields !== undefined && id !== undefined &&
+    disabledFields &&
+    id !== undefined &&
     (disabledFields === 'all' || (Array.isArray(disabledFields) && disabledFields.includes(id)))
   ) {
     fieldProps = { ...fieldProps, disabled: true };
@@ -116,17 +118,17 @@ const createField = (field, label, disabledFields, id) => {
  * Form - Ant Design Form 组件增强版本
  * @link https://ant.design/components/form-cn/
  *
- * @param {object} api - 经 Form.create 包装后注入的 `form` 属性（为规避 Ant Design 提示信息，改为 `api`）
- * @param {object} [data] - 与表单域的 `id` 属性对应的一组数据
+ * @param {Object} api - 经 Form.create 包装后注入的 `form` 属性（为规避 Ant Design 提示信息，改为 `api`）
+ * @param {Object} [data] - 与表单域的 `id` 属性对应的一组数据
  * @param {string|array} [disabledFields] - 禁用的表单域，全部禁用传 "all"，部分禁用传 id 组成的数组
  * @param {boolean} [colon] - 是否显示 label 后的冒号
- * @param {function} [onSubmit] - 提交表单的回调事件
+ * @param {Function} [onSubmit] - 提交表单的回调事件
  * @param {node} [fields] - 表单域集合，e.g. <Input label="账号" id="id" rules=['number'] />
  * @param {node} [children] - Form 子节点（表单域集合）
  * @param {...any} [props] - 其它传给 Ant.Form 组件的 props
  */
 class Form extends Ant.Form {
-  onSubmit = event => {
+  onSubmit = (event) => {
     event.preventDefault();
     this.props.onSubmit();
   };
@@ -146,10 +148,7 @@ class Form extends Ant.Form {
     Form.createItems = Form.renderNodes(form, data, disabledFields, formColon);
 
     return (
-      <Ant.Form
-        onSubmit={this.onSubmit}
-        {...props}
-      >
+      <Ant.Form onSubmit={this.onSubmit} {...props}>
         {Form.createItems(fields || children)}
       </Ant.Form>
     );
@@ -158,81 +157,110 @@ class Form extends Ant.Form {
 
 Form.displayName = 'AntPlus.Form';
 Form.defaultProps = undefined;
+Form.createItems = (nodes) => nodes;
 // 设置信息
-Form.setConfig = config => {
+Form.setConfig = (config) => {
   formConfig = { ...formConfig, ...config };
 };
 // 渲染节点
-Form.renderNodes = (form, data, disabledFields, formColon) => nodes => {
-  if (typeof nodes === 'undefined' || typeof nodes === 'string' || typeof nodes === 'boolean') {
+Form.renderNodes = (form, data, disabledFields, formColon) => (nodes) => {
+  if (
+    typeof nodes === 'undefined' ||
+    typeof nodes === 'string' ||
+    typeof nodes === 'boolean' ||
+    typeof nodes === 'function'
+  ) {
     return nodes;
   }
+
   // 遍历节点
-  return React.Children.map(nodes, node => {
+  return React.Children.map(nodes, (node) => {
     if (!node || !node.props) return node;
 
     // 根据 `id` 属性，判断子节点是否为表单域，`id` 为表单域唯一标识，请勿被占用
     const {
-      className, label, id, colon, required = false, before, after,
+      className,
+      label,
+      id,
+      colon,
+      required = false,
+      before,
+      after,
       ...nodeProps
     } = node.props;
 
-    if (!id) {
-      if (!label) {
-        // 若子节点不是表单域，递归查找包装 `children` 内所有表单域
-        const children = Form.createItems(nodeProps.children);
-        return createField({ ...node, props: { ...nodeProps, className, children } });
-      }
-      // 若子节点存在 `label`，使用 `Form.Item` 包装
+    if (id === undefined && label === undefined) {
+      // 若子节点即不存在 `id` 也不存在 `label`，递归查找并包装其 `children` 内表单域
+      const children = Form.createItems(nodeProps.children);
+      return createField({ ...node, props: { ...nodeProps, className, children } });
+    }
+    if (id === undefined && label !== undefined) {
+      // 若子节点不存在 `id`，但存在 `label`，使用 `Form.Item` 包装
       return (
         <Ant.Form.Item
-          className={className} label={label}
-          colon={colon || formColon} required={required}
+          className={className}
+          label={label}
+          colon={colon || formColon}
+          required={required}
         >
           {Form.createItems(before)}
-          {createField({ ...node, props: { ...nodeProps, form } }, label)}
+          {createField({ ...node, props: nodeProps }, label)}
           {Form.createItems(after)}
         </Ant.Form.Item>
       );
     }
 
-    // 当存在 `id`，即为表单域
+    // 是否为嵌套的表单域（`a` and `a.b`）
+    const isNestedField = nodeProps.form !== undefined;
+
+    // 若子节点存在 `id` 且存在 `label`，则为表单域
     const {
+      hide,
+      // Official `options` to `getFieldDecorator(id, options)`
+      getValueFromEvent,
+      initialValue,
+      normalize,
+      rules = [],
+      trigger,
+      validateFirst,
+      validateTrigger,
+      valuePropName,
       hidden,
-      // `options` to getFieldDecorator(id, options)
-      getValueFromEvent, initialValue, normalize, rules = [],
-      trigger, validateFirst, validateTrigger, valuePropName,
-      except,
-      // getValueProps, validate,
+      // getValueProps,
+      // validate,
+      // preserve,
       ...fieldProps
     } = nodeProps;
     // options
     const options = {
-      getValueFromEvent, normalize,
-      trigger, validateFirst, valuePropName,
-      hidden: except,
-      // getValueProps, validate,
+      getValueFromEvent,
+      normalize,
+      trigger,
+      validateFirst,
+      valuePropName,
+      hidden: isNestedField || hidden, // Ignore current field while validating or getting fields
+      // getValueProps,
+      // validate,
+      // preserve,
     };
-    Object.keys(options)
-      .forEach(key => {
-        if (options[key] === undefined) delete options[key];
-      });
+    Object.keys(options).forEach((key) => {
+      if (options[key] === undefined) delete options[key];
+    });
 
     return (
       <Ant.Form.Item
-        className={[id, className].join(' ')} label={label}
-        style={hidden === true ? { display: 'none' } : undefined}
+        className={[className, id].join(' ')}
+        label={label}
         colon={colon || formColon}
+        style={hide === true ? { display: 'none' } : undefined}
       >
         {Form.createItems(before)}
-        {form.getFieldDecorator(id, {
+        {form.getFieldDecorator(isNestedField ? `${id}.nested` : id, {
           rules: createRules(label, rules),
           validateTrigger: validateTrigger || rules.includes('phone') ? 'onBlur' : 'onChange',
-          initialValue: initialValue || data[id],
+          initialValue: initialValue !== undefined ? initialValue : data[id],
           ...options,
-        })(
-          createField({ ...node, props: fieldProps }, label, disabledFields, id),
-        )}
+        })(createField({ ...node, props: fieldProps }, label, disabledFields, id))}
         {Form.createItems(after)}
       </Ant.Form.Item>
     );
@@ -255,64 +283,56 @@ class Input extends Ant.Input {
   constructor(props) {
     super(props);
     const { max } = props;
+    const initState = {};
     if (typeof max === 'number') {
       this.countClass = 'ant-plus-input-with-count';
       this.onChange = this.onChangeWithCount;
       const { value } = props;
-      this.state = {
-        count: value ? value.length : 0,
-      };
+      initState.count = value ? value.length : 0;
     } else {
       const { onChange } = props;
       this.onChange = onChange;
     }
+    this.state = initState;
   }
-  onChangeWithCount = event => {
+  onChangeWithCount = (event) => {
     const { value } = event.target;
     this.setState({ count: value.length });
-    this.props.onChange(value);
+    const { onChange } = this.props;
+    onChange(value);
   };
-  renderCount = () => {
-    const { max } = this.props;
-    const { count } = this.state;
-    return (
-      <span className={['count', count > max ? ' red' : ''].join('')}>{count} | {max}</span>
-    );
-  };
+  renderCount = (max, count) => (
+    <span className={['count', count > max ? ' red' : ''].join('')}>
+      {count} | {max}
+    </span>
+  );
 
   render() {
-    const {
-      onChange,
-      msg,
-      auto,
-      max,
-      textarea,
-      rows,
-      ...props
-    } = this.props;
+    const { onChange, msg, auto, max, textarea, rows, ...props } = this.props;
+    const { count } = this.state;
 
     return (
-      <div className={['ant-plus-input', this.countClass].join(' ')}>
+      <span className={['ant-plus-input', this.countClass].join(' ')}>
         {textarea === true ? (
-          <Fragment>
+          <>
             <Ant.Input.TextArea
               placeholder={msg}
               onChange={this.onChange}
               autosize={{ minRows: rows || 5 }}
               {...props}
             />
-            {typeof max === 'number' && this.renderCount()}
-          </Fragment>
+            {typeof max === 'number' && this.renderCount(max, count)}
+          </>
         ) : (
           <Ant.Input
             placeholder={msg}
             autoComplete={auto}
-            onChange={this.onChangeWithCount}
-            suffix={typeof max === 'number' && this.renderCount()}
+            onChange={this.onChange}
+            suffix={typeof max === 'number' && this.renderCount(max, count)}
             {...props}
           />
         )}
-      </div>
+      </span>
     );
   }
 }
@@ -327,7 +347,7 @@ Input.defaultProps = undefined;
  * @param {string} [msg] - `placeholder` 属性 (若为 `short` 或 `full`，需与 AntPlus.Form 配合使用)
  * e.g. `short` => `请输入`, `full` => `请输入XXX`, `其它提示信息` => `其它提示信息`
  *
- * @param {array} [data] - `dataSource` 属性
+ * @param {Array} [data] - `dataSource` 属性
  * @param {boolean} [search] - 是否可搜索
  * @param {...any} [props] - 其它传给 Ant.AutoComplete 组件的 props
  */
@@ -344,20 +364,10 @@ class AutoComplete extends Ant.AutoComplete {
   }
 
   render() {
-    const {
-      data = [],
-      msg,
-      search,
-      ...props
-    } = this.props;
+    const { data = [], msg, search, ...props } = this.props;
 
     return (
-      <Ant.AutoComplete
-        {...this.searchProps}
-        dataSource={data}
-        placeholder={msg}
-        {...props}
-      />
+      <Ant.AutoComplete {...this.searchProps} dataSource={data} placeholder={msg} {...props} />
     );
   }
 }
@@ -369,8 +379,8 @@ AutoComplete.defaultProps = undefined;
  * Select - Ant Design Select 组件增强版本
  * @link https://ant.design/components/select-cn/
  *
- * @param {array} data - 列表数据源
- * @param {array} [keys] - 当数据源条目中的 key 不是 `id` (值) 与 `value` (展示的汉字) 时传入
+ * @param {Array} data - 列表数据源
+ * @param {Array} [keys] - 当数据源条目中的 key 不是 `value` (值) 与 `label` (展示的汉字) 时传入
  * e.g. 如 [{ shop_id: 1, shop_name: ''}, ...]，则传入 ['shop_id', 'shop_name']
  *
  * @param {string} [msg] - `placeholder` 属性 (若为 `short` 或 `full`，需与 AntPlus.Form 配合使用)
@@ -394,16 +404,8 @@ class Select extends Ant.Select {
   }
 
   render() {
-    const {
-      data = [],
-      keys = [],
-      msg,
-      search,
-      clear,
-      empty = '列表为空',
-      ...props
-    } = this.props;
-    const [value = 'id', label = 'value'] = keys;
+    const { data = [], keys = [], msg, search, clear, empty = '列表为空', ...props } = this.props;
+    const [value = 'value', label = 'label'] = keys;
 
     return (
       <Ant.Select
@@ -413,12 +415,8 @@ class Select extends Ant.Select {
         notFoundContent={empty}
         {...props}
       >
-        {data.map(item => (
-          <Ant.Select.Option
-            key={item[label]}
-            value={item[value]}
-            disabled={item.disabled}
-          >
+        {data.map((item) => (
+          <Ant.Select.Option key={item[label]} value={item[value]} disabled={item.disabled}>
             {item[label]}
           </Ant.Select.Option>
         ))}
@@ -434,7 +432,7 @@ Select.defaultProps = undefined;
  * Transfer - Ant Design Transfer 组件增强版本
  * @link https://ant.design/components/transfer-cn/
  *
- * @param {array} data - `dataSource` 属性
+ * @param {Array} data - `dataSource` 属性
  * @param {string} [msg] - 搜索框 `placeholder` 属性
  * @param {boolean} [search] - 是否可搜索
  * @param {string} [title] - 组件 `未选择XXX` `已选择XXX` 的 `XXX` 文案
@@ -480,14 +478,14 @@ class Transfer extends Ant.Transfer {
 }
 
 Transfer.displayName = 'AntPlus.Transfer';
-Transfer.defaultProps = { render: item => item.title };
+Transfer.defaultProps = { render: (item) => item.title };
 
 /**
  * Cascader - Ant Design Cascader 组件增强版本
  * @link https://ant.design/components/cascader-cn/
  *
- * @param {array} data - `options` 属性
- * @param {array} [keys] - 当数据源条目中的 key 不是 `value` `label` `children` 时传入
+ * @param {Array} data - `options` 属性
+ * @param {Array} [keys] - 当数据源条目中的 key 不是 `value` `label` `children` 时传入
  * @param {string} [msg] - `placeholder` 属性，默认为 `请选择`
  * @param {boolean} [search] - 是否可搜索
  * @param {string} [empty] - `notFoundContent` 属性，默认为 `未找到`
@@ -500,14 +498,15 @@ class Cascader extends Ant.Cascader {
     super(props);
     const {
       keys: [value = 'value', label = 'label', children = 'children'] = [],
-      search, last,
+      search,
+      last,
     } = props;
     // 初始化 fieldNames
     this.fieldNames = { value, label, children };
     // 是否可搜索
     if (search === true) {
       this.searchProps = {
-        showSearch: { filter: (val, path) => path.some(option => option[label].includes(val)) },
+        showSearch: { filter: (val, path) => path.some((option) => option[label].includes(val)) },
       };
     }
     // 是否只传出数组的最后一个 value
@@ -515,14 +514,14 @@ class Cascader extends Ant.Cascader {
       this.valueMap = {};
     }
   }
-  onChange = value => {
+  onChange = (value) => {
     const { last, onChange } = this.props;
     onChange(last === true ? value[value.length - 1] : value);
   };
   travelOptions = (valueMap, arr, breadValues) => {
     if (arr.length === 0) return;
     const { value, children } = this.fieldNames;
-    arr.forEach(item => {
+    arr.forEach((item) => {
       const curBreadValues = breadValues.concat(item[value]);
       if (item[children]) {
         this.travelOptions(valueMap, item[children], curBreadValues);
@@ -572,14 +571,14 @@ Cascader.defaultProps = undefined;
  * TreeSelect - Ant Design TreeSelect 组件增强版本
  * @link https://ant.design/components/tree-select-cn/
  *
- * @param {array} data - `treeData` 属性
- * @param {array} [keys] - 当数据源条目中的 key 不是 `value` `title` `children` 时传入
+ * @param {Array} data - `treeData` 属性
+ * @param {Array} [keys] - 当数据源条目中的 key 不是 `value` `title` `children` 时传入
  * @param {boolean} [useString] - 当数据源条目中的 `value` 为 number 类型时传入
  * @param {string} [msg] - `placeholder` 属性，默认为 `请选择`
  * @param {boolean} [search] - 是否可搜索
  * @param {boolean} [check] - `treeCheckable` 属性
  * @param {boolean} [expandAll] - `treeDefaultExpandAll` 属性
- * @param {array} [expandKeys] - `treeDefaultExpandedKeys` 属性
+ * @param {Array} [expandKeys] - `treeDefaultExpandedKeys` 属性
  * @param {boolean} [clear] - 是否支持清除
  * @param {...any} [props] - 其它传给 Ant.TreeSelect 组件的 props
  */
@@ -593,11 +592,11 @@ class TreeSelect extends Ant.TreeSelect {
         filterTreeNode: (val, node) => new RegExp(val, 'i').test(`${node.value}${node.title}`),
       };
     }
-    this.shouldFormat = keys !== undefined || useString !== undefined;
+    this.useKeys = keys !== undefined || useString !== undefined;
   }
-  getTreeData = data => {
+  getTreeData = (data) => {
     if (this.formatted) return this.treeData;
-    if (this.shouldFormat && data.length > 0) {
+    if (this.useKeys && data.length > 0) {
       const { useString, keys } = this.props;
       const [value = 'value', title = 'title', children = 'children'] = keys || [];
       this.treeData = this.travelTreeData(data, useString, value, title, children);
@@ -607,16 +606,17 @@ class TreeSelect extends Ant.TreeSelect {
     }
     return this.treeData;
   };
-  travelTreeData = (data, useString, value, title, children) => data.map(item => {
-    const newItem = {
-      value: useString !== true ? item[value] : item[value].toString(),
-      title: item[title],
-    };
-    if (item[children]) {
-      newItem.children = this.travelTreeData(item[children], useString, value, title, children);
-    }
-    return newItem;
-  });
+  travelTreeData = (data, useString, value, title, children) =>
+    data.map((item) => {
+      const newItem = {
+        value: useString !== true ? item[value] : item[value].toString(),
+        title: item[title],
+      };
+      if (item[children]) {
+        newItem.children = this.travelTreeData(item[children], useString, value, title, children);
+      }
+      return newItem;
+    });
 
   render() {
     const {
@@ -653,43 +653,63 @@ TreeSelect.displayName = 'AntPlus.TreeSelect';
 TreeSelect.defaultProps = { dropdownStyle: { maxHeight: 400, overflow: 'auto' } };
 
 /**
- * Upload - Ant Design Upload 组件增强版本
- * @link https://ant.design/components/upload-cn/
+ * Checkbox - Ant Design Checkbox 组件增强版本
+ * @link https://ant.design/components/checkbox-cn/
  *
- * @param {function} [onUpload] - 获取上传的文件，可用于手动上传
- * @param {...any} [props] - 其它传给 Ant.Upload 组件的 props
+ * @param {Array} [keys] - 当数据源条目中的 key 不是 `value` `label` 时传入
+ * @param {...any} [props] - 其它传给 Ant.Checkbox 组件的 props
  */
-class Upload extends Ant.Upload {
+class Checkbox extends Ant.Checkbox {
+  render() {
+    return <Ant.Checkbox {...this.props} />;
+  }
+}
+Checkbox.Group = class CheckboxGroup extends Ant.Checkbox.Group {
   constructor(props) {
     super(props);
-    const { onUpload } = props;
-    if (typeof onUpload === 'function') {
-      this.beforeUploadProps = {
-        beforeUpload: this.beforeUpload,
+    const { keys } = props;
+    this.useKeys = Array.isArray(keys) && keys.length === 2;
+    if (this.useKeys) {
+      this.state = {
+        newOptions: [],
       };
     }
   }
-  beforeUpload = file => {
-    this.props.onUpload(file);
-    return false;
-  };
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const { newOptions } = prevState;
+    if (!newOptions) return null;
+
+    // useKeys
+    const { options } = nextProps;
+    if (options.length === 0 || newOptions.length > 0) return null;
+
+    const { keys } = nextProps;
+    const [value, label] = keys;
+    const throwError = (key) => {
+      throw new Error(`\`option.${key}\` is undefined`);
+    };
+    return {
+      newOptions: options.map((option) => {
+        if (option[value] === undefined) throwError(value);
+        if (option[label] === undefined) throwError(label);
+        return {
+          value: option[value],
+          label: option[label],
+        };
+      }),
+    };
+  }
 
   render() {
-    const {
-      onUpload,
-      ...props
-    } = this.props;
-
-    return (
-      <Ant.Upload
-        {...this.beforeUploadProps}
-        {...props}
-      />
-    );
+    if (!this.useKeys) return <Ant.Checkbox.Group {...this.props} />;
+    const { options, keys, ...props } = this.props;
+    // useKeys
+    const { newOptions } = this.state;
+    return <Ant.Checkbox.Group options={newOptions} {...props} />;
   }
-}
+};
 
-Upload.defaultProps = undefined;
+Checkbox.Group.defaultProps = undefined;
 
 /**
  * exports
@@ -703,5 +723,5 @@ export {
   Transfer,
   Cascader,
   TreeSelect,
-  Upload,
+  Checkbox,
 };
