@@ -7,6 +7,7 @@ export default {
   title: 'Ant Plus',
   description: 'Enhanced Ant Design Form',
   codeSandbox: false,
+  hashRouter: true,
   plugins: [
     css(),
     css({
