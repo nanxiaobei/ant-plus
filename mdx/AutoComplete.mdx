@@ -1,0 +1,19 @@
+---
+name: AutoComplete
+route: /auto-complete
+---
+
+import { Playground, PropsTable } from 'docz';
+import { Form, AutoComplete } from '../src';
+
+# AutoComplete
+
+### Demo
+
+<Playground>
+  <AutoComplete data={['🐅 小脑斧', '🐶 小狗子', '🐱 小猫崽']} search clear msg="写点什么 ..." />
+</Playground>
+
+### Props
+
+<PropsTable of={AutoComplete} />

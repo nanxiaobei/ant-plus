@@ -1,0 +1,29 @@
+---
+name: Select
+route: /select
+---
+
+import { Playground, PropsTable } from 'docz';
+import { Form, Select } from '../src';
+
+# Select
+
+### Demo
+
+<Playground>
+  <Select
+    data={[
+      { id: 'tiger', name: '🐅 小脑斧' },
+      { id: 'dog', name: '🐶 小狗子' },
+      { id: 'cat', name: '🐱 小猫崽' },
+    ]}
+    keys={['id', 'name']}
+    search
+    clear
+    msg="选个宠物吧"
+  />
+</Playground>
+
+### Props
+
+<PropsTable of={Select} />

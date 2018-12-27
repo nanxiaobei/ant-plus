@@ -1,0 +1,59 @@
+---
+name: Form
+route: /form
+---
+
+import { Playground, PropsTable } from 'docz';
+import { Component } from 'react';
+import { Button } from 'antd';
+import { Form, Input, Select } from '../src';
+
+# Form
+
+### Demo
+
+<Playground>
+  {() => {
+    class Demo extends Component {
+      constructor() {
+        this.onSubmit = this.onSubmit.bind(this);
+      }
+      onSubmit() {
+        const { form } = this.props;
+        form.validateFields((err, values) => {
+          if (err) return;
+          console.log(values);
+        });
+      }
+      render() {
+        const { form } = this.props;
+        return (
+          <Form api={form} data={{ name: 'Emily', sex: 1 }} onSubmit={this.onSubmit}>
+            <Input
+              label="姓名"
+              id="name"
+              rules={['required', 'string', 'max=10']}
+              max={10}
+              msg="short"
+            />
+            <Select
+              label="性别"
+              id="sex"
+              rules={['required', 'number']}
+              data={[{ id: 0, type: '男' }, { id: 1, type: '女' }]}
+              keys={['id', 'type']}
+              msg="full"
+            />
+            <Button htmlType="submit">提交</Button>
+          </Form>
+        );
+      }
+    }
+    const WrappedDemo = Form.create()(Demo);
+    return <WrappedDemo />;
+  }}
+</Playground>
+
+### Props
+
+<PropsTable of={Form} />

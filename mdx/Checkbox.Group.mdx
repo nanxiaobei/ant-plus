@@ -1,0 +1,26 @@
+---
+name: Checkbox.Group
+route: /checkbox-group
+---
+
+import { Playground, PropsTable } from 'docz';
+import { Form, Checkbox, CheckboxGroup } from '../src';
+
+# Checkbox.Group
+
+### Demo
+
+<Playground>
+  <Checkbox.Group
+    data={[
+      { id: 'tiger', name: '🐅 小脑斧' },
+      { id: 'dog', name: '🐶 小狗子' },
+      { id: 'cat', name: '🐱 小猫崽' },
+    ]}
+    keys={['id', 'name']}
+  />
+</Playground>
+
+### Props
+
+<PropsTable of={CheckboxGroup} />

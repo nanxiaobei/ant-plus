@@ -1,0 +1,34 @@
+---
+name: Transfer
+route: /transfer
+---
+
+import { Playground, PropsTable } from 'docz';
+import { Form, Transfer } from '../src';
+
+# Transfer
+
+### Demo
+
+<Playground>
+  <Transfer
+    data={[
+      { key: 'tiger', title: '🐅 小脑斧' },
+      { key: 'dog', title: '🐶 小狗子' },
+      { key: 'cat', title: '🐱 小猫崽' },
+    ]}
+    onChange={(targetKeys, direction, moveKeys) => {
+      console.log('targetKeys: ', targetKeys);
+      console.log('direction: ', direction);
+      console.log('moveKeys: ', moveKeys);
+    }}
+    search
+    title="宠物"
+    unit="只"
+    searchMsg="找一找"
+  />
+</Playground>
+
+### Props
+
+<PropsTable of={Transfer} />
