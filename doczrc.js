@@ -1,16 +1,12 @@
 import { css } from 'docz-plugin-css';
 
 export default {
+  src: './mdx',
   dest: './docs',
+  base: '/ant-plus/',
   title: '🚀 Ant Plus',
   description: 'Enhanced Ant Design Form',
-  modifyBabelRc: (babelrc) => {
-    babelrc.plugins.unshift([
-      'import',
-      { libraryName: 'antd', libraryDirectory: 'es', style: 'css' },
-    ]);
-    return babelrc;
-  },
+  codeSandbox: false,
   menu: [
     'Getting Started',
     'Form',
@@ -22,7 +18,6 @@ export default {
     'TreeSelect',
     'Checkbox.Group',
   ],
-  codeSandbox: false,
   plugins: [
     css(),
     css({
@@ -35,4 +30,11 @@ export default {
       preprocessor: 'sass',
     }),
   ],
+  modifyBabelRc: (babelrc) => {
+    babelrc.plugins.unshift([
+      'import',
+      { libraryName: 'antd', libraryDirectory: 'es', style: 'css' },
+    ]);
+    return babelrc;
+  },
 };
