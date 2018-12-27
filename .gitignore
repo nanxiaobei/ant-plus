@@ -1,5 +1,6 @@
 .git
 .idea
+.docz
 
 node_modules
 coverage
