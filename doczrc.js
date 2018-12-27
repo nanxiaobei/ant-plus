@@ -3,21 +3,10 @@ import { css } from 'docz-plugin-css';
 export default {
   src: './mdx',
   dest: './docs',
-  base: '/ant-plus/',
+  base: '/ant-plus',
   title: '🚀 Ant Plus',
   description: 'Enhanced Ant Design Form',
   codeSandbox: false,
-  menu: [
-    'Getting Started',
-    'Form',
-    'Input',
-    'AutoComplete',
-    'Select',
-    'Transfer',
-    'Cascader',
-    'TreeSelect',
-    'Checkbox.Group',
-  ],
   plugins: [
     css(),
     css({
@@ -37,4 +26,19 @@ export default {
     ]);
     return babelrc;
   },
+  htmlContext: {
+    favicon: './public/favicon.ico',
+  },
+  sourcemaps: false,
+  menu: [
+    'Getting Started',
+    'Form',
+    'Input',
+    'AutoComplete',
+    'Select',
+    'Transfer',
+    'Cascader',
+    'TreeSelect',
+    'Checkbox.Group',
+  ],
 };
