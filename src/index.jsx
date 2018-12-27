@@ -95,9 +95,8 @@ const createField = (field, label, disabledFields, id) => {
       throw new Error('`msg` prop is not allowed for a non `AntPlus` component');
     }
     const { displayName } = field.type;
-    const isSelect = selectList.includes(
-      typeof displayName === 'string' && displayName.split('.')[1],
-    );
+    const isSelect =
+      typeof displayName === 'string' && selectList.includes(displayName.split('.')[1]);
     const shortMsg = isSelect ? formConfig.selectPlaceholder : formConfig.inputPlaceholder;
     const msg = fieldProps.msg === 'short' ? shortMsg : `${shortMsg}${label || ''}`;
     fieldProps = { ...fieldProps, msg };
