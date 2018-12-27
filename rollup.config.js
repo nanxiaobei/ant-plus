@@ -1,62 +1,34 @@
-import resolve from 'rollup-plugin-node-resolve';
+import { eslint } from 'rollup-plugin-eslint';
 import babel from 'rollup-plugin-babel';
-import replace from 'rollup-plugin-replace';
 import sass from 'rollup-plugin-sass';
-import { uglify } from 'rollup-plugin-uglify';
 
-const env = process.env.NODE_ENV;
+import pkg from './package.json';
+
+const { NODE_ENV } = process.env;
+const dependencies = Object.keys(pkg.peerDependencies);
+
 const config = {
-  input: 'src/ant-plus.jsx',
-  external: ['react', 'antd'],
-  plugins: [],
+  input: 'src/index.jsx',
+  output: { format: NODE_ENV, indent: false },
+  external: (id) => {
+    if (dependencies.includes(id)) return true;
+    if (id.includes('antd/') || id.includes('@babel/runtime/')) return true;
+  },
+  plugins: [
+    eslint({
+      throwOnError: true,
+      throwOnWarning: true,
+      include: ['src/**/*.(js|jsx)'],
+      exclude: ['node_modules/**'],
+    }),
+    babel({
+      exclude: 'node_modules/**',
+      runtimeHelpers: true,
+    }),
+    sass({
+      insert: true,
+    }),
+  ],
 };
-
-if (env === 'es' || env === 'cjs') {
-  config.output = { format: env };
-  config.plugins.push(
-    sass({
-      insert: true,
-    }),
-    babel({
-      exclude: 'node_modules/**',
-    }),
-  );
-}
-
-if (env === 'development' || env === 'production') {
-  config.output = {
-    format: 'umd',
-    name: 'ant-plus',
-    globals: {
-      react: 'react',
-      antDeisgn: 'antd',
-    },
-  };
-  config.plugins.push(
-    resolve(),
-    sass({
-      insert: true,
-    }),
-    babel({
-      exclude: 'node_modules/**',
-    }),
-    replace({
-      'process.env.NODE_ENV': JSON.stringify(env),
-    }),
-  );
-}
-
-if (env === 'production') {
-  config.plugins.push(
-    uglify({
-      compress: {
-        pure_getters: true,
-        unsafe: true,
-        unsafe_comps: true,
-        warnings: false,
-      },
-    }),
-  );
-}
 
 export default config;
