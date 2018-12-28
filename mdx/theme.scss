@@ -1,0 +1,188 @@
+@mixin font-family {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+    Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+$red: rgb(225, 0, 80);
+// Body
+// --------------------------------------------------
+body {
+  color: rgba(#000, 0.8);
+  @include font-family;
+  background: #fff;
+}
+.css-1eko99s {
+  display: none;
+}
+// Sidebar
+// --------------------------------------------------
+.css-wwgiek {
+  background: transparent;
+  border-right: 1px solid rgba(#000, 0.1);
+  .css-pccrlp {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+}
+.css-y1r3ra {
+  margin-top: 16px;
+  &::before {
+    display: none;
+  }
+}
+.css-c9p757 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 700;
+  outline: 0;
+  &::before {
+    content: '🚀';
+    margin-right: 8px;
+  }
+}
+.css-1pxi6pq {
+  margin: 0 24px 24px;
+  padding: 6px 12px;
+  background: rgba(#000, 0.04);
+  border: 0;
+  border-radius: 6px;
+  .css-6r9w8j {
+    padding: 0 0 0 8px;
+    font-size: 14px;
+  }
+}
+.css-14jzf4k {
+  margin-bottom: 0;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.css-1evit71,
+.css-1ccg7te {
+  &::after {
+    display: none;
+  }
+}
+.css-82rrzo {
+  padding: 12px 24px;
+  color: rgba(#000, 0.8);
+  font-size: 14px;
+  font-weight: 400 !important;
+  letter-spacing: 0.2px;
+  &:hover,
+  &.active {
+    color: $red;
+  }
+}
+.css-1l1jc95 {
+  padding-bottom: 8px;
+  color: rgba(#000, 0.8) !important;
+  &:hover,
+  &:active {
+    opacity: 1;
+  }
+  &.active {
+    &::before {
+      display: none;
+    }
+  }
+}
+.css-b4nn6f {
+  display: none;
+}
+// Main
+// --------------------------------------------------
+.css-pw2o4y {
+  background: transparent;
+}
+.css-p4m8gg {
+  display: none;
+}
+.css-cpkfv3 {
+  margin: 32px 0;
+  @include font-family;
+  font-size: 56px;
+  line-height: 1.2;
+  transform: translateX(-2px);
+  &::before {
+    display: none;
+  }
+}
+.css-18hsff8 {
+  margin: 32px 0 12px;
+  padding-bottom: 0;
+  @include font-family;
+  font-size: 28px;
+  border-bottom: 0;
+}
+.css-ky3id2 {
+  margin: 16px 0 8px;
+  font-size: 16px;
+}
+.css-1fxdu0u,
+.css-tb8t2g {
+  margin: 8px 0 24px;
+}
+.css-kqau70 {
+  width: auto;
+  border: 1px solid rgba(#000, 0.1);
+  border-radius: 2px;
+}
+.css-1ldarm7 {
+  background: transparent;
+  border: 0;
+}
+.css-1yrrg0j {
+  padding: 24px;
+}
+.css-dkk4re {
+  padding: 0 4px 2px;
+  background: transparent;
+  border: 0;
+}
+.css-13v12oq {
+  border-left: 0;
+}
+.css-1e5t11t {
+  border-left: 0;
+  &[title='Maximize'] {
+    display: none;
+  }
+}
+.css-k592kb {
+  display: none;
+}
+.css-1pbel1z {
+  width: 100%;
+  background: #fafafa;
+  border: 0;
+  .css-p87o66 .cm-s-docz-light.CodeMirror {
+    background: transparent;
+    .CodeMirror-lines,
+    .CodeMirror-gutters,
+    .CodeMirror-linenumber {
+      background: transparent;
+    }
+    .CodeMirror-lines {
+      padding: 16px 0;
+    }
+  }
+}
+.css-15c1kw4 {
+  box-shadow: 0 1px 0 rgba(#000, 0.1);
+  thead {
+    color: rgba(#000, 0.5);
+    background: #fafafa;
+    border-radius: 2px 2px 0 0;
+    th {
+      padding: 16px;
+    }
+  }
+  tbody {
+    tr {
+      border-top-color: rgba(#000, 0.1);
+    }
+    td {
+      padding: 16px;
+    }
+  }
+}
