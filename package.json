@@ -22,11 +22,12 @@
     "src"
   ],
   "scripts": {
-    "pretty": "prettier --write 'src/**/*.{jsx,scss}' .babelrc.js rollup.config.js '**/*.md'",
     "clean": "rimraf lib es",
     "build:commonjs": "cross-env NODE_ENV=cjs rollup -c -o lib/index.js",
     "build:es": "cross-env NODE_ENV=esm rollup -c -o es/index.js",
-    "build": "npm run clean && npm run build:commonjs && npm run build:es"
+    "build": "yarn clean && yarn build:commonjs && yarn build:es",
+    "dev": "yarn docz dev",
+    "doc": "yarn docz build"
   },
   "peerDependencies": {
     "antd": "^3.11.6",
