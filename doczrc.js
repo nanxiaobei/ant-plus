@@ -28,7 +28,7 @@ export default {
     return babelrc;
   },
   htmlContext: {
-    favicon: './public/favicon.ico',
+    favicon: '/ant-plus/public/favicon.ico',
   },
   sourcemaps: false,
   menu: [
