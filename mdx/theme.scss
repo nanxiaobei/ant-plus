@@ -31,7 +31,7 @@ body {
 }
 .css-c9p757 {
   margin: 0;
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 700;
   outline: 0;
   &::before {
@@ -42,12 +42,15 @@ body {
 .css-1pxi6pq {
   margin: 0 24px 24px;
   padding: 6px 12px;
-  background: rgba(#000, 0.04);
+  background: rgba(#000, 0.03);
   border: 0;
   border-radius: 6px;
+  .css-1at2ihp {
+    width: 16px;
+  }
   .css-6r9w8j {
     padding: 0 0 0 8px;
-    font-size: 14px;
+    font-size: 15px;
   }
 }
 .css-14jzf4k {
@@ -63,10 +66,10 @@ body {
   }
 }
 .css-82rrzo {
-  padding: 12px 24px;
+  padding: 10px 24px;
   color: rgba(#000, 0.8);
-  font-size: 14px;
-  font-weight: 400 !important;
+  font-size: 15px;
+  font-weight: 500 !important;
   letter-spacing: 0.2px;
   &:hover,
   &.active {
@@ -76,14 +79,9 @@ body {
 .css-1l1jc95 {
   padding-bottom: 8px;
   color: rgba(#000, 0.8) !important;
-  &:hover,
-  &:active {
-    opacity: 1;
-  }
-  &.active {
-    &::before {
-      display: none;
-    }
+  opacity: 0.5 !important;
+  &.active::before {
+    display: none;
   }
 }
 .css-b4nn6f {
@@ -100,13 +98,14 @@ body {
 .css-cpkfv3 {
   margin: 32px 0;
   @include font-family;
-  font-size: 56px;
-  line-height: 1.3;
+  font-size: 48px;
+  line-height: 1.5;
   transform: translateX(-2px);
   &::before {
     display: none;
   }
 }
+.css-18hsff8,
 .css-p16bed {
   margin: 32px 0 12px;
   padding-bottom: 0;
