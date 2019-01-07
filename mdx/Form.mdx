@@ -28,7 +28,7 @@ import { Form, Input, Select } from '../src';
       render() {
         const { form } = this.props;
         return (
-          <Form api={form} data={{ name: 'Emily', sex: 1 }} onSubmit={this.onSubmit}>
+          <Form api={form} data={{ name: 'Emily', sex: 2 }} onSubmit={this.onSubmit}>
             <Input
               label="姓名"
               id="name"
@@ -40,7 +40,7 @@ import { Form, Input, Select } from '../src';
               label="性别"
               id="sex"
               rules={['required', 'number']}
-              data={[{ id: 0, type: '男' }, { id: 1, type: '女' }]}
+              data={[{ id: 1, type: '男' }, { id: 2, type: '女' }]}
               keys={['id', 'type']}
               msg="full"
             />
