@@ -50,3 +50,9 @@ export default Form.create()(App);
 使用 Ant Plus 与使用传统 Ant Design 的代码对比
 
 ![代码对比图](https://raw.githubusercontent.com/nanxiaobei/ant-plus/master/contrast/demo.png)
+
+## API
+
+`Form.setConfig(config: Object)`
+
+用于设置校验规则错误提示信息
