@@ -40,6 +40,5 @@ export default {
     'Transfer 穿梭框',
     'Cascader 级联选择',
     'TreeSelect 树选择',
-    'Checkbox.Group 多选框',
   ],
 };

@@ -738,72 +738,6 @@ class TreeSelect extends Ant.TreeSelect {
 TreeSelect.displayName = 'AntPlus.TreeSelect';
 
 /**
- * Checkbox.Group - Ant Design Checkbox.Group 组件增强版本
- * @link https://ant.design/components/checkbox-cn/
- */
-class CheckboxGroup extends Ant.Checkbox.Group {
-  static propTypes = {
-    /** `options` 属性 */
-    data: t.array,
-    /** 当数据源条目中的 key 不是 `value` `label` 时传入（需与 `data` 配合使用）*/
-    keys: t.array,
-  };
-  static defaultProps = {
-    data: [],
-    keys: ['value', 'label'],
-  };
-
-  constructor(props) {
-    super(props);
-    const { keys } = props;
-    this.useKeys = Array.isArray(keys) && keys[0] !== 'value';
-    if (this.useKeys) {
-      this.state = {
-        useKeys: this.useKeys,
-        newData: [],
-      };
-    }
-  }
-  static getDerivedStateFromProps(nextProps, prevState) {
-    const { useKeys } = prevState;
-    if (!useKeys) return null;
-
-    // useKeys
-    const { data } = nextProps;
-    if (data.length === 0 || prevState.newData.length > 0) return null;
-
-    const { keys } = nextProps;
-    const [value = 'value', label = 'label'] = keys;
-    const throwError = (key, index) => {
-      throw new Error(`\`data[${index}].${key}\` is undefined`);
-    };
-    const newData = data.map((item, index) => {
-      if (item[value] === undefined) throwError(value, index);
-      if (item[label] === undefined) throwError(label, index);
-      return {
-        value: item[value],
-        label: item[label],
-      };
-    });
-    return { newData };
-  }
-
-  render() {
-    const { data, keys, ...props } = this.props;
-    const { newData } = this.state;
-
-    return <Ant.Checkbox.Group options={this.useKeys ? newData : data} {...props} />;
-  }
-}
-
-class Checkbox extends Ant.Checkbox {
-  render() {
-    return <Ant.Checkbox {...this.props} />;
-  }
-}
-Checkbox.Group = CheckboxGroup;
-
-/**
  * exports
  */
 export {
@@ -815,6 +749,4 @@ export {
   Transfer,
   Cascader,
   TreeSelect,
-  Checkbox,
-  CheckboxGroup,
 };
