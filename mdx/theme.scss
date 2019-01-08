@@ -10,6 +10,20 @@ body {
   @include font-family;
   background: #fff;
 }
+h1,
+h2 {
+  font-weight: 700 !important;
+}
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600 !important;
+}
+b,
+strong {
+  font-weight: 600 !important;
+}
 img {
   max-width: 100%;
 }
@@ -39,7 +53,6 @@ img {
 .css-c9p757 {
   margin: 0;
   font-size: 24px;
-  font-weight: 700;
   outline: 0;
   &::before {
     content: '🚀';
@@ -117,16 +130,15 @@ img {
   margin: 32px 0 12px;
   padding-bottom: 0;
   @include font-family;
-  font-size: 28px;
+  font-size: 24px;
   border-bottom: 0;
 }
 .css-ky3id2 {
   margin: 32px 0 16px;
   font-size: 20px;
-  font-weight: 500;
 }
 .css-1ab6bas {
-  margin: 24px 0 12px;
+  margin: 16px 0 12px;
   font-size: 16px;
 }
 .css-1fxdu0u,
@@ -189,15 +201,14 @@ img {
 }
 .css-1pbel1z {
   width: 100%;
-  background: #fafafa;
   border: 0;
   .css-p87o66 .cm-s-docz-light.CodeMirror {
     background: transparent;
-    .CodeMirror-lines,
-    .CodeMirror-gutters,
-    .CodeMirror-linenumber {
-      background: transparent;
-    }
+    //.CodeMirror-lines,
+    //.CodeMirror-gutters,
+    //.CodeMirror-linenumber {
+    //  background: transparent;
+    //}
     .CodeMirror-lines {
       padding: 16px 0;
     }
@@ -210,7 +221,7 @@ img {
     background: #fafafa;
     border-radius: 2px 2px 0 0;
     th {
-      padding: 16px;
+      padding: 16px 12px;
       color: rgba(#000, 0.4);
       font-weight: 700;
     }
@@ -220,7 +231,7 @@ img {
       border-top-color: rgba(#000, 0.1);
     }
     td {
-      padding: 16px;
+      padding: 12px;
       color: rgba(#000, 0.7);
       font-weight: 400;
     }

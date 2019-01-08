@@ -78,10 +78,10 @@ import { Form } from 'antx';
 
 `config` 的配置项：
 
-| Option            | Default               | Remark                                              |
+| 参数              | 默认                  | 说明                                                |
 | ----------------- | --------------------- | --------------------------------------------------- |
-| inputPlaceholder  | '请输入'              |                                                     |
-| selectPlaceholder | '请选择'              |                                                     |
+| inputPlaceholder  | '请输入'              | 当 `msg` 传入 `short` 或 `full` 时使用              |
+| selectPlaceholder | '请选择'              | 当 `msg` 传入 `short` 或 `full` 时使用              |
 | requiredMessage   | '{label}不得为空'     | 字符串 `{label}` 为表单域名称的占位符，会被自动替换 |
 | typeMessage       | '{label}格式有误'     | 字符串 `{label}` 为表单域名称的占位符，会被自动替换 |
 | maxMessage        | '不得超过 {num} 个字' | 字符串 `{num}` 为限制字数的占位符，会被自动替换     |
@@ -100,7 +100,9 @@ Form.setConfig({
 
 ### 3. Props
 
-Ant Plus 的核心使用方式 —— 直接在 Form 表单域组件的 Props 中，传入相关 props，示例：
+Ant Plus 的核心使用方式 —— 直接在 Form 表单域组件的 Props 中，传入相关 props。
+
+其中 `id` 为表单域的唯一标识，用于区分表单域组件与普通组件，请勿用作它用，示例：
 
 ```jsx harmony
 <Input
@@ -114,11 +116,11 @@ Ant Plus 的核心使用方式 —— 直接在 Form 表单域组件的 Props �
 />
 ```
 
-以下为可用 Props。
+以下为可用的 Props。
 
 **Form.Item 相关属性**
 
-| Prop      | Description                                                                                            |
+| 属性      | 说明                                                                                                   |
 | --------- | ------------------------------------------------------------------------------------------------------ |
 | className | `className` 将被传给 Form.Item，而非表单域例如 Input。此外，Ant Plus 会自动添加 `id` 的值到 `class` 中 |
 | label     |                                                                                                        |
@@ -129,9 +131,9 @@ _不可用属性：经考虑，`extra`、`hasFeedback`、`help`、`labelCol`、`
 
 **form.getFieldDecorator(id, options) 相关属性**
 
-| Prop              | Description                                            |
+| 属性              | 说明                                                   |
 | ----------------- | ------------------------------------------------------ |
-| id                | `getFieldDecorator` 参数中的 `id`，为表单域的唯一标识  |
+| id                | 表单域的唯一标识，`getFieldDecorator` 参数中的 `id`    |
 | before            | 表单域前缀信息（string/node），建议使用 CSS 来控制布局 |
 | after             | 表单域后缀信息（string/node），建议使用 CSS 来控制布局 |
 | hide              | 是否隐藏表单域（页面中隐藏，仍可收集到值）             |
@@ -182,4 +184,6 @@ Ant Plus 提供了以下「短语」形式的校验规则，配合上文的 "2. 
 | phone    | 'phone'    | 手机号       | 'XXX 格式有误'     |
 | id       | 'id'       | 身份证       | 'XXX 格式有误'     |
 
-_`max` `min` 的使用方式，传入例如 `max=10`，以 `=` 分割。上文「错误提示」中的 `XXX` 会被替换为表单域的 `label`。_
+同时，遵循渐进增强的理念，未在「短语」中列出的规则，或需要自定义规则，仍可使用传统方式即对象的形式来定义规则。
+
+_`max` `min` 的使用方式为传入例如 `max=10`，以 `=` 分割。上文「错误提示」中的 `XXX` 会被替换为表单域的 `label`。_
