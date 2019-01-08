@@ -46,7 +46,7 @@ import { Form, Input } from 'antx';
 const App = ({ form }) => (
   <Form api={form} data={{ username: 'Emily' }}>
     <Input
-      label="姓名"
+      label="用户名"
       id="username"
       rules={['required', 'string', 'max=10']}
       max={10}
