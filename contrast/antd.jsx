@@ -3,15 +3,15 @@ import { Form, Input, Select, Button } from 'antd';
 
 const Demo = ({ form }) => (
   <Form>
-    <Form.Item label="姓名">
+    <Form.Item label="用户名">
       {form.getFieldDecorator('username', {
         rules: [
-          { required: true, message: '姓名不得为空' },
-          { type: 'string', whitespace: true, message: '姓名格式有误' },
+          { required: true, message: '用户名不得为空' },
+          { type: 'string', whitespace: true, message: '用户名格式有误' },
           { max: 10, message: '不得超过 10 个字' },
         ],
         initialValue: 'Emily',
-      })(<Input placeholder="请输入姓名" />)}
+      })(<Input placeholder="请输入用户名" />)}
     </Form.Item>
     <Form.Item label="性别">
       {form.getFieldDecorator('gender', {

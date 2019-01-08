@@ -5,7 +5,7 @@ import { Form, Input, Select } from 'antx';
 const Demo = ({ form }) => (
   <Form api={form} data={{ username: 'Emily', gender: 2 }}>
     <Input
-      label="姓名"
+      label="用户名"
       id="username"
       rules={['required', 'string', 'max=10']}
       max={10}
