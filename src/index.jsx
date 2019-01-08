@@ -33,11 +33,6 @@ const fieldRules = (rule, label) => {
       whitespace: true,
       message: `${typeBefore}${label}${typeAfter}`,
     },
-    numAll: {
-      pattern: /^-?\d+$/,
-      whitespace: true,
-      message: `${typeBefore}${label}${typeAfter}`,
-    },
     array: {
       type: 'array',
       message: `${typeBefore}${label}${typeAfter}`,
@@ -120,15 +115,15 @@ const createField = (field, label, disabledFields, id) => {
  */
 class Form extends Ant.Form {
   static propTypes = {
-    /** 经 Form.create 包装后注入的 `form` 属性（为规避 Ant Design 提示信息，改为 `api`）*/
+    /** 必选。经 Form.create 包装后注入的 `form` 属性（为规避 Ant Design 提示信息，改为 `api`）*/
     api: t.object.isRequired,
-    /** 与内部各表单域 `id` 对应的一组 { [id]: value, ... } 数据 */
+    /** 与各表单域 `id` 对应的一组键值对，用于设置各表单域初始值 e.g. { [id]: value, ... } */
     data: t.object,
     /** 禁用的表单域，全部禁用传 "all"，部分禁用传 id 组成的数组 */
     disabledFields: t.array,
-    /** 是否显示 label 后的冒号 */
+    /** 是否整体显示 label 后的冒号 */
     colon: t.bool,
-    /** 提交表单的回调事件 */
+    /** 提交表单的回调事件，已做了 `event.preventDefault()` 处理 */
     onSubmit: t.func,
     /** 表单域集合（推荐通过 children 传入），e.g. <Input label="账号" id="id" rules=['number'] /> */
     fields: t.node,
