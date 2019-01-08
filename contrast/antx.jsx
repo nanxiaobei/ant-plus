@@ -1,19 +1,18 @@
 import React from 'react';
-import { Button } from 'antd';
-import { Form, Input, Select } from 'antx';
+import { Form, Input, Select, Button } from 'antd';
 
-const App = ({ form }) => (
-  <Form api={form} data={{ name: 'Emily', sex: 2 }}>
+const Demo = ({ form }) => (
+  <Form api={form} data={{ username: 'Emily', gender: 2 }}>
     <Input
       label="姓名"
-      id="name"
+      id="username"
       rules={['required', 'string', 'max=10']}
       max={10}
       msg="full"
     />
     <Select
       label="性别"
-      id="sex"
+      id="gender"
       rules={['required', 'number']}
       data={[{ id: 1, type: '男' }, { id: 2, type: '女' }]}
       keys={['id', 'type']}
@@ -23,4 +22,4 @@ const App = ({ form }) => (
   </Form>
 );
 
-export default Form.create()(App);
+export default Form.create()(Demo);

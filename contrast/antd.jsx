@@ -1,25 +1,23 @@
 import React from 'react';
 import { Form, Input, Select, Button } from 'antd';
 
-const App = ({ form }) => (
+const Demo = ({ form }) => (
   <Form>
     <Form.Item label="姓名">
-      {form.getFieldDecorator('name', {
+      {form.getFieldDecorator('username', {
         rules: [
           { required: true, message: '姓名不得为空' },
           { type: 'string', whitespace: true, message: '姓名格式有误' },
           { max: 10, message: '不得超过 10 个字' },
         ],
         initialValue: 'Emily',
-      })(
-        <Input placeholder="请输入姓名" />,
-      )}
+      })(<Input placeholder="请输入姓名" />)}
     </Form.Item>
     <Form.Item label="性别">
-      {form.getFieldDecorator('sex', {
+      {form.getFieldDecorator('gender', {
         rules: [
           { required: true, message: '性别不得为空' },
-          { pattern: /^\d+$/, whitespace: true, message: '姓名格式有误' },
+          { pattern: /^\d+$/, whitespace: true, message: '性别格式有误' },
         ],
         initialValue: 2,
       })(
@@ -33,4 +31,4 @@ const App = ({ form }) => (
   </Form>
 );
 
-export default Form.create()(App);
+export default Form.create()(Demo);
