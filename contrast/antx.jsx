@@ -1,5 +1,6 @@
 import React from 'react';
-import { Form, Input, Select, Button } from 'antd';
+import { Button } from 'antd';
+import { Form, Input, Select } from 'antx';
 
 const Demo = ({ form }) => (
   <Form api={form} data={{ username: 'Emily', gender: 2 }}>
