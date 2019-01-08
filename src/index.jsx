@@ -635,10 +635,6 @@ class TreeSelect extends Ant.TreeSelect {
   static propTypes = {
     /** `treeData` 属性 */
     data: t.array,
-    /** 当数据源条目中的 key 不是 `value` `title` `children` 时传入 */
-    keys: t.array,
-    /** 当数据源条目中的 `value` 为 number 类型时传入 */
-    useString: t.bool,
     /** 是否可搜索 */
     search: t.bool,
     /** `treeCheckable` 属性 */
@@ -656,7 +652,6 @@ class TreeSelect extends Ant.TreeSelect {
   };
   static defaultProps = {
     data: [],
-    keys: ['value', 'title', 'children'],
     search: false,
     check: false,
     expandAll: false,
@@ -668,45 +663,19 @@ class TreeSelect extends Ant.TreeSelect {
 
   constructor(props) {
     super(props);
-    const { search, keys, useString } = props;
+    const { search } = props;
     if (search === true) {
       this.searchProps = {
         showSearch: true,
         filterTreeNode: (val, node) => new RegExp(val, 'i').test(`${node.value}${node.title}`),
       };
     }
-    this.useKeys = keys !== undefined || useString !== undefined;
   }
-  getTreeData = (data) => {
-    if (this.formatted) return this.treeData;
-    if (this.useKeys && data.length > 0) {
-      const { useString, keys } = this.props;
-      const [value = 'value', title = 'title', children = 'children'] = keys || [];
-      this.treeData = this.travelTreeData(data, useString, value, title, children);
-      this.formatted = true;
-    } else {
-      this.treeData = data;
-    }
-    return this.treeData;
-  };
-  travelTreeData = (data, useString, value, title, children) =>
-    data.map((item) => {
-      const newItem = {
-        value: useString !== true ? item[value] : item[value].toString(),
-        title: item[title],
-      };
-      if (item[children]) {
-        newItem.children = this.travelTreeData(item[children], useString, value, title, children);
-      }
-      return newItem;
-    });
 
   render() {
     const {
       data,
       value,
-      keys,
-      useString,
       msg,
       check,
       expandAll,
@@ -721,8 +690,8 @@ class TreeSelect extends Ant.TreeSelect {
       <Ant.TreeSelect
         className="ant-plus-tree-select"
         {...this.searchProps}
-        treeData={this.getTreeData(data)}
-        value={this.treeData.length > 0 ? value : undefined}
+        treeData={data}
+        value={data.length > 0 ? value : undefined}
         treeCheckable={check}
         treeDefaultExpandAll={expandAll}
         treeDefaultExpandedKeys={expandKeys}
