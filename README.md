@@ -1,17 +1,21 @@
 # 🚀 Ant Plus
 
-Ant Plus 是 [Ant Design Form](https://ant.design/components/form-cn/) 的增强版本，基础用法完全相同，在此之上，封装了极其简便的 Form 使用方式与一些简化的组件 API。
+Ant Plus 是 [Ant Design Form](https://ant.design/components/form-cn/) 的增强版，在其基础上，封装了极其简便的 Form 使用方式与 Form 相关组件的简化 API。
 
 [![npm version](https://img.shields.io/npm/v/antx.svg?style=flat-square)](https://www.npmjs.com/package/antx)
 [![GitHub](https://img.shields.io/github/license/nanxiaobei/ant-plus.svg?style=flat-square)](https://github.com/nanxiaobei/ant-plus/blob/master/LICENSE)
 [![npm downloads](https://img.shields.io/npm/dt/antx.svg?style=flat-square)](http://www.npmtrends.com/antx)
 
+## 文档
+
+[https://nanxiaobei.github.io/ant-plus](https://nanxiaobei.github.io/ant-plus)
+
 ## 特点
 
-- **极其简便**：告别繁琐的 `form.getFieldDecorator` 样板代码，告别冗长的 `rules` 检验代码
-- **统一提示**：全局定义 `rules` 错误提示信息，统一体验，告别烦乱的自定义与不可控
-- **渐进增强**：若不用新的功能，完全可以把它们当作 Ant Design 组件来使用
-- **简化 API**：对一些常用 API 进行了简化，一切只为更简捷流畅的开发
+- **🧬 极其简便**：告别繁琐的 `form.getFieldDecorator` 样板代码，告别冗长的 `rules` 检验代码。
+- **⛳️ 统一提示**：全局定义 `rules` 错误提示信息，统一体验，告别烦乱的自定义与不可控。
+- **💅 渐进增强**：若不使用新的功能，完全可以把组件当作 Ant Design 中的组件来使用。
+- **🥽 简化 API**：对 Form 相关组件的常用 API 进行了简化，一切只为更流畅的开发。
 
 ## 安装
 
@@ -29,13 +33,11 @@ npm install antx
 
 ## 使用
 
-在组件 Props 中添加 `id` 以标明是表单域，`label` 用以渲染 Form.Item 的 `label`。
+添加 `id` 属性以标明是表单域，`label` 用以渲染 Form.Item 的 `label`。其它 [`getFieldDecorator(id, options)`](<https://ant.design/components/form-cn/#getFieldDecorator(id,-options)-%E5%8F%82%E6%95%B0>) `options` 参数中的项，均可直接用于组件的 Props，例如 `rules` `initialValue` 等。
 
-其它 [`getFieldDecorator(id, options)`](<https://ant.design/components/form-cn/#getFieldDecorator(id,-options)-%E5%8F%82%E6%95%B0>) `options` 参数中的项，均可直接用于组件的 Props，例如 `rules`。
+Ant Plus 还对 `rules` 做了一些特殊处理，可在规则数组中使用字符串，以简化校验规则的生成，并提供了自定义错误提示信息的接口。
 
-Ant Plus 还对 `rules` 做了一些特殊处理，可使用字符串以简化校验规则的生成，并提供了自定义校验提示的接口，如下文示例。
-
-更完整的使用介绍，请参阅 [Ant Plus Form 组件文档](https://nanxiaobei.github.io/ant-plus/#/form)。
+更完整使用介绍，请查阅 [Ant Plus Form 组件文档](https://nanxiaobei.github.io/ant-plus/#/form)。
 
 ```jsx harmony
 import { Button } from 'antd';
@@ -57,14 +59,14 @@ const App = ({ form }) => (
 export default Form.create()(App);
 ```
 
-是的，一切就是如此的简洁清晰，查看示例：[https://codesandbox.io/s/q75nvj6vrj](https://codesandbox.io/s/q75nvj6vrj)
+是的，一切就是如此的简洁清晰。示例：[https://codesandbox.io/s/q75nvj6vrj](https://codesandbox.io/s/q75nvj6vrj)。
 
 ## 对比
 
-使用 Ant Plus 与使用传统 Ant Design 的代码对比
+使用 Ant Plus 与使用传统 Ant Design 搭建 Form 的代码对比。
 
 ![代码对比图](https://raw.githubusercontent.com/nanxiaobei/ant-plus/master/contrast/demo.png)
 
-## 文档
+## 协议
 
-查阅 [Ant Plus 文档](https://nanxiaobei.github.io/ant-plus/#/)，了解简便的 Form 使用方式，以及各个组件的简化 API。
+[MIT](https://github.com/nanxiaobei/ant-plus/blob/master/LICENSE)
