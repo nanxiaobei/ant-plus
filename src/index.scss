@@ -1,3 +1,43 @@
+// Error Message
+$red: #f5222d;
+.ant-form-item {
+  &.ant-form-item-with-help {
+    margin-bottom: 24px;
+    .ant-transfer-list {
+      border-color: $red;
+    }
+    .ant-input.ant-transfer-list-search {
+      border-color: #d9d9d9;
+      box-shadow: none;
+    }
+  }
+  // 错误提示
+  .ant-form-explain,
+  .ant-form-split {
+    position: absolute;
+    z-index: 2;
+    top: -34px;
+    left: 0;
+    padding: 3px 8px;
+    color: #fff !important;
+    font-size: 12px;
+    line-height: 20px;
+    background: $red;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(#000, 0.3);
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -4px;
+      border-top: 4px solid $red;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      transform: translateX(-50%);
+    }
+  }
+}
+
 // Input
 .ant-plus-input {
   display: flex;
