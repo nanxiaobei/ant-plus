@@ -226,32 +226,35 @@ Form.renderNodes = (form, data, disabledFields, formColon) => (nodes) => {
     // 若子节点存在 `id` 且存在 `label`，则为表单域
     const {
       hide,
-      // Official `options` to `getFieldDecorator(id, options)`
+      // Ant Design `options` to `getFieldDecorator(id, options)`
       getValueFromEvent,
       initialValue,
       normalize,
+      preserve,
       rules = [],
       trigger,
       validateFirst,
       validateTrigger,
       valuePropName,
+      // rc-form option
       hidden,
-      // getValueProps,
-      // validate,
-      // preserve,
+      getValueProps,
+      validate,
       ...fieldProps
     } = nodeProps;
     // options
     const options = {
+      // Ant Design `options` to `getFieldDecorator(id, options)`
       getValueFromEvent,
       normalize,
+      preserve,
       trigger,
       validateFirst,
       valuePropName,
+      // rc-form option
       hidden: isNestedField || hidden, // Ignore current field while validating or getting fields
-      // getValueProps,
-      // validate,
-      // preserve,
+      getValueProps,
+      validate,
     };
     Object.keys(options).forEach((key) => {
       if (options[key] === undefined) delete options[key];
