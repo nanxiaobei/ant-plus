@@ -10,6 +10,10 @@ import { Form, Input, Select } from '../src';
 
 # Form 表单
 
+Ant Plus 最主要的特点，便是可以在 Form 表单域组件的 Props 中，直接传入以前需要使用 `Form.Item` 和 `form.getFieldDecorator` 来包裹传入的信息。
+
+从而简化使用，杜绝冗余的样板代码，构建起简洁清晰、方便开发、利于维护的 Form 表单代码。
+
 ## 使用
 
 ```js
@@ -36,7 +40,7 @@ import { Form } from 'antx';
         return (
           <Form api={form} data={{ name: 'Emily', sex: 2 }} onSubmit={this.onSubmit}>
             <Input
-              label="姓名"
+              label="用户名"
               id="name"
               rules={['required', 'string', 'max=10']}
               max={10}
@@ -60,8 +64,122 @@ import { Form } from 'antx';
   }}
 </Playground>
 
-## Props
+## API
+
+### 1. Form
 
 其它 Props 与 [Ant Design Form](https://ant.design/components/form-cn/) 完全一致，以下为增强 Props。
 
 <PropsTable of={Form} />
+
+### 2. Form.setConfig(config: Object)
+
+用于设置 Placeholder 及校验的错误提示信息，需要在项目入口文件中调用。
+
+`config` 的配置项：
+
+| Option            | Default               | Remark                                              |
+| ----------------- | --------------------- | --------------------------------------------------- |
+| inputPlaceholder  | '请输入'              |                                                     |
+| selectPlaceholder | '请选择'              |                                                     |
+| requiredMessage   | '{label}不得为空'     | 字符串 `{label}` 为表单域名称的占位符，会被自动替换 |
+| typeMessage       | '{label}格式有误'     | 字符串 `{label}` 为表单域名称的占位符，会被自动替换 |
+| maxMessage        | '不得超过 {num} 个字' | 字符串 `{num}` 为限制字数的占位符，会被自动替换     |
+| minMessage        | '不得少于 {num} 个字' | 字符串 `{num}` 为限制字数的占位符，会被自动替换     |
+
+使用示例：
+
+```js
+import { Form } from 'antx';
+
+Form.setConfig({
+  inputPlaceholder: 'Please input',
+  requiredMessage: '{label} is needed',
+});
+```
+
+### 3. Props
+
+Ant Plus 的核心使用方式 —— 直接在 Form 表单域组件的 Props 中，传入相关 props，示例：
+
+```jsx harmony
+<Input
+  label="用户名"
+  id="username"
+  colon
+  after={<span>请输入正确的信息</span>}
+  rules={['required', 'string']}
+  initialValue="Emily"
+  normalize={(value) => value}
+/>
+```
+
+以下为可用 Props。
+
+**Form.Item 相关属性**
+
+| Prop      | Description                                                                                            |
+| --------- | ------------------------------------------------------------------------------------------------------ |
+| className | `className` 将被传给 Form.Item，而非表单域例如 Input。此外，Ant Plus 会自动添加 `id` 的值到 `class` 中 |
+| label     |                                                                                                        |
+| colon     | 当 Form 的 `colon` 属性也存在时，可用来自定义某个域的冒号是否显示                                      |
+| required  | 只传入 `label` 不传入 `id` 时有效，用于校验必填，传入 `id` 时，建议使用 `rules` 来校验必填             |
+
+_不可用属性：经考虑，`extra`、`hasFeedback`、`help`、`labelCol`、`validateStatus`、`wrapperCol` 不被支持。建议使用 `rules` 来设置校验信息，CSS 代码来控制布局，可减少大量纯布局用的 `<div>`。_
+
+**form.getFieldDecorator(id, options) 相关属性**
+
+| Prop              | Description                                            |
+| ----------------- | ------------------------------------------------------ |
+| id                | `getFieldDecorator` 参数中的 `id`，为表单域的唯一标识  |
+| before            | 表单域前缀信息（string/node），建议使用 CSS 来控制布局 |
+| after             | 表单域后缀信息（string/node），建议使用 CSS 来控制布局 |
+| hide              | 是否隐藏表单域（页面中隐藏，仍可收集到值）             |
+| getValueFromEvent | `options.getValueFromEvent`                            |
+| initialValue      | `options.initialValue`                                 |
+| normalize         | `options.normalize`                                    |
+| preserve          | `options.preserve`                                     |
+| rules             | `options.rules`（参阅下文 "4. Rules" 使用方式）        |
+| trigger           | `options.trigger`                                      |
+| validateFirst     | `options.validateFirst`                                |
+| validateTrigger   | `options.validateTrigger`                              |
+| valuePropName     | `options.valuePropName`                                |
+| hidden            | `options.hidden`（`rc-form`）                          |
+| getValueProps     | `options.getValueProps`（`rc-form`）                   |
+| validate          | `options.validate`（`rc-form`）                        |
+
+### 4. rules
+
+Ant Plus 提供了极其简洁的检验规则生成方式，传统的 Ant Design Form 中，需要在 `rules` 数组中传入对象，例如：
+
+```jsx harmony
+form.getFieldDecorator('username', {
+  rules: [
+    { required: true, message: '用户名不得为空' },
+    { type: 'string', whitespace: true, message: '用户名格式有误' },
+    { max: 10, message: '不得超过 10 个字' },
+  ],
+})(<Input />);
+```
+
+而使用 Ant Plus，只需要传入简单的字符串即可，如下：
+
+```jsx harmony
+<Input id="username" rules={['required', 'string', 'max=10']} />
+```
+
+Ant Plus 提供了以下「短语」形式的校验规则，配合上文的 "2. Form.setConfig()"，可自定义错误提示信息。
+
+| 规则     | 使用方式   | 校验         | 错误提示           |
+| -------- | ---------- | ------------ | ------------------ |
+| required | 'required' | 必填         | 'XXX 不得为空'     |
+| string   | 'string'   | 字符串       | 'XXX 格式有误'     |
+| number   | 'number'   | 数值         | 'XXX 格式有误'     |
+| array    | 'array'    | 数组         | 'XXX 格式有误'     |
+| email    | 'array'    | 邮箱         | 'XXX 格式有误'     |
+| max      | 'max=10'   | 最大字符长度 | '不得超过 10 个字' |
+| min      | 'min=2'    | 最小字符长度 | '不得少于 2 个字'  |
+| phone    | 'phone'    | 手机号       | 'XXX 格式有误'     |
+| id       | 'id'       | 身份证       | 'XXX 格式有误'     |
+
+_`max` `min` 的使用方式，传入例如 `max=10`，以 `=` 分割。上文「错误提示」中的 `XXX` 会被替换为表单域的 `label`。_

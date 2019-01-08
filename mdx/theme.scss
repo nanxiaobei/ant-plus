@@ -10,9 +10,16 @@ body {
   @include font-family;
   background: #fff;
 }
+img {
+  max-width: 100%;
+}
+.css-jn0lzx {
+  color: $red !important;
+}
 .css-1eko99s {
   display: none;
 }
+
 // Sidebar
 // --------------------------------------------------
 .css-wwgiek {
@@ -114,12 +121,42 @@ body {
   border-bottom: 0;
 }
 .css-ky3id2 {
-  margin: 16px 0 8px;
+  margin: 32px 0 16px;
+  font-size: 20px;
+  font-weight: 500;
+}
+.css-1ab6bas {
+  margin: 24px 0 12px;
   font-size: 16px;
 }
 .css-1fxdu0u,
 .css-tb8t2g {
   margin: 8px 0 24px;
+}
+.css-2ngb9d li,
+.css-1v6pp3c {
+  color: rgba(#000, 0.8);
+  font-size: 16px;
+}
+.css-2ngb9d {
+  list-style: disc;
+  padding-left: 20px;
+  li {
+    &::before {
+      display: none;
+    }
+    + li {
+      margin-top: 8px;
+    }
+  }
+}
+.css-1v6pp3c {
+  em {
+    color: rgba(#000, 0.4);
+  }
+}
+.css-1er7839 {
+  color: rgba(#000, 0.6);
 }
 .css-kqau70 {
   width: auto;
@@ -174,6 +211,8 @@ body {
     border-radius: 2px 2px 0 0;
     th {
       padding: 16px;
+      color: rgba(#000, 0.4);
+      font-weight: 700;
     }
   }
   tbody {
@@ -182,6 +221,8 @@ body {
     }
     td {
       padding: 16px;
+      color: rgba(#000, 0.7);
+      font-weight: 400;
     }
   }
 }
