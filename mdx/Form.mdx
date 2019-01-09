@@ -24,6 +24,9 @@ import { Form } from 'antx';
 
 <Playground>
   {() => {
+    /**
+     * Ant PLus Form Demo
+     */
     class Demo extends Component {
       constructor() {
         this.onSubmit = this.onSubmit.bind(this);
@@ -38,7 +41,7 @@ import { Form } from 'antx';
       render() {
         const { form } = this.props;
         return (
-          <Form api={form} data={{ name: 'Emily', sex: 2 }} onSubmit={this.onSubmit}>
+          <Form api={form} data={{ name: 'Emily', gender: 2 }} onSubmit={this.onSubmit}>
             <Input
               label="用户名"
               id="name"
@@ -48,7 +51,7 @@ import { Form } from 'antx';
             />
             <Select
               label="性别"
-              id="sex"
+              id="gender"
               rules={['required', 'number']}
               data={[{ id: 1, type: '男' }, { id: 2, type: '女' }]}
               keys={['id', 'type']}
@@ -72,35 +75,9 @@ import { Form } from 'antx';
 
 <PropsTable of={Form} />
 
-### 2. Form.setConfig(config)
+### 2. 表单域组件 Props
 
-用于设置 `placeholder` 与校验提示信息，需在项目入口文件中调用。
-
-`config` 的配置项：
-
-| 参数              | 默认                  | 说明                                                |
-| ----------------- | --------------------- | --------------------------------------------------- |
-| inputPlaceholder  | '请输入'              | 当 `msg` 传入 `short` 或 `full` 时使用              |
-| selectPlaceholder | '请选择'              | 当 `msg` 传入 `short` 或 `full` 时使用              |
-| requiredMessage   | '{label}不得为空'     | 字符串 `{label}` 为表单域名称的占位符，会被自动替换 |
-| typeMessage       | '{label}格式有误'     | 字符串 `{label}` 为表单域名称的占位符，会被自动替换 |
-| maxMessage        | '不得超过 {num} 个字' | 字符串 `{num}` 为限制字数的占位符，会被自动替换     |
-| minMessage        | '不得少于 {num} 个字' | 字符串 `{num}` 为限制字数的占位符，会被自动替换     |
-
-使用示例：
-
-```js
-import { Form } from 'antx';
-
-Form.setConfig({
-  inputPlaceholder: 'Please input ',
-  requiredMessage: 'Oops, {label} is needed',
-});
-```
-
-### 3. Props
-
-Ant Plus 的核心使用方式 —— 直接在 Form 表单域组件的 Props 中，传入相关 props。
+Ant Plus 最核心的使用方式 —— 直接在 Form 表单域组件的 Props 中，传入相关 props。
 
 其中 `id` 为表单域的唯一标识，用于区分表单域组件与普通组件，请勿被占用，示例：
 
@@ -118,7 +95,7 @@ Ant Plus 的核心使用方式 —— 直接在 Form 表单域组件的 Props �
 
 以下为可用的 Props。
 
-**Form.Item 相关属性**
+**Form.Item 相关可用属性**
 
 | 属性      | 说明                                                                                                   |
 | --------- | ------------------------------------------------------------------------------------------------------ |
@@ -129,30 +106,35 @@ Ant Plus 的核心使用方式 —— 直接在 Form 表单域组件的 Props �
 
 _不可用属性：经考虑，`extra`、`hasFeedback`、`help`、`labelCol`、`validateStatus`、`wrapperCol` 不被支持。建议使用 `rules` 来设置校验信息，CSS 代码来控制布局，可减少大量纯布局用的 `<div>`。_
 
-**form.getFieldDecorator(id, options) 相关属性**
+**form.getFieldDecorator(id, options) 相关可用属性**
 
-| 属性              | 说明                                                   |
-| ----------------- | ------------------------------------------------------ |
-| id                | 表单域的唯一标识，`getFieldDecorator` 参数中的 `id`    |
-| before            | 表单域前缀信息（string/node），建议使用 CSS 来控制布局 |
-| after             | 表单域后缀信息（string/node），建议使用 CSS 来控制布局 |
-| hide              | 是否隐藏表单域（页面中隐藏，仍可收集到值）             |
-| getValueFromEvent | `options.getValueFromEvent`                            |
-| initialValue      | `options.initialValue`                                 |
-| normalize         | `options.normalize`                                    |
-| preserve          | `options.preserve`                                     |
-| rules             | `options.rules`（参阅下文 "4. Rules" 使用方式）        |
-| trigger           | `options.trigger`                                      |
-| validateFirst     | `options.validateFirst`                                |
-| validateTrigger   | `options.validateTrigger`                              |
-| valuePropName     | `options.valuePropName`                                |
-| hidden            | `options.hidden`（`rc-form`）                          |
-| getValueProps     | `options.getValueProps`（`rc-form`）                   |
-| validate          | `options.validate`（`rc-form`）                        |
+| 属性              | 说明                                                |
+| ----------------- | --------------------------------------------------- |
+| id                | 表单域的唯一标识，`getFieldDecorator` 参数中的 `id` |
+| getValueFromEvent | `options.getValueFromEvent`                         |
+| initialValue      | `options.initialValue`                              |
+| normalize         | `options.normalize`                                 |
+| preserve          | `options.preserve`                                  |
+| rules             | `options.rules`（参阅下文 "3. rules" 使用方式）     |
+| trigger           | `options.trigger`                                   |
+| validateFirst     | `options.validateFirst`                             |
+| validateTrigger   | `options.validateTrigger`                           |
+| valuePropName     | `options.valuePropName`                             |
+| hidden            | `options.hidden`（`rc-form`）                       |
+| getValueProps     | `options.getValueProps`（`rc-form`）                |
+| validate          | `options.validate`（`rc-form`）                     |
 
-### 4. rules
+**其它可用属性**
 
-Ant Plus 提供了极其简洁的检验规则生成方式，传统的 Ant Design Form 中，需要在 `rules` 数组中传入对象，例如：
+| 属性   | 说明                                                       |
+| ------ | ---------------------------------------------------------- |
+| hide   | 是否隐藏表单域（页面中不可见，但仍可收集到值）             |
+| before | 表单域前缀信息（`string | node`），建议使用 CSS 来控制布局 |
+| after  | 表单域后缀信息（`string | node`），建议使用 CSS 来控制布局 |
+
+### 3. rules
+
+Ant Plus 提供了一种简洁的校验规则生成方式，传统的 Ant Design Form 中，需要在 `rules` 数组中传入对象，例如：
 
 ```jsx harmony
 form.getFieldDecorator('username', {
@@ -164,15 +146,15 @@ form.getFieldDecorator('username', {
 })(<Input />);
 ```
 
-而使用 Ant Plus，只需要传入简单的字符串即可，如下：
+而使用 Ant Plus，只需要传入简单的「短语」字符串即可，如下：
 
 ```jsx harmony
 <Input id="username" rules={['required', 'string', 'max=10']} />
 ```
 
-Ant Plus 提供了以下「短语」形式的校验规则，配合上文的 "2. Form.setConfig(config)"，可自定义校验提示信息。
+Ant Plus 提供了以下「短语」形式的校验规则，配合下文 "4. Form.setConfig(config)"，可自定义校验提示信息。
 
-| 规则     | 使用方式   | 校验         | 提示信息           |
+| 规则     | 使用方式   | 校验         | 默认提示           |
 | -------- | ---------- | ------------ | ------------------ |
 | required | 'required' | 必填         | 'XXX 不得为空'     |
 | string   | 'string'   | 字符串       | 'XXX 格式有误'     |
@@ -184,6 +166,32 @@ Ant Plus 提供了以下「短语」形式的校验规则，配合上文的 "2. 
 | phone    | 'phone'    | 手机号       | 'XXX 格式有误'     |
 | id       | 'id'       | 身份证       | 'XXX 格式有误'     |
 
-同时，遵循渐进增强的理念，未在「短语」中列出的规则，或需要自定义规则，仍可使用传统方式即对象的形式来定义规则。
+同时，遵循「渐进增强」的理念，当遇到未在以上「短语」中列出的规则，或需要自定义规则时，仍可使用传统的方式即传入对象，字符串与对象两种形式可完美的搭配使用。
 
-_`max` `min` 的使用方式为传入例如 `max=10`，以 `=` 分割。上文「提示信息」中的 `XXX` 会被替换为表单域的 `label`。_
+_注意：`max` 与 `min` 的使用方式为传入例如 `max=10`、`min=2`，以 `=` 分割。上文校验提示信息中的 `XXX` 代表表单域的 `label`。_
+
+### 4. Form.setConfig(config)
+
+用于设置 Input 与 Select 的 `placeholder` 及校验提示信息，需在项目入口文件中调用。
+
+`config` 的配置项：
+
+| 参数              | 默认                  | 说明                                                                                                     |
+| ----------------- | --------------------- | -------------------------------------------------------------------------------------------------------- |
+| inputPlaceholder  | '请输入'              | `msg` 为 `short ⎮ full` 时使用（`short` 为设置值，`full` 将在尾部自动添加 `label`，例如 "请输入用户名"） |
+| selectPlaceholder | '请选择'              | `msg` 为 `short ⎮ full` 时使用（`short` 为设置值，`full` 将在尾部自动添加 `label`，例如 "请选择性别"）   |
+| requiredMessage   | '{label}不得为空'     | `{label}` 为表单域名称的占位符，会被自动替换                                                             |
+| typeMessage       | '{label}格式有误'     | `{label}` 为表单域名称的占位符，会被自动替换                                                             |
+| maxMessage        | '不得超过 {num} 个字' | `{num}` 为限制字数的占位符，会被自动替换                                                                 |
+| minMessage        | '不得少于 {num} 个字' | `{num}` 为限制字数的占位符，会被自动替换                                                                 |
+
+使用示例：
+
+```js
+import { Form } from 'antx';
+
+Form.setConfig({
+  inputPlaceholder: 'Please input ',
+  requiredMessage: 'Oops, {label} is needed',
+});
+```
