@@ -125,8 +125,6 @@ class Form extends Ant.Form {
     colon: t.bool,
     /** 提交表单的回调事件，已做了 `event.preventDefault()` 处理 */
     onSubmit: t.func,
-    /** 表单域集合（推荐通过 children 传入），e.g. <Input label="账号" id="id" rules=['number'] /> */
-    fields: t.node,
   };
   static defaultProps = {
     data: {},
@@ -145,7 +143,6 @@ class Form extends Ant.Form {
       disabledFields,
       colon: formColon,
       onSubmit,
-      fields,
       children,
       ...props
     } = this.props;
@@ -154,7 +151,7 @@ class Form extends Ant.Form {
 
     return (
       <Ant.Form onSubmit={this.onSubmit} {...props}>
-        {Form.createItems(fields || children)}
+        {Form.createItems(children)}
       </Ant.Form>
     );
   }
