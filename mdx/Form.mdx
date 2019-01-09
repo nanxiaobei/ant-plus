@@ -72,9 +72,9 @@ import { Form } from 'antx';
 
 <PropsTable of={Form} />
 
-### 2. Form.setConfig(config: Object)
+### 2. Form.setConfig(config)
 
-用于设置 Placeholder 及校验的错误提示信息，需要在项目入口文件中调用。
+用于设置 `placeholder` 与校验提示信息，需在项目入口文件中调用。
 
 `config` 的配置项：
 
@@ -93,8 +93,8 @@ import { Form } from 'antx';
 import { Form } from 'antx';
 
 Form.setConfig({
-  inputPlaceholder: 'Please input',
-  requiredMessage: '{label} is needed',
+  inputPlaceholder: 'Please input ',
+  requiredMessage: 'Oops, {label} is needed',
 });
 ```
 
@@ -102,7 +102,7 @@ Form.setConfig({
 
 Ant Plus 的核心使用方式 —— 直接在 Form 表单域组件的 Props 中，传入相关 props。
 
-其中 `id` 为表单域的唯一标识，用于区分表单域组件与普通组件，请勿用作它用，示例：
+其中 `id` 为表单域的唯一标识，用于区分表单域组件与普通组件，请勿被占用，示例：
 
 ```jsx harmony
 <Input
@@ -170,9 +170,9 @@ form.getFieldDecorator('username', {
 <Input id="username" rules={['required', 'string', 'max=10']} />
 ```
 
-Ant Plus 提供了以下「短语」形式的校验规则，配合上文的 "2. Form.setConfig()"，可自定义错误提示信息。
+Ant Plus 提供了以下「短语」形式的校验规则，配合上文的 "2. Form.setConfig(config)"，可自定义校验提示信息。
 
-| 规则     | 使用方式   | 校验         | 错误提示           |
+| 规则     | 使用方式   | 校验         | 提示信息           |
 | -------- | ---------- | ------------ | ------------------ |
 | required | 'required' | 必填         | 'XXX 不得为空'     |
 | string   | 'string'   | 字符串       | 'XXX 格式有误'     |
@@ -186,4 +186,4 @@ Ant Plus 提供了以下「短语」形式的校验规则，配合上文的 "2. 
 
 同时，遵循渐进增强的理念，未在「短语」中列出的规则，或需要自定义规则，仍可使用传统方式即对象的形式来定义规则。
 
-_`max` `min` 的使用方式为传入例如 `max=10`，以 `=` 分割。上文「错误提示」中的 `XXX` 会被替换为表单域的 `label`。_
+_`max` `min` 的使用方式为传入例如 `max=10`，以 `=` 分割。上文「提示信息」中的 `XXX` 会被替换为表单域的 `label`。_
