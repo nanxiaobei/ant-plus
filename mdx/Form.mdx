@@ -97,40 +97,47 @@ Ant Plus 最核心的使用方式 —— 直接在 Form 表单域组件的 Props
 
 **Form.Item 相关可用属性**
 
-| 属性      | 说明                                                                                                   |
-| --------- | ------------------------------------------------------------------------------------------------------ |
-| className | `className` 将被传给 Form.Item，而非表单域例如 Input。此外，Ant Plus 会自动添加 `id` 的值到 `class` 中 |
-| label     |                                                                                                        |
-| colon     | 当 Form 的 `colon` 属性也存在时，可用来自定义某个域的冒号是否显示                                      |
-| required  | 只传入 `label` 不传入 `id` 时有效，用于校验必填，传入 `id` 时，建议使用 `rules` 来校验必填             |
+| 属性           | 说明                                                        |
+| -------------- | ----------------------------------------------------------- |
+| colon          | 可在 Form 总体 `colon` 属性之外，自定义某个域的冒号是否显示 |
+| extra          |                                                             |
+| hasFeedback    |                                                             |
+| help           |                                                             |
+| label          |                                                             |
+| labelCol       |                                                             |
+| required       |                                                             |
+| validateStatus |                                                             |
+| wrapperCol     |                                                             |
 
-_不可用属性：经考虑，`extra`、`hasFeedback`、`help`、`labelCol`、`validateStatus`、`wrapperCol` 不被支持。建议使用 `rules` 来设置校验信息，CSS 代码来控制布局，可减少大量纯布局用的 `<div>`。_
+_不建议使用 `extra`、`hasFeedback`、`help`、`validateStatus` 与 `labelCol`、`wrapperCol`。建议使用 `rules` 来设置校验信息，CSS 代码来控制布局，可减少大量纯布局用的 `<div>`。_
 
 **form.getFieldDecorator(id, options) 相关可用属性**
 
-| 属性              | 说明                                                |
-| ----------------- | --------------------------------------------------- |
-| id                | 表单域的唯一标识，`getFieldDecorator` 参数中的 `id` |
-| getValueFromEvent | `options.getValueFromEvent`                         |
-| initialValue      | `options.initialValue`                              |
-| normalize         | `options.normalize`                                 |
-| preserve          | `options.preserve`                                  |
-| rules             | `options.rules`（参阅下文 "3. rules" 使用方式）     |
-| trigger           | `options.trigger`                                   |
-| validateFirst     | `options.validateFirst`                             |
-| validateTrigger   | `options.validateTrigger`                           |
-| valuePropName     | `options.valuePropName`                             |
-| hidden            | `options.hidden`（`rc-form`）                       |
-| getValueProps     | `options.getValueProps`（`rc-form`）                |
-| validate          | `options.validate`（`rc-form`）                     |
+| 属性              | 说明                                            |
+| ----------------- | ----------------------------------------------- |
+| id                | 表单域的唯一标识，`id`                          |
+| getValueFromEvent | `options.getValueFromEvent`                     |
+| initialValue      | `options.initialValue`                          |
+| normalize         | `options.normalize`                             |
+| preserve          | `options.preserve`                              |
+| rules             | `options.rules`（参阅下文 "3. rules" 使用方式） |
+| trigger           | `options.trigger`                               |
+| validateFirst     | `options.validateFirst`                         |
+| validateTrigger   | `options.validateTrigger`                       |
+| valuePropName     | `options.valuePropName`                         |
+| hidden            | `options.hidden`（`rc-form`）                   |
+| getValueProps     | `options.getValueProps`（`rc-form`）            |
+| validate          | `options.validate`（`rc-form`）                 |
 
 **其它可用属性**
 
-| 属性   | 说明                                                       |
-| ------ | ---------------------------------------------------------- |
-| hide   | 是否隐藏表单域（页面中不可见，但仍可收集到值）             |
-| before | 表单域前缀信息（`string | node`），建议使用 CSS 来控制布局 |
-| after  | 表单域后缀信息（`string | node`），建议使用 CSS 来控制布局 |
+| 属性      | 说明                                                                                                                 |
+| --------- | -------------------------------------------------------------------------------------------------------------------- |
+| className | `label` 存在时，`className` 将被传给 Form.Item。此外，Ant Plus 会自动添加 `id` 的值到 `class` 列表中，方便自定义扩展 |
+| style     | `label` 存在时，`style` 将被传给 Form.Item                                                                           |  |
+| before    | 表单域前缀信息（`string | node`），`label` 存在时有效，建议使用 CSS 来控制布局                                       |
+| after     | 表单域后缀信息（`string | node`），`label` 存在时有效，建议使用 CSS 来控制布局                                       |
+| hide      | 是否隐藏表单域（页面中不可见，但仍可收集到值）                                                                       |
 
 ### 3. rules
 
