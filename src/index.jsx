@@ -65,7 +65,7 @@ const fieldRules = (rule, label) => {
 };
 
 /**
- * createRules - 根据表单域简写 `rules` 属性生成完整验证规则 (配合 AntPlus.Form 组件使用）
+ * 根据表单域简写 `rules` 属性生成完整验证规则 (配合 AntPlus.Form 组件使用）
  */
 const createRules = (label, rules) =>
   rules.map((rule) => {
@@ -77,36 +77,39 @@ const createRules = (label, rules) =>
     return fieldRules(numRule, Number(num));
   });
 
+const phraseList = ['short', 'full'];
 const selectList = ['Select', 'Cascader', 'TreeSelect'];
 
 /**
- * createField - 格式化 AntPlus.Form 下的表单域
+ * 格式化 AntPlus.Form 下的节点
  */
-const createField = (field, label, disabledFields, id) => {
-  if (!field.props.msg && !disabledFields) return field;
-  let fieldProps = field.props;
-  // 若 msg (placeholder) 值为 `full`，进行转义
-  if (fieldProps.msg !== undefined && (fieldProps.msg === 'short' || fieldProps.msg === 'full')) {
-    if (field.type.displayName === undefined) {
-      throw new Error('`msg` prop is not allowed for a non `AntPlus` component');
+const getMsgAndDisabled = (node, label = '', id, disabledFields) => {
+  let nodeProps = node.props;
+
+  if (typeof nodeProps.msg === 'string' && phraseList.includes(nodeProps.msg)) {
+    // 若 msg (placeholder) 值为 `short` 或 `full`，进行转义
+    const { displayName } = node.type;
+    if (typeof displayName !== 'string') {
+      throw new Error('`msg` prop is not valid for a non Ant Plus component');
     }
-    const { displayName } = field.type;
-    const isSelect =
-      typeof displayName === 'string' && selectList.includes(displayName.split('.')[1]);
+    const isSelect = selectList.includes(displayName.split('.')[1]);
     const shortMsg = isSelect ? formConfig.selectPlaceholder : formConfig.inputPlaceholder;
-    const msg = fieldProps.msg === 'short' ? shortMsg : `${shortMsg}${label || ''}`;
-    fieldProps = { ...fieldProps, msg };
+
+    const msg = nodeProps.msg === 'short' ? shortMsg : `${shortMsg}${label}`;
+    nodeProps = { ...nodeProps, msg };
   }
+
   // 若 disabledFields 值为 `all`、或为数组且包含当前表单域 `id`，添加 `disabled`
   if (
-    disabledFields &&
-    id !== undefined &&
+    typeof disabledFields !== 'undefined' &&
+    typeof id === 'string' &&
     (disabledFields === 'all' || (Array.isArray(disabledFields) && disabledFields.includes(id)))
   ) {
-    fieldProps = { ...fieldProps, disabled: true };
+    nodeProps = { ...nodeProps, disabled: true };
   }
-  // 返回格式化后的 field
-  return { ...field, props: fieldProps };
+
+  // 返回格式化后的 node
+  return { ...node, props: nodeProps };
 };
 
 /**
@@ -133,7 +136,8 @@ class Form extends Ant.Form {
 
   onSubmit = (event) => {
     event.preventDefault();
-    this.props.onSubmit();
+    const { onSubmit } = this.props;
+    onSubmit();
   };
 
   render() {
@@ -147,129 +151,183 @@ class Form extends Ant.Form {
       ...props
     } = this.props;
 
-    Form.createItems = Form.renderNodes(form, data, disabledFields, formColon);
+    Form.createRender(form, data, disabledFields, formColon);
 
     return (
       <Ant.Form onSubmit={this.onSubmit} {...props}>
-        {Form.createItems(children)}
+        {Form.render && Form.render(children)}
       </Ant.Form>
     );
   }
 }
 
 Form.displayName = 'AntPlus.Form';
-Form.createItems = (nodes) => nodes;
-// 设置信息
+
+// 设置校验提示
 Form.setConfig = (config) => {
   formConfig = { ...formConfig, ...config };
   return formConfig;
 };
-// 渲染节点
-Form.renderNodes = (form, data, disabledFields, formColon) => (nodes) => {
-  if (
-    typeof nodes === 'undefined' ||
-    typeof nodes === 'string' ||
-    typeof nodes === 'boolean' ||
-    typeof nodes === 'function'
-  ) {
-    return nodes;
+
+// Default option functions
+const defaultGetValueFromEvent = (e) => {
+  if (!e || !e.target) {
+    return e;
   }
+  const { target } = e;
+  return target.type === 'checkbox' ? target.checked : target.value;
+};
 
-  // 遍历节点
-  return React.Children.map(nodes, (node) => {
-    if (!node || !node.props) return node;
+const defaultGetValueProps = (value) => ({ value });
 
-    // 根据 `id` 属性，判断子节点是否为表单域，`id` 为表单域唯一标识，请勿被占用
-    const {
-      className,
-      label,
-      id,
-      colon,
-      required = false,
-      before,
-      after,
-      ...nodeProps
-    } = node.props;
+// 生成 `Form.render` 方法
+Form.createRender = (form, data, disabledFields, formColon) => {
+  // 核心渲染方法
+  Form.render = (nodes) => {
+    if (typeof nodes !== 'object' || nodes === null) return nodes;
 
-    if (id === undefined && label === undefined) {
-      // 若子节点即不存在 `id` 也不存在 `label`，递归查找并包装其 `children` 内表单域
-      const children = Form.createItems(nodeProps.children);
-      return createField({ ...node, props: { ...nodeProps, className, children } });
-    }
-    if (id === undefined && label !== undefined) {
-      // 若子节点不存在 `id`，但存在 `label`，使用 `Form.Item` 包装
-      return (
-        <Ant.Form.Item
-          className={className}
-          label={label}
-          colon={colon || formColon}
-          required={required}
-        >
-          {Form.createItems(before)}
-          {createField({ ...node, props: nodeProps }, label)}
-          {Form.createItems(after)}
-        </Ant.Form.Item>
-      );
-    }
+    // 遍历节点
+    return React.Children.map(nodes, (node) => {
+      if (!node.props) return node;
 
-    // 是否为嵌套的表单域（`a` and `a.b`）
-    const isNestedField = nodeProps.form !== undefined;
+      // 判断子节点是否为表单域，`id` 为表单域唯一标识，请勿被占用
+      const { label, id, ...nodeProps } = node.props;
 
-    // 若子节点存在 `id` 且存在 `label`，则为表单域
-    const {
-      hide,
-      // Ant Design `options` to `getFieldDecorator(id, options)`
-      getValueFromEvent,
-      initialValue,
-      normalize,
-      preserve,
-      rules = [],
-      trigger,
-      validateFirst,
-      validateTrigger,
-      valuePropName,
-      // rc-form option
-      hidden,
-      getValueProps,
-      validate,
-      ...fieldProps
-    } = nodeProps;
-    // options
-    const options = {
-      // Ant Design `options` to `getFieldDecorator(id, options)`
-      getValueFromEvent,
-      normalize,
-      preserve,
-      trigger,
-      validateFirst,
-      valuePropName,
-      // rc-form option
-      hidden: isNestedField || hidden, // Ignore current field while validating or getting fields
-      getValueProps,
-      validate,
-    };
-    Object.keys(options).forEach((key) => {
-      if (options[key] === undefined) delete options[key];
-    });
+      // ``
+      if (label === undefined && id === undefined) {
+        // 递归查找，包装渲染 `children` 内表单域
+        const newChildren = Form.render(nodeProps.children);
+        const newNode = { ...node, props: { ...nodeProps, children: newChildren } };
+        return getMsgAndDisabled(newNode);
+      }
 
-    return (
-      <Ant.Form.Item
-        className={[className, id].join(' ')}
-        label={label}
-        colon={colon || formColon}
-        style={hide === true ? { display: 'none' } : undefined}
-      >
-        {Form.createItems(before)}
-        {form.getFieldDecorator(isNestedField ? `${id}.nested` : id, {
-          rules: createRules(label, rules),
+      const {
+        // Form.Item props
+        colon: itemColon,
+        extra,
+        hasFeedback = false,
+        help,
+        // label,
+        labelCol,
+        required = false,
+        validateStatus,
+        wrapperCol,
+
+        // UI props
+        className,
+        style,
+
+        // Two sides
+        before,
+        after,
+
+        // Props
+        ...otherNodeProps
+      } = nodeProps;
+
+      const itemProps = {
+        // colon,
+        extra,
+        hasFeedback,
+        help,
+        // label,
+        labelCol,
+        required,
+        validateStatus,
+        wrapperCol,
+      };
+
+      const colon = itemColon !== undefined ? itemColon : formColon;
+      // `label`
+      if (label !== undefined && id === undefined) {
+        const newNode = { ...node, props: otherNodeProps };
+        return (
+          <Ant.Form.Item
+            className={className}
+            style={style}
+            label={label}
+            colon={colon}
+            {...itemProps}
+          >
+            {before && Form.render(before)}
+            {getMsgAndDisabled(newNode, label)}
+            {after && Form.render(after)}
+          </Ant.Form.Item>
+        );
+      }
+
+      // 是否为嵌套表单域（`a` & `a.b`）
+      const isNestedField = otherNodeProps.form !== undefined;
+
+      const {
+        // Form options
+        getValueFromEvent = defaultGetValueFromEvent,
+        initialValue,
+        normalize,
+        preserve = false,
+        rules,
+        trigger = 'onChange',
+        validateFirst = false,
+        validateTrigger,
+        valuePropName = 'value',
+        // rc-form options
+        hidden,
+        getValueProps = defaultGetValueProps,
+        validate = [],
+
+        // Extra options
+        hide,
+
+        ...fieldProps
+      } = otherNodeProps;
+
+      const options = {
+        getValueFromEvent,
+        // initialValue,
+        normalize,
+        preserve,
+        // rules,
+        trigger,
+        validateFirst,
+        // validateTrigger,
+        valuePropName,
+
+        hidden: hidden || isNestedField,
+        getValueProps,
+        validate,
+      };
+
+      const createField = (field) =>
+        form.getFieldDecorator(isNestedField ? `${id}.nested` : id, {
+          rules: Array.isArray(rules) && createRules(label, rules),
           validateTrigger: validateTrigger || rules.includes('phone') ? 'onBlur' : 'onChange',
           initialValue: initialValue !== undefined ? initialValue : data[id],
           ...options,
-        })(createField({ ...node, props: fieldProps }, label, disabledFields, id))}
-        {Form.createItems(after)}
-      </Ant.Form.Item>
-    );
-  });
+        })(getMsgAndDisabled(field, label, id, disabledFields));
+
+      // `id`
+      if (label === undefined) {
+        const field = { ...node, props: { ...fieldProps, className, style } };
+        return createField(field);
+      }
+
+      // `label`, `id`
+      const field = { ...node, props: fieldProps };
+      return (
+        <Ant.Form.Item
+          className={`${className} ${id}`}
+          style={hide === true ? { display: 'none' } : style}
+          label={label}
+          colon={colon}
+          {...itemProps}
+        >
+          {before && Form.render(before)}
+          {createField(field)}
+          {after && Form.render(after)}
+        </Ant.Form.Item>
+      );
+    });
+  };
 };
 
 /**
@@ -704,13 +762,4 @@ TreeSelect.displayName = 'AntPlus.TreeSelect';
 /**
  * exports
  */
-export {
-  // Form
-  Form,
-  Input,
-  AutoComplete,
-  Select,
-  Transfer,
-  Cascader,
-  TreeSelect,
-};
+export { Form, Input, AutoComplete, Select, Transfer, Cascader, TreeSelect };
