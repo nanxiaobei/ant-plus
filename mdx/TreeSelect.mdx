@@ -20,14 +20,17 @@ import { TreeSelect } from 'antx';
   <TreeSelect
     data={[
       {
-        id: 'tiger',
-        name: '🐅 小脑斧',
-        children: [{ id: 'little tiger', name: '🐅 小脑斧的儿子' }],
+        value: 'tiger',
+        title: '🐅 小脑斧',
+        children: [{ value: 'little tiger', title: '🐅 小脑斧的儿子' }],
       },
-      { id: 'dog', name: '🐶 小狗子', children: [{ id: 'little dog', name: '🐶 小狗子的儿子' }] },
-      { id: 'cat', name: '🐱 小猫崽' },
+      {
+        value: 'dog',
+        title: '🐶 小狗子',
+        children: [{ value: 'little dog', title: '🐶 小狗子的儿子' }],
+      },
+      { value: 'cat', title: '🐱 小猫崽' },
     ]}
-    keys={['id', 'name']}
     onChange={(value, selectedOptions) => {
       console.log('value: ', value);
       console.log('selectedOptions: ', selectedOptions);
