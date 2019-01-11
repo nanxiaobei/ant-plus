@@ -1,87 +1,115 @@
 import React from 'react';
-import * as Ant from 'antd';
 import t from 'prop-types';
+import * as Ant from 'antd';
 import './index.scss';
 
-let formConfig = {
-  // Placeholder
-  inputPlaceholder: '请输入',
-  selectPlaceholder: '请选择',
+const defaultConfig = {
+  // `placeholder`
+  input: '请输入',
+  select: '请选择',
   // Rule messages
-  requiredMessage: '{label}不得为空',
-  typeMessage: '{label}格式有误',
-  maxMessage: '不得超过 {num} 个字',
-  minMessage: '不得少于 {num} 个字',
+  required: '{label}不得为空',
+  type: '{label}格式有误',
+  max: '不得超过 {max} 个字',
+  min: '不得少于 {min} 个字',
 };
-const fieldRules = (rule, label) => {
-  const [requiredBefore, requiredAfter] = formConfig.requiredMessage.split('{label}');
-  const [typeBefore, typeAfter] = formConfig.typeMessage.split('{label}');
-  const [maxBefore, maxAfter] = formConfig.maxMessage.split('{num}');
-  const [minBefore, minAfter] = formConfig.minMessage.split('{num}');
-  const rules = {
-    required: {
-      required: true,
-      message: `${requiredBefore}${label}${requiredAfter}`,
-    },
-    string: {
-      type: 'string',
-      whitespace: true,
-      message: `${typeBefore}${label}${typeAfter}`,
-    },
-    number: {
-      pattern: /^\d+$/,
-      whitespace: true,
-      message: `${typeBefore}${label}${typeAfter}`,
-    },
-    array: {
-      type: 'array',
-      message: `${typeBefore}${label}${typeAfter}`,
-    },
-    email: {
-      type: 'email',
-      whitespace: true,
-      message: `${typeBefore}${label}${typeAfter}`,
-    },
-    max: {
-      max: label,
-      message: `${maxBefore}${label}${maxAfter}`,
-    },
-    min: {
-      min: label,
-      message: `${minBefore}${label}${minAfter}`,
-    },
-    phone: {
-      pattern: /^1[3456789]\d{9}$/,
-      whitespace: true,
-      message: `${typeBefore}${label}${typeAfter}`,
-    },
-    id: {
-      pattern: /^\d+x?$/i,
-      whitespace: true,
-      message: `${typeBefore}${label}${typeAfter}`,
-    },
-  };
-  return rules[rule];
+
+let message = {};
+const messageCreator = {
+  input: (input) => {
+    message = { ...message, input };
+  },
+  select: (select) => {
+    message = { ...message, select };
+  },
+  required: (required) => {
+    const [requiredBefore, requiredAfter] = required.split('{label}');
+    message = { ...message, requiredBefore, requiredAfter };
+  },
+  type: (type) => {
+    const [typeBefore, typeAfter] = type.split('{label}');
+    message = { ...message, typeBefore, typeAfter };
+  },
+  max: (max) => {
+    const [maxBefore, maxAfter] = max.split('{max}');
+    message = { ...message, maxBefore, maxAfter };
+  },
+  min: (min) => {
+    const [minBefore, minAfter] = min.split('{min}');
+    message = { ...message, minBefore, minAfter };
+  },
+};
+const createMessage = (formConfig) => {
+  Object.entries(formConfig).forEach(([key, val]) => {
+    if (messageCreator[key]) messageCreator[key](val);
+  });
+};
+
+// 初始化 message
+createMessage(defaultConfig);
+
+const ruleCreator = {
+  required: (label) => ({
+    required: true,
+    message: `${message.requiredBefore}${label}${message.requiredAfter}`,
+  }),
+  string: (label) => ({
+    type: 'string',
+    whitespace: true,
+    message: `${message.typeBefore}${label}${message.typeAfter}`,
+  }),
+  number: (label) => ({
+    pattern: /^\d+$/,
+    whitespace: true,
+    message: `${message.typeBefore}${label}${message.typeAfter}`,
+  }),
+  array: (label) => ({
+    type: 'array',
+    message: `${message.typeBefore}${label}${message.typeAfter}`,
+  }),
+  email: (label) => ({
+    type: 'email',
+    whitespace: true,
+    message: `${message.typeBefore}${label}${message.typeAfter}`,
+  }),
+  max: (max) => ({
+    max,
+    message: `${message.maxBefore}${max}${message.maxAfter}`,
+  }),
+  min: (min) => ({
+    min,
+    message: `${message.minBefore}${min}${message.minAfter}`,
+  }),
+  phone: (label) => ({
+    pattern: /^1[3456789]\d{9}$/,
+    whitespace: true,
+    message: `${message.typeBefore}${label}${message.typeAfter}`,
+  }),
+  id: (label) => ({
+    pattern: /^\d+x?$/i,
+    whitespace: true,
+    message: `${message.typeBefore}${label}${message.typeAfter}`,
+  }),
 };
 
 /**
- * 根据表单域简写 `rules` 属性生成完整验证规则 (配合 AntPlus.Form 组件使用）
+ * 根据 `rules` 「短语」生成完整验证规则 (配合 AntPlus.Form 组件使用）
  */
-const createRules = (label, rules) =>
+const createRules = (label = '', rules) =>
   rules.map((rule) => {
     if (typeof rule !== 'string') return rule;
     // e.g. "required"
-    if (!rule.includes('=')) return fieldRules(rule, label || '');
+    if (!rule.includes('=')) return ruleCreator[rule](label);
     // e.g. "max=5"
-    const [numRule, num] = rule.split('=');
-    return fieldRules(numRule, Number(num));
+    const [key, val] = rule.split('=');
+    return ruleCreator[key](Number(val));
   });
 
 const phraseList = ['short', 'full'];
 const selectList = ['Select', 'Cascader', 'TreeSelect'];
 
 /**
- * 格式化 AntPlus.Form 下的节点
+ * 格式化 `msg`，添加 `disabled`
  */
 const getMsgAndDisabled = (node, label = '', id, disabledFields) => {
   let nodeProps = node.props;
@@ -93,7 +121,7 @@ const getMsgAndDisabled = (node, label = '', id, disabledFields) => {
       throw new Error('`msg` prop is not valid for a non Ant Plus component');
     }
     const isSelect = selectList.includes(displayName.split('.')[1]);
-    const shortMsg = isSelect ? formConfig.selectPlaceholder : formConfig.inputPlaceholder;
+    const shortMsg = isSelect ? message.select : message.input;
 
     const msg = nodeProps.msg === 'short' ? shortMsg : `${shortMsg}${label}`;
     nodeProps = { ...nodeProps, msg };
@@ -134,11 +162,15 @@ class Form extends Ant.Form {
     colon: false,
   };
 
-  onSubmit = (event) => {
+  constructor(props) {
+    super(props);
+    this.onSubmit = this.onSubmit.bind(this);
+  }
+  onSubmit(event) {
     event.preventDefault();
     const { onSubmit } = this.props;
     onSubmit();
-  };
+  }
 
   render() {
     const {
@@ -164,9 +196,8 @@ class Form extends Ant.Form {
 Form.displayName = 'AntPlus.Form';
 
 // 设置校验提示
-Form.setConfig = (config) => {
-  formConfig = { ...formConfig, ...config };
-  return formConfig;
+Form.setConfig = (newConfig) => {
+  createMessage(newConfig);
 };
 
 const removeUndefined = (obj) => {
@@ -398,53 +429,41 @@ class Input extends Ant.Input {
 
   constructor(props) {
     super(props);
-    const { max } = props;
-    const initState = {};
-    if (typeof max === 'number') {
-      this.countClass = 'ant-plus-input-with-count';
-      this.onChange = this.onChangeWithCount;
-      const { value } = props;
-      initState.count = value ? value.length : 0;
-    } else {
-      const { onChange } = props;
-      this.onChange = onChange;
-    }
-    this.state = initState;
+    this.state = {
+      count: 0,
+    };
   }
-  onChangeWithCount = (event) => {
-    const { value } = event.target;
-    this.setState({ count: value.length });
-    const { onChange } = this.props;
-    onChange(value);
-  };
-  renderCount = (max, count) => (
-    <span className={['count', count > max ? ' red' : ''].join('')}>
-      {count} | {max}
-    </span>
-  );
+  static getDerivedStateFromProps({ max, value }) {
+    if (typeof max === 'number' && typeof value === 'string') {
+      return { count: value.length };
+    }
+    return null;
+  }
+  renderCount(max) {
+    const { count } = this.state;
+    return (
+      <span className={`count ${count < max ? '' : 'red'}`}>
+        {count} | {max}
+      </span>
+    );
+  }
 
   render() {
-    const { onChange, max, auto, msg, textarea, rows, ...props } = this.props;
-    const { count } = this.state;
+    const { max, auto, msg, textarea, rows, ...props } = this.props;
+    const showCount = typeof max === 'number';
 
     return (
-      <span className={['ant-plus-input', this.countClass].join(' ')}>
+      <span className={`ant-plus-input ${showCount ? 'ant-plus-input-with-count' : ''}`}>
         {textarea === true ? (
           <>
-            <Ant.Input.TextArea
-              onChange={this.onChange}
-              autosize={{ minRows: rows || 5 }}
-              placeholder={msg}
-              {...props}
-            />
-            {typeof max === 'number' && this.renderCount(max, count)}
+            <Ant.Input.TextArea autosize={{ minRows: rows || 5 }} placeholder={msg} {...props} />
+            {showCount && this.renderCount(max)}
           </>
         ) : (
           <Ant.Input
             autoComplete={auto}
-            onChange={this.onChange}
             placeholder={msg}
-            suffix={typeof max === 'number' && this.renderCount(max, count)}
+            suffix={showCount && this.renderCount(max)}
             {...props}
           />
         )}
@@ -459,6 +478,11 @@ Input.displayName = 'AntPlus.Input';
  * AutoComplete - Ant Design AutoComplete 组件增强版本
  * @link https://ant.design/components/auto-complete-cn/
  */
+const autoCompleteSearchProps = {
+  filterOption: (val, option) => {
+    return option.props.children.includes(val);
+  },
+};
 class AutoComplete extends Ant.AutoComplete {
   static propTypes = {
     /** `dataSource` 属性 */
@@ -472,27 +496,17 @@ class AutoComplete extends Ant.AutoComplete {
   };
   static defaultProps = {
     data: [],
-    search: false,
+    search: true,
     clear: false,
   };
-
-  constructor(props) {
-    super(props);
-    const { search } = props;
-    if (search === true) {
-      this.searchProps = {
-        filterOption: (val, option) => option.props.children.includes(val),
-      };
-    }
-  }
 
   render() {
     const { data, search, clear, msg, ...props } = this.props;
 
     return (
       <Ant.AutoComplete
-        {...this.searchProps}
         dataSource={data}
+        {...search === true && autoCompleteSearchProps}
         allowClear={clear}
         placeholder={msg}
         {...props}
@@ -507,6 +521,11 @@ AutoComplete.displayName = 'AntPlus.AutoComplete';
  * Select - Ant Design Select 组件增强版本
  * @link https://ant.design/components/select-cn/
  */
+const selectModeList = ['multiple', 'tags'];
+const selectSearchProps = {
+  showSearch: true,
+  filterOption: (val, option) => option.props.children.includes(val),
+};
 class Select extends Ant.Select {
   static propTypes = {
     /** 列表数据源 */
@@ -533,23 +552,24 @@ class Select extends Ant.Select {
 
   constructor(props) {
     super(props);
-    const { search, mode } = props;
-    if (search === true || mode === 'multiple' || mode === 'tags') {
-      this.searchProps = {
-        showSearch: true,
-        filterOption: (val, option) => option.props.children.includes(val),
-      };
+    this.state = {};
+  }
+  static getDerivedStateFromProps({ keys }, state) {
+    const [value = 'value', label = 'label'] = keys;
+    if (value !== state.value || label !== state.label) {
+      return { value, label };
     }
+    return null;
   }
 
   render() {
     const { data, keys, search, clear, empty, msg, ...props } = this.props;
-    const [value = 'value', label = 'label'] = keys;
+    const { value, label } = this.state;
 
     return (
       <Ant.Select
         className="ant-plus-select"
-        {...this.searchProps}
+        {...(search === true || selectModeList.includes(props.mode)) && selectSearchProps}
         allowClear={clear}
         notFoundContent={empty}
         placeholder={msg}
@@ -571,6 +591,10 @@ Select.displayName = 'AntPlus.Select';
  * Transfer - Ant Design Transfer 组件增强版本
  * @link https://ant.design/components/transfer-cn/
  */
+const transferSearchProps = {
+  showSearch: true,
+  filterOption: (val, option) => `${option.title}${option.description || ''}`.includes(val),
+};
 class Transfer extends Ant.Transfer {
   static propTypes = {
     /** `dataSource` 属性 */
@@ -596,23 +620,12 @@ class Transfer extends Ant.Transfer {
     render: (item) => item.title,
   };
 
-  constructor(props) {
-    super(props);
-    const { search } = props;
-    if (search === true) {
-      this.searchProps = {
-        showSearch: true,
-        filterOption: (val, option) => `${option.title}${option.description || ''}`.includes(val),
-      };
-    }
-  }
-
   render() {
     const { data, targetKeys, value, search, title, unit, empty, searchMsg, ...props } = this.props;
 
     return (
       <Ant.Transfer
-        {...this.searchProps}
+        {...search === true && transferSearchProps}
         dataSource={data}
         targetKeys={targetKeys || value}
         titles={[`未选择${title}`, `已选择${title}`]}
@@ -634,6 +647,24 @@ Transfer.displayName = 'AntPlus.Transfer';
  * Cascader - Ant Design Cascader 组件增强版本
  * @link https://ant.design/components/cascader-cn/
  */
+let cascaderIdMap = null;
+const cascaderTravelOptions = (arr, fieldNames, valueMap, idList) => {
+  if (arr.length === 0) return;
+  const { value, children } = fieldNames;
+  arr.forEach((item) => {
+    const curIdList = idList.concat(item[value]);
+    if (item[children]) {
+      cascaderTravelOptions(valueMap, item[children], curIdList);
+    } else {
+      valueMap[item[value]] = curIdList;
+    }
+  });
+};
+const getCascaderSearchProps = (label) => ({
+  showSearch: {
+    filter: (val, path) => path.some((option) => option[label].includes(val)),
+  },
+});
 class Cascader extends Ant.Cascader {
   static propTypes = {
     /** `options` 属性 */
@@ -663,54 +694,41 @@ class Cascader extends Ant.Cascader {
 
   constructor(props) {
     super(props);
-    const {
-      keys: [value = 'value', label = 'label', children = 'children'] = [],
-      search,
-      last,
-    } = props;
-    // 初始化 fieldNames
-    this.fieldNames = { value, label, children };
-    // 是否可搜索
-    if (search === true) {
-      this.searchProps = {
-        showSearch: { filter: (val, path) => path.some((option) => option[label].includes(val)) },
-      };
-    }
-    // 是否只传出数组的最后一个 value
-    if (last === true) {
-      this.valueMap = {};
-    }
+    this.state = {
+      fieldNames: {},
+    };
   }
-  onChange = (value) => {
+  static getDerivedStateFromProps({ last, data, ...props }, { fieldNames }) {
+    if (last === true && !cascaderIdMap && data.length > 0) {
+      cascaderIdMap = {};
+      cascaderTravelOptions(data, fieldNames, cascaderIdMap, []);
+    }
+    const { keys: [value = 'value', label = 'label', children = 'children'] = [] } = props;
+    if (
+      value !== fieldNames.value ||
+      label !== fieldNames.label ||
+      children !== fieldNames.children
+    ) {
+      return { fieldNames: { value, label, children } };
+    }
+    return null;
+  }
+
+  onChange(value) {
     const { last, onChange } = this.props;
     onChange(last === true ? value[value.length - 1] : value);
-  };
-  travelOptions = (valueMap, arr, breadValues) => {
-    if (arr.length === 0) return;
-    const { value, children } = this.fieldNames;
-    arr.forEach((item) => {
-      const curBreadValues = breadValues.concat(item[value]);
-      if (item[children]) {
-        this.travelOptions(valueMap, item[children], curBreadValues);
-      } else {
-        valueMap[item[value]] = curBreadValues;
-      }
-    });
-  };
+  }
 
   render() {
     const { value, data, keys, search, clear, empty, msg, last, ...props } = this.props;
-
-    if (last === true && Object.keys(this.valueMap).length === 0 && data.length > 0) {
-      this.travelOptions(this.valueMap, data, []);
-    }
+    const { fieldNames } = this.state;
 
     return (
       <Ant.Cascader
-        {...this.searchProps}
+        {...search === true && getCascaderSearchProps(fieldNames.label)}
         options={data}
-        fieldNames={this.fieldNames}
-        value={last === true ? this.valueMap[value] : value}
+        fieldNames={fieldNames}
+        value={last === true ? cascaderIdMap[value] : value}
         onChange={this.onChange}
         allowClear={clear}
         notFoundContent={empty}
@@ -727,9 +745,13 @@ Cascader.displayName = 'AntPlus.Cascader';
  * TreeSelect - Ant Design TreeSelect 组件增强版本
  * @link https://ant.design/components/tree-select-cn/
  */
+const treeSelectSearchProps = {
+  showSearch: true,
+  filterTreeNode: (val, node) => new RegExp(val, 'i').test(`${node.value}${node.title}`),
+};
 class TreeSelect extends Ant.TreeSelect {
   static propTypes = {
-    /** `treeData` 属性 */
+    /** `treeData` 属性，Array<{value, title, children}> */
     data: t.array,
     /** 是否可搜索 */
     search: t.bool,
@@ -757,17 +779,6 @@ class TreeSelect extends Ant.TreeSelect {
     dropdownStyle: { maxHeight: 400, overflow: 'auto' },
   };
 
-  constructor(props) {
-    super(props);
-    const { search } = props;
-    if (search === true) {
-      this.searchProps = {
-        showSearch: true,
-        filterTreeNode: (val, node) => new RegExp(val, 'i').test(`${node.value}${node.title}`),
-      };
-    }
-  }
-
   render() {
     const {
       data,
@@ -785,7 +796,6 @@ class TreeSelect extends Ant.TreeSelect {
     return (
       <Ant.TreeSelect
         className="ant-plus-tree-select"
-        {...this.searchProps}
         treeData={data}
         value={data.length > 0 ? value : undefined}
         treeCheckable={check}
@@ -793,6 +803,7 @@ class TreeSelect extends Ant.TreeSelect {
         treeDefaultExpandedKeys={expandKeys}
         allowClear={clear}
         placeholder={msg}
+        {...search === true && treeSelectSearchProps}
         searchPlaceholder={searchMsg}
         {...props}
       />
