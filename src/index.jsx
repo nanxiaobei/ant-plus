@@ -169,16 +169,12 @@ Form.setConfig = (config) => {
   return formConfig;
 };
 
-// Default option functions
-const defaultGetValueFromEvent = (e) => {
-  if (!e || !e.target) {
-    return e;
-  }
-  const { target } = e;
-  return target.type === 'checkbox' ? target.checked : target.value;
+const removeUndefined = (obj) => {
+  Object.keys(obj).forEach((key) => {
+    if (obj[key] === undefined) delete obj[key];
+  });
+  return obj;
 };
-
-const defaultGetValueProps = (value) => ({ value });
 
 // 生成 `Form.render` 方法
 Form.createRender = (form, data, disabledFields, formColon) => {
@@ -193,39 +189,91 @@ Form.createRender = (form, data, disabledFields, formColon) => {
       // 判断子节点是否为表单域，`id` 为表单域唯一标识，请勿被占用
       const { label, id, ...nodeProps } = node.props;
 
-      // ``
-      if (label === undefined && id === undefined) {
-        // 递归查找，包装渲染 `children` 内表单域
-        const newChildren = Form.render(nodeProps.children);
-        const newNode = { ...node, props: { ...nodeProps, children: newChildren } };
-        return getMsgAndDisabled(newNode);
+      if (label === undefined) {
+        /**
+         * ``
+         */
+        if (id === undefined) {
+          // 递归查找，渲染 `children` 内表单域
+          const newChildren = Form.render(nodeProps.children);
+          return getMsgAndDisabled({ ...node, props: { ...nodeProps, children: newChildren } });
+        }
+
+        /**
+         * `id`
+         */
+        const {
+          // Form options
+          getValueFromEvent,
+          initialValue,
+          normalize,
+          preserve,
+          rules,
+          trigger,
+          validateFirst,
+          validateTrigger,
+          valuePropName,
+          // rc-form options
+          hidden,
+          getValueProps,
+          validate,
+
+          ...fieldProps
+        } = nodeProps;
+
+        const options = removeUndefined({
+          getValueFromEvent,
+          // initialValue,
+          normalize,
+          preserve,
+          // rules,
+          trigger,
+          validateFirst,
+          // validateTrigger,
+          valuePropName,
+
+          // hidden,
+          getValueProps,
+          validate,
+        });
+
+        // 是否嵌套表单域（`a` & `a.b`）
+        const isNestedField = fieldProps.form !== undefined;
+
+        return form.getFieldDecorator(isNestedField ? `${id}.nested` : id, {
+          initialValue: initialValue !== undefined ? initialValue : data[id],
+          rules: Array.isArray(rules) && createRules(label, rules),
+          validateTrigger: validateTrigger || rules.includes('phone') ? 'onBlur' : 'onChange',
+          hidden: hidden || isNestedField,
+          ...options,
+        })(getMsgAndDisabled({ ...node, props: fieldProps }, label, id, disabledFields));
       }
 
       const {
-        // Form.Item props
-        colon: itemColon,
-        extra,
-        hasFeedback = false,
-        help,
-        // label,
-        labelCol,
-        required = false,
-        validateStatus,
-        wrapperCol,
-
         // UI props
         className,
         style,
+
+        // Item props
+        colon: itemColon,
+        extra,
+        hasFeedback,
+        help,
+        // label,
+        labelCol,
+        required,
+        validateStatus,
+        wrapperCol,
 
         // Two sides
         before,
         after,
 
-        // Props
+        // Other props
         ...otherNodeProps
       } = nodeProps;
 
-      const itemProps = {
+      const itemProps = removeUndefined({
         // colon,
         extra,
         hasFeedback,
@@ -235,45 +283,47 @@ Form.createRender = (form, data, disabledFields, formColon) => {
         required,
         validateStatus,
         wrapperCol,
-      };
+      });
 
       const colon = itemColon !== undefined ? itemColon : formColon;
-      // `label`
-      if (label !== undefined && id === undefined) {
-        const newNode = { ...node, props: otherNodeProps };
+
+      /**
+       * `label`
+       */
+      if (id === undefined) {
         return (
           <Ant.Form.Item
             className={className}
             style={style}
-            label={label}
             colon={colon}
+            label={label}
             {...itemProps}
           >
             {before && Form.render(before)}
-            {getMsgAndDisabled(newNode, label)}
+            {getMsgAndDisabled({ ...node, props: otherNodeProps }, label)}
             {after && Form.render(after)}
           </Ant.Form.Item>
         );
       }
 
-      // 是否为嵌套表单域（`a` & `a.b`）
-      const isNestedField = otherNodeProps.form !== undefined;
-
+      /**
+       * `label` `id`
+       */
       const {
         // Form options
-        getValueFromEvent = defaultGetValueFromEvent,
+        getValueFromEvent,
         initialValue,
         normalize,
-        preserve = false,
+        preserve,
         rules,
-        trigger = 'onChange',
-        validateFirst = false,
+        trigger,
+        validateFirst,
         validateTrigger,
-        valuePropName = 'value',
+        valuePropName,
         // rc-form options
         hidden,
-        getValueProps = defaultGetValueProps,
-        validate = [],
+        getValueProps,
+        validate,
 
         // Extra options
         hide,
@@ -281,7 +331,7 @@ Form.createRender = (form, data, disabledFields, formColon) => {
         ...fieldProps
       } = otherNodeProps;
 
-      const options = {
+      const options = removeUndefined({
         getValueFromEvent,
         // initialValue,
         normalize,
@@ -292,37 +342,30 @@ Form.createRender = (form, data, disabledFields, formColon) => {
         // validateTrigger,
         valuePropName,
 
-        hidden: hidden || isNestedField,
+        // hidden,
         getValueProps,
         validate,
-      };
+      });
 
-      const createField = (field) =>
-        form.getFieldDecorator(isNestedField ? `${id}.nested` : id, {
-          rules: Array.isArray(rules) && createRules(label, rules),
-          validateTrigger: validateTrigger || rules.includes('phone') ? 'onBlur' : 'onChange',
-          initialValue: initialValue !== undefined ? initialValue : data[id],
-          ...options,
-        })(getMsgAndDisabled(field, label, id, disabledFields));
+      // 是否嵌套表单域（`a` & `a.b`）
+      const isNestedField = fieldProps.form !== undefined;
 
-      // `id`
-      if (label === undefined) {
-        const field = { ...node, props: { ...fieldProps, className, style } };
-        return createField(field);
-      }
-
-      // `label`, `id`
-      const field = { ...node, props: fieldProps };
       return (
         <Ant.Form.Item
           className={`${className} ${id}`}
           style={hide === true ? { display: 'none' } : style}
-          label={label}
           colon={colon}
+          label={label}
           {...itemProps}
         >
           {before && Form.render(before)}
-          {createField(field)}
+          {form.getFieldDecorator(isNestedField ? `${id}.nested` : id, {
+            initialValue: initialValue !== undefined ? initialValue : data[id],
+            rules: Array.isArray(rules) && createRules(label, rules),
+            validateTrigger: validateTrigger || rules.includes('phone') ? 'onBlur' : 'onChange',
+            hidden: hidden || isNestedField,
+            ...options,
+          })(getMsgAndDisabled({ ...node, props: fieldProps }, label, id, disabledFields))}
           {after && Form.render(after)}
         </Ant.Form.Item>
       );
