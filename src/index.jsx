@@ -1,5 +1,5 @@
 import React from 'react';
-import t from 'prop-types';
+import PropTypes from 'prop-types';
 import * as Ant from 'antd';
 import './index.scss';
 
@@ -93,7 +93,7 @@ const ruleCreator = {
 };
 
 /**
- * 根据 `rules` 「短语」生成完整验证规则 (配合 AntPlus.Form 组件使用）
+ * 根据 `rules` 「短语」生成完整验证规则 (配合 Ant Plus Form 组件使用）
  */
 const createRules = (label = '', rules) =>
   rules.map((rule) => {
@@ -145,23 +145,6 @@ const getMsgAndDisabled = (node, label = '', id, disabledFields) => {
  * @link https://ant.design/components/form-cn/
  */
 class Form extends Ant.Form {
-  static propTypes = {
-    /** 必选。经 Form.create 包装后注入的 `form` 属性（为规避 Ant Design 提示信息，改为 `api`）*/
-    api: t.object.isRequired,
-    /** 与各表单域 `id` 对应的一组键值对，用于设置各表单域初始值 e.g. { [id]: value, ... } */
-    data: t.object,
-    /** 禁用的表单域，全部禁用传 "all"，部分禁用传 id 组成的数组 */
-    disabledFields: t.array,
-    /** 是否整体显示 label 后的冒号 */
-    colon: t.bool,
-    /** 提交表单的回调事件，已做了 `event.preventDefault()` 处理 */
-    onSubmit: t.func,
-  };
-  static defaultProps = {
-    data: {},
-    colon: false,
-  };
-
   constructor(props) {
     super(props);
     this.onSubmit = this.onSubmit.bind(this);
@@ -194,6 +177,24 @@ class Form extends Ant.Form {
 }
 
 Form.displayName = 'AntPlus.Form';
+
+Form.propTypes = {
+  /** 必选。经 Form.create 包装后注入的 `form` 属性（为规避 Ant Design 提示信息，改为 `api`）*/
+  api: PropTypes.object.isRequired,
+  /** 与各表单域 `id` 对应的一组键值对，用于设置各表单域初始值 e.g. { [id]: value, ... } */
+  data: PropTypes.object,
+  /** 禁用的表单域，全部禁用传 "all"，部分禁用传 id 组成的数组 */
+  disabledFields: PropTypes.array,
+  /** 是否整体显示 label 后的冒号 */
+  colon: PropTypes.bool,
+  /** 提交表单的回调事件，已做了 `event.preventDefault()` 处理 */
+  onSubmit: PropTypes.func,
+};
+
+Form.defaultProps = {
+  data: {},
+  colon: false,
+};
 
 // 设置校验提示
 Form.setConfig = (newConfig) => {
@@ -409,24 +410,6 @@ Form.createRender = (form, data, disabledFields, formColon) => {
  * @link https://ant.design/components/input-cn/
  */
 class Input extends Ant.Input {
-  static propTypes = {
-    /** 最大可输入字符数（传入则显示字符计数器）*/
-    max: t.number,
-    /** `autoComplete` 属性（关闭需传入 "off"）*/
-    auto: t.string,
-    /** `placeholder` 属性（可传入 `short` 或 `full`，在 AntPlus.Form 中时有效）。
-     e.g. `short` => `请输入`, `full` => `请输入XXX`, `其它提示信息` => `其它提示信息`*/
-    msg: t.string,
-    /** 默认为 Input 组件，若传入 textarea，则为 TextArea 组件 */
-    textarea: t.bool,
-    /** 若为 TextArea 时的输入框行高 */
-    rows: t.number,
-  };
-  static defaultProps = {
-    textarea: false,
-    rows: 2,
-  };
-
   constructor(props) {
     super(props);
     this.state = {
@@ -474,6 +457,25 @@ class Input extends Ant.Input {
 
 Input.displayName = 'AntPlus.Input';
 
+Input.propTypes = {
+  /** 最大可输入字符数（传入则显示字符计数器）*/
+  max: PropTypes.number,
+  /** `autoComplete` 属性（关闭需传入 "off"）*/
+  auto: PropTypes.string,
+  /** `placeholder` 属性（可传入 `short` 或 `full`，在 Ant Plus Form 中时有效）。
+       e.g. `short` => `请输入`, `full` => `请输入XXX`, `其它提示信息` => `其它提示信息`*/
+  msg: PropTypes.string,
+  /** 默认为 Input 组件，若传入 textarea，则为 TextArea 组件 */
+  textarea: PropTypes.bool,
+  /** 若为 TextArea 时的输入框行高 */
+  rows: PropTypes.number,
+};
+
+Input.defaultProps = {
+  textarea: false,
+  rows: 2,
+};
+
 /**
  * AutoComplete - Ant Design AutoComplete 组件增强版本
  * @link https://ant.design/components/auto-complete-cn/
@@ -484,22 +486,6 @@ const autoCompleteSearchProps = {
   },
 };
 class AutoComplete extends Ant.AutoComplete {
-  static propTypes = {
-    /** `dataSource` 属性 */
-    data: t.array,
-    /** 是否可搜索 */
-    search: t.bool,
-    /** `allowClear` 属性 */
-    clear: t.bool,
-    /** `placeholder` 属性（可传入 `short` 或 `full`，在 AntPlus.Form 中时有效）*/
-    msg: t.string,
-  };
-  static defaultProps = {
-    data: [],
-    search: true,
-    clear: false,
-  };
-
   render() {
     const { data, search, clear, msg, ...props } = this.props;
 
@@ -517,6 +503,23 @@ class AutoComplete extends Ant.AutoComplete {
 
 AutoComplete.displayName = 'AntPlus.AutoComplete';
 
+AutoComplete.propTypes = {
+  /** `dataSource` 属性 */
+  data: PropTypes.array,
+  /** 是否可搜索 */
+  search: PropTypes.bool,
+  /** `allowClear` 属性 */
+  clear: PropTypes.bool,
+  /** `placeholder` 属性（可传入 `short` 或 `full`，在 Ant Plus Form 中时有效）*/
+  msg: PropTypes.string,
+};
+
+AutoComplete.defaultProps = {
+  data: [],
+  search: true,
+  clear: false,
+};
+
 /**
  * Select - Ant Design Select 组件增强版本
  * @link https://ant.design/components/select-cn/
@@ -527,44 +530,16 @@ const selectSearchProps = {
   filterOption: (val, option) => option.props.children.includes(val),
 };
 class Select extends Ant.Select {
-  static propTypes = {
-    /** 列表数据源 */
-    data: t.array,
-    /** 当数据源条目中的 key 不是 `value` (值) 与 `label` (展示的汉字) 时传入，e.g. 如 [{ id: 1, name: ''}, ...]，则传入 ['id', 'name'] */
-    keys: t.array,
-    /** 是否可搜索 */
-    search: t.bool,
-    /** `allowClear` 属性 */
-    clear: t.bool,
-    /** `notFoundContent` 属性 */
-    empty: t.string,
-    /** `placeholder` 属性（可传入 `short` 或 `full`，在 AntPlus.Form 中时有效）。
-     e.g. `short` => `请选择`, `full` => `请选择XXX`, `其它提示信息` => `其它提示信息`*/
-    msg: t.string,
-  };
-  static defaultProps = {
-    data: [],
-    keys: ['value', 'label'],
-    search: false,
-    clear: false,
-    empty: '列表为空',
-  };
-
   constructor(props) {
     super(props);
-    this.state = {};
-  }
-  static getDerivedStateFromProps({ keys }, state) {
+    const { keys } = props;
     const [value = 'value', label = 'label'] = keys;
-    if (value !== state.value || label !== state.label) {
-      return { value, label };
-    }
-    return null;
+    this.keys = { value, label };
   }
 
   render() {
     const { data, keys, search, clear, empty, msg, ...props } = this.props;
-    const { value, label } = this.state;
+    const { value, label } = this.keys;
 
     return (
       <Ant.Select
@@ -587,6 +562,30 @@ class Select extends Ant.Select {
 
 Select.displayName = 'AntPlus.Select';
 
+Select.propTypes = {
+  /** 列表数据源 */
+  data: PropTypes.array,
+  /** 当数据源条目中的 key 不是 `value` (值) 与 `label` (展示的名称) 时传入，e.g. 如 [{ id: 1, name: ''}, ...]，则传入 ['id', 'name'] */
+  keys: PropTypes.array,
+  /** 是否可搜索 */
+  search: PropTypes.bool,
+  /** `allowClear` 属性 */
+  clear: PropTypes.bool,
+  /** `notFoundContent` 属性 */
+  empty: PropTypes.string,
+  /** `placeholder` 属性（可传入 `short` 或 `full`，在 Ant Plus Form 中时有效）。
+   e.g. `short` => `请选择`, `full` => `请选择XXX`, `其它提示信息` => `其它提示信息`*/
+  msg: PropTypes.string,
+};
+
+Select.defaultProps = {
+  data: [],
+  keys: ['value', 'label'],
+  search: false,
+  clear: false,
+  empty: '列表为空',
+};
+
 /**
  * Transfer - Ant Design Transfer 组件增强版本
  * @link https://ant.design/components/transfer-cn/
@@ -596,38 +595,14 @@ const transferSearchProps = {
   filterOption: (val, option) => `${option.title}${option.description || ''}`.includes(val),
 };
 class Transfer extends Ant.Transfer {
-  static propTypes = {
-    /** `dataSource` 属性 */
-    data: t.array,
-    /** 是否可搜索 */
-    search: t.bool,
-    /** 组件 `未选择XXX` `已选择XXX` 的 `XXX` 文案 */
-    title: t.string,
-    /** 数字后面的单位 */
-    unit: t.string,
-    /** `notFoundContent` 属性 */
-    empty: t.string,
-    /** 搜索框 `placeholder` 属性 */
-    searchMsg: t.string,
-  };
-  static defaultProps = {
-    data: [],
-    search: false,
-    title: '',
-    unit: '项',
-    empty: '列表为空',
-    searchMsg: '搜索',
-    render: (item) => item.title,
-  };
-
   render() {
     const { data, targetKeys, value, search, title, unit, empty, searchMsg, ...props } = this.props;
 
     return (
       <Ant.Transfer
-        {...search === true && transferSearchProps}
         dataSource={data}
         targetKeys={targetKeys || value}
+        {...search === true && transferSearchProps}
         titles={[`未选择${title}`, `已选择${title}`]}
         locale={{
           itemsUnit: unit,
@@ -643,20 +618,45 @@ class Transfer extends Ant.Transfer {
 
 Transfer.displayName = 'AntPlus.Transfer';
 
+Transfer.propTypes = {
+  /** `dataSource` 属性 */
+  data: PropTypes.array,
+  /** 是否可搜索 */
+  search: PropTypes.bool,
+  /** 组件 `未选择XXX` `已选择XXX` 的 `XXX` 文案 */
+  title: PropTypes.string,
+  /** 数字后面的单位 */
+  unit: PropTypes.string,
+  /** `notFoundContent` 属性 */
+  empty: PropTypes.string,
+  /** 搜索框 `placeholder` 属性 */
+  searchMsg: PropTypes.string,
+};
+
+Transfer.defaultProps = {
+  data: [],
+  search: false,
+  title: '',
+  unit: '项',
+  empty: '列表为空',
+  searchMsg: '搜索',
+  render: (item) => item.title,
+};
+
 /**
  * Cascader - Ant Design Cascader 组件增强版本
  * @link https://ant.design/components/cascader-cn/
  */
-let cascaderIdMap = null;
-const cascaderTravelOptions = (arr, fieldNames, valueMap, idList) => {
-  if (arr.length === 0) return;
-  const { value, children } = fieldNames;
-  arr.forEach((item) => {
-    const curIdList = idList.concat(item[value]);
-    if (item[children]) {
-      cascaderTravelOptions(valueMap, item[children], curIdList);
+let cascaderIdMap = {};
+const cascaderTravelOptions = (data, valueKey, childrenKey, idList) => {
+  data.forEach((item) => {
+    const { [valueKey]: id, [childrenKey]: children } = item;
+
+    const itemIdList = idList.concat(id);
+    if (Array.isArray(children) && children.length > 0) {
+      cascaderTravelOptions(children, valueKey, childrenKey, itemIdList);
     } else {
-      valueMap[item[value]] = curIdList;
+      cascaderIdMap[id] = itemIdList;
     }
   });
 };
@@ -666,69 +666,34 @@ const getCascaderSearchProps = (label) => ({
   },
 });
 class Cascader extends Ant.Cascader {
-  static propTypes = {
-    /** `options` 属性 */
-    data: t.array,
-    /** 当数据源条目中的 key 不是 `value` `label` `children` 时传入 */
-    keys: t.array,
-    /** 是否可搜索 */
-    search: t.bool,
-    /** `allowClear` 属性 */
-    clear: t.bool,
-    /** `notFoundContent` 属性 */
-    empty: t.string,
-    /** `placeholder` 属性 */
-    msg: t.string,
-    /** `value` 是否只传出数组的最后一个 id（在 AntPlus.Form 中时有效）*/
-    last: t.bool,
-  };
-  static defaultProps = {
-    data: [],
-    keys: ['value', 'label', 'children'],
-    search: false,
-    clear: true,
-    empty: '列表为空',
-    msg: '请选择',
-    last: false,
-  };
-
   constructor(props) {
     super(props);
-    this.state = {
-      fieldNames: {},
-    };
+    const { keys: [value = 'value', label = 'label', children = 'children'] = [], last } = props;
+    this.fieldNames = { value, label, children };
+    if (last === true) this.useLast = true;
   }
-  static getDerivedStateFromProps({ last, data, ...props }, { fieldNames }) {
-    if (last === true && !cascaderIdMap && data.length > 0) {
+  componentDidUpdate({ data: prevData }) {
+    const { data } = this.props;
+    if (this.useLast && data.length !== prevData.length) {
       cascaderIdMap = {};
-      cascaderTravelOptions(data, fieldNames, cascaderIdMap, []);
+      const { value: valueKey, children: childrenKey } = this.fieldNames;
+      cascaderTravelOptions(data, valueKey, childrenKey, []);
     }
-    const { keys: [value = 'value', label = 'label', children = 'children'] = [] } = props;
-    if (
-      value !== fieldNames.value ||
-      label !== fieldNames.label ||
-      children !== fieldNames.children
-    ) {
-      return { fieldNames: { value, label, children } };
-    }
-    return null;
   }
-
   onChange(value) {
-    const { last, onChange } = this.props;
-    onChange(last === true ? value[value.length - 1] : value);
+    const { onChange } = this.props;
+    onChange(this.useLast ? value[value.length - 1] : value);
   }
 
   render() {
     const { value, data, keys, search, clear, empty, msg, last, ...props } = this.props;
-    const { fieldNames } = this.state;
 
     return (
       <Ant.Cascader
-        {...search === true && getCascaderSearchProps(fieldNames.label)}
+        {...search === true && getCascaderSearchProps(this.fieldNames.label)}
         options={data}
-        fieldNames={fieldNames}
-        value={last === true ? cascaderIdMap[value] : value}
+        fieldNames={this.fieldNames}
+        value={this.useLast ? cascaderIdMap[value] : value}
         onChange={this.onChange}
         allowClear={clear}
         notFoundContent={empty}
@@ -741,6 +706,33 @@ class Cascader extends Ant.Cascader {
 
 Cascader.displayName = 'AntPlus.Cascader';
 
+Cascader.propTypes = {
+  /** `options` 属性 */
+  data: PropTypes.array,
+  /** 当数据源条目中的 key 不是 `value` `label` `children` 时传入 */
+  keys: PropTypes.array,
+  /** 是否可搜索 */
+  search: PropTypes.bool,
+  /** `allowClear` 属性 */
+  clear: PropTypes.bool,
+  /** `notFoundContent` 属性 */
+  empty: PropTypes.string,
+  /** `placeholder` 属性 */
+  msg: PropTypes.string,
+  /** `value` 是否只传出数组的最后一个 id（在 Ant Plus Form 中时有效）*/
+  last: PropTypes.bool,
+};
+
+Cascader.defaultProps = {
+  data: [],
+  keys: ['value', 'label', 'children'],
+  search: false,
+  clear: true,
+  empty: '列表为空',
+  msg: '请选择',
+  last: false,
+};
+
 /**
  * TreeSelect - Ant Design TreeSelect 组件增强版本
  * @link https://ant.design/components/tree-select-cn/
@@ -749,61 +741,71 @@ const treeSelectSearchProps = {
   showSearch: true,
   filterTreeNode: (val, node) => new RegExp(val, 'i').test(`${node.value}${node.title}`),
 };
+const treeSelectTravelData = (data, valueKey, titleKey, childrenKey) =>
+  data.map((item) => {
+    const { [valueKey]: value, [titleKey]: title, [childrenKey]: children } = item;
+    const newItem = {
+      value,
+      title,
+    };
+    if (Array.isArray(children) && children.length > 0) {
+      newItem.children = treeSelectTravelData(children, valueKey, titleKey, childrenKey);
+    }
+    return newItem;
+  });
+
 class TreeSelect extends Ant.TreeSelect {
-  static propTypes = {
-    /** `treeData` 属性，Array<{value, title, children}> */
-    data: t.array,
-    /** 是否可搜索 */
-    search: t.bool,
-    /** `treeCheckable` 属性 */
-    check: t.bool,
-    /** `treeDefaultExpandAll` 属性 */
-    expandAll: t.bool,
-    /** `treeDefaultExpandedKeys` 属性 */
-    expandKeys: t.array,
-    /** `allowClear` 属性 */
-    clear: t.bool,
-    /** `placeholder` 属性 */
-    msg: t.string,
-    /** `searchPlaceholder` 属性 */
-    searchMsg: t.string,
-  };
-  static defaultProps = {
-    data: [],
-    search: false,
-    check: false,
-    expandAll: false,
-    clear: false,
-    msg: '请选择',
-    searchMsg: '搜索',
-    dropdownStyle: { maxHeight: 400, overflow: 'auto' },
-  };
+  constructor(props) {
+    super(props);
+    const { keys } = props;
+    const [value = 'value', title = 'title', children = 'children'] = keys;
+    const useKeys = value !== 'value' || title !== 'title' || children !== 'children';
+    this.state = {
+      treeData: [],
+      keys: useKeys ? { value, title, children } : null,
+    };
+  }
+  static getDerivedStateFromProps({ data }, { treeData, keys }) {
+    if (treeData.length !== data.length) {
+      let newTreeData = data;
+      if (keys) {
+        const { value: valueKey, title: titleKey, children: childrenKey } = keys;
+        newTreeData = treeSelectTravelData(data, valueKey, titleKey, childrenKey);
+      }
+      return { treeData: newTreeData };
+    }
+    return null;
+  }
 
   render() {
     const {
       data,
+      keys,
       value,
-      msg,
+      search,
       check,
+      back,
       expandAll,
       expandKeys,
       clear,
-      search,
+      msg,
       searchMsg,
       ...props
     } = this.props;
+    const { treeData } = this.state;
 
     return (
       <Ant.TreeSelect
         className="ant-plus-tree-select"
-        treeData={data}
-        value={data.length > 0 ? value : undefined}
+        treeData={treeData}
+        value={treeData.length > 0 ? value : undefined}
+        {...search === true && treeSelectSearchProps}
         treeCheckable={check}
+        showCheckedStrategy={back}
         treeDefaultExpandAll={expandAll}
         treeDefaultExpandedKeys={expandKeys}
         allowClear={clear}
         placeholder={msg}
-        {...search === true && treeSelectSearchProps}
         searchPlaceholder={searchMsg}
         {...props}
       />
@@ -812,6 +814,42 @@ class TreeSelect extends Ant.TreeSelect {
 }
 
 TreeSelect.displayName = 'AntPlus.TreeSelect';
+
+TreeSelect.propTypes = {
+  /** `treeData` 属性 */
+  data: PropTypes.array,
+  /** 当数据源条目中的 key 不是 `value` `title` `children` 时传入 */
+  keys: PropTypes.array,
+  /** 是否可搜索 */
+  search: PropTypes.bool,
+  /** `treeCheckable` 属性 */
+  check: PropTypes.bool,
+  /** `showCheckedStrategy` 属性 */
+  back: PropTypes.oneOf([TreeSelect.SHOW_ALL, TreeSelect.SHOW_PARENT, TreeSelect.SHOW_CHILD]),
+  /** `treeDefaultExpandAll` 属性 */
+  expandAll: PropTypes.bool,
+  /** `treeDefaultExpandedKeys` 属性 */
+  expandKeys: PropTypes.array,
+  /** `allowClear` 属性 */
+  clear: PropTypes.bool,
+  /** `placeholder` 属性 */
+  msg: PropTypes.string,
+  /** `searchPlaceholder` 属性 */
+  searchMsg: PropTypes.string,
+};
+
+TreeSelect.defaultProps = {
+  data: [],
+  keys: ['value', 'title', 'children'],
+  search: false,
+  check: false,
+  back: TreeSelect.SHOW_CHILD,
+  expandAll: false,
+  clear: false,
+  msg: '请选择',
+  searchMsg: '搜索',
+  dropdownStyle: { maxHeight: 400, overflow: 'auto' },
+};
 
 /**
  * exports
