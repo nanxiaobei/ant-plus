@@ -8,6 +8,5 @@ module.exports = {
   plugins: [
     ['import', { libraryName: 'antd', libraryDirectory: 'es', style: 'css' }],
     ['@babel/plugin-transform-runtime', { useESModules: NODE_ENV === 'esm' }],
-    '@babel/plugin-proposal-class-properties',
   ],
 };
