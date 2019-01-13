@@ -30,7 +30,7 @@
     "doc": "yarn docz build"
   },
   "peerDependencies": {
-    "antd": "^3.11.6",
+    "antd": "^3.12.3",
     "prop-types": "^15.6.2",
     "react": "^16.7.0"
   },
@@ -40,7 +40,7 @@
     "@babel/preset-env": "^7.2.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/runtime": "^7.2.0",
-    "antd": "^3.11.6",
+    "antd": "^3.12.3",
     "babel-core": "^7.0.0-bridge",
     "babel-eslint": "^10.0.1",
     "babel-plugin-import": "^1.11.0",
@@ -54,10 +54,10 @@
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "rimraf": "^2.6.2",
-    "rollup": "^0.68.2",
+    "rollup": "^1.1.0",
     "rollup-plugin-babel": "^4.0.3",
     "rollup-plugin-eslint": "^5.0.0",
-    "rollup-plugin-sass": "^0.9.3"
+    "rollup-plugin-sass": "^1.1.0"
   },
   "husky": {
     "hooks": {
