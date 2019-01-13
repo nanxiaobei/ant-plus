@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import * as Ant from 'antd';
 import './index.scss';
 
-const defaultConfig = {
+let config = {
   // `placeholder`
   input: '请输入',
   select: '请选择',
@@ -14,81 +14,47 @@ const defaultConfig = {
   min: '不得少于 {min} 个字',
 };
 
-let message = {};
-const messageCreator = {
-  input: (input) => {
-    message = { ...message, input };
-  },
-  select: (select) => {
-    message = { ...message, select };
-  },
-  required: (required) => {
-    const [requiredBefore, requiredAfter] = required.split('{label}');
-    message = { ...message, requiredBefore, requiredAfter };
-  },
-  type: (type) => {
-    const [typeBefore, typeAfter] = type.split('{label}');
-    message = { ...message, typeBefore, typeAfter };
-  },
-  max: (max) => {
-    const [maxBefore, maxAfter] = max.split('{max}');
-    message = { ...message, maxBefore, maxAfter };
-  },
-  min: (min) => {
-    const [minBefore, minAfter] = min.split('{min}');
-    message = { ...message, minBefore, minAfter };
-  },
-};
-const createMessage = (formConfig) => {
-  Object.entries(formConfig).forEach(([key, val]) => {
-    if (messageCreator[key]) messageCreator[key](val);
-  });
-};
-
-// 初始化 message
-createMessage(defaultConfig);
-
 const ruleCreator = {
   required: (label) => ({
     required: true,
-    message: `${message.requiredBefore}${label}${message.requiredAfter}`,
+    message: config.required.replace('{label}', label),
   }),
   string: (label) => ({
     type: 'string',
     whitespace: true,
-    message: `${message.typeBefore}${label}${message.typeAfter}`,
+    message: config.type.replace('{label}', label),
   }),
   number: (label) => ({
     pattern: /^\d+$/,
     whitespace: true,
-    message: `${message.typeBefore}${label}${message.typeAfter}`,
+    message: config.type.replace('{label}', label),
   }),
   array: (label) => ({
     type: 'array',
-    message: `${message.typeBefore}${label}${message.typeAfter}`,
+    message: config.type.replace('{label}', label),
   }),
   email: (label) => ({
     type: 'email',
     whitespace: true,
-    message: `${message.typeBefore}${label}${message.typeAfter}`,
+    message: config.type.replace('{label}', label),
   }),
   max: (max) => ({
     max,
-    message: `${message.maxBefore}${max}${message.maxAfter}`,
+    message: config.max.replace('{max}', max),
   }),
   min: (min) => ({
     min,
-    message: `${message.minBefore}${min}${message.minAfter}`,
+    message: config.min.replace('{min}', min),
   }),
   phone: (label) => ({
     pattern: /^1[3456789]\d{9}$/,
     whitespace: true,
-    message: `${message.typeBefore}${label}${message.typeAfter}`,
+    message: config.type.replace('{label}', label),
   }),
   id: (label) => ({
     pattern: /^\d+x?$/i,
     whitespace: true,
-    message: `${message.typeBefore}${label}${message.typeAfter}`,
+    message: config.type.replace('{label}', label),
   }),
 };
 
@@ -105,13 +71,13 @@ const createRules = (label = '', rules) =>
     return ruleCreator[key](Number(val));
   });
 
+/**
+ * 获取 `placeholder` 与 `disabled` 属性
+ */
 const phraseList = ['short', 'full'];
 const selectList = ['Select', 'Cascader', 'TreeSelect'];
 
-/**
- * 格式化 `msg`，添加 `disabled`
- */
-const getMsgAndDisabled = (node, label = '', id, disabledFields) => {
+const propsCreator = (node, label = '', id, disabledFields) => {
   let nodeProps = node.props;
 
   if (typeof nodeProps.msg === 'string' && phraseList.includes(nodeProps.msg)) {
@@ -121,7 +87,7 @@ const getMsgAndDisabled = (node, label = '', id, disabledFields) => {
       throw new Error('`msg` prop is not valid for a non Ant Plus component');
     }
     const isSelect = selectList.includes(displayName.split('.')[1]);
-    const shortMsg = isSelect ? message.select : message.input;
+    const shortMsg = isSelect ? config.select : config.input;
 
     const msg = nodeProps.msg === 'short' ? shortMsg : `${shortMsg}${label}`;
     nodeProps = { ...nodeProps, msg };
@@ -198,7 +164,7 @@ Form.defaultProps = {
 
 // 设置校验提示
 Form.setConfig = (newConfig) => {
-  createMessage(newConfig);
+  config = { ...config, ...newConfig };
 };
 
 const removeUndefined = (obj) => {
@@ -228,7 +194,7 @@ Form.createRender = (form, data, disabledFields, formColon) => {
         if (id === undefined) {
           // 递归查找，渲染 `children` 内表单域
           const newChildren = Form.render(nodeProps.children);
-          return getMsgAndDisabled({ ...node, props: { ...nodeProps, children: newChildren } });
+          return propsCreator({ ...node, props: { ...nodeProps, children: newChildren } });
         }
 
         /**
@@ -278,7 +244,7 @@ Form.createRender = (form, data, disabledFields, formColon) => {
           validateTrigger: validateTrigger || rules.includes('phone') ? 'onBlur' : 'onChange',
           hidden: hidden || isNestedField,
           ...options,
-        })(getMsgAndDisabled({ ...node, props: fieldProps }, label, id, disabledFields));
+        })(propsCreator({ ...node, props: fieldProps }, label, id, disabledFields));
       }
 
       const {
@@ -332,7 +298,7 @@ Form.createRender = (form, data, disabledFields, formColon) => {
             {...itemProps}
           >
             {before && Form.render(before)}
-            {getMsgAndDisabled({ ...node, props: otherNodeProps }, label)}
+            {propsCreator({ ...node, props: otherNodeProps }, label)}
             {after && Form.render(after)}
           </Ant.Form.Item>
         );
@@ -397,7 +363,7 @@ Form.createRender = (form, data, disabledFields, formColon) => {
             validateTrigger: validateTrigger || rules.includes('phone') ? 'onBlur' : 'onChange',
             hidden: hidden || isNestedField,
             ...options,
-          })(getMsgAndDisabled({ ...node, props: fieldProps }, label, id, disabledFields))}
+          })(propsCreator({ ...node, props: fieldProps }, label, id, disabledFields))}
           {after && Form.render(after)}
         </Ant.Form.Item>
       );
@@ -534,12 +500,12 @@ class Select extends Ant.Select {
     super(props);
     const { keys } = props;
     const [value = 'value', label = 'label'] = keys;
-    this.keys = { value, label };
+    this.value = value;
+    this.label = label;
   }
 
   render() {
     const { data, keys, search, clear, empty, msg, ...props } = this.props;
-    const { value, label } = this.keys;
 
     return (
       <Ant.Select
@@ -551,8 +517,12 @@ class Select extends Ant.Select {
         {...props}
       >
         {data.map((item) => (
-          <Ant.Select.Option key={item[label]} value={item[value]} disabled={item.disabled}>
-            {item[label]}
+          <Ant.Select.Option
+            key={item[this.label]}
+            value={item[this.value]}
+            disabled={item.disabled}
+          >
+            {item[this.label]}
           </Ant.Select.Option>
         ))}
       </Ant.Select>
