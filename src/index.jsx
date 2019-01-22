@@ -61,14 +61,19 @@ const ruleCreator = {
 /**
  * 根据 `rules` 「短语」生成完整验证规则 (配合 Ant Plus Form 组件使用）
  */
-const createRules = (label = '', rules) =>
+const createRules = (label = '', id, rules) =>
   rules.map((rule) => {
     if (typeof rule !== 'string') return rule;
+    const ruleKey = `${id}.${rule}`;
     // e.g. "required"
-    if (!rule.includes('=')) return ruleCreator[rule](label);
+    if (!rule.includes('=')) {
+      if (!createRules[ruleKey]) createRules[ruleKey] = ruleCreator[rule](label);
+      return createRules[ruleKey];
+    }
     // e.g. "max=5"
     const [key, val] = rule.split('=');
-    return ruleCreator[key](Number(val));
+    if (!createRules[ruleKey]) createRules[ruleKey] = ruleCreator[key](Number(val));
+    return createRules[ruleKey];
   });
 
 /**
@@ -182,7 +187,7 @@ Form.createRender = (form, data, disabledFields, formColon) => {
 
     // 遍历节点
     return React.Children.map(nodes, (node) => {
-      if (!node.props) return node;
+      if (!node || !node.props) return node;
 
       // 判断子节点是否为表单域，`id` 为表单域唯一标识，请勿被占用
       const { label, id, ...nodeProps } = node.props;
@@ -235,13 +240,15 @@ Form.createRender = (form, data, disabledFields, formColon) => {
           validate,
         });
 
-        // 是否嵌套表单域（`a` & `a.b`）
-        const isNestedField = fieldProps.form !== undefined;
+        const isNestedField = fieldProps.form !== undefined; // 是否嵌套表单域（`a` & `a.b`）
+
+        const isValidRules = Array.isArray(rules);
 
         return form.getFieldDecorator(isNestedField ? `${id}.nested` : id, {
           initialValue: initialValue !== undefined ? initialValue : data[id],
-          rules: Array.isArray(rules) && createRules(label, rules),
-          validateTrigger: validateTrigger || rules.includes('phone') ? 'onBlur' : 'onChange',
+          rules: isValidRules && createRules(label, id, rules),
+          validateTrigger:
+            validateTrigger || (isValidRules && rules.includes('phone')) ? 'onBlur' : 'onChange',
           hidden: hidden || isNestedField,
           ...options,
         })(propsCreator({ ...node, props: fieldProps }, label, id, disabledFields));
@@ -345,8 +352,8 @@ Form.createRender = (form, data, disabledFields, formColon) => {
         validate,
       });
 
-      // 是否嵌套表单域（`a` & `a.b`）
-      const isNestedField = fieldProps.form !== undefined;
+      const isNestedField = fieldProps.form !== undefined; // 是否嵌套表单域（`a` & `a.b`）
+      const isValidRules = Array.isArray(rules);
 
       return (
         <Ant.Form.Item
@@ -359,8 +366,9 @@ Form.createRender = (form, data, disabledFields, formColon) => {
           {before && Form.render(before)}
           {form.getFieldDecorator(isNestedField ? `${id}.nested` : id, {
             initialValue: initialValue !== undefined ? initialValue : data[id],
-            rules: Array.isArray(rules) && createRules(label, rules),
-            validateTrigger: validateTrigger || rules.includes('phone') ? 'onBlur' : 'onChange',
+            rules: isValidRules && createRules(label, id, rules),
+            validateTrigger:
+              validateTrigger || (isValidRules && rules.includes('phone')) ? 'onBlur' : 'onChange',
             hidden: hidden || isNestedField,
             ...options,
           })(propsCreator({ ...node, props: fieldProps }, label, id, disabledFields))}
