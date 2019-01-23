@@ -187,7 +187,7 @@ Form.createRender = (form, data, disabledFields, formColon) => {
 
     // 遍历节点
     return React.Children.map(nodes, (node) => {
-      if (node === null || (typeof node === 'object' && !node.props)) return node;
+      if (node === null || typeof node !== 'object' || !node.props) return node;
 
       // 判断子节点是否为表单域，`id` 为表单域唯一标识，请勿被占用
       const { label, id, ...nodeProps } = node.props;
