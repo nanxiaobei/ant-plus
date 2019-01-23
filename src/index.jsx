@@ -241,7 +241,6 @@ Form.createRender = (form, data, disabledFields, formColon) => {
         });
 
         const isNestedField = fieldProps.form !== undefined; // 是否嵌套表单域（`a` & `a.b`）
-
         const isValidRules = Array.isArray(rules);
 
         return form.getFieldDecorator(isNestedField ? `${id}.nested` : id, {
