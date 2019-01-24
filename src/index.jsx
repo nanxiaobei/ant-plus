@@ -184,7 +184,7 @@ const removeUndefined = (obj) => {
 Form.createRender = (form, data, disabledFields, formColon) => {
   // 核心渲染方法
   Form.render = (nodes) => {
-    if (typeof nodes !== 'object' || nodes === null) return nodes;
+    if (nodes === null || typeof nodes !== 'object') return nodes;
 
     // 遍历节点
     return React.Children.map(nodes, (node) => {
