@@ -128,6 +128,7 @@ class Form extends Ant.Form {
 
   render() {
     const {
+      className = '',
       api: form,
       data,
       disabledFields,
@@ -140,7 +141,7 @@ class Form extends Ant.Form {
     Form.createRender(form, data, disabledFields, formColon);
 
     return (
-      <Ant.Form onSubmit={this.onSubmit} {...props}>
+      <Ant.Form className={`ant-plus-form ${className}`} onSubmit={this.onSubmit} {...props}>
         {Form.render && Form.render(children)}
       </Ant.Form>
     );
@@ -255,7 +256,7 @@ Form.createRender = (form, data, disabledFields, formColon) => {
 
       const {
         // UI props
-        className,
+        className = '',
         style,
 
         // Item props
