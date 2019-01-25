@@ -386,15 +386,30 @@ Form.createRender = (form, data, disabledFields, formColon) => {
 class Input extends Ant.Input {
   constructor(props) {
     super(props);
+
+    let showCount = false;
+    const { max } = props;
+    if (typeof max === 'number') {
+      showCount = true;
+      const { onChange } = props;
+      this.onChange = typeof onChange === 'function' ? onChange : this.defaultOnChange.bind(this);
+    }
     this.state = {
+      showCount,
       count: 0,
     };
   }
-  static getDerivedStateFromProps({ max, value }) {
-    if (typeof max === 'number' && typeof value === 'string') {
+  static getDerivedStateFromProps({ value }, { showCount }) {
+    if (showCount && typeof value === 'string') {
       return { count: value.length };
     }
     return null;
+  }
+  defaultOnChange(event) {
+    const { value } = event.target;
+    if (typeof value === 'string') {
+      this.setState({ count: value.length });
+    }
   }
   renderCount(max) {
     const { count } = this.state;
@@ -407,17 +422,23 @@ class Input extends Ant.Input {
 
   render() {
     const { max, auto, msg, textarea, rows, ...props } = this.props;
-    const showCount = typeof max === 'number';
+    const { showCount } = this.state;
 
     return (
       <span className={`ant-plus-input ${showCount ? 'ant-plus-input-with-count' : ''}`}>
         {textarea === true ? (
           <>
-            <Ant.Input.TextArea autosize={{ minRows: rows || 5 }} placeholder={msg} {...props} />
+            <Ant.Input.TextArea
+              onChange={this.onChange}
+              autosize={{ minRows: rows || 5 }}
+              placeholder={msg}
+              {...props}
+            />
             {showCount && this.renderCount(max)}
           </>
         ) : (
           <Ant.Input
+            onChange={this.onChange}
             autoComplete={auto}
             placeholder={msg}
             suffix={showCount && this.renderCount(max)}
