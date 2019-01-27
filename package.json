@@ -27,7 +27,7 @@
     "build:es": "cross-env NODE_ENV=esm rollup -c -o es/index.js",
     "build": "yarn clean && yarn build:commonjs && yarn build:es",
     "dev": "yarn docz dev",
-    "doc": "yarn docz build"
+    "site": "yarn docz build"
   },
   "peerDependencies": {
     "antd": "^3.12.3",
