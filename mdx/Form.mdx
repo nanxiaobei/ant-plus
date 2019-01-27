@@ -10,7 +10,7 @@ import { Form, Input, Select } from '../src';
 
 # Form 表单
 
-Ant Plus 最主要的特点，便是可以在 Form 表单域组件的 Props 中，直接传入以前需要使用 `Form.Item` 和 `form.getFieldDecorator` 来包裹传入的信息。
+Ant Plus 最主要的特点，便是可以在 Form 表单控件的 Props 中，直接传入以前需要使用 `Form.Item` 和 `form.getFieldDecorator` 来包裹传入的信息。
 
 从而简化使用，杜绝冗余的样板代码，构建起简洁清晰、方便开发、利于维护的 Form 表单代码。
 
@@ -75,11 +75,11 @@ import { Form } from 'antx';
 
 <PropsTable of={Form} />
 
-### 2. 表单域组件 Props
+### 2. 表单控件 Props
 
-Ant Plus 最核心的使用方式 —— 直接在 Form 表单域组件的 Props 中，传入相关 props。
+Ant Plus 最核心的使用方式 —— 直接在 Form 表单控件的 Props 中，传入相关 props。
 
-其中 `id` 为表单域的唯一标识，用于区分表单域组件与普通组件，请勿被占用，示例：
+其中 `id` 为表单域的唯一标识，用于区分表单控件与普通组件，请勿被占用，示例：
 
 ```jsx harmony
 <Input

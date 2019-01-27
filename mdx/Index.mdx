@@ -32,12 +32,6 @@ npm install antx
 
 ## 使用
 
-表单域组件的 Props 中，`id` 为表单域唯一标识，`label` 为 Form.Item 的 `label`。[`getFieldDecorator(id, options)`](<https://ant.design/components/form-cn/#getFieldDecorator(id,-options)-%E5%8F%82%E6%95%B0>) `options` 参数中的项，均可直接用于组件的 Props，例如 `rules`、`initialValue` 等。
-
-Ant Plus 还对 `rules` 做了优化，可使用简洁的字符串，来设置校验规则。同时提供了体验更好的校验提示 UI。
-
-完整的使用介绍，请查阅 [Ant Plus Form 组件文档](#/form)。
-
 ```jsx harmony
 import { Button } from 'antd';
 import { Form, Input } from 'antx';
@@ -58,7 +52,13 @@ const Demo = ({ form }) => (
 export default Form.create()(Demo);
 ```
 
-是的，一切就是如此的简洁清晰。示例：[https://codesandbox.io/s/q75nvj6vrj](https://codesandbox.io/s/q75nvj6vrj)。
+示例：[https://codesandbox.io/s/q75nvj6vrj](https://codesandbox.io/s/q75nvj6vrj)
+
+表单控件的 Props 中，`id` 为表单域唯一标识，`label` 为 Form.Item 的 `label`。[`getFieldDecorator(id, options)`](<https://ant.design/components/form-cn/#getFieldDecorator(id,-options)-%E5%8F%82%E6%95%B0>) `options` 参数中的项，均可直接用于组件的 Props，如 `rules`、`initialValue` 等。
+
+Ant Plus 还对 `rules` 做了优化，可使用简洁的字符串，来设置校验规则。同时提供了体验更好的校验提示 UI。
+
+是的，一切就是如此的简洁清晰。完整使用介绍，请查阅 [Ant Plus Form 组件文档](https://nanxiaobei.github.io/ant-plus/#/form)。
 
 ## 对比
 
