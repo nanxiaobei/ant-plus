@@ -58,12 +58,14 @@ const ruleCreator = {
   }),
 };
 
+const ruleList = Object.keys(ruleCreator);
+
 /**
  * 根据 `rules` 「短语」生成完整验证规则 (配合 Ant Plus Form 组件使用）
  */
 const createRules = (label = '', id, rules) =>
   rules.map((rule) => {
-    if (typeof rule !== 'string') return rule;
+    if (typeof rule !== 'string' || !ruleList.includes(rule)) return rule;
     const ruleKey = `${id}.${rule}`;
     // e.g. "required"
     if (!rule.includes('=')) {
