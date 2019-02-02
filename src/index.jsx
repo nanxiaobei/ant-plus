@@ -228,7 +228,7 @@ Form.createRender = (form, data, disabledFields, formColon) => {
           after,
 
           // Other props
-          ...otherNodeProps
+          ...otherProps
         } = nodeProps;
 
         const itemProps = removeUndefined({
@@ -254,7 +254,7 @@ Form.createRender = (form, data, disabledFields, formColon) => {
             {...itemProps}
           >
             {before && Form.render(before)}
-            {propsCreator({ ...node, props: otherNodeProps }, label)}
+            {propsCreator({ ...node, props: otherProps }, label)}
             {after && Form.render(after)}
           </Ant.Form.Item>
         );
@@ -287,7 +287,7 @@ Form.createRender = (form, data, disabledFields, formColon) => {
         after,
 
         // Other props
-        ...otherNodeProps
+        ...otherProps
       } = nodeProps;
 
       const itemProps = removeUndefined({
@@ -322,7 +322,7 @@ Form.createRender = (form, data, disabledFields, formColon) => {
         validate,
 
         ...fieldProps
-      } = otherNodeProps;
+      } = otherProps;
 
       const options = removeUndefined({
         getValueFromEvent,
