@@ -33,9 +33,10 @@ npm install antx
 
 ## 使用
 
+示例：[https://codesandbox.io/s/q75nvj6vrj](https://codesandbox.io/s/q75nvj6vrj)
+
 ```jsx harmony
-import { Button } from 'antd';
-import { Form, Input } from 'antx';
+import { Form, Input, Button } from 'antx';
 
 const Demo = ({ form }) => (
   <Form api={form} data={{ username: 'Emily' }}>
@@ -52,8 +53,6 @@ const Demo = ({ form }) => (
 
 export default Form.create()(Demo);
 ```
-
-> 示例：[https://codesandbox.io/s/q75nvj6vrj](https://codesandbox.io/s/q75nvj6vrj)
 
 表单控件的 Props 中，`id` 为表单域唯一标识，`label` 为 Form.Item 的 `label`。[`getFieldDecorator(id, options)`](<https://ant.design/components/form-cn/#getFieldDecorator(id,-options)-%E5%8F%82%E6%95%B0>) `options` 参数中的项，均可直接用于组件的 Props，如 `rules`、`initialValue` 等。
 
