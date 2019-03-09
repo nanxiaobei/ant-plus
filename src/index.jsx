@@ -120,13 +120,12 @@ const propsCreator = (node, label = '', id, disabledFields) => {
 class Form extends Ant.Form {
   constructor(props) {
     super(props);
-    this.onSubmit = this.onSubmit.bind(this);
   }
-  onSubmit(event) {
+  onSubmit = (event) => {
     event.preventDefault();
     const { onSubmit } = this.props;
     onSubmit();
-  }
+  };
 
   render() {
     const {
@@ -380,7 +379,7 @@ class Input extends Ant.Input {
     if (typeof max === 'number') {
       showCount = true;
       const { onChange } = props;
-      this.onChange = typeof onChange === 'function' ? onChange : this.defaultOnChange.bind(this);
+      this.onChange = typeof onChange === 'function' ? onChange : this.defaultOnChange;
     }
     this.state = {
       showCount,
@@ -393,20 +392,20 @@ class Input extends Ant.Input {
     }
     return null;
   }
-  defaultOnChange(event) {
+  defaultOnChange = (event) => {
     const { value } = event.target;
     if (typeof value === 'string') {
       this.setState({ count: value.length });
     }
-  }
-  renderCount(max) {
+  };
+  renderCount = (max) => {
     const { count } = this.state;
     return (
       <span className={`count ${count < max ? '' : 'red'}`}>
         {count} | {max}
       </span>
     );
-  }
+  };
 
   render() {
     const { max, auto, msg, textarea, rows, ...props } = this.props;
@@ -667,10 +666,10 @@ class Cascader extends Ant.Cascader {
       cascaderTravelOptions(data, valueKey, childrenKey, []);
     }
   }
-  onChange(value) {
+  onChange = (value) => {
     const { onChange } = this.props;
     onChange(this.useLast ? value[value.length - 1] : value);
-  }
+  };
 
   render() {
     const { value, data, keys, search, clear, empty, msg, last, ...props } = this.props;
