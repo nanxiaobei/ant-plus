@@ -1,6 +1,5 @@
 import React from 'react';
-import { Button } from 'antd';
-import { Form, Input, Select } from 'antx';
+import { Form, Input, Select, Button } from 'antx';
 
 const Demo = ({ form }) => (
   <Form api={form} data={{ username: 'Emily', gender: 2 }}>
@@ -15,8 +14,7 @@ const Demo = ({ form }) => (
       label="性别"
       id="gender"
       rules={['required', 'number']}
-      data={[{ id: 1, type: '男' }, { id: 2, type: '女' }]}
-      keys={['id', 'type']}
+      data={[{ value: 1, label: '男' }, { value: 2, label: '女' }]}
       msg="full"
     />
     <Button htmlType="submit">提交</Button>
