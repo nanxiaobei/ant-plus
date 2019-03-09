@@ -838,6 +838,12 @@ TreeSelect.defaultProps = {
 };
 
 /**
+ * Button
+ * 未做任何封装，方便 Form 中使用
+ */
+const Button = Ant.Button;
+
+/**
  * exports
  */
-export { Form, Input, AutoComplete, Select, Transfer, Cascader, TreeSelect };
+export { Form, Input, AutoComplete, Select, Transfer, Cascader, TreeSelect, Button };
