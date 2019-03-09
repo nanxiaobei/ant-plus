@@ -12,10 +12,10 @@ Ant Plus 是 [Ant Design Form](https://ant.design/components/form-cn/) 的增强
 
 ## 特点
 
-- **🧬 极其简便**：告别繁琐的 `form.getFieldDecorator` 样板代码与冗长的 `rules` 校验代码。
-- **💅 渐进增强**：若不使用新的功能，完全可以把组件当作 Ant Design 中的组件来使用。
-- **⛳️ 统一提示**：可全局定义 `rules` 校验提示信息，统一体验，告别烦乱的自定义与不可控。
-- **🥽 简化 API**：对 Form 相关组件的常用 API 进行了简化，一切只为更流畅的开发。
+- **极其简便**：告别繁琐的 `form.getFieldDecorator` 样板代码与冗长的 `rules` 校验代码。
+- **渐进增强**：若不使用新的功能，完全可以把组件当作 Ant Design 中的组件来使用。
+- **统一提示**：可全局定义 `rules` 校验提示信息，统一体验，告别烦乱的自定义与不可控。
+- **简化 API**：对 Form 相关组件的常用 API 进行了简化，一切只为更流畅的开发。
 
 ## 安装
 
