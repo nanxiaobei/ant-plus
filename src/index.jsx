@@ -115,7 +115,7 @@ const propsCreator = (node, label = '', id, disabledFields) => {
 
 /**
  * Form - Ant Design Form 组件增强版本
- * @link https://ant.design/components/form-cn/
+ * https://ant.design/components/form-cn/
  */
 class Form extends Ant.Form {
   constructor(props) {
@@ -368,7 +368,7 @@ Form.createRender = (form, data, disabledFields, formColon) => {
 
 /**
  * Input - Ant Design Input (TextArea) 组件增强版本
- * @link https://ant.design/components/input-cn/
+ * https://ant.design/components/input-cn/
  */
 class Input extends Ant.Input {
   constructor(props) {
@@ -460,7 +460,7 @@ Input.defaultProps = {
 
 /**
  * AutoComplete - Ant Design AutoComplete 组件增强版本
- * @link https://ant.design/components/auto-complete-cn/
+ * https://ant.design/components/auto-complete-cn/
  */
 const autoCompleteSearchProps = {
   filterOption: (val, option) => {
@@ -504,7 +504,7 @@ AutoComplete.defaultProps = {
 
 /**
  * Select - Ant Design Select 组件增强版本
- * @link https://ant.design/components/select-cn/
+ * https://ant.design/components/select-cn/
  */
 const selectModeList = ['multiple', 'tags'];
 const selectSearchProps = {
@@ -574,7 +574,7 @@ Select.defaultProps = {
 
 /**
  * Transfer - Ant Design Transfer 组件增强版本
- * @link https://ant.design/components/transfer-cn/
+ * https://ant.design/components/transfer-cn/
  */
 const transferSearchProps = {
   showSearch: true,
@@ -631,7 +631,7 @@ Transfer.defaultProps = {
 
 /**
  * Cascader - Ant Design Cascader 组件增强版本
- * @link https://ant.design/components/cascader-cn/
+ * https://ant.design/components/cascader-cn/
  */
 let cascaderIdMap = {};
 const cascaderTravelOptions = (data, valueKey, childrenKey, idList) => {
@@ -721,7 +721,7 @@ Cascader.defaultProps = {
 
 /**
  * TreeSelect - Ant Design TreeSelect 组件增强版本
- * @link https://ant.design/components/tree-select-cn/
+ * https://ant.design/components/tree-select-cn/
  */
 const treeSelectSearchProps = {
   showSearch: true,
