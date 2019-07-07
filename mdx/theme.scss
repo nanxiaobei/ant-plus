@@ -2,13 +2,18 @@
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
     Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
-$color: #1890ff;
+$base: rgba(#000, 0.8);
+$link: #1890ff;
+$side-width: 300px;
+$side-bg: #fff;
+$code-bg: #fafafa;
+$border: #e5e5e5;
 // Body
 // --------------------------------------------------
 body {
-  color: rgba(#000, 0.8);
+  color: $base;
   @include font-family;
-  background: #fff;
+  line-height: 1.7;
 }
 h1,
 h2 {
@@ -29,7 +34,7 @@ img {
 }
 .css-jn0lzx,
 .css-1352wy5 {
-  color: $color !important;
+  color: $link !important;
 }
 .css-1eko99s {
   display: none;
@@ -37,35 +42,60 @@ img {
 
 // Sidebar
 // --------------------------------------------------
-.css-wwgiek {
-  background: transparent;
-  border-right: 1px solid #e5e5e5;
+.css-wwgiek,
+.css-k33w14 {
+  width: $side-width;
+  min-width: $side-width;
   .css-pccrlp {
-    padding-left: 4px;
-    padding-right: 4px;
+    width: inherit;
+    min-width: inherit;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+.css-wwgiek {
+  background: $side-bg;
+  border-right: 1px solid $border;
+}
+.css-k33w14 {
+  background: $side-bg;
+  .css-pccrlp {
+    .css-15exo54 {
+      top: 0;
+      background: $side-bg;
+      &::before {
+        display: none;
+      }
+    }
+    .css-12xm67f {
+      &::before {
+        background: $side-bg;
+      }
+    }
   }
 }
 .css-y1r3ra {
-  margin-top: 8px;
+  margin-top: 6px;
   &::before {
     display: none;
   }
 }
 .css-c9p757 {
   margin: 0;
-  font-size: 26px;
+  font-size: 24px;
   outline: 0;
   &::before {
-    content: '✌️';
+    content: '⚡';
     margin-left: -4px;
-    margin-right: 8px;
-    font-size: 1.1em;
+    margin-right: 6px;
+    font-size: 1.2em;
+    vertical-align: middle;
   }
 }
 .css-1pxi6pq {
   margin: 0 24px 24px;
   padding: 6px 10px;
-  border: 1px solid #e5e5e5;
+  border: 1px solid $border;
   border-radius: 2px;
   .css-1at2ihp {
     width: 16px;
@@ -89,13 +119,13 @@ img {
 }
 .css-82rrzo {
   padding: 10px 24px;
-  color: rgba(#000, 0.8);
+  color: $base;
   font-size: 15px;
   font-weight: 500 !important;
   letter-spacing: 0.3px;
   &:hover,
   &.active {
-    color: $color;
+    color: $link;
   }
 }
 .css-1qc5yjq {
@@ -103,7 +133,7 @@ img {
 }
 .css-1l1jc95 {
   padding-bottom: 8px;
-  color: rgba(#000, 0.8) !important;
+  color: $base !important;
   opacity: 0.5 !important;
   &.active::before {
     display: none;
@@ -151,12 +181,12 @@ img {
   margin: 8px 0 24px;
 }
 .css-1fxdu0u {
-  border-color: #e5e5e5;
+  border-color: $border;
   border-radius: 2px;
 }
 .css-2ngb9d li,
 .css-1v6pp3c {
-  color: rgba(#000, 0.8);
+  color: $base;
   font-size: 16px;
 }
 .css-2ngb9d {
@@ -177,13 +207,16 @@ img {
   }
 }
 .css-1er7839 {
-  color: rgba(#000, 0.8);
-  background: #fafafa;
-  border-color: #e5e5e5;
+  padding: 2px 6px 3px;
+  color: $base;
+  background: $code-bg;
+  border-color: $border;
+  border-radius: 2px;
+  white-space: nowrap;
 }
 .css-kqau70 {
   width: auto;
-  border: 1px solid #e5e5e5;
+  border: 1px solid $border;
   border-radius: 2px;
 }
 .css-1ldarm7 {
@@ -212,9 +245,15 @@ img {
 }
 .css-1pbel1z {
   width: 100%;
-  background: #fafafa;
+  background: $code-bg;
   border: 0;
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid $border;
+  .css-p87o66 .cm-s-docz-light {
+    background: transparent !important;
+    .CodeMirror-lines {
+      padding: 16px 0;
+    }
+  }
 }
 .css-p87o66 .cm-s-docz-light {
   background: transparent !important;
@@ -226,13 +265,13 @@ img {
 }
 .css-lvl8gf {
   padding: 0;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid $border;
   .css-15c1kw4 {
     box-shadow: none;
     thead {
       background: transparent;
       th {
-        padding: 16px 12px;
+        padding: 16px 8px;
         color: rgba(#000, 0.6);
         @include font-family;
         font-weight: 500;
@@ -241,11 +280,11 @@ img {
     }
     tbody {
       tr {
-        border-top-color: #e5e5e5;
+        border-top-color: $border;
       }
       td {
-        padding: 12px;
-        color: rgba(#000, 0.8);
+        padding: 12px 8px;
+        color: $base;
         font-weight: 400;
       }
     }
