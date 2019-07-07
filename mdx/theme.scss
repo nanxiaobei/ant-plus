@@ -57,7 +57,9 @@ img {
   outline: 0;
   &::before {
     content: '✌️';
-    margin-right: 12px;
+    margin-left: -4px;
+    margin-right: 8px;
+    font-size: 1.1em;
   }
 }
 .css-1pxi6pq {
@@ -243,7 +245,7 @@ img {
       }
       td {
         padding: 12px;
-        color: rgba(#000, 0.7);
+        color: rgba(#000, 0.8);
         font-weight: 400;
       }
     }
