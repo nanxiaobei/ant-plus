@@ -1,4 +1,4 @@
-# 🚀 Ant Plus
+# ✌️ Ant Plus
 
 Ant Plus 是 [Ant Design Form](https://ant.design/components/form-cn/) 的增强版，在其基础上，封装了极其简便的 Form 使用方式与 Form 相关组件的简化 API。
 
