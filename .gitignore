@@ -1,10 +1,6 @@
-.git
-.idea
 .docz
 
 node_modules
-coverage
-lib
-es
+dist
 
 yarn-error.log
