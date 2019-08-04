@@ -1,6 +1,6 @@
 {
   "name": "antx",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Enhanced Ant Design Form",
   "keywords": [
     "react",
@@ -14,63 +14,46 @@
   "homepage": "https://github.com/nanxiaobei/ant-plus",
   "repository": "github:nanxiaobei/ant-plus",
   "bugs": "https://github.com/nanxiaobei/ant-plus/issues",
-  "main": "lib/index.js",
-  "module": "es/index.js",
+  "main": "dist/ant-plus.cjs.js",
+  "module": "dist/ant-plus.esm.js",
   "files": [
-    "lib",
-    "es",
+    "dist",
     "src"
   ],
   "scripts": {
-    "clean": "rimraf lib es",
-    "build:commonjs": "cross-env NODE_ENV=cjs rollup -c -o lib/index.js",
-    "build:es": "cross-env NODE_ENV=esm rollup -c -o es/index.js",
-    "build": "yarn clean && yarn build:commonjs && yarn build:es",
-    "dev": "yarn docz dev",
-    "site": "yarn docz build"
+    "build": "rimraf dist && rollup -c",
+    "start": "yarn docz dev",
+    "docs": "yarn docz build"
   },
   "peerDependencies": {
     "antd": "^3.12.3",
     "prop-types": "^15.6.2",
-    "react": "^16.7.0"
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
   },
   "dependencies": {
-    "@babel/runtime": "^7.5.1"
+    "@babel/runtime": "^7.5.5"
   },
   "devDependencies": {
-    "@babel/core": "^7.5.0",
-    "@babel/plugin-proposal-class-properties": "^7.5.0",
-    "@babel/plugin-transform-runtime": "^7.5.0",
-    "@babel/preset-env": "^7.5.0",
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
-    "antd": "^3.20.1",
-    "babel-core": "^7.0.0-bridge",
+    "antd": "^3.20.7",
     "babel-eslint": "^10.0.2",
     "babel-plugin-import": "^1.12.0",
-    "cross-env": "^5.2.0",
     "docz": "0.13.7",
     "docz-plugin-css": "^0.11.0",
     "docz-theme-default": "0.13.7",
-    "husky": "^3.0.0",
-    "lint-staged": "^9.1.0",
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
     "prettier": "^1.18.2",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
-    "rimraf": "^2.6.2",
-    "rollup": "^1.16.6",
+    "rollup": "^1.18.0",
     "rollup-plugin-babel": "^4.3.3",
-    "rollup-plugin-eslint": "^7.0.0",
     "rollup-plugin-sass": "^1.2.2"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "src/**/*.{jsx,scss}": [
-      "prettier --write",
-      "git add"
-    ]
   }
 }
