@@ -1,0 +1,10 @@
+*.png
+*.ico
+
+.docz
+docs
+dist
+
+.*ignore
+yarn.lock
+yarn-error.log
