@@ -21,10 +21,7 @@ export default {
     }),
   ],
   modifyBabelRc: (babelrc) => {
-    babelrc.plugins.unshift([
-      'import',
-      { libraryName: 'antd', libraryDirectory: 'es', style: 'css' },
-    ]);
+    babelrc.plugins.push(['import', { libraryName: 'antd', libraryDirectory: 'es', style: 'css' }]);
     return babelrc;
   },
   htmlContext: {
