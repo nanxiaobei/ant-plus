@@ -474,7 +474,7 @@ class AutoComplete extends Ant.AutoComplete {
     return (
       <Ant.AutoComplete
         dataSource={data}
-        {...search === true && autoCompleteSearchProps}
+        {...(search === true && autoCompleteSearchProps)}
         allowClear={clear}
         placeholder={msg}
         {...props}
@@ -526,7 +526,7 @@ class Select extends Ant.Select {
     return (
       <Ant.Select
         className="ant-plus-select"
-        {...(search === true || selectModeList.includes(props.mode)) && selectSearchProps}
+        {...((search === true || selectModeList.includes(props.mode)) && selectSearchProps)}
         allowClear={clear}
         notFoundContent={empty}
         placeholder={msg}
@@ -588,7 +588,7 @@ class Transfer extends Ant.Transfer {
       <Ant.Transfer
         dataSource={data}
         targetKeys={targetKeys || value}
-        {...search === true && transferSearchProps}
+        {...(search === true && transferSearchProps)}
         titles={[`未选择${title}`, `已选择${title}`]}
         locale={{
           itemsUnit: unit,
@@ -676,7 +676,7 @@ class Cascader extends Ant.Cascader {
 
     return (
       <Ant.Cascader
-        {...search === true && getCascaderSearchProps(this.fieldNames.label)}
+        {...(search === true && getCascaderSearchProps(this.fieldNames.label))}
         options={data}
         fieldNames={this.fieldNames}
         value={this.useLast ? cascaderIdMap[value] : value}
@@ -785,7 +785,7 @@ class TreeSelect extends Ant.TreeSelect {
         className="ant-plus-tree-select"
         treeData={treeData}
         value={treeData.length > 0 ? value : undefined}
-        {...search === true && treeSelectSearchProps}
+        {...(search === true && treeSelectSearchProps)}
         treeCheckable={check}
         showCheckedStrategy={back}
         treeDefaultExpandAll={expandAll}
