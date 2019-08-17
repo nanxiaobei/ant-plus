@@ -5,9 +5,10 @@
 $base: rgba(#000, 0.8);
 $link: #1890ff;
 $side-width: 300px;
-$side-bg: #fff;
+$side-bg: #fafafa;
 $code-bg: #fafafa;
-$border: #e5e5e5;
+$border: #eee;
+$radius: 4px;
 // Body
 // --------------------------------------------------
 body {
@@ -54,8 +55,8 @@ img {
   }
 }
 .css-wwgiek {
+  position: fixed;
   background: $side-bg;
-  border-right: 1px solid $border;
 }
 .css-k33w14 {
   background: $side-bg;
@@ -95,8 +96,10 @@ img {
 .css-1pxi6pq {
   margin: 0 24px 24px;
   padding: 6px 10px;
-  border: 1px solid $border;
-  border-radius: 2px;
+  background: #fff;
+  border: 0;
+  border-radius: $radius;
+  box-shadow: 0 1px 4px rgba(#000, 0.15);
   .css-1at2ihp {
     width: 16px;
   }
@@ -145,6 +148,7 @@ img {
 // Main
 // --------------------------------------------------
 .css-pw2o4y {
+  margin-left: 300px;
   background: transparent;
 }
 .css-p4m8gg {
@@ -182,7 +186,7 @@ img {
 }
 .css-1fxdu0u {
   border-color: $border;
-  border-radius: 2px;
+  border-radius: $radius;
 }
 .css-2ngb9d li,
 .css-1v6pp3c {
@@ -211,13 +215,13 @@ img {
   color: $base;
   background: $code-bg;
   border-color: $border;
-  border-radius: 2px;
+  border-radius: $radius;
   white-space: nowrap;
 }
 .css-kqau70 {
   width: auto;
   border: 1px solid $border;
-  border-radius: 2px;
+  border-radius: $radius;
 }
 .css-1ldarm7 {
   background: transparent;
