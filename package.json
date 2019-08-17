@@ -22,8 +22,8 @@
   ],
   "scripts": {
     "build": "rimraf dist && rollup -c",
-    "start": "yarn docz dev",
-    "docs": "yarn docz build"
+    "dev": "yarn docz dev",
+    "site": "yarn docz build"
   },
   "peerDependencies": {
     "antd": "^3.12.3",
@@ -40,7 +40,7 @@
     "@babel/plugin-transform-runtime": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
-    "antd": "^3.21.0",
+    "antd": "^3.22.0",
     "babel-eslint": "^10.0.2",
     "babel-plugin-import": "^1.12.0",
     "docz": "0.13.7",
@@ -52,8 +52,8 @@
     "eslint-plugin-react": "^7.14.3",
     "prettier": "^1.18.2",
     "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "rollup": "^1.18.0",
+    "react": "^16.9.0",
+    "rollup": "^1.19.4",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-sass": "^1.2.2"
   }
