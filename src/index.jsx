@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import * as Ant from 'antd';
 import './index.scss';
@@ -65,16 +65,27 @@ const ruleList = Object.keys(ruleCreator);
  */
 const createRules = (label = '', id, rules) =>
   rules.map((rule) => {
-    if (typeof rule !== 'string' || !ruleList.includes(rule)) return rule;
-    const ruleKey = `${id}.${rule}`;
+    if (typeof rule !== 'string') return rule;
+
     // e.g. "required"
     if (!rule.includes('=')) {
-      if (!createRules[ruleKey]) createRules[ruleKey] = ruleCreator[rule](label);
+      if (!ruleList.includes(rule)) return rule;
+
+      const ruleKey = `${id}.${rule}`;
+      if (!createRules[ruleKey]) {
+        createRules[ruleKey] = ruleCreator[rule](label);
+      }
       return createRules[ruleKey];
     }
-    // e.g. "max=5"
+
+    // e.g. "max=10"
     const [key, val] = rule.split('=');
-    if (!createRules[ruleKey]) createRules[ruleKey] = ruleCreator[key](Number(val));
+    if (!ruleList.includes(key)) return rule;
+
+    const ruleKey = `${id}.${rule}`;
+    if (!createRules[ruleKey]) {
+      createRules[ruleKey] = ruleCreator[key](Number(val));
+    }
     return createRules[ruleKey];
   });
 
@@ -117,10 +128,7 @@ const propsCreator = (node, label = '', id, disabledFields) => {
  * Form - Ant Design Form 组件增强版本
  * https://ant.design/components/form-cn/
  */
-class Form extends Ant.Form {
-  constructor(props) {
-    super(props);
-  }
+class Form extends Component {
   onSubmit = (event) => {
     event.preventDefault();
     const { onSubmit } = this.props;
@@ -129,12 +137,14 @@ class Form extends Ant.Form {
 
   render() {
     const {
+      // eslint-disable-next-line
       className = '',
       api: form,
       data,
       disabledFields,
       colon: formColon,
       onSubmit,
+      // eslint-disable-next-line
       children,
       ...props
     } = this.props;
@@ -143,13 +153,11 @@ class Form extends Ant.Form {
 
     return (
       <Ant.Form className={`ant-plus-form ${className}`} onSubmit={this.onSubmit} {...props}>
-        {Form.render && Form.render(children)}
+        {Form.render(children)}
       </Ant.Form>
     );
   }
 }
-
-Form.displayName = 'AntPlus.Form';
 
 Form.propTypes = {
   /** 必选。经 Form.create 包装后注入的 `form` 属性（为规避 Ant Design 提示信息，改为 `api`）*/
@@ -176,7 +184,9 @@ Form.setConfig = (newConfig) => {
 
 const removeUndefined = (obj) => {
   Object.keys(obj).forEach((key) => {
-    if (obj[key] === undefined) delete obj[key];
+    if (obj[key] === undefined) {
+      delete obj[key];
+    }
   });
   return obj;
 };
@@ -370,7 +380,7 @@ Form.createRender = (form, data, disabledFields, formColon) => {
  * Input - Ant Design Input (TextArea) 组件增强版本
  * https://ant.design/components/input-cn/
  */
-class Input extends Ant.Input {
+class Input extends Component {
   constructor(props) {
     super(props);
 
@@ -378,6 +388,7 @@ class Input extends Ant.Input {
     const { max } = props;
     if (typeof max === 'number') {
       showCount = true;
+      // eslint-disable-next-line
       const { onChange } = props;
       this.onChange = typeof onChange === 'function' ? onChange : this.defaultOnChange;
     }
@@ -386,8 +397,10 @@ class Input extends Ant.Input {
       count: 0,
     };
   }
+  // eslint-disable-next-line
   static getDerivedStateFromProps({ value }, { showCount }) {
     if (showCount && typeof value === 'string') {
+      // eslint-disable-next-line
       return { count: value.length };
     }
     return null;
@@ -437,8 +450,6 @@ class Input extends Ant.Input {
   }
 }
 
-Input.displayName = 'AntPlus.Input';
-
 Input.propTypes = {
   /** 最大可输入字符数（传入则显示字符计数器）*/
   max: PropTypes.number,
@@ -463,18 +474,23 @@ Input.defaultProps = {
  * https://ant.design/components/auto-complete-cn/
  */
 const autoCompleteSearchProps = {
-  filterOption: (val, option) => {
-    return option.props.children.includes(val);
-  },
+  filterOption: (val, option) => option.props.children.includes(val),
 };
-class AutoComplete extends Ant.AutoComplete {
+
+class AutoComplete extends Component {
   render() {
     const { data, search, clear, msg, ...props } = this.props;
+
+    let searchProps;
+    if (search === true) {
+      searchProps = autoCompleteSearchProps;
+      Object.assign(props, searchProps);
+    }
 
     return (
       <Ant.AutoComplete
         dataSource={data}
-        {...(search === true && autoCompleteSearchProps)}
+        {...searchProps}
         allowClear={clear}
         placeholder={msg}
         {...props}
@@ -482,8 +498,6 @@ class AutoComplete extends Ant.AutoComplete {
     );
   }
 }
-
-AutoComplete.displayName = 'AntPlus.AutoComplete';
 
 AutoComplete.propTypes = {
   /** `dataSource` 属性 */
@@ -506,12 +520,12 @@ AutoComplete.defaultProps = {
  * Select - Ant Design Select 组件增强版本
  * https://ant.design/components/select-cn/
  */
-const selectModeList = ['multiple', 'tags'];
 const selectSearchProps = {
   showSearch: true,
   filterOption: (val, option) => option.props.children.includes(val),
 };
-class Select extends Ant.Select {
+
+class Select extends Component {
   constructor(props) {
     super(props);
     const { keys } = props;
@@ -523,10 +537,16 @@ class Select extends Ant.Select {
   render() {
     const { data, keys, search, clear, empty, msg, ...props } = this.props;
 
+    let searchProps;
+    if (search === true) {
+      searchProps = selectSearchProps;
+      Object.assign(props, searchProps);
+    }
+
     return (
       <Ant.Select
         className="ant-plus-select"
-        {...((search === true || selectModeList.includes(props.mode)) && selectSearchProps)}
+        {...searchProps}
         allowClear={clear}
         notFoundContent={empty}
         placeholder={msg}
@@ -545,8 +565,6 @@ class Select extends Ant.Select {
     );
   }
 }
-
-Select.displayName = 'AntPlus.Select';
 
 Select.propTypes = {
   /** 列表数据源 */
@@ -580,15 +598,23 @@ const transferSearchProps = {
   showSearch: true,
   filterOption: (val, option) => `${option.title}${option.description || ''}`.includes(val),
 };
-class Transfer extends Ant.Transfer {
+
+class Transfer extends Component {
   render() {
+    // eslint-disable-next-line
     const { data, targetKeys, value, search, title, unit, empty, searchMsg, ...props } = this.props;
+
+    let searchProps;
+    if (search === true) {
+      searchProps = transferSearchProps;
+      Object.assign(props, searchProps);
+    }
 
     return (
       <Ant.Transfer
         dataSource={data}
         targetKeys={targetKeys || value}
-        {...(search === true && transferSearchProps)}
+        {...searchProps}
         titles={[`未选择${title}`, `已选择${title}`]}
         locale={{
           itemsUnit: unit,
@@ -601,8 +627,6 @@ class Transfer extends Ant.Transfer {
     );
   }
 }
-
-Transfer.displayName = 'AntPlus.Transfer';
 
 Transfer.propTypes = {
   /** `dataSource` 属性 */
@@ -647,16 +671,17 @@ const cascaderTravelOptions = (data, valueKey, childrenKey, idList) => {
   });
 };
 const getCascaderSearchProps = (label) => ({
-  showSearch: {
-    filter: (val, path) => path.some((option) => option[label].includes(val)),
-  },
+  showSearch: { filter: (val, path) => path.some((option) => option[label].includes(val)) },
 });
-class Cascader extends Ant.Cascader {
+
+class Cascader extends Component {
   constructor(props) {
     super(props);
     const { keys: [value = 'value', label = 'label', children = 'children'] = [], last } = props;
     this.fieldNames = { value, label, children };
-    if (last === true) this.useLast = true;
+    if (last === true) {
+      this.useLast = true;
+    }
   }
   componentDidUpdate({ data: prevData }) {
     const { data } = this.props;
@@ -667,16 +692,24 @@ class Cascader extends Ant.Cascader {
     }
   }
   onChange = (value) => {
+    // eslint-disable-next-line
     const { onChange } = this.props;
     onChange(this.useLast ? value[value.length - 1] : value);
   };
 
   render() {
+    // eslint-disable-next-line
     const { value, data, keys, search, clear, empty, msg, last, ...props } = this.props;
+
+    let searchProps;
+    if (search === true) {
+      searchProps = getCascaderSearchProps(this.fieldNames.label);
+      Object.assign(props, searchProps);
+    }
 
     return (
       <Ant.Cascader
-        {...(search === true && getCascaderSearchProps(this.fieldNames.label))}
+        {...searchProps}
         options={data}
         fieldNames={this.fieldNames}
         value={this.useLast ? cascaderIdMap[value] : value}
@@ -689,8 +722,6 @@ class Cascader extends Ant.Cascader {
     );
   }
 }
-
-Cascader.displayName = 'AntPlus.Cascader';
 
 Cascader.propTypes = {
   /** `options` 属性 */
@@ -740,7 +771,7 @@ const treeSelectTravelData = (data, valueKey, titleKey, childrenKey) =>
     return newItem;
   });
 
-class TreeSelect extends Ant.TreeSelect {
+class TreeSelect extends Component {
   constructor(props) {
     super(props);
     const { keys } = props;
@@ -767,6 +798,7 @@ class TreeSelect extends Ant.TreeSelect {
     const {
       data,
       keys,
+      // eslint-disable-next-line
       value,
       search,
       check,
@@ -780,12 +812,18 @@ class TreeSelect extends Ant.TreeSelect {
     } = this.props;
     const { treeData } = this.state;
 
+    let searchProps;
+    if (search === true) {
+      searchProps = treeSelectSearchProps;
+      Object.assign(props, searchProps);
+    }
+
     return (
       <Ant.TreeSelect
         className="ant-plus-tree-select"
         treeData={treeData}
         value={treeData.length > 0 ? value : undefined}
-        {...(search === true && treeSelectSearchProps)}
+        {...searchProps}
         treeCheckable={check}
         showCheckedStrategy={back}
         treeDefaultExpandAll={expandAll}
@@ -798,8 +836,6 @@ class TreeSelect extends Ant.TreeSelect {
     );
   }
 }
-
-TreeSelect.displayName = 'AntPlus.TreeSelect';
 
 TreeSelect.propTypes = {
   /** `treeData` 属性 */
@@ -846,4 +882,25 @@ const Button = Ant.Button;
 /**
  * exports
  */
+const AntPlus = { Form, Input, AutoComplete, Select, Transfer, Cascader, TreeSelect };
+
+const copyComponents = () => {
+  const { Form, Input, AutoComplete, Select, Transfer, Cascader, TreeSelect } = Ant;
+  const AntDesign = { Form, Input, AutoComplete, Select, Transfer, Cascader, TreeSelect };
+
+  Object.entries(AntPlus).forEach(([name, component]) => {
+    component.displayName = `AntPlus.${name}`;
+
+    const { propTypes, defaultProps, ...others } = AntDesign[name];
+    component.propTypes = { ...propTypes, ...component.propTypes };
+    component.defaultProps = { ...defaultProps, ...component.defaultProps };
+
+    Object.entries(others).forEach(([key, val]) => {
+      component[key] = val;
+    });
+  });
+};
+
+copyComponents();
+
 export { Form, Input, AutoComplete, Select, Transfer, Cascader, TreeSelect, Button };
