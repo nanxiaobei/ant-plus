@@ -421,7 +421,16 @@ class Input extends Component {
   };
 
   render() {
-    const { max, auto, msg, textarea, rows, ...props } = this.props;
+    const {
+      // eslint-disable-next-line
+      className = '',
+      max,
+      auto,
+      msg,
+      textarea,
+      rows,
+      ...props
+    } = this.props;
     const { showCount } = this.state;
 
     return (
@@ -429,6 +438,7 @@ class Input extends Component {
         {textarea === true ? (
           <>
             <Ant.Input.TextArea
+              className={`ant-plus-textarea ${className}`}
               onChange={this.onChange}
               autosize={{ minRows: rows || 5 }}
               placeholder={msg}
@@ -438,6 +448,7 @@ class Input extends Component {
           </>
         ) : (
           <Ant.Input
+            className={`ant-plus-input ${className}`}
             onChange={this.onChange}
             autoComplete={auto}
             placeholder={msg}
@@ -479,18 +490,21 @@ const autoCompleteSearchProps = {
 
 class AutoComplete extends Component {
   render() {
-    const { data, search, clear, msg, ...props } = this.props;
-
-    let searchProps;
-    if (search === true) {
-      searchProps = autoCompleteSearchProps;
-      Object.assign(props, searchProps);
-    }
+    const {
+      // eslint-disable-next-line
+      className = '',
+      data,
+      search,
+      clear,
+      msg,
+      ...props
+    } = this.props;
 
     return (
       <Ant.AutoComplete
+        className={`ant-plus-auto-complete ${className}`}
         dataSource={data}
-        {...searchProps}
+        {...(search === true && autoCompleteSearchProps)}
         allowClear={clear}
         placeholder={msg}
         {...props}
@@ -535,18 +549,22 @@ class Select extends Component {
   }
 
   render() {
-    const { data, keys, search, clear, empty, msg, ...props } = this.props;
-
-    let searchProps;
-    if (search === true) {
-      searchProps = selectSearchProps;
-      Object.assign(props, searchProps);
-    }
+    const {
+      // eslint-disable-next-line
+      className = '',
+      data,
+      keys,
+      search,
+      clear,
+      empty,
+      msg,
+      ...props
+    } = this.props;
 
     return (
       <Ant.Select
-        className="ant-plus-select"
-        {...searchProps}
+        className={`ant-plus-select ${className}`}
+        {...(search === true && selectSearchProps)}
         allowClear={clear}
         notFoundContent={empty}
         placeholder={msg}
@@ -601,20 +619,28 @@ const transferSearchProps = {
 
 class Transfer extends Component {
   render() {
-    // eslint-disable-next-line
-    const { data, targetKeys, value, search, title, unit, empty, searchMsg, ...props } = this.props;
-
-    let searchProps;
-    if (search === true) {
-      searchProps = transferSearchProps;
-      Object.assign(props, searchProps);
-    }
+    const {
+      // eslint-disable-next-line
+      className = '',
+      data,
+      // eslint-disable-next-line
+      targetKeys,
+      // eslint-disable-next-line
+      value,
+      search,
+      title,
+      unit,
+      empty,
+      searchMsg,
+      ...props
+    } = this.props;
 
     return (
       <Ant.Transfer
+        className={`ant-plus-transfer ${className}`}
         dataSource={data}
         targetKeys={targetKeys || value}
-        {...searchProps}
+        {...(search === true && transferSearchProps)}
         titles={[`未选择${title}`, `已选择${title}`]}
         locale={{
           itemsUnit: unit,
@@ -661,7 +687,6 @@ let cascaderIdMap = {};
 const cascaderTravelOptions = (data, valueKey, childrenKey, idList) => {
   data.forEach((item) => {
     const { [valueKey]: id, [childrenKey]: children } = item;
-
     const itemIdList = idList.concat(id);
     if (Array.isArray(children) && children.length > 0) {
       cascaderTravelOptions(children, valueKey, childrenKey, itemIdList);
@@ -698,22 +723,29 @@ class Cascader extends Component {
   };
 
   render() {
-    // eslint-disable-next-line
-    const { value, data, keys, search, clear, empty, msg, last, ...props } = this.props;
-
-    let searchProps;
-    if (search === true) {
-      searchProps = getCascaderSearchProps(this.fieldNames.label);
-      Object.assign(props, searchProps);
-    }
+    const {
+      // eslint-disable-next-line
+      className = '',
+      // eslint-disable-next-line
+      value,
+      data,
+      keys,
+      search,
+      clear,
+      empty,
+      msg,
+      last,
+      ...props
+    } = this.props;
 
     return (
       <Ant.Cascader
-        {...searchProps}
+        className={`ant-plus-cascader ${className}`}
         options={data}
         fieldNames={this.fieldNames}
         value={this.useLast ? cascaderIdMap[value] : value}
         onChange={this.onChange}
+        {...(search === true && getCascaderSearchProps(this.fieldNames.label))}
         allowClear={clear}
         notFoundContent={empty}
         placeholder={msg}
@@ -796,6 +828,8 @@ class TreeSelect extends Component {
 
   render() {
     const {
+      // eslint-disable-next-line
+      className = '',
       data,
       keys,
       // eslint-disable-next-line
@@ -812,18 +846,12 @@ class TreeSelect extends Component {
     } = this.props;
     const { treeData } = this.state;
 
-    let searchProps;
-    if (search === true) {
-      searchProps = treeSelectSearchProps;
-      Object.assign(props, searchProps);
-    }
-
     return (
       <Ant.TreeSelect
-        className="ant-plus-tree-select"
+        className={`ant-plus-tree-select ${className}`}
         treeData={treeData}
         value={treeData.length > 0 ? value : undefined}
-        {...searchProps}
+        {...(search === true && treeSelectSearchProps)}
         treeCheckable={check}
         showCheckedStrategy={back}
         treeDefaultExpandAll={expandAll}
@@ -884,23 +912,19 @@ const Button = Ant.Button;
  */
 const AntPlus = { Form, Input, AutoComplete, Select, Transfer, Cascader, TreeSelect };
 
-const copyComponents = () => {
+const copyComponentsKeys = () => {
   const { Form, Input, AutoComplete, Select, Transfer, Cascader, TreeSelect } = Ant;
   const AntDesign = { Form, Input, AutoComplete, Select, Transfer, Cascader, TreeSelect };
 
   Object.entries(AntPlus).forEach(([name, component]) => {
-    component.displayName = `AntPlus.${name}`;
-
     const { propTypes, defaultProps, ...others } = AntDesign[name];
-    component.propTypes = { ...propTypes, ...component.propTypes };
-    component.defaultProps = { ...defaultProps, ...component.defaultProps };
-
     Object.entries(others).forEach(([key, val]) => {
       component[key] = val;
     });
+    component.displayName = `AntPlus.${name}`;
   });
 };
 
-copyComponents();
+copyComponentsKeys();
 
 export { Form, Input, AutoComplete, Select, Transfer, Cascader, TreeSelect, Button };
