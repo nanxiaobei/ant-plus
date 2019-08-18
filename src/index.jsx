@@ -434,11 +434,12 @@ class Input extends Component {
     const { showCount } = this.state;
 
     return (
-      <span className={`ant-plus-input ${showCount ? 'ant-plus-input-with-count' : ''}`}>
+      <span
+        className={`ant-plus-input ${showCount ? 'ant-plus-input-with-count' : ''} ${className}`}
+      >
         {textarea === true ? (
           <>
             <Ant.Input.TextArea
-              className={`ant-plus-textarea ${className}`}
               onChange={this.onChange}
               autosize={{ minRows: rows || 5 }}
               placeholder={msg}
@@ -448,7 +449,6 @@ class Input extends Component {
           </>
         ) : (
           <Ant.Input
-            className={`ant-plus-input ${className}`}
             onChange={this.onChange}
             autoComplete={auto}
             placeholder={msg}
