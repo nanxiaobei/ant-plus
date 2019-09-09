@@ -21,10 +21,10 @@
     "src"
   ],
   "scripts": {
-    "build": "rimraf dist && rollup -c",
+    "renew": "yarn upgrade --latest && yarn add docz@0.13.7 docz-theme-default@0.13.7 -D",
     "dev": "yarn docz dev",
-    "site": "yarn docz build",
-    "update": "yarn upgrade --latest && yarn add docz@0.13.7 docz-theme-default@0.13.7 -D"
+    "build": "yarn docz build",
+    "release": "rimraf dist && rollup -c"
   },
   "peerDependencies": {
     "antd": "^3.12.3",
@@ -54,7 +54,7 @@
     "prettier": "^1.18.2",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
-    "rollup": "^1.21.0",
+    "rollup": "^1.21.1",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-sass": "^1.2.2"
   }
