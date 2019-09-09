@@ -1,5 +1,9 @@
+/* eslint-disable */
+
 import React from 'react';
 import { Form, Input, Select, Button } from 'antd';
+
+const options = [{ value: 1, label: '男' }, { value: 2, label: '女' }];
 
 const Demo = ({ form }) => (
   <Form>
@@ -7,7 +11,6 @@ const Demo = ({ form }) => (
       {form.getFieldDecorator('username', {
         rules: [
           { required: true, message: '用户名不得为空' },
-          { type: 'string', whitespace: true, message: '用户名格式有误' },
           { max: 10, message: '不得超过 10 个字' },
         ],
         initialValue: 'Emily',
@@ -22,8 +25,9 @@ const Demo = ({ form }) => (
         initialValue: 2,
       })(
         <Select placeholder="请选择性别">
-          <Select.Option value={1}>男</Select.Option>
-          <Select.Option value={2}>女</Select.Option>
+          {options.map(({ value, label }) => (
+            <Select.Option value={value}>{label}</Select.Option>
+          ))}
         </Select>,
       )}
     </Form.Item>
