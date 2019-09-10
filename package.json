@@ -21,10 +21,11 @@
     "src"
   ],
   "scripts": {
-    "renew": "yarn upgrade --latest && yarn add docz@0.13.7 docz-theme-default@0.13.7 -D",
     "dev": "yarn docz dev",
-    "build": "yarn docz build",
-    "release": "rimraf dist && rollup -c"
+    "sync": "node sync.js",
+    "docs": "sh docs.sh",
+    "build": "rimraf dist && rollup -c",
+    "renew": "yarn upgrade --latest && yarn add docz@0.13.7 docz-theme-default@0.13.7 -D"
   },
   "peerDependencies": {
     "antd": "^3.12.3",
