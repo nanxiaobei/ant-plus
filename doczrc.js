@@ -1,7 +1,7 @@
 import { css } from 'docz-plugin-css';
 
 export default {
-  src: './mdx',
+  src: './docz',
   dest: './docs',
   base: '/ant-plus',
   title: 'Ant Plus',
