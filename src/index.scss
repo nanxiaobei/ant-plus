@@ -40,15 +40,16 @@ $red: #f5222d;
 
 // Input
 .ant-plus-input {
-  display: flex;
   &.ant-plus-input-with-count {
+    display: flex;
+    flex-direction: column;
     align-items: flex-end;
     .count {
       display: inline-block;
-      height: 20px;
+      height: 24px;
       color: #ddd;
       font-size: 12px;
-      line-height: 20px;
+      line-height: 24px;
       background: #fff;
       &.red {
         color: #f74052;
@@ -69,16 +70,18 @@ $red: #f5222d;
         padding-left: 8px;
       }
     }
-    textarea + .count {
-      $gap: 1px;
-      position: relative;
-      right: 1px + $gap;
-      bottom: 1px + $gap;
-      padding-left: 6px;
-      padding-right: 6px;
-      white-space: nowrap;
-      border-bottom-right-radius: 20px;
-      transform: translateX(-100%);
+    textarea {
+      margin-bottom: -24px;
+      + .count {
+        $gap: 1px;
+        position: relative;
+        right: 1px + $gap;
+        bottom: 1px + $gap;
+        padding-left: 6px;
+        padding-right: 6px;
+        white-space: nowrap;
+        border-bottom-right-radius: 20px;
+      }
     }
   }
 }
