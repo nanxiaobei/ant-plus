@@ -4,7 +4,7 @@ import * as Ant from 'antd';
 import './index.scss';
 
 let config = {
-  // `placeholder`
+  // placeholder
   input: '请输入',
   select: '请选择',
   // Rule messages
@@ -61,7 +61,7 @@ const ruleCreator = {
 const ruleList = Object.keys(ruleCreator);
 
 /**
- * 根据 `rules` 「短语」生成完整验证规则 (配合 Ant Plus Form 组件使用）
+ * 根据 rules 「短语」生成完整验证规则 (配合 Ant Plus Form 组件使用）
  */
 const createRules = (label = '', id, rules) =>
   rules.map((rule) => {
@@ -90,7 +90,7 @@ const createRules = (label = '', id, rules) =>
   });
 
 /**
- * 获取 `placeholder` 与 `disabled` 属性
+ * 获取 placeholder 与 disabled 属性
  */
 const phraseList = ['short', 'full'];
 const selectList = ['Select', 'Cascader', 'TreeSelect'];
@@ -99,7 +99,7 @@ const propsCreator = (node, label = '', id, disabledFields) => {
   let nodeProps = node.props;
 
   if (typeof nodeProps.msg === 'string' && phraseList.includes(nodeProps.msg)) {
-    // 若 msg (placeholder) 值为 `short` 或 `full`，进行转义
+    // 若 msg (placeholder) 值为 "short" 或 "full"，进行转义
     const { displayName } = node.type;
     if (typeof displayName !== 'string') {
       throw new Error('`msg` prop is not valid for a non Ant Plus component');
@@ -160,15 +160,15 @@ class Form extends Component {
 }
 
 Form.propTypes = {
-  /** 必选。经 Form.create 包装后注入的 `form` 属性（为规避 Ant Design 提示信息，改为 `api`）*/
+  /** 必选。Form.create() 包装后注入的 form 属性*/
   api: PropTypes.object.isRequired,
-  /** 与各表单域 `id` 对应的一组键值对，用于设置各表单域初始值 e.g. { [id]: value, ... } */
+  /** 表单域初始值数据。e.g. { id1: value1, id2: value2 } */
   data: PropTypes.object,
   /** 禁用的表单域，全部禁用传 "all"，部分禁用传 id 组成的数组 */
   disabledFields: PropTypes.array,
-  /** 是否整体显示 label 后的冒号 */
+  /** 是否显示 label 后的冒号 */
   colon: PropTypes.bool,
-  /** 提交表单的回调事件，已做了 `event.preventDefault()` 处理 */
+  /** 表单提交，已做了 event.preventDefault() 处理 */
   onSubmit: PropTypes.func,
 };
 
@@ -209,12 +209,12 @@ Form.createRender = (form, data, disabledFields, formColon) => {
          * ``
          */
         if (label === undefined) {
-          // 递归查找，渲染 `children` 内表单域
+          // 递归查找，渲染 children 内表单域
           const newChildren = Form.render(nodeProps.children);
           return propsCreator({ ...node, props: { ...nodeProps, children: newChildren } });
         }
         /**
-         * `label`
+         * label
          */
         const {
           // UI props
@@ -270,7 +270,7 @@ Form.createRender = (form, data, disabledFields, formColon) => {
       }
 
       /**
-       * `id` | `label` `id`
+       * `id` | label `id`
        */
       const {
         // UI props
@@ -464,10 +464,9 @@ class Input extends Component {
 Input.propTypes = {
   /** 最大可输入字符数（传入则显示字符计数器）*/
   max: PropTypes.number,
-  /** `autoComplete` 属性（关闭需传入 "off"）*/
+  /** autoComplete 属性简写（关闭需传入 "off"）*/
   auto: PropTypes.string,
-  /** `placeholder` 属性（可传入 `short` 或 `full`，在 Ant Plus Form 中时有效）。
-   e.g. `short` => `请输入`, `full` => `请输入XXX`, `其它提示信息` => `其它提示信息`*/
+  /** placeholder 属性简写，可传入短语 "short" "full"（Ant Plus Form 组件内有效）对应关系："short" => "请输入", "full" => "请输入XXX", "其它提示" => "其它提示" */
   msg: PropTypes.string,
   /** 默认为 Input 组件，若传入 textarea，则为 TextArea 组件 */
   textarea: PropTypes.bool,
@@ -514,13 +513,13 @@ class AutoComplete extends Component {
 }
 
 AutoComplete.propTypes = {
-  /** `dataSource` 属性 */
+  /** dataSource 属性简写 */
   data: PropTypes.array,
   /** 是否可搜索 */
   search: PropTypes.bool,
-  /** `allowClear` 属性 */
+  /** allowClear 属性简写 */
   clear: PropTypes.bool,
-  /** `placeholder` 属性（可传入 `short` 或 `full`，在 Ant Plus Form 中时有效）*/
+  /** placeholder 属性简写，可传入短语 "short" "full"（Ant Plus Form 组件内有效）对应关系："short" => "请输入", "full" => "请输入XXX", "其它提示" => "其它提示" */
   msg: PropTypes.string,
 };
 
@@ -587,22 +586,21 @@ class Select extends Component {
 Select.propTypes = {
   /** 列表数据源 */
   data: PropTypes.array,
-  /** 当数据源条目中的 key 不是 `value` (值) 与 `label` (展示的名称) 时传入，e.g. 如 [{ id: 1, name: ''}, ...]，则传入 ['id', 'name'] */
+  /** 当数据源条目中的 key 不是 "value" (值) 与 "label" (名称) 时传入。e.g. 数据源为 [{ id: 1, name: 'A'}, { id: 2, name: 'B'}]，则传入 ['id', 'name'] */
   keys: PropTypes.array,
   /** 是否可搜索 */
   search: PropTypes.bool,
-  /** `allowClear` 属性 */
+  /** allowClear 属性简写 */
   clear: PropTypes.bool,
-  /** `notFoundContent` 属性 */
+  /** notFoundContent 属性简写 */
   empty: PropTypes.string,
-  /** `placeholder` 属性（可传入 `short` 或 `full`，在 Ant Plus Form 中时有效）。
-   e.g. `short` => `请选择`, `full` => `请选择XXX`, `其它提示信息` => `其它提示信息`*/
+  /** placeholder 属性简写，可传入短语 "short" "full"（Ant Plus Form 组件内有效）对应关系："short" => "请选择", "full" => "请选择XXX", "其它提示" => "其它提示" */
   msg: PropTypes.string,
 };
 
 Select.defaultProps = {
   data: [],
-  keys: ['value', 'label'],
+  keys: [`value`, `label`],
   search: false,
   clear: false,
   empty: '列表为空',
@@ -655,27 +653,27 @@ class Transfer extends Component {
 }
 
 Transfer.propTypes = {
-  /** `dataSource` 属性 */
+  /** dataSource 属性简写 */
   data: PropTypes.array,
   /** 是否可搜索 */
   search: PropTypes.bool,
-  /** 组件 `未选择XXX` `已选择XXX` 的 `XXX` 文案 */
+  /** 组件 "未选择XXX" "已选择XXX" 的 "XXX" 文案 */
   title: PropTypes.string,
   /** 数字后面的单位 */
   unit: PropTypes.string,
-  /** `notFoundContent` 属性 */
+  /** notFoundContent 属性简写 */
   empty: PropTypes.string,
-  /** 搜索框 `placeholder` 属性 */
+  /** 搜索框 placeholder 属性 */
   searchMsg: PropTypes.string,
 };
 
 Transfer.defaultProps = {
   data: [],
   search: false,
-  title: '',
-  unit: '项',
-  empty: '列表为空',
-  searchMsg: '搜索',
+  title: ``,
+  unit: `项`,
+  empty: `列表为空`,
+  searchMsg: `搜索`,
   render: (item) => item.title,
 };
 
@@ -756,29 +754,29 @@ class Cascader extends Component {
 }
 
 Cascader.propTypes = {
-  /** `options` 属性 */
+  /** options 属性简写 */
   data: PropTypes.array,
-  /** 当数据源条目中的 key 不是 `value` `label` `children` 时传入 */
+  /** 当数据源条目中的 key 不是 "value" "label" "children" 时传入 */
   keys: PropTypes.array,
   /** 是否可搜索 */
   search: PropTypes.bool,
-  /** `allowClear` 属性 */
+  /** allowClear 属性简写 */
   clear: PropTypes.bool,
-  /** `notFoundContent` 属性 */
+  /** notFoundContent 属性简写 */
   empty: PropTypes.string,
-  /** `placeholder` 属性 */
+  /** placeholder 属性简写 */
   msg: PropTypes.string,
-  /** `value` 是否只传出数组的最后一个 id（在 Ant Plus Form 中时有效）*/
+  /** value 为数组最后一个 id，默认为整体数组（Ant Plus Form 组件内有效）*/
   last: PropTypes.bool,
 };
 
 Cascader.defaultProps = {
   data: [],
-  keys: ['value', 'label', 'children'],
+  keys: [`value`, `label`, `children`],
   search: false,
   clear: true,
-  empty: '列表为空',
-  msg: '请选择',
+  empty: `列表为空`,
+  msg: `请选择`,
   last: false,
 };
 
@@ -866,39 +864,39 @@ class TreeSelect extends Component {
 }
 
 TreeSelect.propTypes = {
-  /** `treeData` 属性 */
+  /** treeData 属性简写 */
   data: PropTypes.array,
-  /** 当数据源条目中的 key 不是 `value` `title` `children` 时传入 */
+  /** 当数据源条目中的 key 不是 "value" "title" "children" 时传入 */
   keys: PropTypes.array,
   /** 是否可搜索 */
   search: PropTypes.bool,
-  /** `treeCheckable` 属性 */
+  /** treeCheckable 属性简写 */
   check: PropTypes.bool,
-  /** `showCheckedStrategy` 属性 */
+  /** showCheckedStrategy 属性简写 */
   back: PropTypes.oneOf([TreeSelect.SHOW_ALL, TreeSelect.SHOW_PARENT, TreeSelect.SHOW_CHILD]),
-  /** `treeDefaultExpandAll` 属性 */
+  /** treeDefaultExpandAll 属性简写 */
   expandAll: PropTypes.bool,
-  /** `treeDefaultExpandedKeys` 属性 */
+  /** treeDefaultExpandedKeys 属性简写 */
   expandKeys: PropTypes.array,
-  /** `allowClear` 属性 */
+  /** allowClear 属性简写 */
   clear: PropTypes.bool,
-  /** `placeholder` 属性 */
+  /** placeholder 属性简写 */
   msg: PropTypes.string,
-  /** `searchPlaceholder` 属性 */
+  /** searchPlaceholder 属性简写 */
   searchMsg: PropTypes.string,
 };
 
 TreeSelect.defaultProps = {
   data: [],
-  keys: ['value', 'title', 'children'],
+  keys: [`value`, `title`, `children`],
   search: false,
   check: false,
   back: TreeSelect.SHOW_CHILD,
   expandAll: false,
   clear: false,
-  msg: '请选择',
-  searchMsg: '搜索',
-  dropdownStyle: { maxHeight: 400, overflow: 'auto' },
+  msg: `请选择`,
+  searchMsg: `搜索`,
+  dropdownStyle: { maxHeight: 400, overflow: `auto` },
 };
 
 /**
