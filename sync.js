@@ -8,8 +8,6 @@ route: /
 import './theme.scss';
 
 # 快速开始
-
-## 介绍
 `;
 
 const licenseText = '## 协议';
@@ -31,7 +29,6 @@ function syncReadmeToDoczIndex() {
   contentData = contentData.slice(0, licenseIndex) + gitHubText + contentData.slice(licenseIndex);
 
   const data = headerData + contentData;
-
   fs.writeFileSync('./docz/Index.mdx', data, 'utf-8');
 }
 
