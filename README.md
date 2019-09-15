@@ -9,9 +9,9 @@ Ant Plus 是 [Ant Design Form](https://ant.design/components/form-cn/) 的简化
 
 ## 介绍
 
-Ant Plus 最主要的特点，便是可以在表单控件的 Props 中，直接传入以前需使用 `<Form.Item>` 与 `form.getFieldDecorator` 包裹来传入的信息。
+Ant Plus 最主要的特点，便是可以在表单控件的 Props 中，直接传入以前需使用 `Form.Item` 与 `form.getFieldDecorator` 包裹来传入的信息。
 
-从而简化使用，杜绝冗余的样板代码，构建起简洁清晰、便于维护的 Form 表单代码。
+从而简化使用，杜绝冗余的样板代码，构建起简洁清晰、利于维护的 Form 代码。
 
 ## 对比
 
@@ -25,7 +25,7 @@ Ant Plus 最主要的特点，便是可以在表单控件的 Props 中，直接�
 
 ## 特性
 
-- **极其简便**：符合直觉，告别繁琐的 `<Form.Item>` `form.getFieldDecorator` `rules`。
+- **极其简便**：符合直觉，告别繁琐的 `Form.Item` `form.getFieldDecorator` `rules`。
 - **统一提示**：简化 `rules` 代码，可全局定义校验提示，告别烦乱的自定义与不可控。
 - **简化 API**：对 Form 相关组件的常用 API 进行了简化，一切只为更流畅的开发。
 - **渐进增强**：兼容组件全部原有使用方式，在基础之上，进行了功能的拓展与简化。
@@ -61,7 +61,7 @@ const Demo = ({ form }) => (
 export default Form.create()(Demo);
 ```
 
-表单控件的 Props 中，`id` 为表单域唯一标识，`label` 为 `<Form.Item>` 的 `label`。[`getFieldDecorator(id, options)`](<https://ant.design/components/form-cn/#getFieldDecorator(id,-options)-%E5%8F%82%E6%95%B0>) `options` 参数中的项，均可直接用于组件的 Props，如 `rules`、`initialValue` 等。
+表单控件的 Props 中，`id` 为表单域唯一标识，`label` 为 `Form.Item` 的 `label`。[`getFieldDecorator(id, options)`](<https://ant.design/components/form-cn/#getFieldDecorator(id,-options)-%E5%8F%82%E6%95%B0>) `options` 参数中的项，均可直接用于组件的 Props，如 `rules`、`initialValue` 等。
 
 Ant Plus 还对 `rules` 做了简化，可使用简洁的字符串来设置校验规则，同时提供了体验更好的 UI。
 
