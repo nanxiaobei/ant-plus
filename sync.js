@@ -21,9 +21,9 @@ const gitHubText = `## GitHub
 function syncReadmeToDoczIndex() {
   const readme = fs.readFileSync('./README.md', 'utf-8');
 
-  let contentData = readme.replace(/.+\s/, '');
+  let contentData = readme.replace(/.+\n/, '');
   contentData = contentData.replace(/(\[!\[npm.+)|(\[!\[GitHub.+)/g, '');
-  contentData = contentData.replace(/\s{5}/g, '');
+  contentData = contentData.replace(/\n{5}/g, '');
 
   const licenseIndex = contentData.indexOf(licenseText);
   contentData = contentData.slice(0, licenseIndex) + gitHubText + contentData.slice(licenseIndex);
