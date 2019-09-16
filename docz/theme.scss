@@ -94,7 +94,7 @@ img {
   }
 }
 .css-1pxi6pq {
-  margin: 0 24px 24px;
+  margin: 0 24px 32px;
   padding: 6px 10px;
   background: #fff;
   border: 0;
@@ -121,9 +121,10 @@ img {
   }
 }
 .css-82rrzo {
-  padding: 10px 24px;
+  padding: 0 24px;
   color: $base;
   font-size: 15px;
+  line-height: 44px;
   font-weight: 500 !important;
   letter-spacing: 0.3px;
   &:hover,
