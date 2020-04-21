@@ -1,0 +1,35 @@
+---
+name: Select 选择器
+route: /select
+---
+
+import { Playground, Props } from 'docz';
+import { Select } from 'antx';
+
+# Select 选择器
+
+## 演示
+
+```js
+import { Select } from 'antx';
+```
+
+<Playground>
+  <Select
+    data={[
+      { val: 'tiger', text: '小脑斧 🐅' },
+      { val: 'dog', text: '小狗子 🐕' },
+      { val: 'cat', text: '小喵咪 🐈' },
+    ]}
+    keys={['val', 'text']}
+    tip="选个宠物吧"
+    search
+    clear
+  />
+</Playground>
+
+## API
+
+<Props of={Select} isToggle />
+
+其它 Props 与 [Ant Design Select](https://ant.design/components/select-cn/) 一致。

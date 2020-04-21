@@ -1,0 +1,31 @@
+---
+name: Input 输入框
+route: /input
+---
+
+import { Playground, Props } from 'docz';
+import { Input } from 'antx';
+
+# Input 输入框
+
+## 演示
+
+```js
+import { Input } from 'antx';
+```
+
+<Playground>
+  <Input max={10} tip="写点什么 ..." />
+</Playground>
+
+---
+
+<Playground>
+  <Input textarea max={20} rows={5} tip="说出你的想法 ..." />
+</Playground>
+
+## API
+
+<Props of={Input} isToggle />
+
+其它 Props 与 [Ant Design Input](https://ant.design/components/input-cn/) 一致。

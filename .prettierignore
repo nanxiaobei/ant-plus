@@ -1,0 +1,16 @@
+# docz
+.docz
+docs
+
+# rollup
+dist
+
+# root
+.*ignore
+*.sh
+LICENSE
+yarn*
+
+# images
+*.png
+*.ico

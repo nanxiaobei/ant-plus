@@ -1,0 +1,91 @@
+@error: #ff4d4f;
+@border: #d9d9d9;
+@radius: 2px;
+
+.ant-plus-form {
+  // Error reminder
+  .ant-form-item {
+    .ant-form-item-explain,
+    .ant-form-item-split {
+      div {
+        position: relative;
+        display: inline-block;
+        + div {
+          margin-left: 4px;
+        }
+        &::before {
+          content: '↑';
+          margin-left: -1px;
+          margin-right: 3px;
+        }
+      }
+    }
+  }
+}
+
+// Input with count
+.ant-form-item-has-error .ant-plus-input-wrapper .ant-plus-input {
+  + .count {
+    color: @error;
+  }
+  &:not(textarea) {
+    + .count {
+      border-color: @error;
+    }
+    &.ant-input-group-wrapper + .count {
+      background: transparent;
+    }
+  }
+}
+.ant-plus-input-wrapper {
+  position: relative;
+  display: flex;
+  .count {
+    padding-left: 8px;
+    padding-right: 8px;
+    color: #bbb;
+    font-size: 12px;
+    &.red {
+      color: @error;
+    }
+  }
+  .ant-plus-input:not(textarea) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    &.ant-input-group-wrapper {
+      .ant-input-group-addon {
+        border-radius: 0;
+      }
+      + .count {
+        margin-left: -1px;
+        background: #fafafa;
+      }
+    }
+    + .count {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      border: solid @border;
+      border-width: 1px 1px 1px 0;
+      border-radius: 0 @radius @radius 0;
+      transition: 0.3s;
+    }
+  }
+  textarea.ant-plus-input {
+    + .count {
+      position: absolute;
+      right: 1px;
+      bottom: 1px;
+      line-height: 28px;
+      white-space: nowrap;
+      background: #fff;
+      border-bottom-right-radius: 20px;
+    }
+  }
+}
+// Min width
+.ant-plus-select,
+.ant-plus-auto-complete,
+.ant-plus-tree-select {
+  width: 100%;
+}

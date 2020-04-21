@@ -1,0 +1,47 @@
+---
+name: TreeSelect 树选择
+route: /tree-select
+---
+
+import { Playground, Props } from 'docz';
+import { TreeSelect } from 'antx';
+
+# TreeSelect 树选择
+
+## 演示
+
+```js
+import { TreeSelect } from 'antx';
+```
+
+<Playground>
+  <TreeSelect
+    data={[
+      {
+        val: 'tiger',
+        text: '小脑斧 🐅',
+        children: [{ val: 'lil_tiger', text: '小小脑斧 🐯' }],
+      },
+      {
+        val: 'dog',
+        text: '小狗子 🐕',
+        children: [{ val: 'lil_dog', text: '小小狗子 🐶' }],
+      },
+      { val: 'cat', text: '小喵咪 🐈' },
+    ]}
+    keys={['val', 'text']}
+    onChange={(value) => {
+      console.log(value);
+    }}
+    tip="找一找"
+    search
+    checkbox
+    showType={TreeSelect.SHOW_ALL}
+  />
+</Playground>
+
+## API
+
+<Props of={TreeSelect} isToggle />
+
+其它 Props 与 [Ant Design TreeSelect](https://ant.design/components/tree-select-cn/) 一致。

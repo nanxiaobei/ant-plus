@@ -1,0 +1,30 @@
+---
+name: 从 v1 迁移到 v4
+route: /migrate
+---
+
+# 从 v1 迁移到 v4
+
+## 全局
+
+- **变更** `id` → `name`（统一为 `antd@4` 命名 `name`）
+- **变更** `msg` → `tip`
+- **变更** `searchMsg` → - `searchTip`
+
+## Form
+
+- **变更** `disabledFields` → `disabledNames`
+- **新增** `config`
+- ~~**废弃**~~ `api` - 无需再传入
+- ~~**废弃**~~ `Form.setConfig()` - 改为通过 `config` 属性配置：`<Form config={config}>`
+
+## Form.Item
+
+- **变更** CSS 选择器 `.${name}` → `.form-item-${name}`
+- ~~**废弃**~~ `before` - 直接使用 jsx
+- ~~**废弃**~~ `after` - 直接使用 jsx
+
+## TreeSelect
+
+- **变更** `check` → `checkbox`
+- **变更** `back` → `showType`

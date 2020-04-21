@@ -1,0 +1,53 @@
+{
+  "name": "antx",
+  "version": "4.0.0-alpha.0",
+  "description": "Simplified Ant Design Form",
+  "keywords": [
+    "react",
+    "form",
+    "antd",
+    "ant-design",
+    "ant-plus"
+  ],
+  "license": "MIT",
+  "author": "nanxiaobei <nanxiaobei@gmail.com> (https://github.com/nanxiaobei)",
+  "homepage": "https://github.com/nanxiaobei/ant-plus",
+  "repository": "github:nanxiaobei/ant-plus",
+  "bugs": "https://github.com/nanxiaobei/ant-plus/issues",
+  "main": "dist/ant-plus.cjs.js",
+  "module": "dist/ant-plus.esm.js",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "dev": "rimraf .docz && docz dev",
+    "docs": "docz build",
+    "serve": "docz serve",
+    "build": "rimraf dist && rollup -c"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.9.2"
+  },
+  "peerDependencies": {
+    "antd": "^4.0.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  },
+  "devDependencies": {
+    "antd": "^4.1.4",
+    "babel-plugin-import": "^1.13.0",
+    "docz": "^2.3.2-alpha.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-prettier": "^3.1.3",
+    "gatsby-plugin-less": "^3.1.3",
+    "less": "^3.11.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "rollup": "^2.6.1",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-less": "^1.1.2"
+  }
+}

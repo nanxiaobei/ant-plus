@@ -1,0 +1,50 @@
+---
+name: Cascader 级联选择
+route: /cascader
+---
+
+import { useState } from 'react';
+import { Playground, Props } from 'docz';
+import { Cascader } from 'antx';
+
+# Cascader 级联选择
+
+## 演示
+
+```js
+import { Cascader } from 'antx';
+```
+
+<Playground>
+  {() => {
+    const [value, onChange] = useState(['cat']);
+    return (
+      <Cascader
+        data={[
+          {
+            val: 'tiger',
+            text: '小脑斧 🐅',
+            children: [{ val: 'lil_tiger', text: '小小脑斧 🐯' }],
+          },
+          { val: 'dog', text: '小狗子 🐕', children: [{ val: 'lil_dog', text: '小小狗子 🐶' }] },
+          { val: 'cat', text: '小喵咪 🐈' },
+        ]}
+        keys={['val', 'text']}
+        value={value}
+        onChange={(newValue) => {
+          console.log(newValue);
+          onChange(newValue);
+        }}
+        tip="找一找"
+        search
+        clear
+      />
+    );
+  }}
+</Playground>
+
+## API
+
+<Props of={Cascader} isToggle />
+
+其它 Props 与 [Ant Design Cascader](https://ant.design/components/cascader-cn/) 一致。

@@ -1,0 +1,89 @@
+---
+name: Form 表单
+route: /form
+---
+
+import { Playground, Props } from 'docz';
+import { Form, Input, Select, Button } from 'antx';
+
+# Form 表单
+
+## 演示
+
+```js
+import { Form } from 'antx';
+```
+
+<Playground>
+  {() => {
+    const onFinish = (values) => {
+      console.log(values);
+    };
+    return (
+      <Form data={{ name: 'Emily', sex: 2 }} onFinish={onFinish}>
+        <Input
+          label="用户名"
+          name="name"
+          rules={['required', 'string', 'max=10']}
+          max={10}
+          tip='full'
+        />
+        <Select
+          label="性别"
+          name="sex"
+          rules={['required', 'number']}
+          data={[
+            { id: 1, type: '男' },
+            { id: 2, type: '女' },
+          ]}
+          keys={['id', 'type']}
+          tip='short'
+          search
+        />
+        <Button type="primary"  htmlType="submit">提交</Button>
+      </Form>
+    );
+  }}
+</Playground>
+
+## API
+
+<Props of={Form} isToggle />
+
+其它 Props 与 [Ant Design Form](https://ant.design/components/form-cn/) 一致。
+
+### config
+
+用于统一设置 `placeholder` 信息与 `rules` 校验提示信息。
+
+`config` 可选配置项：
+
+| 参数     | 默认值                | 说明                                                                                                                     |
+| -------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| input    | '请输入'              | Input 的 `placeholder` 信息（`tip` 为 `'short'` `'full'` 时有效，如 `'short'` → `"请输入"`，`'full'` → `请输入用户名`）  |
+| select   | '请选择'              | Select 的 `placeholder` 信息（`tip` 为 `'short'` `'full'` 时有效，如 `'short'` → `'请选择'`，`'full'` → `'请选择性别'`） |
+| required | '{label}不得为空'     | `required` 校验提示，`"{label}"` 为 `label` 占位符，会被替换                                                             |
+| type     | '{label}格式有误'     | 数据格式校验提示，`"{label}"` 为 `label` 占位符，会被替换                                                                |
+| max      | '不得超过 {max} 个字' | `max` 校验提示，`"{max}"` 为数值占位符，会被替换                                                                         |
+| min      | '不得少于 {min} 个字' | `min` 校验提示，`"{min}"` 为数值占位符，会被替换                                                                         |
+
+** 用法 **
+
+```jsx
+const config = {
+  input: 'Please input',
+  select: 'Please select',
+  required: 'Oops, {label} is needed',
+  type: '{label} got a wrong type',
+  max: 'Up to {max} words',
+  min: 'At least {min} words',
+};
+
+<Form config={config} />;
+```
+
+** 与 Ant Design Form `validateMessages` 的区别 **
+
+- `config` 占位符为 `{label}` 格式，`validateMessages` 占位符为 `${name}` 格式
+- `config` 校验提示中使用 `label` 字段，`validateMessages` 使用 `name` 字段。实际开发中，`label` 更为实用（尤其在中文世界），`name` 字段用于前后端数据传递，一般情况下用户应无感知
+- `config` 配置项更简单，可配置范围小，`validateMessages` 配置项更多，存在深一层配置对象

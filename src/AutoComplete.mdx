@@ -1,0 +1,29 @@
+---
+name: AutoComplete 自动完成
+route: /auto-complete
+---
+
+import { Playground, Props } from 'docz';
+import { AutoComplete } from 'antx';
+
+# AutoComplete 自动完成
+
+## 演示
+
+```js
+import { AutoComplete } from 'antx';
+```
+
+<Playground>
+  <AutoComplete
+    data={[{ value: '小脑斧 🐅' }, { value: '小狗子 🐕' }, { value: '小喵咪 🐈' }]}
+    search
+    tip="写点什么 ..."
+  />
+</Playground>
+
+## API
+
+<Props of={AutoComplete} isToggle />
+
+其它 Props 与 [Ant Design AutoComplete](https://ant.design/components/auto-complete-cn/) 一致。
