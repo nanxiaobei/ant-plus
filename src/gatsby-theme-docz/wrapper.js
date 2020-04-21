@@ -1,6 +1,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import favicon from 'root/brand/favicon.ico';
+import './styles.less';
+import './main.js';
 
 const Wrapper = ({ children }) => (
   <>
