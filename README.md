@@ -1,4 +1,6 @@
-# <img src="brand/logo.svg" height="104" align="left" /> Ant Plus 4
+<img src="brand/logo.svg" alt="logo" height="160" />
+
+# Ant Plus 4
 
 > Ant Plus 4.0 发布！🎉
 >
@@ -22,12 +24,9 @@ Ant Plus 是 Ant Design 表单相关组件的简化版，以最符合 html 直�
 
 Ant Plus 去除了对 `Form.Item` 包裹的依赖，同时提供了全新的 `rules` 设置方式与表单相关组件 API，可大幅简化开发，消灭繁琐的样板代码，从而轻松构建起简洁清晰、利于维护的表单代码。
 
-## 特点
-
-- 极其简便，符合 html 直觉，告别繁琐的 `Form.Item`、`rules` 等。
-- 统一提示，可全局定义 `placeholder` 信息与 `rules` 校验提示。
-- 简化版 `rules`，简化的组件常用 Props，一切只为更流畅的开发。
-- 以渐进增强理念实现，兼容组件全部原有功能，不会有任何限制。
+- 极其简便，告别繁琐的 `Form.Item`、`rules` 等。
+- 可全局定义 `placeholder` 信息与 `rules` 校验提示。
+- 简化的 `rules` 设置方式，简化的表单组件常用 Props。
 
 ## 对比
 
@@ -59,7 +58,9 @@ const Demo = () => {
   return (
     <Form data={{ name: 'Emily' }} onFinish={onFinish}>
       <Input label="用户名" name="name" rules={['required', 'max=10']} max={10} tip="full" />
-      <Button htmlType="submit">提交</Button>
+      <Button label="" htmlType="submit">
+        提交
+      </Button>
     </Form>
   );
 };
@@ -67,9 +68,9 @@ const Demo = () => {
 export default Demo;
 ```
 
-[`Form.Item`](https://ant.design/components/form-cn/#Form.Item) Props 中的项，均可直接用于表单控件的 Props，如 `label`、`name`、`rules` 等。此外，Ant Plus 还对 `rules` 进行了简化，可直接使用字符串短语来设置。
+[`Form.Item`](https://ant.design/components/form-cn/#Form.Item) Props 中的项，均可直接用于表单控件的 Props，如 `label`、`name`、`rules` 等。
 
-完整使用介绍，请查看文档。
+此外，Ant Plus 还对 `rules` 进行了简化，可直接使用字符串短语来设置。
 
 ## 示例
 
