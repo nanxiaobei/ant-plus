@@ -727,19 +727,26 @@ const Button = Ant.Button;
 /**
  * sync component keys, add displayName
  */
-const outMap = { Form, Input, AutoComplete, Select, Transfer, Cascader, TreeSelect };
-const omitKeys = ['$$typeof', 'render', 'propTypes', 'defaultProps'];
 
 const copyOriginalKeys = () => {
-  const { Form, Input, AutoComplete, Select, Transfer, Cascader, TreeSelect } = Ant;
-  const inMap = { Form, Input, AutoComplete, Select, Transfer, Cascader, TreeSelect };
+  const fromMap = {
+    Form: Ant.Form,
+    Input: Ant.Input,
+    AutoComplete: Ant.AutoComplete,
+    Select: Ant.Select,
+    Transfer: Ant.Transfer,
+    Cascader: Ant.Cascader,
+    TreeSelect: Ant.TreeSelect,
+  };
+  const toMap = { Form, Input, AutoComplete, Select, Transfer, Cascader, TreeSelect };
+  const omitKeys = ['$$typeof', 'render', 'propTypes', 'defaultProps'];
 
-  Object.entries(outMap).forEach(([name, out]) => {
-    const obj = inMap[name];
-    Object.entries(obj).forEach(([key, val]) => {
-      if (!omitKeys.includes(key)) out[key] = val;
+  Object.entries(fromMap).forEach(([name, fromFn]) => {
+    const toFn = toMap[name];
+    Object.entries(fromFn).forEach(([key, val]) => {
+      if (!omitKeys.includes(key)) toFn[key] = val;
     });
-    out.displayName = `${namePrefix}.${name}`;
+    toFn.displayName = `${namePrefix}.${name}`;
   });
 };
 
