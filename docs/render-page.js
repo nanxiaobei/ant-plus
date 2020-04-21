@@ -96,6 +96,148 @@ return /******/ (function(modules) { // webpackBootstrap
 /************************************************************************/
 /******/ ({
 
+/***/ "../brand/favicon.ico":
+/*!****************************!*\
+  !*** ../brand/favicon.ico ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/vnd.microsoft.icon;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAB+ElEQVRYhe3Wu2sVQRQG8J9710sIMYZ4EbmVpLRIYysWKuID1FIE04lo7CxExNJKxMLGf8HaQolWViKCjWhjESwsxCLEcDHBBIvZyGbd2Zeku1+1O+ecOd/MmfNgjDF2B/2miskuOD+OW02V9zTQOYShcKoVLONXRLeP55n+eXyt2zyNrA+xgLMZgTw28B7PsIStnGwBh7Pve7heR6B4AwluZoZN4vgRd/AFB/ECUzn5NbxpSmACT4QYtsEIi7iISwXZshCK3zHjXu77MU60dA57M8fz2CzIZrCGDzHj7Sy4jNMdnG9jKISgLKsWMYgZ9jCJp0IIumAK+zLnm1gvyPs4gNdlxgnOCVfVBQlmc//TEb0LQohKNzjZ0TmBeP7aU+XZk+C+khAlONLReV/5iWPpO+/fLJGoeCA1mI2sV5X323bWic69YFK3RztQ6BMJvnfYKHZ6dpbmMlzFXJ7Ap5bOZ8R7CKFXVCEV+sRfAq9aOE/FU41QcusIwDFZ1U3wEj8aEiimXRGrDfeBu+j3BNYrOFVjMKE69huaHwT2Yz3fDR8KFauKQCz2IzwQGk8bjPIEUjzCmZabrOKGMKS0Rr4dbwkTzk8cFdpsHd4Jw8vnLs6Jz4QDXBFGsrmCbA1vhZGsctr5HwJ5TAv9PhUe6zf1xWaMMRrjD7/7RsUaaVWSAAAAAElFTkSuQmCC"
+
+/***/ }),
+
+/***/ "../brand/logo.svg":
+/*!*************************!*\
+  !*** ../brand/logo.svg ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAwIiBoZWlnaHQ9IjEwMDAiPgogIDx0aXRsZT5BbnQgUGx1cyBMb2dvPC90aXRsZT4KICA8cGF0aCBmaWxsPSJjdXJyZW50Q29sb3IiIGZpbGwtb3BhY2l0eT0iMC44NSIgZD0ibTAsNTMwIGEzMjAsMzIwIDAgMSAxIDAsMSB6IiAvPgogIDxwYXRoIGZpbGw9ImN1cnJlbnRDb2xvciIgZmlsbC1vcGFjaXR5PSIwLjg1IiBkPSJtNjYwLDE1MCBsMzQwLDU4MSBsLTY4MCwwIHoiIC8+Cjwvc3ZnPgo="
+
+/***/ }),
+
+/***/ "../lib/index.jsx":
+/*!************************!*\
+  !*** ../lib/index.jsx ***!
+  \************************/
+/*! exports provided: Form, Input, AutoComplete, Select, Transfer, Cascader, TreeSelect, Button */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Form", function() { return Form; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Input", function() { return Input; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AutoComplete", function() { return AutoComplete; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Select", function() { return Select; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Transfer", function() { return Transfer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Cascader", function() { return Cascader; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TreeSelect", function() { return TreeSelect; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Button", function() { return Button; });
+/* harmony import */ var antd_es_button_style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! antd/es/button/style/css */ "../node_modules/antd/es/button/style/css.js");
+/* harmony import */ var antd_es_button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! antd/es/button */ "../node_modules/antd/es/button/index.js");
+/* harmony import */ var antd_es_tree_select_style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! antd/es/tree-select/style/css */ "../node_modules/antd/es/tree-select/style/css.js");
+/* harmony import */ var antd_es_tree_select__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! antd/es/tree-select */ "../node_modules/antd/es/tree-select/index.js");
+/* harmony import */ var antd_es_cascader_style_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! antd/es/cascader/style/css */ "../node_modules/antd/es/cascader/style/css.js");
+/* harmony import */ var antd_es_cascader__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! antd/es/cascader */ "../node_modules/antd/es/cascader/index.js");
+/* harmony import */ var antd_es_transfer_style_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! antd/es/transfer/style/css */ "../node_modules/antd/es/transfer/style/css.js");
+/* harmony import */ var antd_es_transfer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! antd/es/transfer */ "../node_modules/antd/es/transfer/index.js");
+/* harmony import */ var antd_es_select_style_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! antd/es/select/style/css */ "../node_modules/antd/es/select/style/css.js");
+/* harmony import */ var antd_es_select__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! antd/es/select */ "../node_modules/antd/es/select/index.js");
+/* harmony import */ var antd_es_auto_complete_style_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! antd/es/auto-complete/style/css */ "../node_modules/antd/es/auto-complete/style/css.js");
+/* harmony import */ var antd_es_auto_complete__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! antd/es/auto-complete */ "../node_modules/antd/es/auto-complete/index.js");
+/* harmony import */ var antd_es_input_style_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! antd/es/input/style/css */ "../node_modules/antd/es/input/style/css.js");
+/* harmony import */ var antd_es_input__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! antd/es/input */ "../node_modules/antd/es/input/index.js");
+/* harmony import */ var antd_es_form_style_css__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! antd/es/form/style/css */ "../node_modules/antd/es/form/style/css.js");
+/* harmony import */ var antd_es_form__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! antd/es/form */ "../node_modules/antd/es/form/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_16__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! prop-types */ "../node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_17__);
+/* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./index.less */ "../lib/index.less");
+/* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(_index_less__WEBPACK_IMPORTED_MODULE_18__);
+/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @emotion/core */ "../node_modules/@emotion/core/dist/core.esm.js");
+function _extends(){_extends=Object.assign||function(target){for(var i=1;i<arguments.length;i++){var source=arguments[i];for(var key in source){if(Object.prototype.hasOwnProperty.call(source,key)){target[key]=source[key];}}}return target;};return _extends.apply(this,arguments);}function _objectWithoutProperties(source,excluded){if(source==null)return{};var target=_objectWithoutPropertiesLoose(source,excluded);var key,i;if(Object.getOwnPropertySymbols){var sourceSymbolKeys=Object.getOwnPropertySymbols(source);for(i=0;i<sourceSymbolKeys.length;i++){key=sourceSymbolKeys[i];if(excluded.indexOf(key)>=0)continue;if(!Object.prototype.propertyIsEnumerable.call(source,key))continue;target[key]=source[key];}}return target;}function _objectWithoutPropertiesLoose(source,excluded){if(source==null)return{};var target={};var sourceKeys=Object.keys(source);var key,i;for(i=0;i<sourceKeys.length;i++){key=sourceKeys[i];if(excluded.indexOf(key)>=0)continue;target[key]=source[key];}return target;}function ownKeys(object,enumerableOnly){var keys=Object.keys(object);if(Object.getOwnPropertySymbols){var symbols=Object.getOwnPropertySymbols(object);if(enumerableOnly)symbols=symbols.filter(function(sym){return Object.getOwnPropertyDescriptor(object,sym).enumerable;});keys.push.apply(keys,symbols);}return keys;}function _objectSpread(target){for(var i=1;i<arguments.length;i++){var source=arguments[i]!=null?arguments[i]:{};if(i%2){ownKeys(Object(source),true).forEach(function(key){_defineProperty(target,key,source[key]);});}else if(Object.getOwnPropertyDescriptors){Object.defineProperties(target,Object.getOwnPropertyDescriptors(source));}else{ownKeys(Object(source)).forEach(function(key){Object.defineProperty(target,key,Object.getOwnPropertyDescriptor(source,key));});}}return target;}function _defineProperty(obj,key,value){if(key in obj){Object.defineProperty(obj,key,{value:value,enumerable:true,configurable:true,writable:true});}else{obj[key]=value;}return obj;}/**
+ * Namespace
+ */const namePrefix='AntPlus';const classPrefix='ant-plus';const fullName=name=>`${namePrefix}.${name}`;/**
+ * Subs
+ */const formSubs=['Item','List','Provider'];const subs=formSubs.map(fullName);/**
+ * Utils
+ */const hasItem=(arr,key)=>Array.isArray(arr)&&arr.includes(key);const hasLength=arr=>Array.isArray(arr)&&arr.length>0;const addUniqueClass=(restProps,name)=>{const{className=''}=restProps;restProps.className=`${classPrefix}-${name} ${className}`;};/**
+ * Settings
+ */const getSettings=customConfig=>{const config=_objectSpread({input:'请输入',select:'请选择',required:'{label} 不得为空',type:'{label} 格式有误',max:'不得超过 {max} 个字',min:'不得少于 {min} 个字'},customConfig);const roleMap={};const ruleTypeMap={};const ruleNumMap={};// tip, addon
+const inputs=['Input','AutoComplete','Transfer'];const selects=['Select','Cascader','TreeSelect'];const addonMap={Input:['addonBefore','addonAfter','prefix','suffix']};const{input,select}=config;inputs.forEach(name=>{const obj={shortTip:input};const addonList=addonMap[name];if(addonList)obj.addonList=addonList;roleMap[fullName(name)]=obj;});selects.forEach(name=>{roleMap[fullName(name)]={shortTip:select};});// rules
+const ruleMap={required:{required:true},string:{type:'string',whitespace:true},number:{pattern:/^\d+$/,whitespace:true},array:{type:'array'},email:{type:'email',whitespace:true},phone:{pattern:/^1[3456789]\d{9}$/,whitespace:true},id:{pattern:/^\d+x?$/i,whitespace:true}};const typeRules=Object.keys(ruleMap);const numRules=['max','min'];typeRules.forEach(key=>{const msg=config[key==='required'?'required':'type'];ruleTypeMap[key]=label=>_objectSpread({},ruleMap[key],{message:msg.replace('{label}',label)});});numRules.forEach(key=>{ruleNumMap[key]=num=>({[key]:+num,message:config[key].replace(`{${key}}`,num)});});return{roleMap,ruleTypeMap,ruleNumMap};};/**
+ * Form.Item props
+ */const itemPropList=['colon','htmlFor','noStyle','label','labelAlign','labelCol','shouldUpdate','wrapperCol','dependencies','extra','getValueFromEvent','hasFeedback','help','name','normalize','required','rules','trigger','validateFirst','validateStatus','validateTrigger','valuePropName','getValueProps',// rc-field-form
+'initialValue',// rc-field-form
+'className','style','prefixCls','fieldKey'];const ownPropMap={ownClass:'className',ownStyle:'style',ownName:'name'};const splitProps=allProps=>{const itemProps={};const ownProps=_objectSpread({},allProps);itemPropList.forEach(key=>{const val=allProps[key];if(val!==undefined)itemProps[key]=val;delete ownProps[key];});Object.entries(ownPropMap).forEach(([key,realKey])=>{const val=allProps[key];if(val!==undefined)ownProps[realKey]=val;delete ownProps[key];});return{itemProps,ownProps};};/**
+ * Form - Ant Design Form 组件增强版本
+ * https://ant.design/fns/form-cn/
+ */const Form=Object(react__WEBPACK_IMPORTED_MODULE_16__["forwardRef"])((props,ref)=>{const{data,config,disabledNames,children:formChildren}=props,restFormProps=_objectWithoutProperties(props,["data","config","disabledNames","children"]);const settings=Object(react__WEBPACK_IMPORTED_MODULE_16__["useRef"])(getSettings(config)).current;/**
+   * 转换 `tip`，包装 addon
+   */const setTipAddon=(isValid,displayName,nodeProps,label='')=>{if(!isValid)return;const{shortTip,addonList}=settings.roleMap[displayName];// `tip`
+if(shortTip){const{tip}=nodeProps;if(tip===`'short'`){nodeProps.tip=shortTip;}else if(tip===`'full'`){nodeProps.tip=`${shortTip}${label}`;}}// addon
+if(addonList){addonList.forEach(key=>{const val=nodeProps[key];if(val!==undefined)nodeProps[key]=launch(val);});}};/**
+   * 生成校验信息
+   */const getRules=(rules,label='')=>{if(!Array.isArray(rules))return rules;return rules.map(rule=>{if(typeof rule!=='string')return rule;// e.g. 'max=10'
+if(rule.includes('=')){const[key,val]=rule.split('=');const getRule=settings.ruleNumMap[key];if(getRule)return getRule(val);}// e.g. 'required'
+const getRule=settings.ruleTypeMap[rule];if(getRule)return getRule(label);return rule;});};/**
+   * 核心渲染工厂
+   */const factory=node=>{var _node$type;if(typeof node!=='object'||node===null||!node.props)return node;const _node$props=node.props,{children}=_node$props,restNodeProps=_objectWithoutProperties(_node$props,["children"]);const{label,name}=restNodeProps;const hasName=name!==undefined;const displayName=(_node$type=node.type)===null||_node$type===void 0?void 0:_node$type.displayName;const isValid=typeof displayName==='string'&&displayName.includes(`${namePrefix}.`);/**
+     * normal node
+     */if(label===undefined&&!hasName){setTipAddon(isValid,displayName,restNodeProps);return _objectSpread({},node,{props:_objectSpread({},restNodeProps,{children:launch(children)})});}/**
+     * original <Form.XX> component
+     */if(isValid&&subs.includes(displayName)){const isRenderProps=typeof children==='function';const newChildren=isRenderProps?(...args)=>launch(children.apply(void 0,args)):launch(children);return _objectSpread({},node,{props:_objectSpread({},restNodeProps,{children:newChildren})});}/**
+     * Ant Plus Form.Item style node
+     */const{rules,validateTrigger:rawVt,hide}=restNodeProps,restAllProps=_objectWithoutProperties(restNodeProps,["rules","validateTrigger","hide"]);if(hide===true)restAllProps.style={display:'none'};const validateTrigger=rawVt||hasItem(rules,'phone')?'onBlur':'onChange';const allProps=_objectSpread({},restAllProps,{rules:getRules(rules,label),validateTrigger});// render props
+if(typeof children==='function'){addUniqueClass(allProps,'form-item');const renderNode=(...args)=>launch(children.apply(void 0,args));return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_19__["jsx"])(antd_es_form__WEBPACK_IMPORTED_MODULE_15__["default"].Item,allProps,renderNode);}// object
+const{itemProps,ownProps}=splitProps(allProps);addUniqueClass(itemProps,`form-item ${hasName?`form-item-${name}`:''}`);setTipAddon(isValid,displayName,ownProps,label);const disabled=disabledNames==='all'||hasName&&hasItem(disabledNames,name);if(disabled)ownProps.disabled=true;const ownNode=_objectSpread({},node,{props:_objectSpread({},ownProps,{children:launch(children)})});return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_19__["jsx"])(antd_es_form__WEBPACK_IMPORTED_MODULE_15__["default"].Item,itemProps,ownNode);};/**
+   * 渲染工厂入口
+   */const launch=node=>{if(typeof node!=='object'||node===null)return node;if(hasLength(node))return react__WEBPACK_IMPORTED_MODULE_16___default.a.Children.map(node,factory);return factory(node);};/**
+   * Form
+   */addUniqueClass(restFormProps,'form');return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_19__["jsx"])(antd_es_form__WEBPACK_IMPORTED_MODULE_15__["default"],_extends({initialValues:data},restFormProps,{ref:ref}),launch(formChildren));});Form.propTypes={/** `initialValues` 简写 */data:prop_types__WEBPACK_IMPORTED_MODULE_17___default.a.object,/** 设置统一的 `placeholder` 信息与 `rules` 校验提示信息。详见下文 **`config`** */config:prop_types__WEBPACK_IMPORTED_MODULE_17___default.a.object,/** 禁用的表单域，传入 `name` 组成的数组。全部禁用传入字符串 `'all'` */disabledNames:prop_types__WEBPACK_IMPORTED_MODULE_17___default.a.array};Form.defaultProps={};/**
+ * Input - Ant Design Input (TextArea) 组件增强版本
+ * https://ant.design/fns/input-cn/
+ */const Input=Object(react__WEBPACK_IMPORTED_MODULE_16__["forwardRef"])((props,ref)=>{const{max,tip,auto,textarea,rows}=props,restProps=_objectWithoutProperties(props,["max","tip","auto","textarea","rows"]);const{disabled}=restProps;addUniqueClass(restProps,'input');const renderInput=inputProps=>{if(textarea!==true){return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_19__["jsx"])(antd_es_input__WEBPACK_IMPORTED_MODULE_13__["default"],_extends({placeholder:tip,autoComplete:auto},inputProps,{ref:ref}));}return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_19__["jsx"])(antd_es_input__WEBPACK_IMPORTED_MODULE_13__["default"].TextArea,_extends({placeholder:tip,autoSize:{minRows:rows}},inputProps,{ref:ref}));};const noCount=typeof max!=='number'||disabled===true;const{0:count,1:setCount}=Object(react__WEBPACK_IMPORTED_MODULE_16__["useState"])(()=>{if(noCount)return null;const{defaultValue,value}=restProps;if(typeof value==='string')return value.length;if(typeof defaultValue==='string')return defaultValue.length;return 0;});// no count
+if(noCount)return renderInput(restProps);// has count
+const{onChange}=restProps;restProps.onChange=event=>{const{value}=event.target;if(typeof value==='string')setCount(value.length);if(typeof onChange==='function')return onChange(event);};return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_19__["jsx"])("div",{className:`${classPrefix}-input-wrapper`},renderInput(restProps),Object(_emotion_core__WEBPACK_IMPORTED_MODULE_19__["jsx"])("span",{className:`count ${count<=max?'':'red'}`},count," | ",max));});Input.propTypes={/** 最大可输入字符数（传入则显示字符计数器） */max:prop_types__WEBPACK_IMPORTED_MODULE_17___default.a.number,/** `placeholder` 简写（在 Ant Plus Form 内时，可传入 `'short'` 或 `'full'`。转义：`'short'` → `'请输入'`, `'full'` → `'请输入XX'`, `'其它'` → `'其它'`） */tip:prop_types__WEBPACK_IMPORTED_MODULE_17___default.a.string,/** `autoComplete` 简写（关闭需传入 `'off'`） */auto:prop_types__WEBPACK_IMPORTED_MODULE_17___default.a.string,/** 默认为 `Input` 组件，若传入 `textarea`，则为 `Input.TextArea` 组件 */textarea:prop_types__WEBPACK_IMPORTED_MODULE_17___default.a.bool,/** `Input.TextArea` 的输入框行高 */rows:prop_types__WEBPACK_IMPORTED_MODULE_17___default.a.number};Input.defaultProps={textarea:false,rows:2};/**
+ * AutoComplete - Ant Design AutoComplete 组件增强版本
+ * https://ant.design/fns/auto-complete-cn/
+ */const AutoComplete=Object(react__WEBPACK_IMPORTED_MODULE_16__["forwardRef"])((props,ref)=>{const{data,tip,search,clear}=props,restProps=_objectWithoutProperties(props,["data","tip","search","clear"]);let searchProps;if(search===true){searchProps={filterOption:(val,option)=>option.value.includes(val)};}addUniqueClass(restProps,'auto-complete');return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_19__["jsx"])(antd_es_auto_complete__WEBPACK_IMPORTED_MODULE_11__["default"],_extends({options:data,placeholder:tip},searchProps,{allowClear:clear},restProps,{ref:ref}));});AutoComplete.propTypes={/** `options` 简写 */data:prop_types__WEBPACK_IMPORTED_MODULE_17___default.a.array,/** `placeholder` 简写（在 Ant Plus Form 内时，可传入 `'short'` 或 `'full'`。转义：`'short'` → `'请输入'`, `'full'` → `'请输入XX'`, `'其它'` → `'其它'`） */tip:prop_types__WEBPACK_IMPORTED_MODULE_17___default.a.string,/** 是否可搜索 */search:prop_types__WEBPACK_IMPORTED_MODULE_17___default.a.bool,/** `allowClear` 简写 */clear:prop_types__WEBPACK_IMPORTED_MODULE_17___default.a.bool};AutoComplete.defaultProps={data:[],search:true,clear:false};/**
+ * Select - Ant Design Select 组件增强版本
+ * https://ant.design/fns/select-cn/
+ */const Select=Object(react__WEBPACK_IMPORTED_MODULE_16__["forwardRef"])((props,ref)=>{const{data,keys,tip,search,clear,empty,children}=props,restProps=_objectWithoutProperties(props,["data","keys","tip","search","clear","empty","children"]);const[value='value',label='label']=keys;let searchProps;if(search===true){searchProps={showSearch:true,filterOption:(val,option)=>option.children.includes(val)};}addUniqueClass(restProps,'select');return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_19__["jsx"])(antd_es_select__WEBPACK_IMPORTED_MODULE_9__["default"],_extends({placeholder:tip},searchProps,{allowClear:clear,notFoundContent:empty},restProps,{ref:ref}),children||data.map(item=>Object(_emotion_core__WEBPACK_IMPORTED_MODULE_19__["jsx"])(antd_es_select__WEBPACK_IMPORTED_MODULE_9__["default"].Option,{key:item[label],value:item[value],disabled:item.disabled},item[label])));});Select.propTypes={/** 列表数据源 */data:prop_types__WEBPACK_IMPORTED_MODULE_17___default.a.array,/** 当数据源的键不是 `'value'` `'label'` 时传入。e.g. 数据源 `[{ val: 1, text: 'A'}, { val: 2, text: 'B'}]，则传入 ['val', 'text']` */keys:prop_types__WEBPACK_IMPORTED_MODULE_17___default.a.array,/** `placeholder` 简写（在 Ant Plus Form 内时，可传入 `'short'` 或 `'full'`。转义：`'short'` → `'请输入'`, `'full'` → `'请输入XX'`, `'其它'` → `'其它'`） */tip:prop_types__WEBPACK_IMPORTED_MODULE_17___default.a.string,/** 是否可搜索 */search:prop_types__WEBPACK_IMPORTED_MODULE_17___default.a.bool,/** `allowClear` 简写 */clear:prop_types__WEBPACK_IMPORTED_MODULE_17___default.a.bool,/** `notFoundContent` 简写 */empty:prop_types__WEBPACK_IMPORTED_MODULE_17___default.a.string};Select.defaultProps={data:[],keys:['value','label'],search:false,clear:false};/**
+ * Transfer - Ant Design Transfer 组件增强版本
+ * https://ant.design/fns/transfer-cn/
+ */const Transfer=Object(react__WEBPACK_IMPORTED_MODULE_16__["forwardRef"])((props,ref)=>{const{data,title,search,unit,searchTip,empty}=props,restProps=_objectWithoutProperties(props,["data","title","search","unit","searchTip","empty"]);let searchProps;if(search===true){searchProps={showSearch:true,filterOption:(val,option)=>`${option.title}${option.description||''}`.includes(val)};}addUniqueClass(restProps,'transfer');const{targetKeys,value}=restProps;restProps.targetKeys=targetKeys||value;return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_19__["jsx"])(antd_es_transfer__WEBPACK_IMPORTED_MODULE_7__["default"],_extends({dataSource:data,titles:[`未选择${title}`,`已选择${title}`]},searchProps,{locale:{itemsUnit:unit,itemUnit:unit,searchPlaceholder:searchTip,notFoundContent:empty}},restProps,{ref:ref}));});Transfer.propTypes={/** `dataSource` 简写 */data:prop_types__WEBPACK_IMPORTED_MODULE_17___default.a.array,/** `'未选择XX'` `'已选择XX'` 的 `'XX'` 文案 */title:prop_types__WEBPACK_IMPORTED_MODULE_17___default.a.string,/** 是否可搜索 */search:prop_types__WEBPACK_IMPORTED_MODULE_17___default.a.bool,/** `local.itemUnit` 与 `local.itemsUnits` 简写，默认：`'项'` */unit:prop_types__WEBPACK_IMPORTED_MODULE_17___default.a.string,/** `locale.searchPlaceholder` 简写（不支持 `'short'` `'full'`） */searchTip:prop_types__WEBPACK_IMPORTED_MODULE_17___default.a.string,/** `locale.notFoundContent` 简写 */empty:prop_types__WEBPACK_IMPORTED_MODULE_17___default.a.string};Transfer.defaultProps={data:[],title:'',search:false,unit:'项',searchTip:'搜索',render:item=>item.title};/**
+ * Cascader - Ant Design Cascader 组件增强版本
+ * https://ant.design/fns/cascader-cn/
+ */const Cascader=Object(react__WEBPACK_IMPORTED_MODULE_16__["forwardRef"])((props,ref)=>{const{data,keys,search,clear,empty,tip,last}=props,restProps=_objectWithoutProperties(props,["data","keys","search","clear","empty","tip","last"]);const[valueKey='value',labelKey='label',childrenKey='children']=keys;const valPathMap=Object(react__WEBPACK_IMPORTED_MODULE_16__["useRef"])({});const prevLength=Object(react__WEBPACK_IMPORTED_MODULE_16__["useRef"])(0);if(last===true){if(prevLength.current!==data.length){prevLength.current=data.length;const travelOptions=(data,values=[])=>{data.forEach(item=>{const{[valueKey]:val,[childrenKey]:children}=item;const selfValues=values.concat(val);if(hasLength(children))return travelOptions(children,selfValues);valPathMap.current[val]=selfValues;});};travelOptions(data);}const{defaultValue,value,onChange}=restProps;if(value!==undefined){restProps.value=valPathMap.current[value];}else if(defaultValue!==undefined){restProps.defaultValue=valPathMap.current[defaultValue];}if(typeof onChange==='function'){restProps.onChange=val=>onChange(val[val.length-1]);}}let searchProps;if(search===true){searchProps={showSearch:{filter:(val,path)=>path.some(option=>option[labelKey].includes(val))}};}addUniqueClass(restProps,'cascader');return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_19__["jsx"])(antd_es_cascader__WEBPACK_IMPORTED_MODULE_5__["default"],_extends({options:data,fieldNames:{value:valueKey,label:labelKey,children:childrenKey},placeholder:tip},searchProps,{allowClear:clear,notFoundContent:empty},restProps,{ref:ref}));});Cascader.propTypes={/** `options` 简写 */data:prop_types__WEBPACK_IMPORTED_MODULE_17___default.a.array,/** 当数据源的键不是 `'value'` `'label'` `'children'` 时传入 */keys:prop_types__WEBPACK_IMPORTED_MODULE_17___default.a.array,/** `placeholder` 简写（不支持 `'short'` `'full'`） */tip:prop_types__WEBPACK_IMPORTED_MODULE_17___default.a.string,/** 是否可搜索 */search:prop_types__WEBPACK_IMPORTED_MODULE_17___default.a.bool,/** `allowClear` 简写 */clear:prop_types__WEBPACK_IMPORTED_MODULE_17___default.a.bool,/** `notFoundContent` 简写 */empty:prop_types__WEBPACK_IMPORTED_MODULE_17___default.a.string,/** `value` 取数组最后一个值，默认为整体数组 */last:prop_types__WEBPACK_IMPORTED_MODULE_17___default.a.bool};Cascader.defaultProps={data:[],keys:['value','label','children'],tip:'请选择',search:false,clear:true,last:false};/**
+ * TreeSelect - Ant Design TreeSelect 组件增强版本
+ * https://ant.design/fns/tree-select-cn/
+ */const TreeSelect=Object(react__WEBPACK_IMPORTED_MODULE_16__["forwardRef"])((props,ref)=>{const{data,keys,tip,search,clear,empty,checkbox,expandAll,expandKeys,showType}=props,restProps=_objectWithoutProperties(props,["data","keys","tip","search","clear","empty","checkbox","expandAll","expandKeys","showType"]);const[valueKey='value',titleKey='title',childrenKey='children']=keys;const treeData=Object(react__WEBPACK_IMPORTED_MODULE_16__["useRef"])([]);if(treeData.current.length!==data.length){if(valueKey==='value'&&titleKey==='title'&&childrenKey==='children'){treeData.current=data;}else{const getNewData=data=>{return data.map(item=>{const{[valueKey]:value,[titleKey]:title,[childrenKey]:children}=item;const newItem={value,title};if(hasLength(children))newItem.children=getNewData(children);return newItem;});};treeData.current=getNewData(data);}}if(treeData.length===0)delete restProps.value;let searchProps;if(search===true){searchProps={showSearch:true,filterTreeNode:(val,node)=>new RegExp(val,'i').test(`${node.value}${node.title}`)};}addUniqueClass(restProps,'tree-select');return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_19__["jsx"])(antd_es_tree_select__WEBPACK_IMPORTED_MODULE_3__["default"],_extends({treeData:treeData.current,placeholder:tip},searchProps,{allowClear:clear,notFoundContent:empty,treeCheckable:checkbox,treeDefaultExpandAll:expandAll,treeDefaultExpandedKeys:expandKeys,showCheckedStrategy:showType},restProps,{ref:ref}));});TreeSelect.propTypes={/** `treeData` 简写 */data:prop_types__WEBPACK_IMPORTED_MODULE_17___default.a.array,/** 当数据源的键不是 `'value'` `'title'` `'children'` 时传入 */keys:prop_types__WEBPACK_IMPORTED_MODULE_17___default.a.array,/** `placeholder` 简写（不支持 `'short'` `'full'`） */tip:prop_types__WEBPACK_IMPORTED_MODULE_17___default.a.string,/** 是否可搜索 */search:prop_types__WEBPACK_IMPORTED_MODULE_17___default.a.bool,/** `allowClear` 简写 */clear:prop_types__WEBPACK_IMPORTED_MODULE_17___default.a.bool,/** `notFoundContent` 简写 */empty:prop_types__WEBPACK_IMPORTED_MODULE_17___default.a.string,/** `treeCheckable` 简写 */checkbox:prop_types__WEBPACK_IMPORTED_MODULE_17___default.a.bool,/** `treeDefaultExpandAll` 简写 */expandAll:prop_types__WEBPACK_IMPORTED_MODULE_17___default.a.bool,/** `treeDefaultExpandedKeys` 简写 */expandKeys:prop_types__WEBPACK_IMPORTED_MODULE_17___default.a.array,/** `showCheckedStrategy` 简写 */showType:prop_types__WEBPACK_IMPORTED_MODULE_17___default.a.oneOf([antd_es_tree_select__WEBPACK_IMPORTED_MODULE_3__["default"].SHOW_ALL,antd_es_tree_select__WEBPACK_IMPORTED_MODULE_3__["default"].SHOW_PARENT,antd_es_tree_select__WEBPACK_IMPORTED_MODULE_3__["default"].SHOW_CHILD])};TreeSelect.defaultProps={data:[],keys:['value','title','children'],tip:'请选择',search:false,clear:false,checkbox:false,expandAll:false,showType:antd_es_tree_select__WEBPACK_IMPORTED_MODULE_3__["default"].SHOW_CHILD};/**
+ * Button - 未做任何封装，方便表单使用
+ */const Button=antd_es_button__WEBPACK_IMPORTED_MODULE_1__["default"];/**
+ * sync component keys, add displayName
+ */const outMap={Form,Input,AutoComplete,Select,Transfer,Cascader,TreeSelect};const omitKeys=['$$typeof','render','propTypes','defaultProps'];const copyOriginalKeys=()=>{const{Form,Input,AutoComplete,Select,Transfer,Cascader,TreeSelect}=Ant;const inMap={Form,Input,AutoComplete,Select,Transfer,Cascader,TreeSelect};Object.entries(outMap).forEach(([name,out])=>{const obj=inMap[name];Object.entries(obj).forEach(([key,val])=>{if(!omitKeys.includes(key))out[key]=val;});out.displayName=`${namePrefix}.${name}`;});};copyOriginalKeys();formSubs.forEach(name=>{Form[name].displayName=`${namePrefix}.${name}`;});/**
+ * exports
+ */if(typeof Button!=='undefined'&&Button&&Button===Object(Button)&&Object.isExtensible(Button)&&!Button.hasOwnProperty('__filemeta')){Object.defineProperty(Button,'__filemeta',{configurable:true,value:{name:"Button",filename:"lib/index.jsx"}});}if(typeof TreeSelect!=='undefined'&&TreeSelect&&TreeSelect===Object(TreeSelect)&&Object.isExtensible(TreeSelect)&&!TreeSelect.hasOwnProperty('__filemeta')){Object.defineProperty(TreeSelect,'__filemeta',{configurable:true,value:{name:"TreeSelect",filename:"lib/index.jsx"}});}if(typeof Cascader!=='undefined'&&Cascader&&Cascader===Object(Cascader)&&Object.isExtensible(Cascader)&&!Cascader.hasOwnProperty('__filemeta')){Object.defineProperty(Cascader,'__filemeta',{configurable:true,value:{name:"Cascader",filename:"lib/index.jsx"}});}if(typeof Transfer!=='undefined'&&Transfer&&Transfer===Object(Transfer)&&Object.isExtensible(Transfer)&&!Transfer.hasOwnProperty('__filemeta')){Object.defineProperty(Transfer,'__filemeta',{configurable:true,value:{name:"Transfer",filename:"lib/index.jsx"}});}if(typeof Select!=='undefined'&&Select&&Select===Object(Select)&&Object.isExtensible(Select)&&!Select.hasOwnProperty('__filemeta')){Object.defineProperty(Select,'__filemeta',{configurable:true,value:{name:"Select",filename:"lib/index.jsx"}});}if(typeof AutoComplete!=='undefined'&&AutoComplete&&AutoComplete===Object(AutoComplete)&&Object.isExtensible(AutoComplete)&&!AutoComplete.hasOwnProperty('__filemeta')){Object.defineProperty(AutoComplete,'__filemeta',{configurable:true,value:{name:"AutoComplete",filename:"lib/index.jsx"}});}if(typeof Input!=='undefined'&&Input&&Input===Object(Input)&&Object.isExtensible(Input)&&!Input.hasOwnProperty('__filemeta')){Object.defineProperty(Input,'__filemeta',{configurable:true,value:{name:"Input",filename:"lib/index.jsx"}});}if(typeof Form!=='undefined'&&Form&&Form===Object(Form)&&Object.isExtensible(Form)&&!Form.hasOwnProperty('__filemeta')){Object.defineProperty(Form,'__filemeta',{configurable:true,value:{name:"Form",filename:"lib/index.jsx"}});}
+
+/***/ }),
+
+/***/ "../lib/index.less":
+/*!*************************!*\
+  !*** ../lib/index.less ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
 /***/ "../node_modules/@ant-design/colors/lib/generate.js":
 /*!**********************************************************!*\
   !*** ../node_modules/@ant-design/colors/lib/generate.js ***!
@@ -583,11 +725,11 @@ exports.default = SearchOutlined;
     value: true
   });
   exports.default = void 0;
-
+  
   var _CaretDownFilled = _interopRequireDefault(__webpack_require__(/*! ./lib/icons/CaretDownFilled */ "../node_modules/@ant-design/icons/lib/icons/CaretDownFilled.js"));
-
+  
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
+  
   var _default = _CaretDownFilled;
   exports.default = _default;
   module.exports = _default;
@@ -607,11 +749,11 @@ exports.default = SearchOutlined;
     value: true
   });
   exports.default = void 0;
-
+  
   var _CheckCircleFilled = _interopRequireDefault(__webpack_require__(/*! ./lib/icons/CheckCircleFilled */ "../node_modules/@ant-design/icons/lib/icons/CheckCircleFilled.js"));
-
+  
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
+  
   var _default = _CheckCircleFilled;
   exports.default = _default;
   module.exports = _default;
@@ -631,11 +773,11 @@ exports.default = SearchOutlined;
     value: true
   });
   exports.default = void 0;
-
+  
   var _CheckOutlined = _interopRequireDefault(__webpack_require__(/*! ./lib/icons/CheckOutlined */ "../node_modules/@ant-design/icons/lib/icons/CheckOutlined.js"));
-
+  
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
+  
   var _default = _CheckOutlined;
   exports.default = _default;
   module.exports = _default;
@@ -655,11 +797,11 @@ exports.default = SearchOutlined;
     value: true
   });
   exports.default = void 0;
-
+  
   var _CloseCircleFilled = _interopRequireDefault(__webpack_require__(/*! ./lib/icons/CloseCircleFilled */ "../node_modules/@ant-design/icons/lib/icons/CloseCircleFilled.js"));
-
+  
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
+  
   var _default = _CloseCircleFilled;
   exports.default = _default;
   module.exports = _default;
@@ -679,11 +821,11 @@ exports.default = SearchOutlined;
     value: true
   });
   exports.default = void 0;
-
+  
   var _CloseOutlined = _interopRequireDefault(__webpack_require__(/*! ./lib/icons/CloseOutlined */ "../node_modules/@ant-design/icons/lib/icons/CloseOutlined.js"));
-
+  
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
+  
   var _default = _CloseOutlined;
   exports.default = _default;
   module.exports = _default;
@@ -703,11 +845,11 @@ exports.default = SearchOutlined;
     value: true
   });
   exports.default = void 0;
-
+  
   var _DownOutlined = _interopRequireDefault(__webpack_require__(/*! ./lib/icons/DownOutlined */ "../node_modules/@ant-design/icons/lib/icons/DownOutlined.js"));
-
+  
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
+  
   var _default = _DownOutlined;
   exports.default = _default;
   module.exports = _default;
@@ -727,11 +869,11 @@ exports.default = SearchOutlined;
     value: true
   });
   exports.default = void 0;
-
+  
   var _ExclamationCircleFilled = _interopRequireDefault(__webpack_require__(/*! ./lib/icons/ExclamationCircleFilled */ "../node_modules/@ant-design/icons/lib/icons/ExclamationCircleFilled.js"));
-
+  
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
+  
   var _default = _ExclamationCircleFilled;
   exports.default = _default;
   module.exports = _default;
@@ -751,11 +893,11 @@ exports.default = SearchOutlined;
     value: true
   });
   exports.default = void 0;
-
+  
   var _EyeInvisibleOutlined = _interopRequireDefault(__webpack_require__(/*! ./lib/icons/EyeInvisibleOutlined */ "../node_modules/@ant-design/icons/lib/icons/EyeInvisibleOutlined.js"));
-
+  
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
+  
   var _default = _EyeInvisibleOutlined;
   exports.default = _default;
   module.exports = _default;
@@ -775,11 +917,11 @@ exports.default = SearchOutlined;
     value: true
   });
   exports.default = void 0;
-
+  
   var _EyeOutlined = _interopRequireDefault(__webpack_require__(/*! ./lib/icons/EyeOutlined */ "../node_modules/@ant-design/icons/lib/icons/EyeOutlined.js"));
-
+  
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
+  
   var _default = _EyeOutlined;
   exports.default = _default;
   module.exports = _default;
@@ -799,11 +941,11 @@ exports.default = SearchOutlined;
     value: true
   });
   exports.default = void 0;
-
+  
   var _FileOutlined = _interopRequireDefault(__webpack_require__(/*! ./lib/icons/FileOutlined */ "../node_modules/@ant-design/icons/lib/icons/FileOutlined.js"));
-
+  
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
+  
   var _default = _FileOutlined;
   exports.default = _default;
   module.exports = _default;
@@ -823,11 +965,11 @@ exports.default = SearchOutlined;
     value: true
   });
   exports.default = void 0;
-
+  
   var _LeftOutlined = _interopRequireDefault(__webpack_require__(/*! ./lib/icons/LeftOutlined */ "../node_modules/@ant-design/icons/lib/icons/LeftOutlined.js"));
-
+  
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
+  
   var _default = _LeftOutlined;
   exports.default = _default;
   module.exports = _default;
@@ -847,11 +989,11 @@ exports.default = SearchOutlined;
     value: true
   });
   exports.default = void 0;
-
+  
   var _LoadingOutlined = _interopRequireDefault(__webpack_require__(/*! ./lib/icons/LoadingOutlined */ "../node_modules/@ant-design/icons/lib/icons/LoadingOutlined.js"));
-
+  
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
+  
   var _default = _LoadingOutlined;
   exports.default = _default;
   module.exports = _default;
@@ -871,11 +1013,11 @@ exports.default = SearchOutlined;
     value: true
   });
   exports.default = void 0;
-
+  
   var _MinusSquareOutlined = _interopRequireDefault(__webpack_require__(/*! ./lib/icons/MinusSquareOutlined */ "../node_modules/@ant-design/icons/lib/icons/MinusSquareOutlined.js"));
-
+  
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
+  
   var _default = _MinusSquareOutlined;
   exports.default = _default;
   module.exports = _default;
@@ -895,11 +1037,11 @@ exports.default = SearchOutlined;
     value: true
   });
   exports.default = void 0;
-
+  
   var _PlusSquareOutlined = _interopRequireDefault(__webpack_require__(/*! ./lib/icons/PlusSquareOutlined */ "../node_modules/@ant-design/icons/lib/icons/PlusSquareOutlined.js"));
-
+  
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
+  
   var _default = _PlusSquareOutlined;
   exports.default = _default;
   module.exports = _default;
@@ -919,11 +1061,11 @@ exports.default = SearchOutlined;
     value: true
   });
   exports.default = void 0;
-
+  
   var _RedoOutlined = _interopRequireDefault(__webpack_require__(/*! ./lib/icons/RedoOutlined */ "../node_modules/@ant-design/icons/lib/icons/RedoOutlined.js"));
-
+  
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
+  
   var _default = _RedoOutlined;
   exports.default = _default;
   module.exports = _default;
@@ -943,11 +1085,11 @@ exports.default = SearchOutlined;
     value: true
   });
   exports.default = void 0;
-
+  
   var _RightOutlined = _interopRequireDefault(__webpack_require__(/*! ./lib/icons/RightOutlined */ "../node_modules/@ant-design/icons/lib/icons/RightOutlined.js"));
-
+  
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
+  
   var _default = _RightOutlined;
   exports.default = _default;
   module.exports = _default;
@@ -967,11 +1109,11 @@ exports.default = SearchOutlined;
     value: true
   });
   exports.default = void 0;
-
+  
   var _SearchOutlined = _interopRequireDefault(__webpack_require__(/*! ./lib/icons/SearchOutlined */ "../node_modules/@ant-design/icons/lib/icons/SearchOutlined.js"));
-
+  
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
+  
   var _default = _SearchOutlined;
   exports.default = _default;
   module.exports = _default;
@@ -7171,35 +7313,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! classnames */ "../node_modules/classnames/index.js");
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var omit_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! omit.js */ "../node_modules/omit.js/es/index.js");
-/* harmony import */ var _config_provider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../config-provider */ "../node_modules/antd/es/config-provider/index.js");
-/* harmony import */ var _util_wave__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../_util/wave */ "../node_modules/antd/es/_util/wave.js");
-/* harmony import */ var _util_type__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../_util/type */ "../node_modules/antd/es/_util/type.js");
-/* harmony import */ var _util_warning__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../_util/warning */ "../node_modules/antd/es/_util/warning.js");
-/* harmony import */ var _config_provider_SizeContext__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../config-provider/SizeContext */ "../node_modules/antd/es/config-provider/SizeContext.js");
-/* harmony import */ var _LoadingIcon__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./LoadingIcon */ "../node_modules/antd/es/button/LoadingIcon.js");
+/* harmony import */ var _button_group__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./button-group */ "../node_modules/antd/es/button/button-group.js");
+/* harmony import */ var _config_provider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../config-provider */ "../node_modules/antd/es/config-provider/index.js");
+/* harmony import */ var _util_wave__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../_util/wave */ "../node_modules/antd/es/_util/wave.js");
+/* harmony import */ var _util_type__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../_util/type */ "../node_modules/antd/es/_util/type.js");
+/* harmony import */ var _util_warning__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../_util/warning */ "../node_modules/antd/es/_util/warning.js");
+/* harmony import */ var _config_provider_SizeContext__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../config-provider/SizeContext */ "../node_modules/antd/es/config-provider/SizeContext.js");
+/* harmony import */ var _LoadingIcon__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./LoadingIcon */ "../node_modules/antd/es/button/LoadingIcon.js");
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
-function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -7216,6 +7351,7 @@ var __rest = undefined && undefined.__rest || function (s, e) {
   return t;
 };
 /* eslint-disable react/button-has-type */
+
 
 
 
@@ -7282,214 +7418,165 @@ function spaceChildren(children, needInserted) {
   });
 }
 
-var ButtonTypes = Object(_util_type__WEBPACK_IMPORTED_MODULE_5__["tuple"])('default', 'primary', 'ghost', 'dashed', 'danger', 'link');
-var ButtonShapes = Object(_util_type__WEBPACK_IMPORTED_MODULE_5__["tuple"])('circle', 'circle-outline', 'round');
-var ButtonHTMLTypes = Object(_util_type__WEBPACK_IMPORTED_MODULE_5__["tuple"])('submit', 'button', 'reset');
+var ButtonTypes = Object(_util_type__WEBPACK_IMPORTED_MODULE_6__["tuple"])('default', 'primary', 'ghost', 'dashed', 'danger', 'link');
+var ButtonShapes = Object(_util_type__WEBPACK_IMPORTED_MODULE_6__["tuple"])('circle', 'circle-outline', 'round');
+var ButtonHTMLTypes = Object(_util_type__WEBPACK_IMPORTED_MODULE_6__["tuple"])('submit', 'button', 'reset');
 
-var Button = /*#__PURE__*/function (_React$Component) {
-  _inherits(Button, _React$Component);
+var Button = function Button(_a) {
+  var props = __rest(_a, []);
 
-  var _super = _createSuper(Button);
+  var _React$useState = react__WEBPACK_IMPORTED_MODULE_0__["useState"](props.loading),
+      _React$useState2 = _slicedToArray(_React$useState, 2),
+      loading = _React$useState2[0],
+      setLoading = _React$useState2[1];
 
-  function Button(props) {
-    var _this;
+  var _React$useState3 = react__WEBPACK_IMPORTED_MODULE_0__["useState"](false),
+      _React$useState4 = _slicedToArray(_React$useState3, 2),
+      hasTwoCNChar = _React$useState4[0],
+      setHasTwoCNChar = _React$useState4[1];
 
-    _classCallCheck(this, Button);
+  var _React$useContext = react__WEBPACK_IMPORTED_MODULE_0__["useContext"](_config_provider__WEBPACK_IMPORTED_MODULE_4__["ConfigContext"]),
+      getPrefixCls = _React$useContext.getPrefixCls,
+      autoInsertSpaceInButton = _React$useContext.autoInsertSpaceInButton,
+      direction = _React$useContext.direction;
 
-    _this = _super.call(this, props);
+  var buttonRef = react__WEBPACK_IMPORTED_MODULE_0__["createRef"]();
+  var delayTimeout;
 
-    _this.saveButtonRef = function (node) {
-      _this.buttonNode = node;
-    };
+  var isNeedInserted = function isNeedInserted() {
+    var icon = props.icon,
+        children = props.children,
+        type = props.type;
+    return react__WEBPACK_IMPORTED_MODULE_0__["Children"].count(children) === 1 && !icon && type !== 'link';
+  };
 
-    _this.handleClick = function (e) {
-      var loading = _this.state.loading;
-      var onClick = _this.props.onClick;
-
-      if (loading) {
-        return;
-      }
-
-      if (onClick) {
-        onClick(e);
-      }
-    };
-
-    _this.state = {
-      loading: props.loading,
-      hasTwoCNChar: false
-    };
-    return _this;
-  }
-
-  _createClass(Button, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      this.fixTwoCNChar();
+  var fixTwoCNChar = function fixTwoCNChar() {
+    // Fix for HOC usage like <FormatMessage />
+    if (!buttonRef || !buttonRef.current || autoInsertSpaceInButton === false) {
+      return;
     }
-  }, {
-    key: "componentDidUpdate",
-    value: function componentDidUpdate(prevProps) {
-      var _this2 = this;
 
-      this.fixTwoCNChar();
+    var buttonText = buttonRef.current.textContent;
 
-      if (prevProps.loading && typeof prevProps.loading !== 'boolean') {
-        clearTimeout(this.delayTimeout);
+    if (isNeedInserted() && isTwoCNChar(buttonText)) {
+      if (!hasTwoCNChar) {
+        setHasTwoCNChar(true);
       }
-
-      var loading = this.props.loading;
-
-      if (loading && typeof loading !== 'boolean' && loading.delay) {
-        this.delayTimeout = window.setTimeout(function () {
-          _this2.setState({
-            loading: loading
-          });
-        }, loading.delay);
-      } else if (prevProps.loading !== loading) {
-        // eslint-disable-next-line react/no-did-update-set-state
-        this.setState({
-          loading: loading
-        });
-      }
+    } else if (hasTwoCNChar) {
+      setHasTwoCNChar(false);
     }
-  }, {
-    key: "componentWillUnmount",
-    value: function componentWillUnmount() {
-      if (this.delayTimeout) {
-        clearTimeout(this.delayTimeout);
-      }
+  };
+
+  react__WEBPACK_IMPORTED_MODULE_0__["useEffect"](function () {
+    if (props.loading && typeof props.loading !== 'boolean') {
+      clearTimeout(delayTimeout);
     }
-  }, {
-    key: "fixTwoCNChar",
-    value: function fixTwoCNChar() {
-      var autoInsertSpaceInButton = this.context.autoInsertSpaceInButton; // Fix for HOC usage like <FormatMessage />
 
-      if (!this.buttonNode || autoInsertSpaceInButton === false) {
-        return;
-      }
-
-      var buttonText = this.buttonNode.textContent;
-
-      if (this.isNeedInserted() && isTwoCNChar(buttonText)) {
-        if (!this.state.hasTwoCNChar) {
-          this.setState({
-            hasTwoCNChar: true
-          });
-        }
-      } else if (this.state.hasTwoCNChar) {
-        this.setState({
-          hasTwoCNChar: false
-        });
-      }
+    if (props.loading && typeof props.loading !== 'boolean' && props.loading.delay) {
+      delayTimeout = window.setTimeout(function () {
+        setLoading(props.loading);
+      }, props.loading.delay);
+    } else if (props.loading !== loading) {
+      setLoading(props.loading);
     }
-  }, {
-    key: "isNeedInserted",
-    value: function isNeedInserted() {
-      var _this$props = this.props,
-          icon = _this$props.icon,
-          children = _this$props.children,
-          type = _this$props.type;
-      return react__WEBPACK_IMPORTED_MODULE_0__["Children"].count(children) === 1 && !icon && type !== 'link';
+  }, [props.loading]);
+  react__WEBPACK_IMPORTED_MODULE_0__["useEffect"](function () {
+    fixTwoCNChar();
+  }, [buttonRef]);
+
+  var handleClick = function handleClick(e) {
+    var onClick = props.onClick;
+
+    if (loading) {
+      return;
     }
-  }, {
-    key: "render",
-    value: function render() {
-      var _this3 = this;
 
-      var _this$context = this.context,
-          getPrefixCls = _this$context.getPrefixCls,
-          autoInsertSpaceInButton = _this$context.autoInsertSpaceInButton,
-          direction = _this$context.direction;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_config_provider_SizeContext__WEBPACK_IMPORTED_MODULE_7__["default"].Consumer, null, function (size) {
-        var _classNames;
-
-        var _a = _this3.props,
-            customizePrefixCls = _a.prefixCls,
-            type = _a.type,
-            danger = _a.danger,
-            shape = _a.shape,
-            customizeSize = _a.size,
-            className = _a.className,
-            children = _a.children,
-            icon = _a.icon,
-            ghost = _a.ghost,
-            block = _a.block,
-            rest = __rest(_a, ["prefixCls", "type", "danger", "shape", "size", "className", "children", "icon", "ghost", "block"]);
-
-        var _this3$state = _this3.state,
-            loading = _this3$state.loading,
-            hasTwoCNChar = _this3$state.hasTwoCNChar;
-        Object(_util_warning__WEBPACK_IMPORTED_MODULE_6__["default"])(!(typeof icon === 'string' && icon.length > 2), 'Button', "`icon` is using ReactNode instead of string naming in v4. Please check `".concat(icon, "` at https://ant.design/components/icon"));
-        var prefixCls = getPrefixCls('btn', customizePrefixCls);
-        var autoInsertSpace = autoInsertSpaceInButton !== false; // large => lg
-        // small => sm
-
-        var sizeCls = '';
-
-        switch (customizeSize || size) {
-          case 'large':
-            sizeCls = 'lg';
-            break;
-
-          case 'small':
-            sizeCls = 'sm';
-            break;
-
-          default:
-            break;
-        }
-
-        var iconType = loading ? 'loading' : icon;
-        var classes = classnames__WEBPACK_IMPORTED_MODULE_1___default()(prefixCls, className, (_classNames = {}, _defineProperty(_classNames, "".concat(prefixCls, "-").concat(type), type), _defineProperty(_classNames, "".concat(prefixCls, "-").concat(shape), shape), _defineProperty(_classNames, "".concat(prefixCls, "-").concat(sizeCls), sizeCls), _defineProperty(_classNames, "".concat(prefixCls, "-icon-only"), !children && children !== 0 && iconType), _defineProperty(_classNames, "".concat(prefixCls, "-background-ghost"), ghost), _defineProperty(_classNames, "".concat(prefixCls, "-loading"), loading), _defineProperty(_classNames, "".concat(prefixCls, "-two-chinese-chars"), hasTwoCNChar && autoInsertSpace), _defineProperty(_classNames, "".concat(prefixCls, "-block"), block), _defineProperty(_classNames, "".concat(prefixCls, "-dangerous"), !!danger), _defineProperty(_classNames, "".concat(prefixCls, "-rtl"), direction === 'rtl'), _classNames));
-        var iconNode = icon && !loading ? icon : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_LoadingIcon__WEBPACK_IMPORTED_MODULE_8__["default"], {
-          existIcon: !!icon,
-          prefixCls: prefixCls,
-          loading: loading
-        });
-        var kids = children || children === 0 ? spaceChildren(children, _this3.isNeedInserted() && autoInsertSpace) : null;
-        var linkButtonRestProps = Object(omit_js__WEBPACK_IMPORTED_MODULE_2__["default"])(rest, ['htmlType', 'loading']);
-
-        if (linkButtonRestProps.href !== undefined) {
-          return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("a", _extends({}, linkButtonRestProps, {
-            className: classes,
-            onClick: _this3.handleClick,
-            ref: _this3.saveButtonRef
-          }), iconNode, kids);
-        } // React does not recognize the `htmlType` prop on a DOM element. Here we pick it out of `rest`.
-
-
-        var _b = rest,
-            htmlType = _b.htmlType,
-            otherProps = __rest(_b, ["htmlType"]);
-
-        var buttonNode = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("button", _extends({}, Object(omit_js__WEBPACK_IMPORTED_MODULE_2__["default"])(otherProps, ['loading']), {
-          type: htmlType,
-          className: classes,
-          onClick: _this3.handleClick,
-          ref: _this3.saveButtonRef
-        }), iconNode, kids);
-
-        if (type === 'link') {
-          return buttonNode;
-        }
-
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_util_wave__WEBPACK_IMPORTED_MODULE_4__["default"], null, buttonNode);
-      });
+    if (onClick) {
+      onClick(e);
     }
-  }]);
+  };
 
-  return Button;
-}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_config_provider_SizeContext__WEBPACK_IMPORTED_MODULE_8__["default"].Consumer, null, function (size) {
+    var _classNames;
 
-Button.__ANT_BUTTON = true;
-Button.contextType = _config_provider__WEBPACK_IMPORTED_MODULE_3__["ConfigContext"];
+    var customizePrefixCls = props.prefixCls,
+        type = props.type,
+        danger = props.danger,
+        shape = props.shape,
+        customizeSize = props.size,
+        className = props.className,
+        children = props.children,
+        icon = props.icon,
+        ghost = props.ghost,
+        block = props.block,
+        rest = __rest(props, ["prefixCls", "type", "danger", "shape", "size", "className", "children", "icon", "ghost", "block"]);
+
+    Object(_util_warning__WEBPACK_IMPORTED_MODULE_7__["default"])(!(typeof icon === 'string' && icon.length > 2), 'Button', "`icon` is using ReactNode instead of string naming in v4. Please check `".concat(icon, "` at https://ant.design/components/icon"));
+    var prefixCls = getPrefixCls('btn', customizePrefixCls);
+    var autoInsertSpace = autoInsertSpaceInButton !== false; // large => lg
+    // small => sm
+
+    var sizeCls = '';
+
+    switch (customizeSize || size) {
+      case 'large':
+        sizeCls = 'lg';
+        break;
+
+      case 'small':
+        sizeCls = 'sm';
+        break;
+
+      default:
+        break;
+    }
+
+    var iconType = loading ? 'loading' : icon;
+    var classes = classnames__WEBPACK_IMPORTED_MODULE_1___default()(prefixCls, className, (_classNames = {}, _defineProperty(_classNames, "".concat(prefixCls, "-").concat(type), type), _defineProperty(_classNames, "".concat(prefixCls, "-").concat(shape), shape), _defineProperty(_classNames, "".concat(prefixCls, "-").concat(sizeCls), sizeCls), _defineProperty(_classNames, "".concat(prefixCls, "-icon-only"), !children && children !== 0 && iconType), _defineProperty(_classNames, "".concat(prefixCls, "-background-ghost"), ghost), _defineProperty(_classNames, "".concat(prefixCls, "-loading"), loading), _defineProperty(_classNames, "".concat(prefixCls, "-two-chinese-chars"), hasTwoCNChar && autoInsertSpace), _defineProperty(_classNames, "".concat(prefixCls, "-block"), block), _defineProperty(_classNames, "".concat(prefixCls, "-dangerous"), !!danger), _defineProperty(_classNames, "".concat(prefixCls, "-rtl"), direction === 'rtl'), _classNames));
+    var iconNode = icon && !loading ? icon : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_LoadingIcon__WEBPACK_IMPORTED_MODULE_9__["default"], {
+      existIcon: !!icon,
+      prefixCls: prefixCls,
+      loading: loading
+    });
+    var kids = children || children === 0 ? spaceChildren(children, isNeedInserted() && autoInsertSpace) : null;
+    var linkButtonRestProps = Object(omit_js__WEBPACK_IMPORTED_MODULE_2__["default"])(rest, ['htmlType', 'loading']);
+
+    if (linkButtonRestProps.href !== undefined) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("a", _extends({}, linkButtonRestProps, {
+        className: classes,
+        onClick: handleClick,
+        ref: buttonRef
+      }), iconNode, kids);
+    } // React does not recognize the `htmlType` prop on a DOM element. Here we pick it out of `rest`.
+
+
+    var _a = rest,
+        htmlType = _a.htmlType,
+        otherProps = __rest(_a, ["htmlType"]);
+
+    var buttonNode = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("button", _extends({}, Object(omit_js__WEBPACK_IMPORTED_MODULE_2__["default"])(otherProps, ['loading']), {
+      type: htmlType,
+      className: classes,
+      onClick: handleClick,
+      ref: buttonRef
+    }), iconNode, kids);
+
+    if (type === 'link') {
+      return buttonNode;
+    }
+
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_util_wave__WEBPACK_IMPORTED_MODULE_5__["default"], null, buttonNode);
+  });
+};
+
 Button.defaultProps = {
   loading: false,
   ghost: false,
   block: false,
   htmlType: 'button'
 };
+Button.Group = _button_group__WEBPACK_IMPORTED_MODULE_3__["default"];
+Button.__ANT_BUTTON = true;
 /* harmony default export */ __webpack_exports__["default"] = (Button);
 
 /***/ }),
@@ -7504,10 +7591,7 @@ Button.defaultProps = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _button__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./button */ "../node_modules/antd/es/button/button.js");
-/* harmony import */ var _button_group__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./button-group */ "../node_modules/antd/es/button/button-group.js");
 
-
-_button__WEBPACK_IMPORTED_MODULE_0__["default"].Group = _button_group__WEBPACK_IMPORTED_MODULE_1__["default"];
 /* harmony default export */ __webpack_exports__["default"] = (_button__WEBPACK_IMPORTED_MODULE_0__["default"]);
 
 /***/ }),
@@ -8339,7 +8423,7 @@ var Checkbox = /*#__PURE__*/function (_React$PureComponent) {
 
       var value = this.props.value;
       (_a = this.context) === null || _a === void 0 ? void 0 : _a.registerValue(value);
-      Object(_util_warning__WEBPACK_IMPORTED_MODULE_5__["default"])('checked' in this.props || this.context || !('value' in this.props), 'Checkbox', '`value` is not validate prop, do you mean `checked`?');
+      Object(_util_warning__WEBPACK_IMPORTED_MODULE_5__["default"])('checked' in this.props || this.context || !('value' in this.props), 'Checkbox', '`value` is not a valid prop, do you mean `checked`?');
     }
   }, {
     key: "componentDidUpdate",
@@ -8889,9 +8973,19 @@ var ConfigProvider = /*#__PURE__*/function (_React$Component) {
 
       var childNode = children; // Additional Form provider
 
+      var validateMessages = {};
+
+      if (locale && locale.Form && locale.Form.defaultValidateMessages) {
+        validateMessages = locale.Form.defaultValidateMessages;
+      }
+
       if (form && form.validateMessages) {
+        validateMessages = _extends(_extends({}, validateMessages), form.validateMessages);
+      }
+
+      if (Object.keys(validateMessages).length > 0) {
         childNode = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](rc_field_form__WEBPACK_IMPORTED_MODULE_1__["FormProvider"], {
-          validateMessages: form.validateMessages
+          validateMessages: validateMessages
         }, children);
       }
 
@@ -10738,14 +10832,15 @@ var ClearableLabeledInput = /*#__PURE__*/function (_React$Component) {
           inputType = _this$props.inputType,
           handleReset = _this$props.handleReset;
 
-      if (!allowClear || disabled || readOnly || value === undefined || value === null || value === '') {
+      if (!allowClear) {
         return null;
       }
 
+      var needClear = !disabled && !readOnly && value;
       var className = inputType === ClearableInputType[0] ? "".concat(prefixCls, "-textarea-clear-icon") : "".concat(prefixCls, "-clear-icon");
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_ant_design_icons_CloseCircleFilled__WEBPACK_IMPORTED_MODULE_2___default.a, {
         onClick: handleReset,
-        className: className,
+        className: classnames__WEBPACK_IMPORTED_MODULE_1___default()(className, _defineProperty({}, "".concat(className, "-hidden"), !needClear)),
         role: "button"
       });
     }
@@ -10767,7 +10862,7 @@ var ClearableLabeledInput = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "renderLabeledIcon",
     value: function renderLabeledIcon(prefixCls, element) {
-      var _classNames;
+      var _classNames2;
 
       var _this$props3 = this.props,
           focused = _this$props3.focused,
@@ -10791,7 +10886,7 @@ var ClearableLabeledInput = /*#__PURE__*/function (_React$Component) {
       var prefixNode = prefix ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", {
         className: "".concat(prefixCls, "-prefix")
       }, prefix) : null;
-      var affixWrapperCls = classnames__WEBPACK_IMPORTED_MODULE_1___default()(className, "".concat(prefixCls, "-affix-wrapper"), (_classNames = {}, _defineProperty(_classNames, "".concat(prefixCls, "-affix-wrapper-focused"), focused), _defineProperty(_classNames, "".concat(prefixCls, "-affix-wrapper-disabled"), disabled), _defineProperty(_classNames, "".concat(prefixCls, "-affix-wrapper-sm"), size === 'small'), _defineProperty(_classNames, "".concat(prefixCls, "-affix-wrapper-lg"), size === 'large'), _defineProperty(_classNames, "".concat(prefixCls, "-affix-wrapper-input-with-clear-btn"), suffix && allowClear && value), _defineProperty(_classNames, "".concat(prefixCls, "-affix-wrapper-rtl"), direction === 'rtl'), _classNames));
+      var affixWrapperCls = classnames__WEBPACK_IMPORTED_MODULE_1___default()(className, "".concat(prefixCls, "-affix-wrapper"), (_classNames2 = {}, _defineProperty(_classNames2, "".concat(prefixCls, "-affix-wrapper-focused"), focused), _defineProperty(_classNames2, "".concat(prefixCls, "-affix-wrapper-disabled"), disabled), _defineProperty(_classNames2, "".concat(prefixCls, "-affix-wrapper-sm"), size === 'small'), _defineProperty(_classNames2, "".concat(prefixCls, "-affix-wrapper-lg"), size === 'large'), _defineProperty(_classNames2, "".concat(prefixCls, "-affix-wrapper-input-with-clear-btn"), suffix && allowClear && value), _defineProperty(_classNames2, "".concat(prefixCls, "-affix-wrapper-rtl"), direction === 'rtl'), _classNames2));
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", {
         ref: this.containerRef,
         className: affixWrapperCls,
@@ -10806,7 +10901,7 @@ var ClearableLabeledInput = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "renderInputWithLabel",
     value: function renderInputWithLabel(prefixCls, labeledElement) {
-      var _classNames2, _classNames3;
+      var _classNames3, _classNames4;
 
       var _this$props4 = this.props,
           addonBefore = _this$props4.addonBefore,
@@ -10828,8 +10923,8 @@ var ClearableLabeledInput = /*#__PURE__*/function (_React$Component) {
       var addonAfterNode = addonAfter ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", {
         className: addonClassName
       }, addonAfter) : null;
-      var mergedWrapperClassName = classnames__WEBPACK_IMPORTED_MODULE_1___default()("".concat(prefixCls, "-wrapper"), (_classNames2 = {}, _defineProperty(_classNames2, wrapperClassName, addonBefore || addonAfter), _defineProperty(_classNames2, "".concat(wrapperClassName, "-rtl"), direction === 'rtl'), _classNames2));
-      var mergedGroupClassName = classnames__WEBPACK_IMPORTED_MODULE_1___default()(className, "".concat(prefixCls, "-group-wrapper"), (_classNames3 = {}, _defineProperty(_classNames3, "".concat(prefixCls, "-group-wrapper-sm"), size === 'small'), _defineProperty(_classNames3, "".concat(prefixCls, "-group-wrapper-lg"), size === 'large'), _defineProperty(_classNames3, "".concat(prefixCls, "-group-wrapper-rtl"), direction === 'rtl'), _classNames3)); // Need another wrapper for changing display:table to display:inline-block
+      var mergedWrapperClassName = classnames__WEBPACK_IMPORTED_MODULE_1___default()("".concat(prefixCls, "-wrapper"), (_classNames3 = {}, _defineProperty(_classNames3, wrapperClassName, addonBefore || addonAfter), _defineProperty(_classNames3, "".concat(wrapperClassName, "-rtl"), direction === 'rtl'), _classNames3));
+      var mergedGroupClassName = classnames__WEBPACK_IMPORTED_MODULE_1___default()(className, "".concat(prefixCls, "-group-wrapper"), (_classNames4 = {}, _defineProperty(_classNames4, "".concat(prefixCls, "-group-wrapper-sm"), size === 'small'), _defineProperty(_classNames4, "".concat(prefixCls, "-group-wrapper-lg"), size === 'large'), _defineProperty(_classNames4, "".concat(prefixCls, "-group-wrapper-rtl"), direction === 'rtl'), _classNames4)); // Need another wrapper for changing display:table to display:inline-block
       // and put style prop in wrapper
 
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", {
@@ -11672,7 +11767,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ant_design_icons_LoadingOutlined__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_ant_design_icons_LoadingOutlined__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _Input__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Input */ "../node_modules/antd/es/input/Input.js");
 /* harmony import */ var _button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../button */ "../node_modules/antd/es/button/index.js");
-/* harmony import */ var _config_provider__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../config-provider */ "../node_modules/antd/es/config-provider/index.js");
+/* harmony import */ var _config_provider_SizeContext__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../config-provider/SizeContext */ "../node_modules/antd/es/config-provider/SizeContext.js");
+/* harmony import */ var _config_provider__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../config-provider */ "../node_modules/antd/es/config-provider/index.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -11711,6 +11807,7 @@ var __rest = undefined && undefined.__rest || function (s, e) {
   }
   return t;
 };
+
 
 
 
@@ -11774,15 +11871,17 @@ var Search = /*#__PURE__*/function (_React$Component) {
     _this.renderLoading = function (prefixCls) {
       var _this$props3 = _this.props,
           enterButton = _this$props3.enterButton,
-          size = _this$props3.size;
+          customizeSize = _this$props3.size;
 
       if (enterButton) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_button__WEBPACK_IMPORTED_MODULE_5__["default"], {
-          className: "".concat(prefixCls, "-button"),
-          type: "primary",
-          size: size,
-          key: "enterButton"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_ant_design_icons_LoadingOutlined__WEBPACK_IMPORTED_MODULE_3___default.a, null));
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_config_provider_SizeContext__WEBPACK_IMPORTED_MODULE_6__["default"].Consumer, null, function (size) {
+          return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_button__WEBPACK_IMPORTED_MODULE_5__["default"], {
+            className: "".concat(prefixCls, "-button"),
+            type: "primary",
+            size: customizeSize || size,
+            key: "enterButton"
+          }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_ant_design_icons_LoadingOutlined__WEBPACK_IMPORTED_MODULE_3___default.a, null));
+        });
       }
 
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_ant_design_icons_LoadingOutlined__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -11817,10 +11916,9 @@ var Search = /*#__PURE__*/function (_React$Component) {
       return icon;
     };
 
-    _this.renderAddonAfter = function (prefixCls) {
+    _this.renderAddonAfter = function (prefixCls, size) {
       var _this$props5 = _this.props,
           enterButton = _this$props5.enterButton,
-          size = _this$props5.size,
           disabled = _this$props5.disabled,
           addonAfter = _this$props5.addonAfter,
           loading = _this$props5.loading;
@@ -11872,36 +11970,43 @@ var Search = /*#__PURE__*/function (_React$Component) {
       var _a = _this.props,
           customizePrefixCls = _a.prefixCls,
           customizeInputPrefixCls = _a.inputPrefixCls,
-          size = _a.size,
           enterButton = _a.enterButton,
           className = _a.className,
-          restProps = __rest(_a, ["prefixCls", "inputPrefixCls", "size", "enterButton", "className"]);
+          customizeSize = _a.size,
+          restProps = __rest(_a, ["prefixCls", "inputPrefixCls", "enterButton", "className", "size"]);
 
       delete restProps.onSearch;
       delete restProps.loading;
       var prefixCls = getPrefixCls('input-search', customizePrefixCls);
       var inputPrefixCls = getPrefixCls('input', customizeInputPrefixCls);
-      var inputClassName;
 
-      if (enterButton) {
-        var _classNames;
+      var getClassName = function getClassName(size) {
+        var inputClassName;
 
-        inputClassName = classnames__WEBPACK_IMPORTED_MODULE_1___default()(prefixCls, className, (_classNames = {}, _defineProperty(_classNames, "".concat(prefixCls, "-rtl"), direction === 'rtl'), _defineProperty(_classNames, "".concat(prefixCls, "-enter-button"), !!enterButton), _defineProperty(_classNames, "".concat(prefixCls, "-").concat(size), !!size), _classNames));
-      } else {
-        inputClassName = classnames__WEBPACK_IMPORTED_MODULE_1___default()(prefixCls, className, _defineProperty({}, "".concat(prefixCls, "-rtl"), direction === 'rtl'));
-      }
+        if (enterButton) {
+          var _classNames;
 
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_Input__WEBPACK_IMPORTED_MODULE_4__["default"], _extends({
-        onPressEnter: _this.onSearch
-      }, restProps, {
-        size: size,
-        prefixCls: inputPrefixCls,
-        addonAfter: _this.renderAddonAfter(prefixCls),
-        suffix: _this.renderSuffix(prefixCls),
-        onChange: _this.onChange,
-        ref: _this.saveInput,
-        className: inputClassName
-      }));
+          inputClassName = classnames__WEBPACK_IMPORTED_MODULE_1___default()(prefixCls, className, (_classNames = {}, _defineProperty(_classNames, "".concat(prefixCls, "-rtl"), direction === 'rtl'), _defineProperty(_classNames, "".concat(prefixCls, "-enter-button"), !!enterButton), _defineProperty(_classNames, "".concat(prefixCls, "-").concat(size), !!size), _classNames));
+        } else {
+          inputClassName = classnames__WEBPACK_IMPORTED_MODULE_1___default()(prefixCls, className, _defineProperty({}, "".concat(prefixCls, "-rtl"), direction === 'rtl'));
+        }
+
+        return inputClassName;
+      };
+
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_config_provider_SizeContext__WEBPACK_IMPORTED_MODULE_6__["default"].Consumer, null, function (size) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_Input__WEBPACK_IMPORTED_MODULE_4__["default"], _extends({
+          onPressEnter: _this.onSearch
+        }, restProps, {
+          size: customizeSize || size,
+          prefixCls: inputPrefixCls,
+          addonAfter: _this.renderAddonAfter(prefixCls, customizeSize || size),
+          suffix: _this.renderSuffix(prefixCls),
+          onChange: _this.onChange,
+          ref: _this.saveInput,
+          className: getClassName(customizeSize || size)
+        }));
+      });
     };
 
     return _this;
@@ -11920,7 +12025,7 @@ var Search = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_config_provider__WEBPACK_IMPORTED_MODULE_6__["ConfigConsumer"], null, this.renderSearch);
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_config_provider__WEBPACK_IMPORTED_MODULE_7__["ConfigConsumer"], null, this.renderSearch);
     }
   }]);
 
@@ -14217,7 +14322,7 @@ var TreeSelect = /*#__PURE__*/function (_React$Component) {
           _this$props$listHeigh = _this$props.listHeight,
           listHeight = _this$props$listHeigh === void 0 ? 256 : _this$props$listHeigh,
           _this$props$listItemH = _this$props.listItemHeight,
-          listItemHeight = _this$props$listItemH === void 0 ? 32 : _this$props$listItemH,
+          listItemHeight = _this$props$listItemH === void 0 ? 26 : _this$props$listItemH,
           notFoundContent = _this$props.notFoundContent,
           _switcherIcon = _this$props.switcherIcon,
           treeLine = _this$props.treeLine,
@@ -14647,7 +14752,7 @@ module.exports = function kindOf(val) {
   if (type === '[object Symbol]') {
     return 'symbol';
   }
-
+  
   if (type === '[object Map Iterator]') {
     return 'mapiterator';
   }
@@ -14660,7 +14765,7 @@ module.exports = function kindOf(val) {
   if (type === '[object Array Iterator]') {
     return 'arrayiterator';
   }
-
+  
   // typed arrays
   if (type === '[object Int8Array]') {
     return 'int8array';
@@ -27535,7 +27640,7 @@ module.exports = function kindOf(val) {
   if (type === '[object Symbol]') {
     return 'symbol';
   }
-
+  
   if (type === '[object Map Iterator]') {
     return 'mapiterator';
   }
@@ -27548,7 +27653,7 @@ module.exports = function kindOf(val) {
   if (type === '[object Array Iterator]') {
     return 'arrayiterator';
   }
-
+  
   // typed arrays
   if (type === '[object Int8Array]') {
     return 'int8array';
@@ -30285,7 +30390,7 @@ var scope_0 = __webpack_require__(/*! ./.cache/caches/gatsby-plugin-mdx/mdx-scop
 
 var scope_1 = __webpack_require__(/*! ./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/340696bcc75b89ae83bdb84729ef74f1.js */ "./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/340696bcc75b89ae83bdb84729ef74f1.js").default;
 
-var scope_2 = __webpack_require__(/*! ./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/57250872f13f039b33fc9b3642c49d2e.js */ "./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/57250872f13f039b33fc9b3642c49d2e.js").default;
+var scope_2 = __webpack_require__(/*! ./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/5a023c93db667062cfddc4eb18ef95bc.js */ "./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/5a023c93db667062cfddc4eb18ef95bc.js").default;
 
 var scope_3 = __webpack_require__(/*! ./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/5b0b6036507ae58ac37fbed4a76941d8.js */ "./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/5b0b6036507ae58ac37fbed4a76941d8.js").default;
 
@@ -30502,7 +30607,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash_fp__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(lodash_fp__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @mdx-js/react */ "../node_modules/@mdx-js/react/dist/esm.js");
 /* harmony import */ var _hooks_useDbQuery__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../hooks/useDbQuery */ "../node_modules/gatsby-theme-docz/src/hooks/useDbQuery.js");
-/* harmony import */ var _wrapper__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../wrapper */ "../node_modules/gatsby-theme-docz/src/wrapper.js");
+/* harmony import */ var _wrapper__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../wrapper */ "./src/gatsby-theme-docz/wrapper.js");
 /* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../index */ "../node_modules/gatsby-theme-docz/src/index.js");
 /* harmony import */ var _Seo__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Seo */ "../node_modules/gatsby-theme-docz/src/base/Seo.js");
 /* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @emotion/core */ "../node_modules/@emotion/core/dist/core.esm.js");
@@ -30790,7 +30895,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var docz__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! docz */ "../node_modules/docz/dist/index.esm.js");
 /* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles */ "../node_modules/gatsby-theme-docz/src/components/Header/styles.js");
 /* harmony import */ var _Icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Icons */ "../node_modules/gatsby-theme-docz/src/components/Icons/index.js");
-/* harmony import */ var _Logo__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Logo */ "../node_modules/gatsby-theme-docz/src/components/Logo/index.js");
+/* harmony import */ var _Logo__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Logo */ "./src/gatsby-theme-docz/components/Logo/index.js");
 /* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @emotion/core */ "../node_modules/@emotion/core/dist/core.esm.js");
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
 
@@ -31389,97 +31494,6 @@ if (typeof wrapper !== 'undefined' && wrapper && wrapper === Object(wrapper) && 
     value: {
       name: "wrapper",
       filename: "node_modules/gatsby-theme-docz/src/components/Layout/styles.js"
-    }
-  });
-}
-
-/***/ }),
-
-/***/ "../node_modules/gatsby-theme-docz/src/components/Logo/index.js":
-/*!**********************************************************************!*\
-  !*** ../node_modules/gatsby-theme-docz/src/components/Logo/index.js ***!
-  \**********************************************************************/
-/*! exports provided: Logo */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Logo", function() { return Logo; });
-/* harmony import */ var theme_ui__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! theme-ui */ "../node_modules/theme-ui/dist/index.esm.js");
-/* harmony import */ var docz__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! docz */ "../node_modules/docz/dist/index.esm.js");
-/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles */ "../node_modules/gatsby-theme-docz/src/components/Logo/styles.js");
-/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @emotion/core */ "../node_modules/@emotion/core/dist/core.esm.js");
-/** @jsx jsx */
-
-
-
-
-const Logo = () => {
-  const config = Object(docz__WEBPACK_IMPORTED_MODULE_1__["useConfig"])();
-  return Object(theme_ui__WEBPACK_IMPORTED_MODULE_0__["jsx"])(theme_ui__WEBPACK_IMPORTED_MODULE_0__["Flex"], {
-    alignItems: "center",
-    sx: _styles__WEBPACK_IMPORTED_MODULE_2__["logo"],
-    "data-testid": "logo"
-  }, Object(theme_ui__WEBPACK_IMPORTED_MODULE_0__["jsx"])(docz__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/",
-    sx: _styles__WEBPACK_IMPORTED_MODULE_2__["link"]
-  }, config.title));
-};
-
-if (typeof Logo !== 'undefined' && Logo && Logo === Object(Logo) && Object.isExtensible(Logo) && !Logo.hasOwnProperty('__filemeta')) {
-  Object.defineProperty(Logo, '__filemeta', {
-    configurable: true,
-    value: {
-      name: "Logo",
-      filename: "node_modules/gatsby-theme-docz/src/components/Logo/index.js"
-    }
-  });
-}
-
-/***/ }),
-
-/***/ "../node_modules/gatsby-theme-docz/src/components/Logo/styles.js":
-/*!***********************************************************************!*\
-  !*** ../node_modules/gatsby-theme-docz/src/components/Logo/styles.js ***!
-  \***********************************************************************/
-/*! exports provided: logo, link */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logo", function() { return logo; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "link", function() { return link; });
-const logo = {
-  letterSpacing: '-0.02em',
-  fontWeight: 600,
-  fontSize: 4
-};
-
-if (typeof logo !== 'undefined' && logo && logo === Object(logo) && Object.isExtensible(logo) && !logo.hasOwnProperty('__filemeta')) {
-  Object.defineProperty(logo, '__filemeta', {
-    configurable: true,
-    value: {
-      name: "logo",
-      filename: "node_modules/gatsby-theme-docz/src/components/Logo/styles.js"
-    }
-  });
-}
-
-const link = {
-  fontWeight: 600,
-  color: 'header.text',
-  textDecoration: 'none',
-  ':hover': {
-    color: 'primary'
-  }
-};
-
-if (typeof link !== 'undefined' && link && link === Object(link) && Object.isExtensible(link) && !link.hasOwnProperty('__filemeta')) {
-  Object.defineProperty(link, '__filemeta', {
-    configurable: true,
-    value: {
-      name: "link",
-      filename: "node_modules/gatsby-theme-docz/src/components/Logo/styles.js"
     }
   });
 }
@@ -34152,39 +34166,6 @@ if (typeof usePrismTheme !== 'undefined' && usePrismTheme && usePrismTheme === O
 
 /***/ }),
 
-/***/ "../node_modules/gatsby-theme-docz/src/wrapper.js":
-/*!********************************************************!*\
-  !*** ../node_modules/gatsby-theme-docz/src/wrapper.js ***!
-  \********************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @emotion/core */ "../node_modules/@emotion/core/dist/core.esm.js");
-
-
-
-const Wrapper = ({
-  children
-}) => Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, children);
-
-/* harmony default export */ __webpack_exports__["default"] = (Wrapper);
-
-if (typeof Wrapper !== 'undefined' && Wrapper && Wrapper === Object(Wrapper) && Object.isExtensible(Wrapper) && !Wrapper.hasOwnProperty('__filemeta')) {
-  Object.defineProperty(Wrapper, '__filemeta', {
-    configurable: true,
-    value: {
-      name: "Wrapper",
-      filename: "node_modules/gatsby-theme-docz/src/wrapper.js"
-    }
-  });
-}
-
-/***/ }),
-
 /***/ "../node_modules/gatsby/package.json":
 /*!*******************************************!*\
   !*** ../node_modules/gatsby/package.json ***!
@@ -34192,7 +34173,7 @@ if (typeof Wrapper !== 'undefined' && Wrapper && Wrapper === Object(Wrapper) && 
 /*! exports provided: name, description, version, author, bin, bugs, dependencies, devDependencies, engines, files, homepage, keywords, license, main, module, peerDependencies, repository, resolutions, scripts, types, yargs, gitHead, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"name\":\"gatsby\",\"description\":\"Blazing fast modern site generator for React\",\"version\":\"2.20.23\",\"author\":\"Kyle Mathews <mathews.kyle@gmail.com>\",\"bin\":{\"gatsby\":\"./dist/bin/gatsby.js\"},\"bugs\":{\"url\":\"https://github.com/gatsbyjs/gatsby/issues\"},\"dependencies\":{\"@babel/code-frame\":\"^7.8.3\",\"@babel/core\":\"^7.8.7\",\"@babel/parser\":\"^7.8.8\",\"@babel/polyfill\":\"^7.8.7\",\"@babel/runtime\":\"^7.8.7\",\"@babel/traverse\":\"^7.8.6\",\"@hapi/joi\":\"^15.1.1\",\"@mikaelkristiansson/domready\":\"^1.0.10\",\"@pieh/friendly-errors-webpack-plugin\":\"1.7.0-chalk-2\",\"@pmmmwh/react-refresh-webpack-plugin\":\"^0.2.0\",\"@reach/router\":\"^1.3.3\",\"@typescript-eslint/eslint-plugin\":\"^2.24.0\",\"@typescript-eslint/parser\":\"^2.24.0\",\"address\":\"1.1.2\",\"autoprefixer\":\"^9.7.4\",\"axios\":\"^0.19.2\",\"babel-core\":\"7.0.0-bridge.0\",\"babel-eslint\":\"^10.1.0\",\"babel-loader\":\"^8.0.6\",\"babel-plugin-add-module-exports\":\"^0.3.3\",\"babel-plugin-dynamic-import-node\":\"^2.3.0\",\"babel-plugin-remove-graphql-queries\":\"^2.8.2\",\"babel-preset-gatsby\":\"^0.3.2\",\"better-opn\":\"1.0.0\",\"better-queue\":\"^3.8.10\",\"bluebird\":\"^3.7.2\",\"browserslist\":\"^4.9.1\",\"cache-manager\":\"^2.11.1\",\"cache-manager-fs-hash\":\"^0.0.7\",\"chalk\":\"^2.4.2\",\"chokidar\":\"3.3.1\",\"common-tags\":\"^1.8.0\",\"compression\":\"^1.7.4\",\"convert-hrtime\":\"^3.0.0\",\"copyfiles\":\"^2.2.0\",\"core-js\":\"^2.6.11\",\"cors\":\"^2.8.5\",\"css-loader\":\"^1.0.1\",\"date-fns\":\"^2.11.0\",\"debug\":\"^3.2.6\",\"del\":\"^5.1.0\",\"detect-port\":\"^1.3.0\",\"devcert\":\"^1.1.0\",\"dotenv\":\"^8.2.0\",\"eslint\":\"^6.8.0\",\"eslint-config-react-app\":\"^5.2.0\",\"eslint-loader\":\"^2.2.1\",\"eslint-plugin-flowtype\":\"^3.13.0\",\"eslint-plugin-graphql\":\"^3.1.1\",\"eslint-plugin-import\":\"^2.20.1\",\"eslint-plugin-jsx-a11y\":\"^6.2.3\",\"eslint-plugin-react\":\"^7.19.0\",\"eslint-plugin-react-hooks\":\"^1.7.0\",\"event-source-polyfill\":\"^1.0.12\",\"express\":\"^4.17.1\",\"express-graphql\":\"^0.9.0\",\"fast-levenshtein\":\"^2.0.6\",\"file-loader\":\"^1.1.11\",\"flat\":\"^4.1.0\",\"fs-exists-cached\":\"1.0.0\",\"fs-extra\":\"^8.1.0\",\"gatsby-cli\":\"^2.11.9\",\"gatsby-core-utils\":\"^1.1.2\",\"gatsby-graphiql-explorer\":\"^0.3.2\",\"gatsby-link\":\"^2.3.3\",\"gatsby-plugin-page-creator\":\"^2.2.2\",\"gatsby-react-router-scroll\":\"^2.2.1\",\"gatsby-recipes\":\"^0.0.6\",\"gatsby-telemetry\":\"^1.2.4\",\"glob\":\"^7.1.6\",\"got\":\"8.3.2\",\"graphql\":\"^14.6.0\",\"graphql-compose\":\"^6.3.8\",\"graphql-playground-middleware-express\":\"^1.7.12\",\"hasha\":\"^5.2.0\",\"invariant\":\"^2.2.4\",\"is-relative\":\"^1.0.0\",\"is-relative-url\":\"^3.0.0\",\"is-wsl\":\"^2.1.1\",\"jest-worker\":\"^24.9.0\",\"json-loader\":\"^0.5.7\",\"json-stringify-safe\":\"^5.0.1\",\"latest-version\":\"5.1.0\",\"lodash\":\"^4.17.15\",\"lokijs\":\"^1.5.8\",\"md5\":\"^2.2.1\",\"md5-file\":\"^3.2.3\",\"micromatch\":\"^3.1.10\",\"mime\":\"^2.4.4\",\"mini-css-extract-plugin\":\"^0.8.2\",\"mitt\":\"^1.2.0\",\"mkdirp\":\"^0.5.1\",\"moment\":\"^2.24.0\",\"name-all-modules-plugin\":\"^1.0.1\",\"normalize-path\":\"^2.1.1\",\"null-loader\":\"^3.0.0\",\"opentracing\":\"^0.14.4\",\"optimize-css-assets-webpack-plugin\":\"^5.0.3\",\"p-defer\":\"^3.0.0\",\"parseurl\":\"^1.3.3\",\"physical-cpu-count\":\"^2.0.0\",\"pnp-webpack-plugin\":\"^1.6.4\",\"postcss-flexbugs-fixes\":\"^4.2.0\",\"postcss-loader\":\"^3.0.0\",\"prompts\":\"^2.3.1\",\"prop-types\":\"^15.7.2\",\"raw-loader\":\"^0.5.1\",\"react-dev-utils\":\"^4.2.3\",\"react-error-overlay\":\"^3.0.0\",\"react-hot-loader\":\"^4.12.20\",\"react-refresh\":\"^0.7.0\",\"redux\":\"^4.0.5\",\"redux-thunk\":\"^2.3.0\",\"semver\":\"^5.7.1\",\"shallow-compare\":\"^1.2.2\",\"sift\":\"^5.1.0\",\"signal-exit\":\"^3.0.2\",\"slugify\":\"^1.4.0\",\"socket.io\":\"^2.3.0\",\"stack-trace\":\"^0.0.10\",\"string-similarity\":\"^1.2.2\",\"style-loader\":\"^0.23.1\",\"terser-webpack-plugin\":\"^1.4.3\",\"true-case-path\":\"^2.2.1\",\"type-of\":\"^2.0.1\",\"url-loader\":\"^1.1.2\",\"util.promisify\":\"^1.0.1\",\"uuid\":\"^3.4.0\",\"v8-compile-cache\":\"^1.1.2\",\"webpack\":\"~4.42.0\",\"webpack-dev-middleware\":\"^3.7.2\",\"webpack-dev-server\":\"^3.10.3\",\"webpack-hot-middleware\":\"^2.25.0\",\"webpack-merge\":\"^4.2.2\",\"webpack-stats-plugin\":\"^0.3.1\",\"xstate\":\"^4.8.0\",\"yaml-loader\":\"^0.5.0\"},\"devDependencies\":{\"@babel/cli\":\"^7.8.4\",\"@babel/runtime\":\"^7.8.7\",\"@types/hapi__joi\":\"^16.0.12\",\"@types/socket.io\":\"^2.1.4\",\"babel-preset-gatsby-package\":\"^0.3.1\",\"cross-env\":\"^5.2.1\",\"documentation\":\"^12.1.4\",\"eslint-plugin-jsx-a11y\":\"^6.2.3\",\"react\":\"^16.12.0\",\"react-dom\":\"^16.12.0\",\"rimraf\":\"^3.0.2\",\"xhr-mock\":\"^2.5.1\",\"zipkin\":\"^0.19.2\",\"zipkin-javascript-opentracing\":\"^2.1.0\",\"zipkin-transport-http\":\"^0.19.2\"},\"engines\":{\"node\":\">=10.13.0\"},\"files\":[\"apis.json\",\"ipc.json\",\"cache-dir\",\"dist\",\"graphql.js\",\"index.d.ts\",\"scripts/postinstall.js\",\"utils.js\"],\"homepage\":\"https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby#readme\",\"keywords\":[\"blog\",\"generator\",\"jekyll\",\"markdown\",\"react\",\"ssg\",\"website\"],\"license\":\"MIT\",\"main\":\"cache-dir/commonjs/gatsby-browser-entry.js\",\"module\":\"cache-dir/gatsby-browser-entry.js\",\"peerDependencies\":{\"react\":\"^16.4.2\",\"react-dom\":\"^16.4.2\"},\"repository\":{\"type\":\"git\",\"url\":\"git+https://github.com/gatsbyjs/gatsby.git\"},\"resolutions\":{\"graphql\":\"^14.6.0\"},\"scripts\":{\"build\":\"npm run build:src && npm run build:internal-plugins && npm run build:rawfiles && npm run build:cjs\",\"postbuild\":\"node scripts/output-api-file.js\",\"build:internal-plugins\":\"copyfiles -u 1 src/internal-plugins/**/package.json dist\",\"build:rawfiles\":\"copyfiles -u 1 src/internal-plugins/**/raw_* dist\",\"build:cjs\":\"babel cache-dir --out-dir cache-dir/commonjs --ignore **/__tests__\",\"build:src\":\"babel src --out-dir dist --source-maps --verbose --ignore **/gatsby-cli.js,src/internal-plugins/dev-404-page/raw_dev-404-page.js,**/__tests__ --extensions \\\".ts,.js\\\"\",\"clean-test-bundles\":\"find test/ -type f -name bundle.js* -exec rm -rf {} +\",\"prebuild\":\"rimraf dist && rimraf cache-dir/commonjs\",\"postinstall\":\"node scripts/postinstall.js\",\"prepare\":\"cross-env NODE_ENV=production npm run build\",\"watch\":\"rimraf dist && mkdir dist && npm run build:internal-plugins && npm run build:rawfiles && npm run build:src -- --watch\"},\"types\":\"index.d.ts\",\"yargs\":{\"boolean-negation\":false},\"gitHead\":\"d3823b5b2af478ce861a38413ee6b4d4f3cc6da9\"}");
+module.exports = JSON.parse("{\"name\":\"gatsby\",\"description\":\"Blazing fast modern site generator for React\",\"version\":\"2.20.27\",\"author\":\"Kyle Mathews <mathews.kyle@gmail.com>\",\"bin\":{\"gatsby\":\"./dist/bin/gatsby.js\"},\"bugs\":{\"url\":\"https://github.com/gatsbyjs/gatsby/issues\"},\"dependencies\":{\"@babel/code-frame\":\"^7.8.3\",\"@babel/core\":\"^7.8.7\",\"@babel/parser\":\"^7.8.8\",\"@babel/polyfill\":\"^7.8.7\",\"@babel/runtime\":\"^7.8.7\",\"@babel/traverse\":\"^7.8.6\",\"@hapi/joi\":\"^15.1.1\",\"@mikaelkristiansson/domready\":\"^1.0.10\",\"@pieh/friendly-errors-webpack-plugin\":\"1.7.0-chalk-2\",\"@pmmmwh/react-refresh-webpack-plugin\":\"^0.2.0\",\"@reach/router\":\"^1.3.3\",\"@typescript-eslint/eslint-plugin\":\"^2.24.0\",\"@typescript-eslint/parser\":\"^2.24.0\",\"address\":\"1.1.2\",\"autoprefixer\":\"^9.7.4\",\"axios\":\"^0.19.2\",\"babel-core\":\"7.0.0-bridge.0\",\"babel-eslint\":\"^10.1.0\",\"babel-loader\":\"^8.0.6\",\"babel-plugin-add-module-exports\":\"^0.3.3\",\"babel-plugin-dynamic-import-node\":\"^2.3.0\",\"babel-plugin-remove-graphql-queries\":\"^2.8.3\",\"babel-preset-gatsby\":\"^0.3.3\",\"better-opn\":\"1.0.0\",\"better-queue\":\"^3.8.10\",\"bluebird\":\"^3.7.2\",\"browserslist\":\"^4.9.1\",\"cache-manager\":\"^2.11.1\",\"cache-manager-fs-hash\":\"^0.0.7\",\"chalk\":\"^2.4.2\",\"chokidar\":\"3.3.1\",\"common-tags\":\"^1.8.0\",\"compression\":\"^1.7.4\",\"convert-hrtime\":\"^3.0.0\",\"copyfiles\":\"^2.2.0\",\"core-js\":\"^2.6.11\",\"cors\":\"^2.8.5\",\"css-loader\":\"^1.0.1\",\"date-fns\":\"^2.11.0\",\"debug\":\"^3.2.6\",\"del\":\"^5.1.0\",\"detect-port\":\"^1.3.0\",\"devcert\":\"^1.1.0\",\"dotenv\":\"^8.2.0\",\"eslint\":\"^6.8.0\",\"eslint-config-react-app\":\"^5.2.0\",\"eslint-loader\":\"^2.2.1\",\"eslint-plugin-flowtype\":\"^3.13.0\",\"eslint-plugin-graphql\":\"^3.1.1\",\"eslint-plugin-import\":\"^2.20.1\",\"eslint-plugin-jsx-a11y\":\"^6.2.3\",\"eslint-plugin-react\":\"^7.19.0\",\"eslint-plugin-react-hooks\":\"^1.7.0\",\"event-source-polyfill\":\"^1.0.12\",\"express\":\"^4.17.1\",\"express-graphql\":\"^0.9.0\",\"fast-levenshtein\":\"^2.0.6\",\"file-loader\":\"^1.1.11\",\"flat\":\"^4.1.0\",\"fs-exists-cached\":\"1.0.0\",\"fs-extra\":\"^8.1.0\",\"gatsby-cli\":\"^2.11.13\",\"gatsby-core-utils\":\"^1.1.3\",\"gatsby-graphiql-explorer\":\"^0.3.3\",\"gatsby-link\":\"^2.3.4\",\"gatsby-plugin-page-creator\":\"^2.2.3\",\"gatsby-react-router-scroll\":\"^2.2.2\",\"gatsby-telemetry\":\"^1.2.5\",\"glob\":\"^7.1.6\",\"got\":\"8.3.2\",\"graphql\":\"^14.6.0\",\"graphql-compose\":\"^6.3.8\",\"graphql-playground-middleware-express\":\"^1.7.12\",\"hasha\":\"^5.2.0\",\"invariant\":\"^2.2.4\",\"is-relative\":\"^1.0.0\",\"is-relative-url\":\"^3.0.0\",\"is-wsl\":\"^2.1.1\",\"jest-worker\":\"^24.9.0\",\"json-loader\":\"^0.5.7\",\"json-stringify-safe\":\"^5.0.1\",\"latest-version\":\"5.1.0\",\"lodash\":\"^4.17.15\",\"lokijs\":\"^1.5.8\",\"md5\":\"^2.2.1\",\"md5-file\":\"^3.2.3\",\"micromatch\":\"^3.1.10\",\"mime\":\"^2.4.4\",\"mini-css-extract-plugin\":\"^0.8.2\",\"mitt\":\"^1.2.0\",\"mkdirp\":\"^0.5.1\",\"moment\":\"^2.24.0\",\"name-all-modules-plugin\":\"^1.0.1\",\"normalize-path\":\"^2.1.1\",\"null-loader\":\"^3.0.0\",\"opentracing\":\"^0.14.4\",\"optimize-css-assets-webpack-plugin\":\"^5.0.3\",\"p-defer\":\"^3.0.0\",\"parseurl\":\"^1.3.3\",\"physical-cpu-count\":\"^2.0.0\",\"pnp-webpack-plugin\":\"^1.6.4\",\"postcss-flexbugs-fixes\":\"^4.2.0\",\"postcss-loader\":\"^3.0.0\",\"prompts\":\"^2.3.1\",\"prop-types\":\"^15.7.2\",\"raw-loader\":\"^0.5.1\",\"react-dev-utils\":\"^4.2.3\",\"react-error-overlay\":\"^3.0.0\",\"react-hot-loader\":\"^4.12.20\",\"react-refresh\":\"^0.7.0\",\"redux\":\"^4.0.5\",\"redux-thunk\":\"^2.3.0\",\"semver\":\"^5.7.1\",\"shallow-compare\":\"^1.2.2\",\"sift\":\"^5.1.0\",\"signal-exit\":\"^3.0.2\",\"slugify\":\"^1.4.0\",\"socket.io\":\"^2.3.0\",\"stack-trace\":\"^0.0.10\",\"string-similarity\":\"^1.2.2\",\"style-loader\":\"^0.23.1\",\"terser-webpack-plugin\":\"^1.4.3\",\"true-case-path\":\"^2.2.1\",\"type-of\":\"^2.0.1\",\"url-loader\":\"^1.1.2\",\"util.promisify\":\"^1.0.1\",\"uuid\":\"^3.4.0\",\"v8-compile-cache\":\"^1.1.2\",\"webpack\":\"~4.42.0\",\"webpack-dev-middleware\":\"^3.7.2\",\"webpack-dev-server\":\"^3.10.3\",\"webpack-hot-middleware\":\"^2.25.0\",\"webpack-merge\":\"^4.2.2\",\"webpack-stats-plugin\":\"^0.3.1\",\"xstate\":\"^4.8.0\",\"yaml-loader\":\"^0.5.0\"},\"devDependencies\":{\"@babel/cli\":\"^7.8.4\",\"@babel/runtime\":\"^7.8.7\",\"@types/hapi__joi\":\"^16.0.12\",\"@types/socket.io\":\"^2.1.4\",\"babel-preset-gatsby-package\":\"^0.3.1\",\"cross-env\":\"^5.2.1\",\"documentation\":\"^12.1.4\",\"eslint-plugin-jsx-a11y\":\"^6.2.3\",\"react\":\"^16.12.0\",\"react-dom\":\"^16.12.0\",\"rimraf\":\"^3.0.2\",\"xhr-mock\":\"^2.5.1\",\"zipkin\":\"^0.19.2\",\"zipkin-javascript-opentracing\":\"^2.1.0\",\"zipkin-transport-http\":\"^0.19.2\"},\"engines\":{\"node\":\">=10.13.0\"},\"files\":[\"apis.json\",\"ipc.json\",\"cache-dir\",\"dist\",\"graphql.js\",\"index.d.ts\",\"scripts/postinstall.js\",\"utils.js\"],\"homepage\":\"https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby#readme\",\"keywords\":[\"blog\",\"generator\",\"jekyll\",\"markdown\",\"react\",\"ssg\",\"website\"],\"license\":\"MIT\",\"main\":\"cache-dir/commonjs/gatsby-browser-entry.js\",\"module\":\"cache-dir/gatsby-browser-entry.js\",\"peerDependencies\":{\"react\":\"^16.4.2\",\"react-dom\":\"^16.4.2\"},\"repository\":{\"type\":\"git\",\"url\":\"git+https://github.com/gatsbyjs/gatsby.git\"},\"resolutions\":{\"graphql\":\"^14.6.0\"},\"scripts\":{\"build\":\"npm run build:src && npm run build:internal-plugins && npm run build:rawfiles && npm run build:cjs\",\"postbuild\":\"node scripts/output-api-file.js\",\"build:internal-plugins\":\"copyfiles -u 1 src/internal-plugins/**/package.json dist\",\"build:rawfiles\":\"copyfiles -u 1 src/internal-plugins/**/raw_* dist\",\"build:cjs\":\"babel cache-dir --out-dir cache-dir/commonjs --ignore \\\"**/__tests__\\\"\",\"build:src\":\"babel src --out-dir dist --source-maps --verbose --ignore \\\"**/gatsby-cli.js,src/internal-plugins/dev-404-page/raw_dev-404-page.js,**/__tests__\\\" --extensions \\\".ts,.js\\\"\",\"clean-test-bundles\":\"find test/ -type f -name bundle.js* -exec rm -rf {} +\",\"prebuild\":\"rimraf dist && rimraf cache-dir/commonjs\",\"postinstall\":\"node scripts/postinstall.js\",\"prepare\":\"cross-env NODE_ENV=production npm run build\",\"watch\":\"rimraf dist && mkdir dist && npm run build:internal-plugins && npm run build:rawfiles && npm run build:src -- --watch\"},\"types\":\"index.d.ts\",\"yargs\":{\"boolean-negation\":false},\"gitHead\":\"c8d86ae086fd0b6551b8e002a860438a71956da5\"}");
 
 /***/ }),
 
@@ -39121,7 +39102,7 @@ var chars = Object.keys(characterMap).join('|');
 var allAccents = new RegExp(chars, 'g');
 var firstAccent = new RegExp(chars, '');
 
-var removeAccents = function(string) {
+var removeAccents = function(string) {	
 	return string.replace(allAccents, function(match) {
 		return characterMap[match];
 	});
@@ -39624,20 +39605,20 @@ function getKeyAttributes(key) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
+//      
 // An event handler can take an optional event argument
 // and should not return a value
-
-
+                                          
+                                                               
 
 // An array of all currently registered event handlers for a type
-
-
+                                            
+                                                            
 // A map of event types and their corresponding event handlers.
-
-
-
-
+                        
+                                 
+                                   
+  
 
 /** Mitt: Tiny (~200b) functional event emitter / pubsub.
  *  @name mitt
@@ -48887,7 +48868,7 @@ var OptionList = function OptionList(_ref, ref) {
      * `setActive` function will call root accessibility state update which makes re-render.
      * So we need to delay to let Input component trigger onChange first.
      */
-    setTimeout(function () {
+    var timeoutId = setTimeout(function () {
       if (!multiple && open && values.size === 1) {
         var value = Array.from(values)[0];
         var index = memoFlattenOptions.findIndex(function (_ref2) {
@@ -48898,6 +48879,9 @@ var OptionList = function OptionList(_ref, ref) {
         scrollIntoView(index);
       }
     });
+    return function () {
+      return clearTimeout(timeoutId);
+    };
   }, [open]); // ========================== Values ==========================
 
   var onSelectValue = function onSelectValue(value) {
@@ -49101,6 +49085,10 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
@@ -49110,10 +49098,6 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 /**
  * To match accessibility requirement, we always provide an input in the component.
@@ -49137,7 +49121,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
  * - openClassName (Not list in api)
  *
  * Update:
- * - `showType` only support `combobox` mode
+ * - `backfill` only support `combobox` mode
  * - `combobox` mode not support `labelInValue` since it's meaningless
  * - `getInputElement` only support `combobox` mode
  * - `onChange` return OptionData instead of ReactNode
@@ -49909,6 +49893,10 @@ var Selector = function Selector(props, ref) {
     }
 
     if (mode !== 'combobox' && (!showSearch || !inputMouseDown) || !open) {
+      if (open) {
+        onSearch('');
+      }
+
       onToggleOpen();
     }
   }; // ================= Inner Selector ==================
@@ -50126,7 +50114,7 @@ function generateSelector(config) {
         _props$notFoundConten = props.notFoundContent,
         notFoundContent = _props$notFoundConten === void 0 ? 'Not Found' : _props$notFoundConten,
         optionLabelProp = props.optionLabelProp,
-        showType = props.showType,
+        backfill = props.backfill,
         getInputElement = props.getInputElement,
         getPopupContainer = props.getPopupContainer,
         _props$listHeight = props.listHeight,
@@ -50158,7 +50146,7 @@ function generateSelector(config) {
         onDeselect = props.onDeselect,
         _props$internalProps = props.internalProps,
         internalProps = _props$internalProps === void 0 ? {} : _props$internalProps,
-        restProps = _objectWithoutProperties(props, ["prefixCls", "className", "id", "open", "defaultOpen", "options", "children", "mode", "value", "defaultValue", "labelInValue", "showSearch", "inputValue", "searchValue", "filterOption", "optionFilterProp", "autoClearSearchValue", "onSearch", "allowClear", "clearIcon", "showArrow", "inputIcon", "menuItemSelectedIcon", "disabled", "loading", "defaultActiveFirstOption", "notFoundContent", "optionLabelProp", "showType", "getInputElement", "getPopupContainer", "listHeight", "listItemHeight", "animation", "transitionName", "virtual", "dropdownStyle", "dropdownClassName", "dropdownMatchSelectWidth", "dropdownRender", "dropdownAlign", "showAction", "direction", "tokenSeparators", "tagRender", "onPopupScroll", "onDropdownVisibleChange", "onFocus", "onBlur", "onKeyUp", "onKeyDown", "onMouseDown", "onChange", "onSelect", "onDeselect", "internalProps"]);
+        restProps = _objectWithoutProperties(props, ["prefixCls", "className", "id", "open", "defaultOpen", "options", "children", "mode", "value", "defaultValue", "labelInValue", "showSearch", "inputValue", "searchValue", "filterOption", "optionFilterProp", "autoClearSearchValue", "onSearch", "allowClear", "clearIcon", "showArrow", "inputIcon", "menuItemSelectedIcon", "disabled", "loading", "defaultActiveFirstOption", "notFoundContent", "optionLabelProp", "backfill", "getInputElement", "getPopupContainer", "listHeight", "listItemHeight", "animation", "transitionName", "virtual", "dropdownStyle", "dropdownClassName", "dropdownMatchSelectWidth", "dropdownRender", "dropdownAlign", "showAction", "direction", "tokenSeparators", "tagRender", "onPopupScroll", "onDropdownVisibleChange", "onFocus", "onBlur", "onKeyUp", "onKeyDown", "onMouseDown", "onChange", "onSelect", "onDeselect", "internalProps"]);
 
     var useInternalProps = internalProps.mark === _interface_generator__WEBPACK_IMPORTED_MODULE_6__["INTERNAL_PROPS_MARK"];
     var domProps = omitDOMProps ? omitDOMProps(restProps) : restProps;
@@ -50639,18 +50627,35 @@ function generateSelector(config) {
       }
     };
 
+    var activeTimeoutIds = [];
+    react__WEBPACK_IMPORTED_MODULE_0__["useEffect"](function () {
+      return function () {
+        activeTimeoutIds.forEach(function (timeoutId) {
+          return clearTimeout(timeoutId);
+        });
+        activeTimeoutIds.splice(0, activeTimeoutIds.length);
+      };
+    }, []);
+
     var onInternalMouseDown = function onInternalMouseDown(event) {
       var target = event.target;
       var popupElement = triggerRef.current && triggerRef.current.getPopupElement(); // We should give focus back to selector if clicked item is not focusable
 
       if (popupElement && popupElement.contains(target)) {
-        setTimeout(function () {
+        var timeoutId = setTimeout(function () {
+          var index = activeTimeoutIds.indexOf(timeoutId);
+
+          if (index !== -1) {
+            activeTimeoutIds.splice(index, 1);
+          }
+
           cancelSetMockFocused();
 
           if (!popupElement.contains(document.activeElement)) {
             selectorRef.current.focus();
           }
         });
+        activeTimeoutIds.push(timeoutId);
       }
 
       if (onMouseDown) {
@@ -50673,7 +50678,7 @@ function generateSelector(config) {
     var onActiveValue = function onActiveValue(active, index) {
       setAccessibilityIndex(index);
 
-      if (showType && mode === 'combobox' && active !== null) {
+      if (backfill && mode === 'combobox' && active !== null) {
         setActiveValue(String(active));
       }
     }; // ============================= Popup ==============================
@@ -51588,7 +51593,7 @@ function warningProps(props) {
   var mode = props.mode,
       options = props.options,
       children = props.children,
-      showType = props.showType,
+      backfill = props.backfill,
       allowClear = props.allowClear,
       placeholder = props.placeholder,
       getInputElement = props.getInputElement,
@@ -51622,9 +51627,9 @@ function warningProps(props) {
   } // `combobox` should not use `optionLabelProp`
 
 
-  Object(rc_util_es_warning__WEBPACK_IMPORTED_MODULE_1__["default"])(mode !== 'combobox' || !optionLabelProp, '`combobox` mode not support `optionLabelProp`. Please set `value` on Option directly.'); // Only `combobox` support `showType`
+  Object(rc_util_es_warning__WEBPACK_IMPORTED_MODULE_1__["default"])(mode !== 'combobox' || !optionLabelProp, '`combobox` mode not support `optionLabelProp`. Please set `value` on Option directly.'); // Only `combobox` support `backfill`
 
-  Object(rc_util_es_warning__WEBPACK_IMPORTED_MODULE_1__["default"])(mode === 'combobox' || !showType, '`showType` only works with `combobox` mode.'); // Only `combobox` support `getInputElement`
+  Object(rc_util_es_warning__WEBPACK_IMPORTED_MODULE_1__["default"])(mode === 'combobox' || !backfill, '`backfill` only works with `combobox` mode.'); // Only `combobox` support `getInputElement`
 
   Object(rc_util_es_warning__WEBPACK_IMPORTED_MODULE_1__["default"])(mode === 'combobox' || !getInputElement, '`getInputElement` only work with `combobox` mode.'); // Customize `getInputElement` should not use `allowClear` & `placeholder`
 
@@ -80361,10 +80366,10 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "../site/AutoComplete.mdx":
-/*!********************************!*\
-  !*** ../site/AutoComplete.mdx ***!
-  \********************************/
+/***/ "../src/AutoComplete.mdx":
+/*!*******************************!*\
+  !*** ../src/AutoComplete.mdx ***!
+  \*******************************/
 /*! exports provided: _frontmatter, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -80377,7 +80382,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mdx-js/react */ "../node_modules/@mdx-js/react/dist/esm.js");
 /* harmony import */ var _Users_Lee_Works_ant_plus_node_modules_gatsby_theme_docz_src_base_Layout_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../node_modules/gatsby-theme-docz/src/base/Layout.js */ "../node_modules/gatsby-theme-docz/src/base/Layout.js");
 /* harmony import */ var docz__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! docz */ "../node_modules/docz/dist/index.esm.js");
-/* harmony import */ var antx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! antx */ "../src/index.jsx");
+/* harmony import */ var antx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! antx */ "../lib/index.jsx");
 /* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @emotion/core */ "../node_modules/@emotion/core/dist/core.esm.js");
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -80402,7 +80407,7 @@ if (typeof _frontmatter !== 'undefined' && _frontmatter && _frontmatter === Obje
     configurable: true,
     value: {
       name: "_frontmatter",
-      filename: "site/AutoComplete.mdx"
+      filename: "src/AutoComplete.mdx"
     }
   });
 }
@@ -80428,17 +80433,15 @@ function MDXContent(_ref) {
   }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h1", {
     "id": "autocomplete-自动完成"
   }, `AutoComplete 自动完成`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", {
-    "id": "使用"
-  }, `使用`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("pre", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("code", _extends({
+    "id": "演示"
+  }, `演示`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("pre", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("code", _extends({
     parentName: "pre"
   }, {
     "className": "language-js"
   }), `import { AutoComplete } from 'antx';
-`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", {
-    "id": "示例"
-  }, `示例`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(docz__WEBPACK_IMPORTED_MODULE_3__["Playground"], {
+`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(docz__WEBPACK_IMPORTED_MODULE_3__["Playground"], {
     __position: 0,
-    __code: '<AutoComplete\n  data={[\n    { value: \'小脑斧 🐅\' },\n    { value: \'小狗子 🐕\' },\n    { value: \'小喵咪 🐈\' },\n  ]}\n  search\n  clear\n  tip=\"写点什么 ...\"\n/>',
+    __code: '<AutoComplete\n  data={[\n    { value: \'小脑斧 🐅\' },\n    { value: \'小狗子 🐕\' },\n    { value: \'小喵咪 🐈\' },\n  ]}\n  search\n  tip=\"写点什么 ...\"\n/>',
     __scope: {
       props,
       DefaultLayout: _Users_Lee_Works_ant_plus_node_modules_gatsby_theme_docz_src_base_Layout_js__WEBPACK_IMPORTED_MODULE_2__["default"],
@@ -80458,20 +80461,19 @@ function MDXContent(_ref) {
       value: '小喵咪 🐈'
     }],
     search: true,
-    clear: true,
     tip: "\u5199\u70B9\u4EC0\u4E48 ...",
     mdxType: "AutoComplete"
   })), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", {
     "id": "api"
-  }, `API`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `其它 Props 与 Ant Design `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("a", _extends({
-    parentName: "p"
-  }, {
-    "href": "https://ant.design/components/auto-complete-cn/"
-  }), `AutoComplete`), ` 一致。`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(docz__WEBPACK_IMPORTED_MODULE_3__["Props"], {
+  }, `API`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(docz__WEBPACK_IMPORTED_MODULE_3__["Props"], {
     of: antx__WEBPACK_IMPORTED_MODULE_4__["AutoComplete"],
     isToggle: true,
     mdxType: "Props"
-  }));
+  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `其它 Props 与 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("a", _extends({
+    parentName: "p"
+  }, {
+    "href": "https://ant.design/components/auto-complete-cn/"
+  }), `Ant Design AutoComplete`), ` 一致。`));
 }
 
 if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDXContent) && Object.isExtensible(MDXContent) && !MDXContent.hasOwnProperty('__filemeta')) {
@@ -80479,7 +80481,7 @@ if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDX
     configurable: true,
     value: {
       name: "MDXContent",
-      filename: "site/AutoComplete.mdx"
+      filename: "src/AutoComplete.mdx"
     }
   });
 }
@@ -80489,10 +80491,10 @@ MDXContent.isMDXComponent = true;
 
 /***/ }),
 
-/***/ "../site/Cascader.mdx":
-/*!****************************!*\
-  !*** ../site/Cascader.mdx ***!
-  \****************************/
+/***/ "../src/Cascader.mdx":
+/*!***************************!*\
+  !*** ../src/Cascader.mdx ***!
+  \***************************/
 /*! exports provided: _frontmatter, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -80505,7 +80507,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mdx-js/react */ "../node_modules/@mdx-js/react/dist/esm.js");
 /* harmony import */ var _Users_Lee_Works_ant_plus_node_modules_gatsby_theme_docz_src_base_Layout_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../node_modules/gatsby-theme-docz/src/base/Layout.js */ "../node_modules/gatsby-theme-docz/src/base/Layout.js");
 /* harmony import */ var docz__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! docz */ "../node_modules/docz/dist/index.esm.js");
-/* harmony import */ var antx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! antx */ "../src/index.jsx");
+/* harmony import */ var antx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! antx */ "../lib/index.jsx");
 /* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @emotion/core */ "../node_modules/@emotion/core/dist/core.esm.js");
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -80531,7 +80533,7 @@ if (typeof _frontmatter !== 'undefined' && _frontmatter && _frontmatter === Obje
     configurable: true,
     value: {
       name: "_frontmatter",
-      filename: "site/Cascader.mdx"
+      filename: "src/Cascader.mdx"
     }
   });
 }
@@ -80557,17 +80559,15 @@ function MDXContent(_ref) {
   }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h1", {
     "id": "cascader-级联选择"
   }, `Cascader 级联选择`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", {
-    "id": "使用"
-  }, `使用`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("pre", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("code", _extends({
+    "id": "演示"
+  }, `演示`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("pre", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("code", _extends({
     parentName: "pre"
   }, {
     "className": "language-js"
   }), `import { Cascader } from 'antx';
-`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", {
-    "id": "示例"
-  }, `示例`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(docz__WEBPACK_IMPORTED_MODULE_3__["Playground"], {
+`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(docz__WEBPACK_IMPORTED_MODULE_3__["Playground"], {
     __position: 0,
-    __code: '() => {\n  const [value, onChange] = useState([\'cat\'])\n  return (\n    <Cascader\n      data={[\n        {\n          val: \'tiger\',\n          text: \'小脑斧 🐅\',\n          children: [{ val: \'lil_tiger\', text: \'小小脑斧 🐯\' }],\n        },\n        {\n          val: \'dog\',\n          text: \'小狗子 🐕\',\n          children: [{ val: \'lil_dog\', text: \'小小狗子 🐶\' }],\n        },\n        { val: \'cat\', text: \'小喵咪 🐈\' },\n      ]}\n      keys={[\'val\', \'text\']}\n      value={value}\n      onChange={onChange}\n      tip=\"找一找\"\n      search\n      clear\n    />\n  )\n}',
+    __code: '() => {\n  const [value, onChange] = useState([\'cat\'])\n  return (\n    <Cascader\n      data={[\n        {\n          val: \'tiger\',\n          text: \'小脑斧 🐅\',\n          children: [{ val: \'lil_tiger\', text: \'小小脑斧 🐯\' }],\n        },\n        {\n          val: \'dog\',\n          text: \'小狗子 🐕\',\n          children: [{ val: \'lil_dog\', text: \'小小狗子 🐶\' }],\n        },\n        { val: \'cat\', text: \'小喵咪 🐈\' },\n      ]}\n      keys={[\'val\', \'text\']}\n      value={value}\n      onChange={newValue => {\n        console.log(newValue)\n        onChange(newValue)\n      }}\n      tip=\"找一找\"\n      search\n      clear\n    />\n  )\n}',
     __scope: {
       props,
       DefaultLayout: _Users_Lee_Works_ant_plus_node_modules_gatsby_theme_docz_src_base_Layout_js__WEBPACK_IMPORTED_MODULE_2__["default"],
@@ -80605,7 +80605,10 @@ function MDXContent(_ref) {
       }],
       keys: ['val', 'text'],
       value: value,
-      onChange: onChange,
+      onChange: newValue => {
+        console.log(newValue);
+        onChange(newValue);
+      },
       tip: "\u627E\u4E00\u627E",
       search: true,
       clear: true,
@@ -80613,15 +80616,15 @@ function MDXContent(_ref) {
     });
   }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", {
     "id": "api"
-  }, `API`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `其它 Props 与 Ant Design `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("a", _extends({
-    parentName: "p"
-  }, {
-    "href": "https://ant.design/components/cascader-cn/"
-  }), `Cascader`), ` 一致。`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(docz__WEBPACK_IMPORTED_MODULE_3__["Props"], {
+  }, `API`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(docz__WEBPACK_IMPORTED_MODULE_3__["Props"], {
     of: antx__WEBPACK_IMPORTED_MODULE_4__["Cascader"],
     isToggle: true,
     mdxType: "Props"
-  }));
+  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `其它 Props 与 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("a", _extends({
+    parentName: "p"
+  }, {
+    "href": "https://ant.design/components/cascader-cn/"
+  }), `Ant Design Cascader`), ` 一致。`));
 }
 
 if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDXContent) && Object.isExtensible(MDXContent) && !MDXContent.hasOwnProperty('__filemeta')) {
@@ -80629,7 +80632,7 @@ if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDX
     configurable: true,
     value: {
       name: "MDXContent",
-      filename: "site/Cascader.mdx"
+      filename: "src/Cascader.mdx"
     }
   });
 }
@@ -80639,10 +80642,10 @@ MDXContent.isMDXComponent = true;
 
 /***/ }),
 
-/***/ "../site/Form.mdx":
-/*!************************!*\
-  !*** ../site/Form.mdx ***!
-  \************************/
+/***/ "../src/Form.mdx":
+/*!***********************!*\
+  !*** ../src/Form.mdx ***!
+  \***********************/
 /*! exports provided: _frontmatter, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -80655,7 +80658,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mdx-js/react */ "../node_modules/@mdx-js/react/dist/esm.js");
 /* harmony import */ var _Users_Lee_Works_ant_plus_node_modules_gatsby_theme_docz_src_base_Layout_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../node_modules/gatsby-theme-docz/src/base/Layout.js */ "../node_modules/gatsby-theme-docz/src/base/Layout.js");
 /* harmony import */ var docz__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! docz */ "../node_modules/docz/dist/index.esm.js");
-/* harmony import */ var antx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! antx */ "../src/index.jsx");
+/* harmony import */ var antx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! antx */ "../lib/index.jsx");
 /* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @emotion/core */ "../node_modules/@emotion/core/dist/core.esm.js");
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -80680,7 +80683,7 @@ if (typeof _frontmatter !== 'undefined' && _frontmatter && _frontmatter === Obje
     configurable: true,
     value: {
       name: "_frontmatter",
-      filename: "site/Form.mdx"
+      filename: "src/Form.mdx"
     }
   });
 }
@@ -80706,17 +80709,15 @@ function MDXContent(_ref) {
   }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h1", {
     "id": "form-表单"
   }, `Form 表单`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", {
-    "id": "使用"
-  }, `使用`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("pre", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("code", _extends({
+    "id": "演示"
+  }, `演示`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("pre", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("code", _extends({
     parentName: "pre"
   }, {
     "className": "language-js"
   }), `import { Form } from 'antx';
-`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", {
-    "id": "示例"
-  }, `示例`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(docz__WEBPACK_IMPORTED_MODULE_3__["Playground"], {
+`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(docz__WEBPACK_IMPORTED_MODULE_3__["Playground"], {
     __position: 0,
-    __code: '() => {\n  const onFinish = () => {\n    console.log(values)\n  }\n  return (\n    <Form data={{ name: \'Emily\', sex: 2 }} onFinish={onFinish}>\n      <Input\n        label=\"用户名\"\n        name=\"name\"\n        rules={[\'required\', \'string\', \'max=10\']}\n        max={10}\n        tip=\"full\"\n      />\n      <Select\n        label=\"性别\"\n        name=\"sex\"\n        rules={[\'required\', \'number\']}\n        data={[\n          { id: 1, type: \'男\' },\n          { id: 2, type: \'女\' },\n        ]}\n        keys={[\'id\', \'type\']}\n        tip=\"short\"\n        search\n      />\n      <Button htmlType=\"submit\">提交</Button>\n    </Form>\n  )\n}',
+    __code: '() => {\n  const onFinish = values => {\n    console.log(values)\n  }\n  return (\n    <Form data={{ name: \'Emily\', sex: 2 }} onFinish={onFinish}>\n      <Input\n        label=\"用户名\"\n        name=\"name\"\n        rules={[\'required\', \'string\', \'max=10\']}\n        max={10}\n        tip=\"full\"\n      />\n      <Select\n        label=\"性别\"\n        name=\"sex\"\n        rules={[\'required\', \'number\']}\n        data={[\n          { id: 1, type: \'男\' },\n          { id: 2, type: \'女\' },\n        ]}\n        keys={[\'id\', \'type\']}\n        tip=\"short\"\n        search\n      />\n      <Button type=\"primary\" htmlType=\"submit\">\n        提交\n      </Button>\n    </Form>\n  )\n}',
     __scope: {
       props,
       DefaultLayout: _Users_Lee_Works_ant_plus_node_modules_gatsby_theme_docz_src_base_Layout_js__WEBPACK_IMPORTED_MODULE_2__["default"],
@@ -80731,7 +80732,7 @@ function MDXContent(_ref) {
     },
     mdxType: "Playground"
   }, () => {
-    const onFinish = () => {
+    const onFinish = values => {
       console.log(values);
     };
 
@@ -80765,667 +80766,29 @@ function MDXContent(_ref) {
       search: true,
       mdxType: "Select"
     }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(antx__WEBPACK_IMPORTED_MODULE_4__["Button"], {
+      type: "primary",
       htmlType: "submit",
       mdxType: "Button"
     }, "\u63D0\u4EA4"));
   }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", {
     "id": "api"
-  }, `API`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h3", {
-    "id": "1-form"
-  }, `1. Form`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `其它 Props 与 Ant Design `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("a", _extends({
-    parentName: "p"
-  }, {
-    "href": "https://ant.design/components/form-cn/"
-  }), `Form`), ` 一致。`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(docz__WEBPACK_IMPORTED_MODULE_3__["Props"], {
+  }, `API`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(docz__WEBPACK_IMPORTED_MODULE_3__["Props"], {
     of: antx__WEBPACK_IMPORTED_MODULE_4__["Form"],
     isToggle: true,
     mdxType: "Props"
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h3", {
-    "id": "2-表单控件-props"
-  }, `2. 表单控件 Props`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `Ant Plus 最核心的使用方式 —— 直接在表单控件的 Props 中，传入相关 props。如下：`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("pre", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("code", _extends({
-    parentName: "pre"
-  }, {
-    "className": "language-jsx",
-    "metastring": "harmony",
-    "harmony": true
-  }), `<Input
-  label="用户名"
-  name="name"
-  colon
-  after={<span>请输入正确的信息</span>}
-  rules={['required', 'string']}
-  initialValue="Emily"
-  normalize={(value) => value}
-/>
-`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `以下为表单控件可用的 Props：`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("strong", {
+  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `其它 Props 与 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("a", _extends({
     parentName: "p"
-  }, ` ① Form.Item 相关可用属性`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("table", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("thead", {
-    parentName: "table"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "thead"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("th", _extends({
-    parentName: "tr"
   }, {
-    "align": null
-  }), `属性`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("th", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `说明`))), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tbody", {
-    parentName: "table"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "tbody"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `colon`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `Form `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
-  }, `colon`), ` 属性之外，自定义某个域的冒号是否显示`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "tbody"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `extra`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `设置检验（不建议使用）`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "tbody"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `hasFeedback`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `设置检验（不建议使用）`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "tbody"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `help`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `设置检验（不建议使用）`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "tbody"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `label`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `名称`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "tbody"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `labelCol`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `布局（不建议使用）`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "tbody"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `required`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `设置检验（不建议使用）`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "tbody"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `validateStatus`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `设置检验（不建议使用）`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "tbody"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `wrapperCol`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `布局（不建议使用）`)))), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("em", {
+    "href": "https://ant.design/components/form-cn/"
+  }), `Ant Design Form`), ` 一致。`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h3", {
+    "id": "config"
+  }, `config`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `用于统一设置 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
     parentName: "p"
-  }, `不建议使用 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "em"
-  }, `extra`), `、`, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "em"
-  }, `hasFeedback`), `、`, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "em"
-  }, `help`), `、`, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "em"
-  }, `required`), `、`, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "em"
-  }, `validateStatus`), `，建议使用 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "em"
-  }, `rules`), ` 来设置校验信息。 不建议使用 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "em"
-  }, `labelCol`), `、`, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "em"
-  }, `wrapperCol`), `，建议使用 CSS 来布局，可减少大量纯布局用的 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "em"
-  }, `<div>`), `。`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("strong", {
+  }, `placeholder`), ` 信息与 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
     parentName: "p"
-  }, ` ② form.getFieldDecorator(id, options) 相关可用属性`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("table", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("thead", {
-    parentName: "table"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "thead"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("th", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `属性`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("th", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `说明`))), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tbody", {
-    parentName: "table"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "tbody"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `id`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
-  }, `id`), `（表单域唯一标识，用于区分表单控件与普通组件，请勿被占用）`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "tbody"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `getValueFromEvent`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
-  }, `options.getValueFromEvent`))), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "tbody"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `initialValue`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
-  }, `options.initialValue`))), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "tbody"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `normalize`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
-  }, `options.normalize`))), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "tbody"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `preserve`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
-  }, `options.preserve`))), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "tbody"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `rules`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
-  }, `options.rules`), `（见下文 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("strong", {
-    parentName: "td"
-  }, `3. rules`), ` 使用方式）`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "tbody"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `trigger`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
-  }, `options.trigger`))), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "tbody"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `validateFirst`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
-  }, `options.validateFirst`))), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "tbody"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `validateTrigger`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
-  }, `options.validateTrigger`))), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "tbody"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `valuePropName`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
-  }, `options.valuePropName`))), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "tbody"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `hidden`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
-  }, `options.hidden`), `（来自 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
-  }, `rc-field-form`), `）`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "tbody"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `getValueProps`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
-  }, `options.getValueProps`), `（来自 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
-  }, `rc-field-form`), `）`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "tbody"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `validate`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
-  }, `options.validate`), `（来自 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
-  }, `rc-field-form`), `）`)))), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("strong", {
+  }, `rules`), ` 校验提示信息。`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
     parentName: "p"
-  }, ` ③ 其它可用属性`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("table", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("thead", {
-    parentName: "table"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "thead"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("th", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `属性`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("th", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `说明`))), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tbody", {
-    parentName: "table"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "tbody"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `className`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
-  }, `label`), ` 存在时，`, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
-  }, `className`), ` 将传给 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
-  }, `<Form.Item>`), `。此外，Ant Plus 会添加 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
-  }, `id`), ` 的值到 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
-  }, `class`), ` 列表中，方便自定义扩展`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "tbody"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `style`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
-  }, `label`), ` 存在时，`, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
-  }, `style`), ` 将传给 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
-  }, `<Form.Item>`))), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "tbody"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `before`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `表单域前缀信息（\`string`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "tbody"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `after`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `表单域后缀信息（\`string`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "tbody"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `hide`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `是否隐藏表单域（页面上不可见，但仍可收集到值）`)))), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h3", {
-    "id": "3-rules"
-  }, `3. rules`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `Ant Plus 提供了一种简洁的校验规则生成方式，传统 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "p"
-  }, `antd`), ` Form 中，需要在 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "p"
-  }, `rules`), ` 数组中传入对象，如下：`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("pre", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("code", _extends({
-    parentName: "pre"
-  }, {
-    "className": "language-jsx",
-    "metastring": "harmony",
-    "harmony": true
-  }), `<Form.Item
-  label="name"
-  name="name"
-  rules={[
-    { required: true, message: '用户名不得为空' },
-    { type: 'string', whitespace: true, message: '用户名格式有误' },
-    { max: 10, message: '不得超过 10 个字' },
-  ]}
->
-  <Input />
-</Form.Item>
-`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `而使用 Ant Plus，只需要传入「短语」字符串即可，如下：`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("pre", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("code", _extends({
-    parentName: "pre"
-  }, {
-    "className": "language-jsx",
-    "metastring": "harmony",
-    "harmony": true
-  }), `<Input name="name" rules={['required', 'string', 'max=10']} />
-`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `Ant Plus 提供了以下「短语」形式的校验规则，配合下文 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("strong", {
-    parentName: "p"
-  }, `4. Form.setConfig(config)`), `，可自定义校验提示。`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("table", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("thead", {
-    parentName: "table"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "thead"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("th", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `规则`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("th", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `使用方式`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("th", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `校验`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("th", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `默认提示`))), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tbody", {
-    parentName: "table"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "tbody"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `required`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `'required'`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `必填`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `'XXX 不得为空'`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "tbody"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `string`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `'string'`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `字符串`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `'XXX 格式有误'`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "tbody"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `number`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `'number'`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `数值`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `'XXX 格式有误'`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "tbody"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `array`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `'array'`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `数组`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `'XXX 格式有误'`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "tbody"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `email`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `'email'`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `邮箱`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `'XXX 格式有误'`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "tbody"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `max`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `'max=10'`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `最大字符长度`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `'不得超过 10 个字'`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "tbody"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `min`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `'min=2'`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `最小字符长度`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `'不得少于 2 个字'`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "tbody"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `phone`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `'phone'`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `手机号`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `'XXX 格式有误'`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "tbody"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `id`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `'id'`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `身份证`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `'XXX 格式有误'`)))), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `同时，遵循「渐进增强」的理念，当遇到未在以上「短语」中列出的规则，或需要自定义规则时，仍可使用传统方式，即传入对象，字符串与对象两种形式可搭配使用。`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("em", {
-    parentName: "p"
-  }, `注意：`, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "em"
-  }, `max`), ` 与 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "em"
-  }, `min`), ` 的使用方式为传入例如 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "em"
-  }, `"max=10"`), `、`, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "em"
-  }, `"min=2"`), `，以 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "em"
-  }, `"="`), ` 分割。上文校验提示中的 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "em"
-  }, `"XXX"`), ` 代表表单域的 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "em"
-  }, `label`), `。`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h3", {
-    "id": "4-formsetconfigconfig"
-  }, `4. Form.setConfig(config)`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `用于设置 Input 与 Select 的 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "p"
-  }, `placeholder`), ` 与校验提示。`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "p"
-  }, `config`), ` 对象可选配置项：`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("table", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("thead", {
+  }, `config`), ` 可选配置项：`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("table", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("thead", {
     parentName: "table"
   }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
     parentName: "thead"
@@ -81437,7 +80800,7 @@ function MDXContent(_ref) {
     parentName: "tr"
   }, {
     "align": null
-  }), `默认提示`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("th", _extends({
+  }), `默认值`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("th", _extends({
     parentName: "tr"
   }, {
     "align": null
@@ -81459,21 +80822,21 @@ function MDXContent(_ref) {
     "align": null
   }), `Input 的 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
     parentName: "td"
-  }, `placeholder`), `，`, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+  }, `placeholder`), ` 信息（`, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
     parentName: "td"
   }, `tip`), ` 为 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
     parentName: "td"
-  }, `"short"`), ` `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+  }, `'short'`), ` `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
     parentName: "td"
-  }, `"full"`), ` 时有效（`, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+  }, `'full'`), ` 时有效，如 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
     parentName: "td"
-  }, `"short"`), ` => `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+  }, `'short'`), ` → `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
     parentName: "td"
   }, `"请输入"`), `，`, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
     parentName: "td"
-  }, `"full"`), ` 将在后面添加 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+  }, `'full'`), ` → `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
     parentName: "td"
-  }, `label`), `，如 "请输入用户名"）`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
+  }, `请输入用户名`), `）`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
     parentName: "tbody"
   }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
     parentName: "tr"
@@ -81489,21 +80852,21 @@ function MDXContent(_ref) {
     "align": null
   }), `Select 的 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
     parentName: "td"
-  }, `placeholder`), `，`, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+  }, `placeholder`), ` 信息（`, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
     parentName: "td"
   }, `tip`), ` 为 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
     parentName: "td"
-  }, `"short"`), ` `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+  }, `'short'`), ` `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
     parentName: "td"
-  }, `"full"`), ` 时有效（`, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+  }, `'full'`), ` 时有效，如 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
     parentName: "td"
-  }, `"short"`), ` => `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+  }, `'short'`), ` → `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
     parentName: "td"
-  }, `"请选择"`), `，`, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+  }, `'请选择'`), `，`, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
     parentName: "td"
-  }, `"full"`), ` 将在后面添加 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+  }, `'full'`), ` → `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
     parentName: "td"
-  }, `label`), `，如 "请选择性别"）`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
+  }, `'请选择性别'`), `）`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
     parentName: "tbody"
   }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
     parentName: "tr"
@@ -81521,7 +80884,9 @@ function MDXContent(_ref) {
     parentName: "td"
   }, `required`), ` 校验提示，`, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
     parentName: "td"
-  }, `"{label}"`), ` 为表单域名称的占位符，会被自动替换`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
+  }, `"{label}"`), ` 为 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "td"
+  }, `label`), ` 占位符，会被替换`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
     parentName: "tbody"
   }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
     parentName: "tr"
@@ -81537,7 +80902,9 @@ function MDXContent(_ref) {
     "align": null
   }), `数据格式校验提示，`, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
     parentName: "td"
-  }, `"{label}"`), ` 为表单域名称的占位符，会被自动替换`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
+  }, `"{label}"`), ` 为 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "td"
+  }, `label`), ` 占位符，会被替换`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
     parentName: "tbody"
   }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
     parentName: "tr"
@@ -81555,7 +80922,7 @@ function MDXContent(_ref) {
     parentName: "td"
   }, `max`), ` 校验提示，`, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
     parentName: "td"
-  }, `"{max}"`), ` 为最大字数的占位符，会被自动替换`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
+  }, `"{max}"`), ` 为数值占位符，会被替换`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
     parentName: "tbody"
   }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
     parentName: "tr"
@@ -81573,17 +80940,57 @@ function MDXContent(_ref) {
     parentName: "td"
   }, `min`), ` 校验提示，`, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
     parentName: "td"
-  }, `"{min}"`), ` 为最小字数的占位符，会被自动替换`)))), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `设置示例：`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("pre", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("code", _extends({
+  }, `"{min}"`), ` 为数值占位符，会被替换`)))), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("strong", {
+    parentName: "p"
+  }, ` 用法 `)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("pre", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("code", _extends({
     parentName: "pre"
   }, {
-    "className": "language-js"
-  }), `import { Form } from 'antx';
-
-Form.setConfig({
-  input: 'Please input ',
+    "className": "language-jsx"
+  }), `const config = {
+  input: 'Please input',
+  select: 'Please select',
   required: 'Oops, {label} is needed',
-});
-`)));
+  type: '{label} got a wrong type',
+  max: 'Up to {max} words',
+  min: 'At least {min} words',
+};
+
+<Form config={config} />;
+`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("strong", {
+    parentName: "p"
+  }, ` 与 Ant Design Form `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "strong"
+  }, `validateMessages`), ` 的区别 `)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("ul", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("li", {
+    parentName: "ul"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "li"
+  }, `config`), ` 占位符为 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "li"
+  }, `{label}`), ` 格式，`, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "li"
+  }, `validateMessages`), ` 占位符为 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "li"
+  }, `\${name}`), ` 格式`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("li", {
+    parentName: "ul"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "li"
+  }, `config`), ` 校验提示中使用 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "li"
+  }, `label`), ` 字段，`, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "li"
+  }, `validateMessages`), ` 使用 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "li"
+  }, `name`), ` 字段。实际开发中，`, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "li"
+  }, `label`), ` 更为实用（尤其在中文世界），`, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "li"
+  }, `name`), ` 字段用于前后端数据传递，一般情况下用户应无感知`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("li", {
+    parentName: "ul"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "li"
+  }, `config`), ` 配置项更简单，可配置范围小，`, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "li"
+  }, `validateMessages`), ` 配置项更多，存在深一层配置对象`)));
 }
 
 if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDXContent) && Object.isExtensible(MDXContent) && !MDXContent.hasOwnProperty('__filemeta')) {
@@ -81591,7 +80998,7 @@ if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDX
     configurable: true,
     value: {
       name: "MDXContent",
-      filename: "site/Form.mdx"
+      filename: "src/Form.mdx"
     }
   });
 }
@@ -81601,215 +81008,10 @@ MDXContent.isMDXComponent = true;
 
 /***/ }),
 
-/***/ "../site/Index.mdx":
-/*!*************************!*\
-  !*** ../site/Index.mdx ***!
-  \*************************/
-/*! exports provided: _frontmatter, default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_frontmatter", function() { return _frontmatter; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return MDXContent; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mdx-js/react */ "../node_modules/@mdx-js/react/dist/esm.js");
-/* harmony import */ var _Users_Lee_Works_ant_plus_node_modules_gatsby_theme_docz_src_base_Layout_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../node_modules/gatsby-theme-docz/src/base/Layout.js */ "../node_modules/gatsby-theme-docz/src/base/Layout.js");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles.scss */ "../site/styles.scss");
-/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @emotion/core */ "../node_modules/@emotion/core/dist/core.esm.js");
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
-
-/* @jsx mdx */
-
-
-/* @jsx mdx */
-
-
-
-
-const _frontmatter = {};
-
-if (typeof _frontmatter !== 'undefined' && _frontmatter && _frontmatter === Object(_frontmatter) && Object.isExtensible(_frontmatter) && !_frontmatter.hasOwnProperty('__filemeta')) {
-  Object.defineProperty(_frontmatter, '__filemeta', {
-    configurable: true,
-    value: {
-      name: "_frontmatter",
-      filename: "site/Index.mdx"
-    }
-  });
-}
-
-const makeShortcode = name => function MDXDefaultShortcode(props) {
-  console.warn("Component " + name + " was not imported, exported, or provided by MDXProvider as global scope");
-  return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("div", props);
-};
-
-const layoutProps = {
-  _frontmatter
-};
-const MDXLayout = _Users_Lee_Works_ant_plus_node_modules_gatsby_theme_docz_src_base_Layout_js__WEBPACK_IMPORTED_MODULE_2__["default"];
-function MDXContent(_ref) {
-  let {
-    components
-  } = _ref,
-      props = _objectWithoutProperties(_ref, ["components"]);
-
-  return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(MDXLayout, _extends({}, layoutProps, props, {
-    components: components,
-    mdxType: "MDXLayout"
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h1", {
-    "id": "快速开始"
-  }, `快速开始`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `Ant Plus 是 Ant Design `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("a", _extends({
-    parentName: "p"
-  }, {
-    "href": "https://ant.design/components/form-cn/"
-  }), `Form`), ` 的简化版。此刻起，以你最熟悉的方式来搭建 Form。`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", {
-    "id": "介绍"
-  }, `介绍`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `Ant Plus 最主要的特点，便是可以在表单控件的 Props 中，直接传入以前需使用 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "p"
-  }, `Form.Item`), ` 与 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "p"
-  }, `form.getFieldDecorator`), ` 包裹来传入的信息。`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `从而简化使用，杜绝冗余的样板代码，构建起简洁清晰、利于维护的 Form 代码。`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", {
-    "id": "对比"
-  }, `对比`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `使用 Ant Plus 与 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "p"
-  }, `antd`), ` 搭建 Form 的代码对比。`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("img", {
-    alt: "\\u4EE3\\u7801\\u5BF9\\u6BD4\\u56FE",
-    src: "https://raw.githubusercontent.com/nanxiaobei/ant-plus/master/contrast/demo.png"
-  })), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", {
-    "id": "特性"
-  }, `特性`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("ul", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("li", {
-    parentName: "ul"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("strong", {
-    parentName: "li"
-  }, `极其简便`), `：符合直觉，告别繁琐的 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "li"
-  }, `Form.Item`), ` `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "li"
-  }, `rules`), `。`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("li", {
-    parentName: "ul"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("strong", {
-    parentName: "li"
-  }, `统一提示`), `：简化 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "li"
-  }, `rules`), ` 代码，可全局定义校验提示，告别烦乱的自定义与不可控。`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("li", {
-    parentName: "ul"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("strong", {
-    parentName: "li"
-  }, `简化 API`), `：对 Form 相关组件的常用 API 进行了简化，一切只为更流畅的开发。`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("li", {
-    parentName: "ul"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("strong", {
-    parentName: "li"
-  }, `渐进增强`), `：兼容组件全部原有使用方式，在基础之上，进行了功能的拓展与简化。`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", {
-    "id": "安装"
-  }, `安装`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("pre", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("code", _extends({
-    parentName: "pre"
-  }, {
-    "className": "language-sh"
-  }), `yarn add antx
-`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `或`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("pre", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("code", _extends({
-    parentName: "pre"
-  }, {
-    "className": "language-sh"
-  }), `npm install antx
-`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", {
-    "id": "示例"
-  }, `示例`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("a", _extends({
-    parentName: "p"
-  }, {
-    "href": "https://codesandbox.io/s/antx-mqxxzrj87j?fontsize=14"
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("img", {
-    alt: "Edit antx",
-    src: "https://codesandbox.io/static/img/play-codesandbox.svg"
-  }))), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", {
-    "id": "使用"
-  }, `使用`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("pre", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("code", _extends({
-    parentName: "pre"
-  }, {
-    "className": "language-jsx",
-    "metastring": "harmony",
-    "harmony": true
-  }), `import { Input, Button } from 'antx';
-
-const Demo = () => (
-  <Form data={{ name: 'Emily' }}>
-    <Input label="用户名" name="name" rules={['required', 'max=10']} max={10} tip="full" />
-    <Button htmlType="submit">提交</Button>
-  </Form>
-);
-
-export default Demo;
-`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `表单控件的 Props 中，`, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "p"
-  }, `id`), ` 为表单域唯一标识，`, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "p"
-  }, `label`), ` 为 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "p"
-  }, `Form.Item`), ` 的 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "p"
-  }, `label`), `。`, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("a", _extends({
-    parentName: "p"
-  }, {
-    "href": "https://ant.design/components/form-cn/#getFieldDecorator(id,-options)-%E5%8F%82%E6%95%B0"
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "a"
-  }, `getFieldDecorator(id, options)`)), ` `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "p"
-  }, `options`), ` 参数中的项，均可直接用于组件的 Props，如 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "p"
-  }, `rules`), `、`, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "p"
-  }, `initialValue`), ` 等。`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `Ant Plus 还对 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "p"
-  }, `rules`), ` 做了简化，可使用简洁的字符串来设置校验规则，同时提供了体验更好的 UI。`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `是的，一切就是如此的简洁清晰。完整使用介绍，请查阅 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("a", _extends({
-    parentName: "p"
-  }, {
-    "href": "https://nanxiaobei.github.io/ant-plus/#/form#api"
-  }), `Ant Plus Form 组件 API`), `。`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", {
-    "id": "github"
-  }, `GitHub`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("a", _extends({
-    parentName: "p"
-  }, {
-    "href": "https://github.com/nanxiaobei/ant-plus"
-  }), `https://github.com/nanxiaobei/ant-plus`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", {
-    "id": "协议"
-  }, `协议`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("a", _extends({
-    parentName: "p"
-  }, {
-    "href": "https://github.com/nanxiaobei/ant-plus/blob/master/LICENSE"
-  }), `MIT License`), ` (c) `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("a", _extends({
-    parentName: "p"
-  }, {
-    "href": "https://mrlee.me/"
-  }), `nanxiaobei`)));
-}
-
-if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDXContent) && Object.isExtensible(MDXContent) && !MDXContent.hasOwnProperty('__filemeta')) {
-  Object.defineProperty(MDXContent, '__filemeta', {
-    configurable: true,
-    value: {
-      name: "MDXContent",
-      filename: "site/Index.mdx"
-    }
-  });
-}
-
-;
-MDXContent.isMDXComponent = true;
-
-/***/ }),
-
-/***/ "../site/Input.mdx":
-/*!*************************!*\
-  !*** ../site/Input.mdx ***!
-  \*************************/
+/***/ "../src/Input.mdx":
+/*!************************!*\
+  !*** ../src/Input.mdx ***!
+  \************************/
 /*! exports provided: _frontmatter, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -81822,7 +81024,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mdx-js/react */ "../node_modules/@mdx-js/react/dist/esm.js");
 /* harmony import */ var _Users_Lee_Works_ant_plus_node_modules_gatsby_theme_docz_src_base_Layout_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../node_modules/gatsby-theme-docz/src/base/Layout.js */ "../node_modules/gatsby-theme-docz/src/base/Layout.js");
 /* harmony import */ var docz__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! docz */ "../node_modules/docz/dist/index.esm.js");
-/* harmony import */ var antx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! antx */ "../src/index.jsx");
+/* harmony import */ var antx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! antx */ "../lib/index.jsx");
 /* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @emotion/core */ "../node_modules/@emotion/core/dist/core.esm.js");
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -81847,7 +81049,7 @@ if (typeof _frontmatter !== 'undefined' && _frontmatter && _frontmatter === Obje
     configurable: true,
     value: {
       name: "_frontmatter",
-      filename: "site/Input.mdx"
+      filename: "src/Input.mdx"
     }
   });
 }
@@ -81873,17 +81075,13 @@ function MDXContent(_ref) {
   }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h1", {
     "id": "input-输入框"
   }, `Input 输入框`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", {
-    "id": "使用"
-  }, `使用`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("pre", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("code", _extends({
+    "id": "演示"
+  }, `演示`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("pre", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("code", _extends({
     parentName: "pre"
   }, {
     "className": "language-js"
   }), `import { Input } from 'antx';
-`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", {
-    "id": "示例"
-  }, `示例`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h4", {
-    "id": "input"
-  }, `Input`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(docz__WEBPACK_IMPORTED_MODULE_3__["Playground"], {
+`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(docz__WEBPACK_IMPORTED_MODULE_3__["Playground"], {
     __position: 0,
     __code: '<Input max={10} tip=\"写点什么 ...\" />',
     __scope: {
@@ -81900,11 +81098,9 @@ function MDXContent(_ref) {
     max: 10,
     tip: "\u5199\u70B9\u4EC0\u4E48 ...",
     mdxType: "Input"
-  })), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h4", {
-    "id": "textarea"
-  }, `Textarea`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(docz__WEBPACK_IMPORTED_MODULE_3__["Playground"], {
+  })), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("hr", null), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(docz__WEBPACK_IMPORTED_MODULE_3__["Playground"], {
     __position: 1,
-    __code: '<Input textarea max={100} rows={5} tip=\"说出你的想法 ...\" />',
+    __code: '<Input textarea max={20} rows={5} tip=\"说出你的想法 ...\" />',
     __scope: {
       props,
       DefaultLayout: _Users_Lee_Works_ant_plus_node_modules_gatsby_theme_docz_src_base_Layout_js__WEBPACK_IMPORTED_MODULE_2__["default"],
@@ -81917,21 +81113,21 @@ function MDXContent(_ref) {
     mdxType: "Playground"
   }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(antx__WEBPACK_IMPORTED_MODULE_4__["Input"], {
     textarea: true,
-    max: 100,
+    max: 20,
     rows: 5,
     tip: "\u8BF4\u51FA\u4F60\u7684\u60F3\u6CD5 ...",
     mdxType: "Input"
   })), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", {
     "id": "api"
-  }, `API`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `其它 Props 与 Ant Design `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("a", _extends({
-    parentName: "p"
-  }, {
-    "href": "https://ant.design/components/input-cn/"
-  }), `Input`), ` 一致。`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(docz__WEBPACK_IMPORTED_MODULE_3__["Props"], {
+  }, `API`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(docz__WEBPACK_IMPORTED_MODULE_3__["Props"], {
     of: antx__WEBPACK_IMPORTED_MODULE_4__["Input"],
     isToggle: true,
     mdxType: "Props"
-  }));
+  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `其它 Props 与 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("a", _extends({
+    parentName: "p"
+  }, {
+    "href": "https://ant.design/components/input-cn/"
+  }), `Ant Design Input`), ` 一致。`));
 }
 
 if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDXContent) && Object.isExtensible(MDXContent) && !MDXContent.hasOwnProperty('__filemeta')) {
@@ -81939,7 +81135,7 @@ if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDX
     configurable: true,
     value: {
       name: "MDXContent",
-      filename: "site/Input.mdx"
+      filename: "src/Input.mdx"
     }
   });
 }
@@ -81949,10 +81145,10 @@ MDXContent.isMDXComponent = true;
 
 /***/ }),
 
-/***/ "../site/Migrate.mdx":
-/*!***************************!*\
-  !*** ../site/Migrate.mdx ***!
-  \***************************/
+/***/ "../src/Migrate.mdx":
+/*!**************************!*\
+  !*** ../src/Migrate.mdx ***!
+  \**************************/
 /*! exports provided: _frontmatter, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -81986,7 +81182,7 @@ if (typeof _frontmatter !== 'undefined' && _frontmatter && _frontmatter === Obje
     configurable: true,
     value: {
       name: "_frontmatter",
-      filename: "site/Migrate.mdx"
+      filename: "src/Migrate.mdx"
     }
   });
 }
@@ -82010,192 +81206,118 @@ function MDXContent(_ref) {
     components: components,
     mdxType: "MDXLayout"
   }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h1", {
+    "id": "从-v1-迁移到-v4"
+  }, `从 v1 迁移到 v4`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", {
     "id": "全局"
-  }, `全局`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", {
-    "id": "变更-props"
-  }, `变更 Props`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("table", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("thead", {
-    parentName: "table"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "thead"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("th", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `旧属性`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("th", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `新属性`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("th", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `说明`))), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tbody", {
-    parentName: "table"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "tbody"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
-  }, `id`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
-  }, `name`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `统一为 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
+  }, `全局`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("ul", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("li", {
+    parentName: "ul"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("strong", {
+    parentName: "li"
+  }, `变更`), ` `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "li"
+  }, `id`), ` → `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "li"
+  }, `name`), `（统一为 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "li"
   }, `antd@4`), ` 命名 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
-  }, `name`))), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "tbody"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
-  }, `msg`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
-  }, `tip`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
-  }, `placeholder`), ` 简写更新为 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
-  }, `tip`))), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "tbody"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
-  }, `searchMsg`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
-  }, `searchTip`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
-  }, `searchPlaceholder`), ` 简写更新为 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
-  }, `searchTip`))))), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h1", {
+    parentName: "li"
+  }, `name`), `）`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("li", {
+    parentName: "ul"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("strong", {
+    parentName: "li"
+  }, `变更`), ` `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "li"
+  }, `msg`), ` → `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "li"
+  }, `tip`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("li", {
+    parentName: "ul"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("strong", {
+    parentName: "li"
+  }, `变更`), ` `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "li"
+  }, `searchMsg`), ` → - `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "li"
+  }, `searchTip`))), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", {
     "id": "form"
-  }, `Form`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", {
-    "id": "废弃-props"
-  }, `废弃 Props`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("ul", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("li", {
+  }, `Form`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("ul", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("li", {
     parentName: "ul"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("strong", {
     parentName: "li"
-  }, `api`), ` - 不需要再传入`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("li", {
+  }, `变更`), ` `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "li"
+  }, `disabledFields`), ` → `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "li"
+  }, `disabledNames`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("li", {
     parentName: "ul"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("strong", {
     parentName: "li"
-  }, `colon`), ` - 正常使用，但已换为 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+  }, `新增`), ` `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
     parentName: "li"
-  }, `antd@4`), ` 自身实现`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", {
-    "id": "废弃方法"
-  }, `废弃方法`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("ul", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("li", {
+  }, `config`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("li", {
     parentName: "ul"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("del", {
     parentName: "li"
-  }, `Form.setConfig()`), ` - 改为通过 Props 传入，e.g. `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("strong", {
+    parentName: "del"
+  }, `废弃`)), ` `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "li"
+  }, `api`), ` - 无需再传入`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("li", {
+    parentName: "ul"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("del", {
+    parentName: "li"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("strong", {
+    parentName: "del"
+  }, `废弃`)), ` `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "li"
+  }, `Form.setConfig()`), ` - 改为通过 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "li"
+  }, `config`), ` 属性配置：`, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
     parentName: "li"
   }, `<Form config={config}>`))), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", {
-    "id": "其它变更"
-  }, `其它变更`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("ul", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("li", {
+    "id": "formitem"
+  }, `Form.Item`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("ul", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("li", {
     parentName: "ul"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("strong", {
     parentName: "li"
-  }, `Form.Item`), ` CSS 选择器由 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+  }, `变更`), ` CSS 选择器 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
     parentName: "li"
-  }, `.\${name}`), ` 更新为 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+  }, `.\${name}`), ` → `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
     parentName: "li"
-  }, `.form-item-\${name}`))), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h1", {
+  }, `.form-item-\${name}`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("li", {
+    parentName: "ul"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("del", {
+    parentName: "li"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("strong", {
+    parentName: "del"
+  }, `废弃`)), ` `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "li"
+  }, `before`), ` - 直接使用 jsx`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("li", {
+    parentName: "ul"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("del", {
+    parentName: "li"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("strong", {
+    parentName: "del"
+  }, `废弃`)), ` `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "li"
+  }, `after`), ` - 直接使用 jsx`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", {
     "id": "treeselect"
-  }, `TreeSelect`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", {
-    "id": "变更-props-1"
-  }, `变更 Props`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("table", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("thead", {
-    parentName: "table"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "thead"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("th", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `旧属性`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("th", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `新属性`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("th", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), `说明`))), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tbody", {
-    parentName: "table"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "tbody"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
-  }, `check`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
-  }, `checkbox`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
-  }, `treeCheckable`), ` 简写更新为 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
-  }, `checkbox`))), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
-    parentName: "tbody"
-  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
-  }, `back`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
-  }, `showType`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
-    parentName: "tr"
-  }, {
-    "align": null
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
-  }, `showCheckedStrategy`), ` 简写更新为 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
-    parentName: "td"
-  }, `showType`))))));
+  }, `TreeSelect`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("ul", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("li", {
+    parentName: "ul"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("strong", {
+    parentName: "li"
+  }, `变更`), ` `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "li"
+  }, `check`), ` → `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "li"
+  }, `checkbox`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("li", {
+    parentName: "ul"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("strong", {
+    parentName: "li"
+  }, `变更`), ` `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "li"
+  }, `back`), ` → `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "li"
+  }, `showType`))));
 }
 
 if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDXContent) && Object.isExtensible(MDXContent) && !MDXContent.hasOwnProperty('__filemeta')) {
@@ -82203,7 +81325,7 @@ if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDX
     configurable: true,
     value: {
       name: "MDXContent",
-      filename: "site/Migrate.mdx"
+      filename: "src/Migrate.mdx"
     }
   });
 }
@@ -82213,10 +81335,10 @@ MDXContent.isMDXComponent = true;
 
 /***/ }),
 
-/***/ "../site/Select.mdx":
-/*!**************************!*\
-  !*** ../site/Select.mdx ***!
-  \**************************/
+/***/ "../src/Select.mdx":
+/*!*************************!*\
+  !*** ../src/Select.mdx ***!
+  \*************************/
 /*! exports provided: _frontmatter, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -82229,7 +81351,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mdx-js/react */ "../node_modules/@mdx-js/react/dist/esm.js");
 /* harmony import */ var _Users_Lee_Works_ant_plus_node_modules_gatsby_theme_docz_src_base_Layout_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../node_modules/gatsby-theme-docz/src/base/Layout.js */ "../node_modules/gatsby-theme-docz/src/base/Layout.js");
 /* harmony import */ var docz__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! docz */ "../node_modules/docz/dist/index.esm.js");
-/* harmony import */ var antx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! antx */ "../src/index.jsx");
+/* harmony import */ var antx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! antx */ "../lib/index.jsx");
 /* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @emotion/core */ "../node_modules/@emotion/core/dist/core.esm.js");
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -82254,7 +81376,7 @@ if (typeof _frontmatter !== 'undefined' && _frontmatter && _frontmatter === Obje
     configurable: true,
     value: {
       name: "_frontmatter",
-      filename: "site/Select.mdx"
+      filename: "src/Select.mdx"
     }
   });
 }
@@ -82280,15 +81402,13 @@ function MDXContent(_ref) {
   }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h1", {
     "id": "select-选择器"
   }, `Select 选择器`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", {
-    "id": "使用"
-  }, `使用`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("pre", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("code", _extends({
+    "id": "演示"
+  }, `演示`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("pre", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("code", _extends({
     parentName: "pre"
   }, {
     "className": "language-js"
   }), `import { Select } from 'antx';
-`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", {
-    "id": "示例"
-  }, `示例`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(docz__WEBPACK_IMPORTED_MODULE_3__["Playground"], {
+`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(docz__WEBPACK_IMPORTED_MODULE_3__["Playground"], {
     __position: 0,
     __code: '<Select\n  data={[\n    { val: \'tiger\', text: \'小脑斧 🐅\' },\n    { val: \'dog\', text: \'小狗子 🐕\' },\n    { val: \'cat\', text: \'小喵咪 🐈\' },\n  ]}\n  keys={[\'val\', \'text\']}\n  tip=\"选个宠物吧\"\n  search\n  clear\n/>',
     __scope: {
@@ -82319,15 +81439,15 @@ function MDXContent(_ref) {
     mdxType: "Select"
   })), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", {
     "id": "api"
-  }, `API`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `其它 Props 与 Ant Design `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("a", _extends({
-    parentName: "p"
-  }, {
-    "href": "https://ant.design/components/select-cn/"
-  }), `Select`), ` 一致。`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(docz__WEBPACK_IMPORTED_MODULE_3__["Props"], {
+  }, `API`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(docz__WEBPACK_IMPORTED_MODULE_3__["Props"], {
     of: antx__WEBPACK_IMPORTED_MODULE_4__["Select"],
     isToggle: true,
     mdxType: "Props"
-  }));
+  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `其它 Props 与 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("a", _extends({
+    parentName: "p"
+  }, {
+    "href": "https://ant.design/components/select-cn/"
+  }), `Ant Design Select`), ` 一致。`));
 }
 
 if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDXContent) && Object.isExtensible(MDXContent) && !MDXContent.hasOwnProperty('__filemeta')) {
@@ -82335,7 +81455,7 @@ if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDX
     configurable: true,
     value: {
       name: "MDXContent",
-      filename: "site/Select.mdx"
+      filename: "src/Select.mdx"
     }
   });
 }
@@ -82345,10 +81465,161 @@ MDXContent.isMDXComponent = true;
 
 /***/ }),
 
-/***/ "../site/Transfer.mdx":
-/*!****************************!*\
-  !*** ../site/Transfer.mdx ***!
-  \****************************/
+/***/ "../src/Start.mdx":
+/*!************************!*\
+  !*** ../src/Start.mdx ***!
+  \************************/
+/*! exports provided: _frontmatter, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_frontmatter", function() { return _frontmatter; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return MDXContent; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mdx-js/react */ "../node_modules/@mdx-js/react/dist/esm.js");
+/* harmony import */ var _Users_Lee_Works_ant_plus_node_modules_gatsby_theme_docz_src_base_Layout_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../node_modules/gatsby-theme-docz/src/base/Layout.js */ "../node_modules/gatsby-theme-docz/src/base/Layout.js");
+/* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./index.less */ "../src/index.less");
+/* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_index_less__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _index_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./index.js */ "../src/index.js");
+/* harmony import */ var _index_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_index_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @emotion/core */ "../node_modules/@emotion/core/dist/core.esm.js");
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
+/* @jsx mdx */
+
+
+/* @jsx mdx */
+
+
+
+
+
+const _frontmatter = {};
+
+if (typeof _frontmatter !== 'undefined' && _frontmatter && _frontmatter === Object(_frontmatter) && Object.isExtensible(_frontmatter) && !_frontmatter.hasOwnProperty('__filemeta')) {
+  Object.defineProperty(_frontmatter, '__filemeta', {
+    configurable: true,
+    value: {
+      name: "_frontmatter",
+      filename: "src/Start.mdx"
+    }
+  });
+}
+
+const makeShortcode = name => function MDXDefaultShortcode(props) {
+  console.warn("Component " + name + " was not imported, exported, or provided by MDXProvider as global scope");
+  return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("div", props);
+};
+
+const layoutProps = {
+  _frontmatter
+};
+const MDXLayout = _Users_Lee_Works_ant_plus_node_modules_gatsby_theme_docz_src_base_Layout_js__WEBPACK_IMPORTED_MODULE_2__["default"];
+function MDXContent(_ref) {
+  let {
+    components
+  } = _ref,
+      props = _objectWithoutProperties(_ref, ["components"]);
+
+  return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(MDXLayout, _extends({}, layoutProps, props, {
+    components: components,
+    mdxType: "MDXLayout"
+  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h1", {
+    "id": "开始"
+  }, `开始`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("blockquote", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", {
+    parentName: "blockquote"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("strong", {
+    parentName: "p"
+  }, `4.0 is here 🎉`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", {
+    parentName: "blockquote"
+  }, `◆ 全面适配 Ant Design 4.0`, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("br", {
+    parentName: "p"
+  }), `
+`, `◆ React Hooks 重写，大幅性能优化`, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("br", {
+    parentName: "p"
+  }), `
+`, `◆ 全新文档设计，优化内容与排版`, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("br", {
+    parentName: "p"
+  }), `
+`, `◆ Ant Design 文档中所有 Form 示例的对比代码`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", {
+    "id": "介绍"
+  }, `介绍`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `Ant Plus 是 Ant Design 表单系统的简化版，提供了全新的表单开发方式。`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `若需了解 Ant Plus 核心开发方式，请查看 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("a", _extends({
+    parentName: "p"
+  }, {
+    "href": "./usage"
+  }), `使用`), `。组件页面为组件使用示例、以及组件的简化版 Props。`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `Ant Plus 提供了 7 个表单相关组件的封装：`, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "p"
+  }, `Form`), ` `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "p"
+  }, `Input`), ` `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "p"
+  }, `AutoComplete`), ` `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "p"
+  }, `Select`), ` `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "p"
+  }, `Transfer`), ` `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "p"
+  }, `Cascader`), ` `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "p"
+  }, `TreeSelect`), `，以及未做封装的 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "p"
+  }, `Button`), `（为方便使用），此 8 个组件，可直接从 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "p"
+  }, `antx`), ` 中引入。其它 Ant Design 组件，仍需从 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "p"
+  }, `antd`), ` 中引入。`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `Ant Plus 以渐进增强的理念实现，从 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "p"
+  }, `antx`), ` 引入的组件，可完全当做 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "p"
+  }, `antd`), ` 中的组件来使用，不会有任何限制。`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", {
+    "id": "安装"
+  }, `安装`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `使用 Yarn（推荐）：`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("pre", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("code", _extends({
+    parentName: "pre"
+  }, {
+    "className": "language-sh"
+  }), `yarn add antx
+`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `或者 npm：`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("pre", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("code", _extends({
+    parentName: "pre"
+  }, {
+    "className": "language-sh"
+  }), `npm install antx
+`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", {
+    "id": "引入"
+  }, `引入`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("pre", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("code", _extends({
+    parentName: "pre"
+  }, {
+    "className": "language-js"
+  }), `import { Form, Input } from 'antx';
+import { Row, Col, Checkbox } from 'antd'; // 非 Ant Plus 组件从 \`antd\` 引入
+`)));
+}
+
+if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDXContent) && Object.isExtensible(MDXContent) && !MDXContent.hasOwnProperty('__filemeta')) {
+  Object.defineProperty(MDXContent, '__filemeta', {
+    configurable: true,
+    value: {
+      name: "MDXContent",
+      filename: "src/Start.mdx"
+    }
+  });
+}
+
+;
+MDXContent.isMDXComponent = true;
+
+/***/ }),
+
+/***/ "../src/Transfer.mdx":
+/*!***************************!*\
+  !*** ../src/Transfer.mdx ***!
+  \***************************/
 /*! exports provided: _frontmatter, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -82361,7 +81632,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mdx-js/react */ "../node_modules/@mdx-js/react/dist/esm.js");
 /* harmony import */ var _Users_Lee_Works_ant_plus_node_modules_gatsby_theme_docz_src_base_Layout_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../node_modules/gatsby-theme-docz/src/base/Layout.js */ "../node_modules/gatsby-theme-docz/src/base/Layout.js");
 /* harmony import */ var docz__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! docz */ "../node_modules/docz/dist/index.esm.js");
-/* harmony import */ var antx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! antx */ "../src/index.jsx");
+/* harmony import */ var antx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! antx */ "../lib/index.jsx");
 /* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @emotion/core */ "../node_modules/@emotion/core/dist/core.esm.js");
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -82387,7 +81658,7 @@ if (typeof _frontmatter !== 'undefined' && _frontmatter && _frontmatter === Obje
     configurable: true,
     value: {
       name: "_frontmatter",
-      filename: "site/Transfer.mdx"
+      filename: "src/Transfer.mdx"
     }
   });
 }
@@ -82413,17 +81684,15 @@ function MDXContent(_ref) {
   }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h1", {
     "id": "transfer-穿梭框"
   }, `Transfer 穿梭框`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", {
-    "id": "使用"
-  }, `使用`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("pre", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("code", _extends({
+    "id": "演示"
+  }, `演示`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("pre", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("code", _extends({
     parentName: "pre"
   }, {
     "className": "language-js"
   }), `import { Transfer } from 'antx';
-`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", {
-    "id": "示例"
-  }, `示例`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(docz__WEBPACK_IMPORTED_MODULE_3__["Playground"], {
+`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(docz__WEBPACK_IMPORTED_MODULE_3__["Playground"], {
     __position: 0,
-    __code: '() => {\n  const [targetKeys, setTargetKeys] = useState([\'tiger\'])\n  return (\n    <Transfer\n      data={[\n        { key: \'tiger\', title: \'小脑斧 🐅\' },\n        { key: \'dog\', title: \'小狗子 🐕\' },\n        { key: \'cat\', title: \'小喵咪 🐈\' },\n      ]}\n      targetKeys={targetKeys}\n      onChange={setTargetKeys}\n      title=\"宠物\"\n      search\n      unit=\"只\"\n      searchTip=\"找一找\"\n    />\n  )\n}',
+    __code: '() => {\n  const [targetKeys, onChange] = useState([\'tiger\'])\n  return (\n    <Transfer\n      data={[\n        { key: \'tiger\', title: \'小脑斧 🐅\' },\n        { key: \'dog\', title: \'小狗子 🐕\' },\n        { key: \'cat\', title: \'小喵咪 🐈\' },\n      ]}\n      targetKeys={targetKeys}\n      onChange={newTargetKeys => {\n        onChange(newTargetKeys)\n      }}\n      title=\"宠物\"\n      search\n      unit=\"只\"\n      searchTip=\"找一找\"\n    />\n  )\n}',
     __scope: {
       props,
       DefaultLayout: _Users_Lee_Works_ant_plus_node_modules_gatsby_theme_docz_src_base_Layout_js__WEBPACK_IMPORTED_MODULE_2__["default"],
@@ -82438,7 +81707,7 @@ function MDXContent(_ref) {
   }, () => {
     const {
       0: targetKeys,
-      1: setTargetKeys
+      1: onChange
     } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(['tiger']);
     return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(antx__WEBPACK_IMPORTED_MODULE_4__["Transfer"], {
       data: [{
@@ -82452,7 +81721,9 @@ function MDXContent(_ref) {
         title: '小喵咪 🐈'
       }],
       targetKeys: targetKeys,
-      onChange: setTargetKeys,
+      onChange: newTargetKeys => {
+        onChange(newTargetKeys);
+      },
       title: "\u5BA0\u7269",
       search: true,
       unit: "\u53EA",
@@ -82461,15 +81732,15 @@ function MDXContent(_ref) {
     });
   }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", {
     "id": "api"
-  }, `API`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `其它 Props 与 Ant Design `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("a", _extends({
-    parentName: "p"
-  }, {
-    "href": "https://ant.design/components/transfer-cn/"
-  }), `Transfer`), ` 一致。`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(docz__WEBPACK_IMPORTED_MODULE_3__["Props"], {
+  }, `API`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(docz__WEBPACK_IMPORTED_MODULE_3__["Props"], {
     of: antx__WEBPACK_IMPORTED_MODULE_4__["Transfer"],
     isToggle: true,
     mdxType: "Props"
-  }));
+  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `其它 Props 与 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("a", _extends({
+    parentName: "p"
+  }, {
+    "href": "https://ant.design/components/transfer-cn/"
+  }), `Ant Design Transfer`), ` 一致。`));
 }
 
 if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDXContent) && Object.isExtensible(MDXContent) && !MDXContent.hasOwnProperty('__filemeta')) {
@@ -82477,7 +81748,7 @@ if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDX
     configurable: true,
     value: {
       name: "MDXContent",
-      filename: "site/Transfer.mdx"
+      filename: "src/Transfer.mdx"
     }
   });
 }
@@ -82487,10 +81758,10 @@ MDXContent.isMDXComponent = true;
 
 /***/ }),
 
-/***/ "../site/TreeSelect.mdx":
-/*!******************************!*\
-  !*** ../site/TreeSelect.mdx ***!
-  \******************************/
+/***/ "../src/TreeSelect.mdx":
+/*!*****************************!*\
+  !*** ../src/TreeSelect.mdx ***!
+  \*****************************/
 /*! exports provided: _frontmatter, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -82503,7 +81774,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mdx-js/react */ "../node_modules/@mdx-js/react/dist/esm.js");
 /* harmony import */ var _Users_Lee_Works_ant_plus_node_modules_gatsby_theme_docz_src_base_Layout_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../node_modules/gatsby-theme-docz/src/base/Layout.js */ "../node_modules/gatsby-theme-docz/src/base/Layout.js");
 /* harmony import */ var docz__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! docz */ "../node_modules/docz/dist/index.esm.js");
-/* harmony import */ var antx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! antx */ "../src/index.jsx");
+/* harmony import */ var antx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! antx */ "../lib/index.jsx");
 /* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @emotion/core */ "../node_modules/@emotion/core/dist/core.esm.js");
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -82528,7 +81799,7 @@ if (typeof _frontmatter !== 'undefined' && _frontmatter && _frontmatter === Obje
     configurable: true,
     value: {
       name: "_frontmatter",
-      filename: "site/TreeSelect.mdx"
+      filename: "src/TreeSelect.mdx"
     }
   });
 }
@@ -82554,17 +81825,15 @@ function MDXContent(_ref) {
   }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h1", {
     "id": "treeselect-树选择"
   }, `TreeSelect 树选择`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", {
-    "id": "使用"
-  }, `使用`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("pre", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("code", _extends({
+    "id": "演示"
+  }, `演示`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("pre", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("code", _extends({
     parentName: "pre"
   }, {
     "className": "language-js"
   }), `import { TreeSelect } from 'antx';
-`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", {
-    "id": "示例"
-  }, `示例`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(docz__WEBPACK_IMPORTED_MODULE_3__["Playground"], {
+`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(docz__WEBPACK_IMPORTED_MODULE_3__["Playground"], {
     __position: 0,
-    __code: '<TreeSelect\n  data={[\n    {\n      val: \'tiger\',\n      text: \'小脑斧 🐅\',\n      children: [{ val: \'lil_tiger\', text: \'小小脑斧 🐯\' }],\n    },\n    {\n      val: \'dog\',\n      text: \'小狗子 🐕\',\n      children: [{ val: \'lil_dog\', text: \'小小狗子 🐶\' }],\n    },\n    { val: \'cat\', text: \'小喵咪 🐈\' },\n  ]}\n  keys={[\'val\', \'text\']}\n  onChange={value => {\n    console.log(\'value: \', value)\n  }}\n  tip=\"找一找\"\n  search\n  checkbox\n/>',
+    __code: '<TreeSelect\n  data={[\n    {\n      val: \'tiger\',\n      text: \'小脑斧 🐅\',\n      children: [{ val: \'lil_tiger\', text: \'小小脑斧 🐯\' }],\n    },\n    {\n      val: \'dog\',\n      text: \'小狗子 🐕\',\n      children: [{ val: \'lil_dog\', text: \'小小狗子 🐶\' }],\n    },\n    { val: \'cat\', text: \'小喵咪 🐈\' },\n  ]}\n  keys={[\'val\', \'text\']}\n  onChange={value => {\n    console.log(value)\n  }}\n  tip=\"找一找\"\n  search\n  checkbox\n  showType={TreeSelect.SHOW_ALL}\n/>',
     __scope: {
       props,
       DefaultLayout: _Users_Lee_Works_ant_plus_node_modules_gatsby_theme_docz_src_base_Layout_js__WEBPACK_IMPORTED_MODULE_2__["default"],
@@ -82596,23 +81865,24 @@ function MDXContent(_ref) {
     }],
     keys: ['val', 'text'],
     onChange: value => {
-      console.log('value: ', value);
+      console.log(value);
     },
     tip: "\u627E\u4E00\u627E",
     search: true,
     checkbox: true,
+    showType: antx__WEBPACK_IMPORTED_MODULE_4__["TreeSelect"].SHOW_ALL,
     mdxType: "TreeSelect"
   })), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", {
     "id": "api"
-  }, `API`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `其它 Props 与 Ant Design `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("a", _extends({
-    parentName: "p"
-  }, {
-    "href": "https://ant.design/components/tree-select-cn/"
-  }), `TreeSelect`), ` 一致。`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(docz__WEBPACK_IMPORTED_MODULE_3__["Props"], {
+  }, `API`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(docz__WEBPACK_IMPORTED_MODULE_3__["Props"], {
     of: antx__WEBPACK_IMPORTED_MODULE_4__["TreeSelect"],
     isToggle: true,
     mdxType: "Props"
-  }));
+  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `其它 Props 与 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("a", _extends({
+    parentName: "p"
+  }, {
+    "href": "https://ant.design/components/tree-select-cn/"
+  }), `Ant Design TreeSelect`), ` 一致。`));
 }
 
 if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDXContent) && Object.isExtensible(MDXContent) && !MDXContent.hasOwnProperty('__filemeta')) {
@@ -82620,7 +81890,7 @@ if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDX
     configurable: true,
     value: {
       name: "MDXContent",
-      filename: "site/TreeSelect.mdx"
+      filename: "src/TreeSelect.mdx"
     }
   });
 }
@@ -82630,129 +81900,616 @@ MDXContent.isMDXComponent = true;
 
 /***/ }),
 
-/***/ "../site/styles.scss":
-/*!***************************!*\
-  !*** ../site/styles.scss ***!
-  \***************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
-
-/***/ "../src/index.jsx":
+/***/ "../src/Usage.mdx":
 /*!************************!*\
-  !*** ../src/index.jsx ***!
+  !*** ../src/Usage.mdx ***!
   \************************/
-/*! exports provided: Form, Input, AutoComplete, Select, Transfer, Cascader, TreeSelect, Button */
+/*! exports provided: _frontmatter, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Form", function() { return Form; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Input", function() { return Input; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AutoComplete", function() { return AutoComplete; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Select", function() { return Select; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Transfer", function() { return Transfer; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Cascader", function() { return Cascader; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TreeSelect", function() { return TreeSelect; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Button", function() { return Button; });
-/* harmony import */ var core_js_modules_web_dom_iterable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/web.dom.iterable */ "core-js/modules/web.dom.iterable");
-/* harmony import */ var core_js_modules_web_dom_iterable__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_iterable__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var antd_es_button_style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! antd/es/button/style/css */ "../node_modules/antd/es/button/style/css.js");
-/* harmony import */ var antd_es_button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! antd/es/button */ "../node_modules/antd/es/button/index.js");
-/* harmony import */ var antd_es_tree_select_style_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! antd/es/tree-select/style/css */ "../node_modules/antd/es/tree-select/style/css.js");
-/* harmony import */ var antd_es_tree_select__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! antd/es/tree-select */ "../node_modules/antd/es/tree-select/index.js");
-/* harmony import */ var antd_es_cascader_style_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! antd/es/cascader/style/css */ "../node_modules/antd/es/cascader/style/css.js");
-/* harmony import */ var antd_es_cascader__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! antd/es/cascader */ "../node_modules/antd/es/cascader/index.js");
-/* harmony import */ var antd_es_transfer_style_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! antd/es/transfer/style/css */ "../node_modules/antd/es/transfer/style/css.js");
-/* harmony import */ var antd_es_transfer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! antd/es/transfer */ "../node_modules/antd/es/transfer/index.js");
-/* harmony import */ var antd_es_select_style_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! antd/es/select/style/css */ "../node_modules/antd/es/select/style/css.js");
-/* harmony import */ var antd_es_select__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! antd/es/select */ "../node_modules/antd/es/select/index.js");
-/* harmony import */ var antd_es_auto_complete_style_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! antd/es/auto-complete/style/css */ "../node_modules/antd/es/auto-complete/style/css.js");
-/* harmony import */ var antd_es_auto_complete__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! antd/es/auto-complete */ "../node_modules/antd/es/auto-complete/index.js");
-/* harmony import */ var antd_es_input_style_css__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! antd/es/input/style/css */ "../node_modules/antd/es/input/style/css.js");
-/* harmony import */ var antd_es_input__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! antd/es/input */ "../node_modules/antd/es/input/index.js");
-/* harmony import */ var antd_es_form_style_css__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! antd/es/form/style/css */ "../node_modules/antd/es/form/style/css.js");
-/* harmony import */ var antd_es_form__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! antd/es/form */ "../node_modules/antd/es/form/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_17__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! prop-types */ "../node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_18__);
-/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./index.scss */ "../src/index.scss");
-/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_index_scss__WEBPACK_IMPORTED_MODULE_19__);
-/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @emotion/core */ "../node_modules/@emotion/core/dist/core.esm.js");
-function _extends(){_extends=Object.assign||function(target){for(var i=1;i<arguments.length;i++){var source=arguments[i];for(var key in source){if(Object.prototype.hasOwnProperty.call(source,key)){target[key]=source[key];}}}return target;};return _extends.apply(this,arguments);}function _objectWithoutProperties(source,excluded){if(source==null)return{};var target=_objectWithoutPropertiesLoose(source,excluded);var key,i;if(Object.getOwnPropertySymbols){var sourceSymbolKeys=Object.getOwnPropertySymbols(source);for(i=0;i<sourceSymbolKeys.length;i++){key=sourceSymbolKeys[i];if(excluded.indexOf(key)>=0)continue;if(!Object.prototype.propertyIsEnumerable.call(source,key))continue;target[key]=source[key];}}return target;}function _objectWithoutPropertiesLoose(source,excluded){if(source==null)return{};var target={};var sourceKeys=Object.keys(source);var key,i;for(i=0;i<sourceKeys.length;i++){key=sourceKeys[i];if(excluded.indexOf(key)>=0)continue;target[key]=source[key];}return target;}function ownKeys(object,enumerableOnly){var keys=Object.keys(object);if(Object.getOwnPropertySymbols){var symbols=Object.getOwnPropertySymbols(object);if(enumerableOnly)symbols=symbols.filter(function(sym){return Object.getOwnPropertyDescriptor(object,sym).enumerable;});keys.push.apply(keys,symbols);}return keys;}function _objectSpread(target){for(var i=1;i<arguments.length;i++){var source=arguments[i]!=null?arguments[i]:{};if(i%2){ownKeys(Object(source),true).forEach(function(key){_defineProperty(target,key,source[key]);});}else if(Object.getOwnPropertyDescriptors){Object.defineProperties(target,Object.getOwnPropertyDescriptors(source));}else{ownKeys(Object(source)).forEach(function(key){Object.defineProperty(target,key,Object.getOwnPropertyDescriptor(source,key));});}}return target;}function _defineProperty(obj,key,value){if(key in obj){Object.defineProperty(obj,key,{value:value,enumerable:true,configurable:true,writable:true});}else{obj[key]=value;}return obj;}function _toConsumableArray(arr){return _arrayWithoutHoles(arr)||_iterableToArray(arr)||_unsupportedIterableToArray(arr)||_nonIterableSpread();}function _nonIterableSpread(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(o,minLen){if(!o)return;if(typeof o==="string")return _arrayLikeToArray(o,minLen);var n=Object.prototype.toString.call(o).slice(8,-1);if(n==="Object"&&o.constructor)n=o.constructor.name;if(n==="Map"||n==="Set")return Array.from(n);if(n==="Arguments"||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return _arrayLikeToArray(o,minLen);}function _iterableToArray(iter){if(typeof Symbol!=="undefined"&&Symbol.iterator in Object(iter))return Array.from(iter);}function _arrayWithoutHoles(arr){if(Array.isArray(arr))return _arrayLikeToArray(arr);}function _arrayLikeToArray(arr,len){if(len==null||len>arr.length)len=arr.length;for(var i=0,arr2=new Array(len);i<len;i++)arr2[i]=arr[i];return arr2;}/**
- * Utils
- */const hasItem=(arr,key)=>Array.isArray(arr)&&arr.includes(key);const hasLength=arr=>Array.isArray(arr)&&arr.length>0;const addUniqueClass=(restProps,name)=>{const{className=''}=restProps;restProps.className=`ant-plus-${name} ${className}`;};/**
- * tip -> placeholder
- */const inputList=['Input','AutoComplete','Transfer'].map(e=>`AntPlus.${e}`);const selectList=['Select','Cascader','TreeSelect'].map(e=>`AntPlus.${e}`);const displayNameList=[].concat(_toConsumableArray(inputList),_toConsumableArray(selectList));const tipList=['short','full'];/**
- * Form config and rules
- */const defaultConfig={// placeholder
-input:'请输入',select:'请选择',// message
-required:'{label}不得为空',type:'{label}格式有误',max:'不得超过 {max} 个字',min:'不得少于 {min} 个字'};const ruleMap={// required
-required:{required:true},// type
-string:{type:'string',whitespace:true},number:{pattern:/^\d+$/,whitespace:true},array:{type:'array'},email:{type:'email',whitespace:true},phone:{pattern:/^1[3456789]\d{9}$/,whitespace:true},id:{pattern:/^\d+x?$/i,whitespace:true},// num
-max:{},min:{}};const numRuleList=['max','min'];const restRuleList=Object.keys(ruleMap).filter(e=>!numRuleList.includes(e));/**
- * Form.Item props
- */const layoutPropList=['colon','htmlFor','noStyle','label','labelAlign','labelCol','shouldUpdate','wrapperCol'];const validatePropList=['dependencies','extra','getValueFromEvent','hasFeedback','help','name','normalize','required','rules','trigger','validateFirst','validateStatus','validateTrigger','valuePropName','getValueProps',// rc-field-form
-'initialValue'// rc-field-form
-];const miscPropList=['itemClass','itemStyle','before','after','hide'// hide but has value
-];const labelOmitList=[].concat(validatePropList,miscPropList);const namePickOmitList=[].concat(layoutPropList,validatePropList);const getItemProps=(obj,pickOmitList,omitList)=>{const itemProps={};const innerProps=_objectSpread({},obj);pickOmitList.forEach(key=>{if(obj[key]!==undefined)itemProps[key]=obj[key];// pick
-delete innerProps[key];// omit
-});omitList.forEach(key=>{delete innerProps[key];// omit
-});return{itemProps,innerProps};};/**
- * Form - Ant Design Form 组件增强版本
- * https://ant.design/fns/form-cn/
- */function Form(props){const{config:newConfig,disabledFields}=props,formProps=_objectWithoutProperties(props,["config","disabledFields"]);const config=Object(react__WEBPACK_IMPORTED_MODULE_17__["useRef"])(_objectSpread({},defaultConfig,{},newConfig));/**
-   * 生成校验信息
-   */const createRules=(rules,label='')=>{if(!Array.isArray(rules))return rules;return rules.map(rule=>{if(typeof rule!=='string')return rule;// e.g. 'max=10'
-if(rule.includes('=')){const[key,val]=rule.split('=');if(!numRuleList.includes(key))return rule;return{[key]:+val,message:config.current[key].replace(`{${key}}`,val)};}// e.g. 'required'
-if(!restRuleList.includes(rule))return rule;const key=rule==='required'?rule:'type';return _objectSpread({},ruleMap[rule],{message:config.current[key].replace('{label}',label)});});};/**
-   * 获取 tip 与 disabled 属性
-   */const getNodeTip=(node,label='')=>{const{displayName}=node.type;const{tip}=node.props;// `tip` 属性
-if(typeof displayName==='string'&&typeof tip==='string'&&displayNameList.includes(displayName)&&tipList.includes(tip)){const isSelect=selectList.includes(displayName);const shortTip=isSelect?config.current.select:config.current.input;const tipWords=tip==='short'?shortTip:`${shortTip}${label}`;return _objectSpread({},node,{props:_objectSpread({},node.props,{tip:tipWords})});}return node;};const getNodeTipDisabled=(node,label,name)=>{const newNode=getNodeTip(node,label);// `disabled` 属性
-if(disabledFields==='all'||typeof name==='string'&&hasItem(disabledFields,name)){return _objectSpread({},newNode,{props:_objectSpread({},newNode.props,{disabled:true})});}return newNode;};/**
-   * 核心渲染方法
-   */const renderNodes=nodes=>{if(typeof nodes!=='object'||nodes===null)return nodes;return react__WEBPACK_IMPORTED_MODULE_17___default.a.Children.map(nodes,node=>{if(typeof node!=='object'||node===null||!node.props)return node;const _node$props=node.props,{children}=_node$props,nodeProps=_objectWithoutProperties(_node$props,["children"]);const{label,name}=nodeProps;// 1. ``
-if(label===undefined&&name===undefined){const normalNode=_objectSpread({},node,{props:_objectSpread({},nodeProps,{children:renderNodes(children)})});return getNodeTip(normalNode);}// 2. `label`
-if(name===undefined){const{itemClass='',itemStyle,before,after}=nodeProps;const{itemProps,innerProps}=getItemProps(nodeProps,layoutPropList,labelOmitList);const innerNode=_objectSpread({},node,{props:_objectSpread({},innerProps,{children:renderNodes(children)})});return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_20__["jsx"])(antd_es_form__WEBPACK_IMPORTED_MODULE_16__["default"].Item,_extends({className:itemClass,style:itemStyle},itemProps),renderNodes(before),getNodeTip(innerNode,label),renderNodes(after));}// 3. `name` || `label` `name`
-const{itemClass='',itemStyle,hide,rules:oldR,validateTrigger:oldVt}=nodeProps;const rules=createRules(oldR,label);const validateTrigger=oldVt||hasItem(oldR,'phone')?'onBlur':'onChange';const newNodeProps=_objectSpread({},nodeProps,{rules,validateTrigger});const{itemProps,innerProps}=getItemProps(newNodeProps,namePickOmitList,miscPropList);const innerNode=_objectSpread({},node,{props:innerProps});return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_20__["jsx"])(antd_es_form__WEBPACK_IMPORTED_MODULE_16__["default"].Item,_extends({className:`form-item-${name} ${itemClass}`,style:hide===true?{display:'none'}:itemStyle},itemProps),getNodeTipDisabled(innerNode,label,name));});};/**
-   * Form
-   */const{data,children}=formProps,restProps=_objectWithoutProperties(formProps,["data","children"]);// eslint-disable-line
-addUniqueClass(restProps,'form');return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_20__["jsx"])(antd_es_form__WEBPACK_IMPORTED_MODULE_16__["default"],_extends({initialValues:data},restProps),renderNodes(children));}Form.propTypes={/** initialValues 简写。e.g. { name1: value1, name2: value2 } */data:prop_types__WEBPACK_IMPORTED_MODULE_18___default.a.object,/** placeholder 与校验提示，详见下文 config 表格。e.g. { required: 'Oops, {label} is needed' } */config:prop_types__WEBPACK_IMPORTED_MODULE_18___default.a.object,/** 禁用的表单域，传入 name 组成的数组。全部禁用传入字符串 "all" */disabledFields:prop_types__WEBPACK_IMPORTED_MODULE_18___default.a.array};Form.defaultProps={};/**
- * Input - Ant Design Input (TextArea) 组件增强版本
- * https://ant.design/fns/input-cn/
- */function Input(props){const{max,tip,auto,textarea,rows}=props,restProps=_objectWithoutProperties(props,["max","tip","auto","textarea","rows"]);const{disabled}=restProps;addUniqueClass(restProps,'input');const renderInput=inputProps=>{if(textarea!==true){return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_20__["jsx"])(antd_es_input__WEBPACK_IMPORTED_MODULE_14__["default"],_extends({placeholder:tip,autoComplete:auto},inputProps));}return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_20__["jsx"])(antd_es_input__WEBPACK_IMPORTED_MODULE_14__["default"].TextArea,_extends({placeholder:tip,autoSize:{minRows:rows}},inputProps));};const noCount=typeof max!=='number'||disabled===true;const{0:count,1:setCount}=Object(react__WEBPACK_IMPORTED_MODULE_17__["useState"])(()=>{if(noCount)return 0;const{defaultValue,value}=restProps;if(typeof value==='string')return value.length;if(typeof defaultValue==='string')return defaultValue.length;return 0;});// no count
-if(noCount)return renderInput(restProps);// has count
-const{onChange}=restProps;restProps.onChange=event=>{const{value}=event.target;if(typeof value==='string')setCount(value.length);if(typeof onChange==='function')return onChange(event);};return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_20__["jsx"])("div",{className:"ant-plus-input-wrapper"},renderInput(restProps),Object(_emotion_core__WEBPACK_IMPORTED_MODULE_20__["jsx"])("span",{className:`count ${count<=max?'':'red'}`},count," | ",max));}Input.propTypes={/** 最大可输入字符数（传入则显示字符计数器）*/max:prop_types__WEBPACK_IMPORTED_MODULE_18___default.a.number,/** placeholder 简写，可传入 "short" 或 "full"（AntPlus Form 内有效）。转义："short" => "请输入", "full" => "请输入XX", "其它" => "其它" */tip:prop_types__WEBPACK_IMPORTED_MODULE_18___default.a.string,/** autoComplete 简写（关闭需传入 "off"）*/auto:prop_types__WEBPACK_IMPORTED_MODULE_18___default.a.string,/** 默认为 Input 组件，若传入 textarea，则为 TextArea 组件 */textarea:prop_types__WEBPACK_IMPORTED_MODULE_18___default.a.bool,/** TextArea 的输入框行高 */rows:prop_types__WEBPACK_IMPORTED_MODULE_18___default.a.number};Input.defaultProps={textarea:false,rows:2};/**
- * AutoComplete - Ant Design AutoComplete 组件增强版本
- * https://ant.design/fns/auto-complete-cn/
- */function AutoComplete(props){const{data,tip,search,clear}=props,restProps=_objectWithoutProperties(props,["data","tip","search","clear"]);let searchProps;if(search===true){searchProps={filterOption:(val,option)=>option.value.includes(val)};}addUniqueClass(restProps,'auto-complete');return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_20__["jsx"])(antd_es_auto_complete__WEBPACK_IMPORTED_MODULE_12__["default"],_extends({options:data,placeholder:tip},searchProps,{allowClear:clear},restProps));}AutoComplete.propTypes={/** options 简写 */data:prop_types__WEBPACK_IMPORTED_MODULE_18___default.a.array,/** placeholder 简写，可传入 "short" 或 "full"（AntPlus Form 内有效）。转义："short" => "请输入", "full" => "请输入XX", "其它" => "其它" */tip:prop_types__WEBPACK_IMPORTED_MODULE_18___default.a.string,/** 是否可搜索 */search:prop_types__WEBPACK_IMPORTED_MODULE_18___default.a.bool,/** allowClear 简写 */clear:prop_types__WEBPACK_IMPORTED_MODULE_18___default.a.bool};AutoComplete.defaultProps={data:[],search:true,clear:false};/**
- * Select - Ant Design Select 组件增强版本
- * https://ant.design/fns/select-cn/
- */function Select(props){const{data,keys,tip,search,clear,empty}=props,restProps=_objectWithoutProperties(props,["data","keys","tip","search","clear","empty"]);const[value='value',label='label']=keys;let searchProps;if(search===true){searchProps={showSearch:true,filterOption:(val,option)=>option.children.includes(val)};}addUniqueClass(restProps,'select');return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_20__["jsx"])(antd_es_select__WEBPACK_IMPORTED_MODULE_10__["default"],_extends({placeholder:tip},searchProps,{allowClear:clear,notFoundContent:empty},restProps),data.map(item=>Object(_emotion_core__WEBPACK_IMPORTED_MODULE_20__["jsx"])(antd_es_select__WEBPACK_IMPORTED_MODULE_10__["default"].Option,{key:item[label],value:item[value],disabled:item.disabled},item[label])));}Select.propTypes={/** 列表数据源 */data:prop_types__WEBPACK_IMPORTED_MODULE_18___default.a.array,/** 当数据源的键不是 "value" (值) "label" (名称) 时传入。e.g. 数据源 [{ val: 1, text: 'A'}, { val: 2, text: 'B'}]，则传入 ['val', 'text'] */keys:prop_types__WEBPACK_IMPORTED_MODULE_18___default.a.array,/** placeholder 简写，可传入 "short" 或 "full"（AntPlus Form 内有效）。转义："short" => "请选择", "full" => "请选择XX", "其它" => "其它" */tip:prop_types__WEBPACK_IMPORTED_MODULE_18___default.a.string,/** 是否可搜索 */search:prop_types__WEBPACK_IMPORTED_MODULE_18___default.a.bool,/** allowClear 简写 */clear:prop_types__WEBPACK_IMPORTED_MODULE_18___default.a.bool,/** notFoundContent 简写 */empty:prop_types__WEBPACK_IMPORTED_MODULE_18___default.a.string};Select.defaultProps={data:[],keys:['value','label'],search:false,clear:false};/**
- * Transfer - Ant Design Transfer 组件增强版本
- * https://ant.design/fns/transfer-cn/
- */function Transfer(props){const{data,title,search,unit,searchTip,empty}=props,restProps=_objectWithoutProperties(props,["data","title","search","unit","searchTip","empty"]);let searchProps;if(search===true){searchProps={showSearch:true,filterOption:(val,option)=>`${option.title}${option.description||''}`.includes(val)};}addUniqueClass(restProps,'transfer');const{targetKeys,value}=restProps;restProps.targetKeys=targetKeys||value;return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_20__["jsx"])(antd_es_transfer__WEBPACK_IMPORTED_MODULE_8__["default"],_extends({dataSource:data,titles:[`未选择${title}`,`已选择${title}`]},searchProps,{locale:{itemsUnit:unit,itemUnit:unit,searchPlaceholder:searchTip,notFoundContent:empty}},restProps));}Transfer.propTypes={/** dataSource 简写 */data:prop_types__WEBPACK_IMPORTED_MODULE_18___default.a.array,/** "未选择XX" "已选择XX" 的 "XX" 文案 */title:prop_types__WEBPACK_IMPORTED_MODULE_18___default.a.string,/** 是否可搜索 */search:prop_types__WEBPACK_IMPORTED_MODULE_18___default.a.bool,/** local.itemUnit 与 local.itemsUnits 简写，默认：'项' */unit:prop_types__WEBPACK_IMPORTED_MODULE_18___default.a.string,/** locale.searchPlaceholder 简写（不支持 "short" "full"） */searchTip:prop_types__WEBPACK_IMPORTED_MODULE_18___default.a.string,/** locale.notFoundContent 简写 */empty:prop_types__WEBPACK_IMPORTED_MODULE_18___default.a.string};Transfer.defaultProps={data:[],title:'',search:false,unit:'项',searchTip:'搜索',render:item=>item.title};/**
- * Cascader - Ant Design Cascader 组件增强版本
- * https://ant.design/fns/cascader-cn/
- */function Cascader(props){const{data,keys,search,clear,empty,tip,last}=props,restProps=_objectWithoutProperties(props,["data","keys","search","clear","empty","tip","last"]);const[valueKey='value',labelKey='label',childrenKey='children']=keys;const valPathMap=Object(react__WEBPACK_IMPORTED_MODULE_17__["useRef"])({});const prevLength=Object(react__WEBPACK_IMPORTED_MODULE_17__["useRef"])(0);if(last===true){if(prevLength.current!==data.length){prevLength.current=data.length;const travelOptions=(data,valList=[])=>{data.forEach(item=>{const{[valueKey]:val,[childrenKey]:children}=item;const selfValList=valList.concat(val);if(hasLength(children))return travelOptions(children,selfValList);valPathMap.current[val]=selfValList;});};travelOptions(data);}const{defaultValue,value,onChange}=restProps;if(value!==undefined){restProps.value=valPathMap.current[value];}else if(defaultValue!==undefined){restProps.defaultValue=valPathMap.current[defaultValue];}if(typeof onChange==='function'){restProps.onChange=val=>onChange(val[val.length-1]);}}let searchProps;if(search===true){searchProps={showSearch:{filter:(val,path)=>path.some(option=>option[labelKey].includes(val))}};}addUniqueClass(restProps,'cascader');return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_20__["jsx"])(antd_es_cascader__WEBPACK_IMPORTED_MODULE_6__["default"],_extends({options:data,fieldNames:{value:valueKey,label:labelKey,children:childrenKey},placeholder:tip},searchProps,{allowClear:clear,notFoundContent:empty},restProps));}Cascader.propTypes={/** options 简写 */data:prop_types__WEBPACK_IMPORTED_MODULE_18___default.a.array,/** 当数据源的键不是 "value" "label" "children" 时传入 */keys:prop_types__WEBPACK_IMPORTED_MODULE_18___default.a.array,/** placeholder 简写（不支持 "short" "full"） */tip:prop_types__WEBPACK_IMPORTED_MODULE_18___default.a.string,/** 是否可搜索 */search:prop_types__WEBPACK_IMPORTED_MODULE_18___default.a.bool,/** allowClear 简写 */clear:prop_types__WEBPACK_IMPORTED_MODULE_18___default.a.bool,/** notFoundContent 简写 */empty:prop_types__WEBPACK_IMPORTED_MODULE_18___default.a.string,/** value 取数组最后一个值，默认为整体数组（AntPlus Form 内有效）*/last:prop_types__WEBPACK_IMPORTED_MODULE_18___default.a.bool};Cascader.defaultProps={data:[],keys:['value','label','children'],tip:'请选择',search:false,clear:true,last:false};/**
- * TreeSelect - Ant Design TreeSelect 组件增强版本
- * https://ant.design/fns/tree-select-cn/
- */function TreeSelect(props){const{data,keys,tip,search,clear,empty,checkbox,expandAll,expandKeys,showType}=props,restProps=_objectWithoutProperties(props,["data","keys","tip","search","clear","empty","checkbox","expandAll","expandKeys","showType"]);const[valueKey='value',titleKey='title',childrenKey='children']=keys;const treeData=Object(react__WEBPACK_IMPORTED_MODULE_17__["useRef"])([]);if(treeData.current.length!==data.length){if(valueKey==='value'&&titleKey==='title'&&childrenKey==='children'){treeData.current=data;}else{const getNewData=data=>{return data.map(item=>{const{[valueKey]:value,[titleKey]:title,[childrenKey]:children}=item;const newItem={value,title};if(hasLength(children))newItem.children=getNewData(children);return newItem;});};treeData.current=getNewData(data);}}if(treeData.length===0)delete restProps.value;let searchProps;if(search===true){searchProps={showSearch:true,filterTreeNode:(val,node)=>new RegExp(val,'i').test(`${node.value}${node.title}`)};}addUniqueClass(restProps,'tree-select');return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_20__["jsx"])(antd_es_tree_select__WEBPACK_IMPORTED_MODULE_4__["default"],_extends({treeData:treeData.current,placeholder:tip},searchProps,{allowClear:clear,notFoundContent:empty,treeCheckable:checkbox,treeDefaultExpandAll:expandAll,treeDefaultExpandedKeys:expandKeys,showCheckedStrategy:showType},restProps));}TreeSelect.propTypes={/** treeData 简写 */data:prop_types__WEBPACK_IMPORTED_MODULE_18___default.a.array,/** 当数据源的键不是 "value" "title" "children" 时传入 */keys:prop_types__WEBPACK_IMPORTED_MODULE_18___default.a.array,/** placeholder 简写（不支持 "short" "full"） */tip:prop_types__WEBPACK_IMPORTED_MODULE_18___default.a.string,/** 是否可搜索 */search:prop_types__WEBPACK_IMPORTED_MODULE_18___default.a.bool,/** allowClear 简写 */clear:prop_types__WEBPACK_IMPORTED_MODULE_18___default.a.bool,/** notFoundContent 简写 */empty:prop_types__WEBPACK_IMPORTED_MODULE_18___default.a.string,/** treeCheckable 简写 */checkbox:prop_types__WEBPACK_IMPORTED_MODULE_18___default.a.bool,/** treeDefaultExpandAll 简写 */expandAll:prop_types__WEBPACK_IMPORTED_MODULE_18___default.a.bool,/** treeDefaultExpandedKeys 简写 */expandKeys:prop_types__WEBPACK_IMPORTED_MODULE_18___default.a.array,/** showCheckedStrategy 简写 */showType:prop_types__WEBPACK_IMPORTED_MODULE_18___default.a.oneOf([antd_es_tree_select__WEBPACK_IMPORTED_MODULE_4__["default"].SHOW_ALL,antd_es_tree_select__WEBPACK_IMPORTED_MODULE_4__["default"].SHOW_PARENT,antd_es_tree_select__WEBPACK_IMPORTED_MODULE_4__["default"].SHOW_CHILD])};TreeSelect.defaultProps={data:[],keys:['value','title','children'],tip:'请选择',search:false,clear:false,checkbox:false,expandAll:false,showType:antd_es_tree_select__WEBPACK_IMPORTED_MODULE_4__["default"].SHOW_CHILD};/**
- * Button
- * 未做任何封装，方便 Form 中使用
- */const Button=antd_es_button__WEBPACK_IMPORTED_MODULE_2__["default"];/**
- * exports
- */const AntPlus={Form,Input,AutoComplete,Select,Transfer,Cascader,TreeSelect};const omitKeys=['propTypes','defaultProps'];const copyOriginalKeys=()=>{const{Form,Input,AutoComplete,Select,Transfer,Cascader,TreeSelect}=Ant;const AntDesign={Form,Input,AutoComplete,Select,Transfer,Cascader,TreeSelect};Object.entries(AntPlus).forEach(([name,fn])=>{const obj=AntDesign[name];Object.entries(obj).forEach(([key,val])=>{if(!omitKeys.includes(key))fn[key]=val;});fn.displayName=`AntPlus.${name}`;});};copyOriginalKeys();if(typeof Button!=='undefined'&&Button&&Button===Object(Button)&&Object.isExtensible(Button)&&!Button.hasOwnProperty('__filemeta')){Object.defineProperty(Button,'__filemeta',{configurable:true,value:{name:"Button",filename:"src/index.jsx"}});}if(typeof TreeSelect!=='undefined'&&TreeSelect&&TreeSelect===Object(TreeSelect)&&Object.isExtensible(TreeSelect)&&!TreeSelect.hasOwnProperty('__filemeta')){Object.defineProperty(TreeSelect,'__filemeta',{configurable:true,value:{name:"TreeSelect",filename:"src/index.jsx"}});}if(typeof Cascader!=='undefined'&&Cascader&&Cascader===Object(Cascader)&&Object.isExtensible(Cascader)&&!Cascader.hasOwnProperty('__filemeta')){Object.defineProperty(Cascader,'__filemeta',{configurable:true,value:{name:"Cascader",filename:"src/index.jsx"}});}if(typeof Transfer!=='undefined'&&Transfer&&Transfer===Object(Transfer)&&Object.isExtensible(Transfer)&&!Transfer.hasOwnProperty('__filemeta')){Object.defineProperty(Transfer,'__filemeta',{configurable:true,value:{name:"Transfer",filename:"src/index.jsx"}});}if(typeof Select!=='undefined'&&Select&&Select===Object(Select)&&Object.isExtensible(Select)&&!Select.hasOwnProperty('__filemeta')){Object.defineProperty(Select,'__filemeta',{configurable:true,value:{name:"Select",filename:"src/index.jsx"}});}if(typeof AutoComplete!=='undefined'&&AutoComplete&&AutoComplete===Object(AutoComplete)&&Object.isExtensible(AutoComplete)&&!AutoComplete.hasOwnProperty('__filemeta')){Object.defineProperty(AutoComplete,'__filemeta',{configurable:true,value:{name:"AutoComplete",filename:"src/index.jsx"}});}if(typeof Input!=='undefined'&&Input&&Input===Object(Input)&&Object.isExtensible(Input)&&!Input.hasOwnProperty('__filemeta')){Object.defineProperty(Input,'__filemeta',{configurable:true,value:{name:"Input",filename:"src/index.jsx"}});}if(typeof Form!=='undefined'&&Form&&Form===Object(Form)&&Object.isExtensible(Form)&&!Form.hasOwnProperty('__filemeta')){Object.defineProperty(Form,'__filemeta',{configurable:true,value:{name:"Form",filename:"src/index.jsx"}});}
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_frontmatter", function() { return _frontmatter; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return MDXContent; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mdx-js/react */ "../node_modules/@mdx-js/react/dist/esm.js");
+/* harmony import */ var _Users_Lee_Works_ant_plus_node_modules_gatsby_theme_docz_src_base_Layout_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../node_modules/gatsby-theme-docz/src/base/Layout.js */ "../node_modules/gatsby-theme-docz/src/base/Layout.js");
+/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @emotion/core */ "../node_modules/@emotion/core/dist/core.esm.js");
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
+/* @jsx mdx */
+
+
+/* @jsx mdx */
+
+
+
+const _frontmatter = {};
+
+if (typeof _frontmatter !== 'undefined' && _frontmatter && _frontmatter === Object(_frontmatter) && Object.isExtensible(_frontmatter) && !_frontmatter.hasOwnProperty('__filemeta')) {
+  Object.defineProperty(_frontmatter, '__filemeta', {
+    configurable: true,
+    value: {
+      name: "_frontmatter",
+      filename: "src/Usage.mdx"
+    }
+  });
+}
+
+const makeShortcode = name => function MDXDefaultShortcode(props) {
+  console.warn("Component " + name + " was not imported, exported, or provided by MDXProvider as global scope");
+  return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("div", props);
+};
+
+const layoutProps = {
+  _frontmatter
+};
+const MDXLayout = _Users_Lee_Works_ant_plus_node_modules_gatsby_theme_docz_src_base_Layout_js__WEBPACK_IMPORTED_MODULE_2__["default"];
+function MDXContent(_ref) {
+  let {
+    components
+  } = _ref,
+      props = _objectWithoutProperties(_ref, ["components"]);
+
+  return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(MDXLayout, _extends({}, layoutProps, props, {
+    components: components,
+    mdxType: "MDXLayout"
+  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h1", {
+    "id": "使用"
+  }, `使用`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", {
+    "id": "表单控件-props"
+  }, `表单控件 Props`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `Ant Plus 最核心的使用方式，便是可以在表单控件 Props 中，直接传入 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "p"
+  }, `Form.Item`), ` 的相关 Props，如：`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("pre", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("code", _extends({
+    parentName: "pre"
+  }, {
+    "className": "language-jsx",
+    "metastring": "harmony",
+    "harmony": true
+  }), `<Form data={{ name: 'Emily' }}>
+  <Input
+    label="用户名"
+    name="name"
+    colon
+    after={<span>请输入正确信息</span>}
+    rules={['required', 'string']}
+    tip="请输入用户名"
+  />
+</Form>
+`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `从而去除对 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "p"
+  }, `Form.Item`), ` 的依赖，简化表单代码结构。`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("hr", null), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `以下为表单控件除自身 Props 外，可传入的 Props：`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h3", {
+    "id": "formitem-可传入-props"
+  }, `Form.Item 可传入 Props`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("table", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("thead", {
+    parentName: "table"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
+    parentName: "thead"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("th", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  })), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("th", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  })), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("th", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  })), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("th", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  })))), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tbody", {
+    parentName: "table"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
+    parentName: "tbody"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `colon`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `dependencies`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `extra`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `getValueFromEvent`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
+    parentName: "tbody"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `hasFeedback`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `help`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `htmlFor`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `noStyle`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
+    parentName: "tbody"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `label`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `labelAlign`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `labelCol`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `name`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
+    parentName: "tbody"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `normalize`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `required`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `rules`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `shouldUpdate`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
+    parentName: "tbody"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `trigger`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `validateFirst`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `validateStatus`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `validateTrigger`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
+    parentName: "tbody"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `valuePropName`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `wrapperCol`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  })), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }))))), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `若需用 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "p"
+  }, `Form.Item`), ` 来布局，如 Ant Design 代码：`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("pre", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("code", _extends({
+    parentName: "pre"
+  }, {
+    "className": "language-jsx"
+  }), `<Form.Item labelCol={{ span: 8 }} wrapperCol={{ span: 16 }}>
+  <Button>提交</Button>
+</Form.Item>
+`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `则 Ant Plus 对应代码为：`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("pre", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("code", _extends({
+    parentName: "pre"
+  }, {
+    "className": "language-jsx"
+  }), `<Button label="" labelCol={{ span: 8 }} wrapperCol={{ span: 16 }}>
+  提交
+</Button>
+`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `因为 Ant Plus 以 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "p"
+  }, `label`), ` 或 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "p"
+  }, `name`), ` 至少存在一个来识别节点是否为 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "p"
+  }, `Form.Item`), `，而纯布局时 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "p"
+  }, `name`), ` 不存在，所以应传入 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "p"
+  }, `label=""`), ` 以被识别为 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "p"
+  }, `Form.Item`), `。`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `同时，`, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "p"
+  }, `label=""`), ` 也代表当前元素在表单布局中，为 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "p"
+  }, `label`), ` 文字为空一个表单条目。`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h3", {
+    "id": "其它可传入-props"
+  }, `其它可传入 Props`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("table", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("thead", {
+    parentName: "table"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
+    parentName: "thead"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("th", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `属性`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("th", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `说明`))), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tbody", {
+    parentName: "table"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
+    parentName: "tbody"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `className`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `将传给 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "td"
+  }, `Form.Item`), `，如 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "td"
+  }, `<Input className="form-item-class">`))), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
+    parentName: "tbody"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `style`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `将传给 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "td"
+  }, `Form.Item`), `，如 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "td"
+  }, `<Input style="form-item-style">`))), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
+    parentName: "tbody"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `ownClass`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `将传给自身 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "td"
+  }, `className`), `，如 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "td"
+  }, `<Input ownClass="input-class">`))), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
+    parentName: "tbody"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `ownStyle`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `将传给自身 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "td"
+  }, `style`), `，如 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "td"
+  }, `<Input ownClass="input-style">`))), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
+    parentName: "tbody"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `ownName`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `自身存在 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "td"
+  }, `name`), ` 属性时，如 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "td"
+  }, `Upload`), `，则为 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "td"
+  }, `<Upload name="field-name" ownName="files">`))), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
+    parentName: "tbody"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `hide`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `是否隐藏表单域`)))), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", {
+    "id": "简化版-rules"
+  }, `简化版 rules`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `使用 Ant Design Form 时，需在 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "p"
+  }, `rules`), ` 中传入对象，如：`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("pre", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("code", _extends({
+    parentName: "pre"
+  }, {
+    "className": "language-jsx",
+    "metastring": "harmony",
+    "harmony": true
+  }), `<Form.Item
+  label="Username"
+  name="name"
+  rules={[
+    { required: true, message: '用户名不得为空' },
+    { type: 'string', whitespace: true, message: '用户名格式有误' },
+    { max: 10, message: '不得超过 10 个字' },
+  ]}
+>
+  <Input />
+</Form.Item>
+`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `而使用 Ant Plus 时，只需在 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "p"
+  }, `rules`), ` 中传入短语字符串即可，如：`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("pre", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("code", _extends({
+    parentName: "pre"
+  }, {
+    "className": "language-jsx",
+    "metastring": "harmony",
+    "harmony": true
+  }), `<Input name="name" rules={['required', 'string', 'max=10']} />
+`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `Ant Plus 提供了以下短语形式的规则，可通过 Ant Plus `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "p"
+  }, `Form`), ` 组件的 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("a", _extends({
+    parentName: "p"
+  }, {
+    "href": "./form#config"
+  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "a"
+  }, `config`)), ` 属性自定义提示文案。`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("table", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("thead", {
+    parentName: "table"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
+    parentName: "thead"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("th", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `短语`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("th", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `对应规则`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("th", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `规则说明`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("th", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `默认错误提示`))), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tbody", {
+    parentName: "table"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
+    parentName: "tbody"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `'required'`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `required`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `必填`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `'XXX 不得为空'（XXX 为 label 字段，下同）`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
+    parentName: "tbody"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `'string'`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `string`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `字符串`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `'XXX 格式有误'`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
+    parentName: "tbody"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `'number'`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `number`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `数值`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `'XXX 格式有误'`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
+    parentName: "tbody"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `'array'`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `array`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `数组`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `'XXX 格式有误'`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
+    parentName: "tbody"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `'email'`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `email`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `邮箱`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `'XXX 格式有误'`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
+    parentName: "tbody"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `'phone'`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `phone`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `手机号`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `'XXX 格式有误'`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
+    parentName: "tbody"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `'id'`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `id`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `身份证号`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `'XXX 格式有误'`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
+    parentName: "tbody"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `'max=10'`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `max`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `最大字符长度`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `'不得超过 X 个字' （X 为数值，下同）`)), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("tr", {
+    parentName: "tbody"
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `'min=2'`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `min`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `最小字符长度`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("td", _extends({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `'不得少于 X 个字'`)))), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `同时遵循渐进增强的理念，当遇到未在以上列出的规则或需自定义规则时，仍可使用传入对象的方式，字符串与对象可同时使用。`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `注意 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "p"
+  }, `max`), ` 与 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "p"
+  }, `min`), ` 的使用方式为 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "p"
+  }, `"max=10"`), ` `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "p"
+  }, `"min=2"`), `，以 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
+    parentName: "p"
+  }, `"="`), ` 分割。`));
+}
+
+if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDXContent) && Object.isExtensible(MDXContent) && !MDXContent.hasOwnProperty('__filemeta')) {
+  Object.defineProperty(MDXContent, '__filemeta', {
+    configurable: true,
+    value: {
+      name: "MDXContent",
+      filename: "src/Usage.mdx"
+    }
+  });
+}
+
+;
+MDXContent.isMDXComponent = true;
 
 /***/ }),
 
-/***/ "../src/index.scss":
+/***/ "../src/index.js":
+/*!***********************!*\
+  !*** ../src/index.js ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+const pathMap={'/transfer':()=>{setTimeout(()=>{const defaultValues=document.querySelectorAll('[data-testid=prop-default-value]');defaultValues.forEach(el=>{if(el.innerText==='[Empty string]')el.innerText='""';});},100);},'/tree-select':()=>{setTimeout(()=>{const defaultValues=document.querySelectorAll('[data-testid=prop-default-value]');defaultValues.forEach(el=>{if(el.innerText.includes('Ant.'))el.innerText=el.innerText.replace(/Ant\./g,'');});const types=document.querySelectorAll('[data-testid=prop-type]');types.forEach(el=>{if(el.innerText.includes('Ant.'))el.innerText=el.innerText.replace(/Ant\./g,'');});},100);}};if(typeof window!=='undefined'){window.onload=function(){let path=window.location.pathname;const onEnter=()=>{Object.entries(pathMap).forEach(([key,fn])=>{if(key==='all')return fn();if(key.includes(path))return fn();});};onEnter();const body=document.querySelector('body');const observer=new MutationObserver(()=>{const newPath=window.location.pathname;if(path===newPath)return;path=newPath;onEnter();});observer.observe(body,{childList:true,subtree:true});};}
+
+/***/ }),
+
+/***/ "../src/index.less":
 /*!*************************!*\
-  !*** ../src/index.scss ***!
+  !*** ../src/index.less ***!
   \*************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -82992,7 +82749,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var docz__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! docz */ "../node_modules/docz/dist/index.esm.js");
-/* harmony import */ var antx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! antx */ "../src/index.jsx");
+/* harmony import */ var antx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! antx */ "../lib/index.jsx");
 /* harmony default export */ __webpack_exports__["default"] = ({useState: react__WEBPACK_IMPORTED_MODULE_0__["useState"],Playground: docz__WEBPACK_IMPORTED_MODULE_1__["Playground"],Props: docz__WEBPACK_IMPORTED_MODULE_1__["Props"],Transfer: antx__WEBPACK_IMPORTED_MODULE_2__["Transfer"],React: react__WEBPACK_IMPORTED_MODULE_0__});
 
 /***/ }),
@@ -83007,27 +82764,29 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var docz__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! docz */ "../node_modules/docz/dist/index.esm.js");
-/* harmony import */ var antx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! antx */ "../src/index.jsx");
+/* harmony import */ var antx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! antx */ "../lib/index.jsx");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony default export */ __webpack_exports__["default"] = ({Playground: docz__WEBPACK_IMPORTED_MODULE_0__["Playground"],Props: docz__WEBPACK_IMPORTED_MODULE_0__["Props"],Input: antx__WEBPACK_IMPORTED_MODULE_1__["Input"],React: react__WEBPACK_IMPORTED_MODULE_2__});
 
 /***/ }),
 
-/***/ "./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/57250872f13f039b33fc9b3642c49d2e.js":
+/***/ "./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/5a023c93db667062cfddc4eb18ef95bc.js":
 /*!********************************************************************************************!*\
-  !*** ./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/57250872f13f039b33fc9b3642c49d2e.js ***!
+  !*** ./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/5a023c93db667062cfddc4eb18ef95bc.js ***!
   \********************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _site_styles_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../site/styles.scss */ "../site/styles.scss");
-/* harmony import */ var _site_styles_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_site_styles_scss__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony default export */ __webpack_exports__["default"] = ({React: react__WEBPACK_IMPORTED_MODULE_1__});
+/* harmony import */ var _src_index_less__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../src/index.less */ "../src/index.less");
+/* harmony import */ var _src_index_less__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_src_index_less__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _src_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../src/index.js */ "../src/index.js");
+/* harmony import */ var _src_index_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_src_index_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony default export */ __webpack_exports__["default"] = ({React: react__WEBPACK_IMPORTED_MODULE_2__});
 
 /***/ }),
 
@@ -83041,7 +82800,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var docz__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! docz */ "../node_modules/docz/dist/index.esm.js");
-/* harmony import */ var antx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! antx */ "../src/index.jsx");
+/* harmony import */ var antx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! antx */ "../lib/index.jsx");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony default export */ __webpack_exports__["default"] = ({Playground: docz__WEBPACK_IMPORTED_MODULE_0__["Playground"],Props: docz__WEBPACK_IMPORTED_MODULE_0__["Props"],TreeSelect: antx__WEBPACK_IMPORTED_MODULE_1__["TreeSelect"],React: react__WEBPACK_IMPORTED_MODULE_2__});
@@ -83058,7 +82817,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var docz__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! docz */ "../node_modules/docz/dist/index.esm.js");
-/* harmony import */ var antx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! antx */ "../src/index.jsx");
+/* harmony import */ var antx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! antx */ "../lib/index.jsx");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony default export */ __webpack_exports__["default"] = ({Playground: docz__WEBPACK_IMPORTED_MODULE_0__["Playground"],Props: docz__WEBPACK_IMPORTED_MODULE_0__["Props"],AutoComplete: antx__WEBPACK_IMPORTED_MODULE_1__["AutoComplete"],React: react__WEBPACK_IMPORTED_MODULE_2__});
@@ -83075,7 +82834,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var docz__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! docz */ "../node_modules/docz/dist/index.esm.js");
-/* harmony import */ var antx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! antx */ "../src/index.jsx");
+/* harmony import */ var antx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! antx */ "../lib/index.jsx");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony default export */ __webpack_exports__["default"] = ({Playground: docz__WEBPACK_IMPORTED_MODULE_0__["Playground"],Props: docz__WEBPACK_IMPORTED_MODULE_0__["Props"],Form: antx__WEBPACK_IMPORTED_MODULE_1__["Form"],Input: antx__WEBPACK_IMPORTED_MODULE_1__["Input"],Select: antx__WEBPACK_IMPORTED_MODULE_1__["Select"],Button: antx__WEBPACK_IMPORTED_MODULE_1__["Button"],React: react__WEBPACK_IMPORTED_MODULE_2__});
@@ -83094,7 +82853,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var docz__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! docz */ "../node_modules/docz/dist/index.esm.js");
-/* harmony import */ var antx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! antx */ "../src/index.jsx");
+/* harmony import */ var antx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! antx */ "../lib/index.jsx");
 /* harmony default export */ __webpack_exports__["default"] = ({useState: react__WEBPACK_IMPORTED_MODULE_0__["useState"],Playground: docz__WEBPACK_IMPORTED_MODULE_1__["Playground"],Props: docz__WEBPACK_IMPORTED_MODULE_1__["Props"],Cascader: antx__WEBPACK_IMPORTED_MODULE_2__["Cascader"],React: react__WEBPACK_IMPORTED_MODULE_0__});
 
 /***/ }),
@@ -83109,7 +82868,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var docz__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! docz */ "../node_modules/docz/dist/index.esm.js");
-/* harmony import */ var antx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! antx */ "../src/index.jsx");
+/* harmony import */ var antx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! antx */ "../lib/index.jsx");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony default export */ __webpack_exports__["default"] = ({Playground: docz__WEBPACK_IMPORTED_MODULE_0__["Playground"],Props: docz__WEBPACK_IMPORTED_MODULE_0__["Props"],Select: antx__WEBPACK_IMPORTED_MODULE_1__["Select"],React: react__WEBPACK_IMPORTED_MODULE_2__});
@@ -83479,7 +83238,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 const{hot}=__webpack_require__(/*! react-hot-loader/root */ "../node_modules/react-hot-loader/root.js");// prefer default export if available
-const preferDefault=m=>m&&m.default||m;exports.components={"component---site-auto-complete-mdx":hot(preferDefault(__webpack_require__(/*! ../site/AutoComplete.mdx */ "../site/AutoComplete.mdx"))),"component---site-cascader-mdx":hot(preferDefault(__webpack_require__(/*! ../site/Cascader.mdx */ "../site/Cascader.mdx"))),"component---site-form-mdx":hot(preferDefault(__webpack_require__(/*! ../site/Form.mdx */ "../site/Form.mdx"))),"component---site-index-mdx":hot(preferDefault(__webpack_require__(/*! ../site/Index.mdx */ "../site/Index.mdx"))),"component---site-input-mdx":hot(preferDefault(__webpack_require__(/*! ../site/Input.mdx */ "../site/Input.mdx"))),"component---site-migrate-mdx":hot(preferDefault(__webpack_require__(/*! ../site/Migrate.mdx */ "../site/Migrate.mdx"))),"component---site-select-mdx":hot(preferDefault(__webpack_require__(/*! ../site/Select.mdx */ "../site/Select.mdx"))),"component---site-transfer-mdx":hot(preferDefault(__webpack_require__(/*! ../site/Transfer.mdx */ "../site/Transfer.mdx"))),"component---site-tree-select-mdx":hot(preferDefault(__webpack_require__(/*! ../site/TreeSelect.mdx */ "../site/TreeSelect.mdx"))),"component---src-pages-404-js":hot(preferDefault(__webpack_require__(/*! ./src/pages/404.js */ "./src/pages/404.js")))};
+const preferDefault=m=>m&&m.default||m;exports.components={"component---src-auto-complete-mdx":hot(preferDefault(__webpack_require__(/*! ../src/AutoComplete.mdx */ "../src/AutoComplete.mdx"))),"component---src-cascader-mdx":hot(preferDefault(__webpack_require__(/*! ../src/Cascader.mdx */ "../src/Cascader.mdx"))),"component---src-form-mdx":hot(preferDefault(__webpack_require__(/*! ../src/Form.mdx */ "../src/Form.mdx"))),"component---src-input-mdx":hot(preferDefault(__webpack_require__(/*! ../src/Input.mdx */ "../src/Input.mdx"))),"component---src-migrate-mdx":hot(preferDefault(__webpack_require__(/*! ../src/Migrate.mdx */ "../src/Migrate.mdx"))),"component---src-pages-404-js":hot(preferDefault(__webpack_require__(/*! ./src/pages/404.js */ "./src/pages/404.js"))),"component---src-select-mdx":hot(preferDefault(__webpack_require__(/*! ../src/Select.mdx */ "../src/Select.mdx"))),"component---src-start-mdx":hot(preferDefault(__webpack_require__(/*! ../src/Start.mdx */ "../src/Start.mdx"))),"component---src-transfer-mdx":hot(preferDefault(__webpack_require__(/*! ../src/Transfer.mdx */ "../src/Transfer.mdx"))),"component---src-tree-select-mdx":hot(preferDefault(__webpack_require__(/*! ../src/TreeSelect.mdx */ "../src/TreeSelect.mdx"))),"component---src-usage-mdx":hot(preferDefault(__webpack_require__(/*! ../src/Usage.mdx */ "../src/Usage.mdx")))};
 
 /***/ }),
 
@@ -83490,7 +83249,46 @@ const preferDefault=m=>m&&m.default||m;exports.components={"component---site-aut
 /*! exports provided: data, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"data\":{\"doczDb\":{\"id\":\"ace00e2b-9c46-5e24-a19a-5ed242ca9c64\",\"db\":\"{\\\"config\\\":{\\\"title\\\":\\\"Ant Plus\\\",\\\"description\\\":\\\"Enhanced Ant Design Form\\\",\\\"menu\\\":[\\\"快速开始\\\",\\\"Form 表单\\\",\\\"Input 输入框\\\",\\\"AutoComplete 自动完成\\\",\\\"Select 选择器\\\",\\\"Transfer 穿梭框\\\",\\\"Cascader 级联选择\\\",\\\"TreeSelect 树选择\\\",\\\"从 v1 迁移到 v4\\\"],\\\"version\\\":\\\"4.0.0-alpha.0\\\",\\\"repository\\\":\\\"https://github.com/nanxiaobei/ant-plus\\\",\\\"native\\\":false,\\\"themeConfig\\\":{\\\"showDarkModeSwitch\\\":false,\\\"showMarkdownEditButton\\\":false},\\\"separator\\\":\\\"-\\\",\\\"base\\\":\\\"/ant-plus/\\\",\\\"src\\\":\\\"site\\\",\\\"dest\\\":\\\"docs\\\",\\\"docgenConfig\\\":{\\\"searchPath\\\":\\\"src\\\"}},\\\"entries\\\":[{\\\"key\\\":\\\"site/site/AutoComplete.mdx\\\",\\\"value\\\":{\\\"name\\\":\\\"AutoComplete 自动完成\\\",\\\"route\\\":\\\"/auto-complete\\\",\\\"id\\\":\\\"59a6c89f6d80b81c6a26e17c2b07556c\\\",\\\"filepath\\\":\\\"site/site/AutoComplete.mdx\\\",\\\"fullpath\\\":\\\"/Users/Lee/Works/ant-plus/site/AutoComplete.mdx\\\",\\\"link\\\":\\\"https://github.com/nanxiaobei/ant-plus/edit/master/site/site/site/AutoComplete.mdx\\\",\\\"hidden\\\":false,\\\"slug\\\":\\\"site-site-auto-complete\\\",\\\"menu\\\":\\\"\\\",\\\"headings\\\":[{\\\"slug\\\":\\\"autocomplete-自动完成\\\",\\\"depth\\\":1,\\\"value\\\":\\\"AutoComplete 自动完成\\\"},{\\\"slug\\\":\\\"使用\\\",\\\"depth\\\":2,\\\"value\\\":\\\"使用\\\"},{\\\"slug\\\":\\\"示例\\\",\\\"depth\\\":2,\\\"value\\\":\\\"示例\\\"},{\\\"slug\\\":\\\"api\\\",\\\"depth\\\":2,\\\"value\\\":\\\"API\\\"}]}},{\\\"key\\\":\\\"site/site/Cascader.mdx\\\",\\\"value\\\":{\\\"name\\\":\\\"Cascader 级联选择\\\",\\\"route\\\":\\\"/cascader\\\",\\\"id\\\":\\\"ac294fbc8b906c055b6109864136e012\\\",\\\"filepath\\\":\\\"site/site/Cascader.mdx\\\",\\\"fullpath\\\":\\\"/Users/Lee/Works/ant-plus/site/Cascader.mdx\\\",\\\"link\\\":\\\"https://github.com/nanxiaobei/ant-plus/edit/master/site/site/site/Cascader.mdx\\\",\\\"hidden\\\":false,\\\"slug\\\":\\\"site-site-cascader\\\",\\\"menu\\\":\\\"\\\",\\\"headings\\\":[{\\\"slug\\\":\\\"cascader-级联选择\\\",\\\"depth\\\":1,\\\"value\\\":\\\"Cascader 级联选择\\\"},{\\\"slug\\\":\\\"使用\\\",\\\"depth\\\":2,\\\"value\\\":\\\"使用\\\"},{\\\"slug\\\":\\\"示例\\\",\\\"depth\\\":2,\\\"value\\\":\\\"示例\\\"},{\\\"slug\\\":\\\"api\\\",\\\"depth\\\":2,\\\"value\\\":\\\"API\\\"}]}},{\\\"key\\\":\\\"site/site/Form.mdx\\\",\\\"value\\\":{\\\"name\\\":\\\"Form 表单\\\",\\\"route\\\":\\\"/form\\\",\\\"id\\\":\\\"68dfbc300f5f22630db40780c6cb50e8\\\",\\\"filepath\\\":\\\"site/site/Form.mdx\\\",\\\"fullpath\\\":\\\"/Users/Lee/Works/ant-plus/site/Form.mdx\\\",\\\"link\\\":\\\"https://github.com/nanxiaobei/ant-plus/edit/master/site/site/site/Form.mdx\\\",\\\"hidden\\\":false,\\\"slug\\\":\\\"site-site-form\\\",\\\"menu\\\":\\\"\\\",\\\"headings\\\":[{\\\"slug\\\":\\\"form-表单\\\",\\\"depth\\\":1,\\\"value\\\":\\\"Form 表单\\\"},{\\\"slug\\\":\\\"使用\\\",\\\"depth\\\":2,\\\"value\\\":\\\"使用\\\"},{\\\"slug\\\":\\\"示例\\\",\\\"depth\\\":2,\\\"value\\\":\\\"示例\\\"},{\\\"slug\\\":\\\"api\\\",\\\"depth\\\":2,\\\"value\\\":\\\"API\\\"},{\\\"slug\\\":\\\"1-form\\\",\\\"depth\\\":3,\\\"value\\\":\\\"1. Form\\\"},{\\\"slug\\\":\\\"2-表单控件-props\\\",\\\"depth\\\":3,\\\"value\\\":\\\"2. 表单控件 Props\\\"},{\\\"slug\\\":\\\"3-rules\\\",\\\"depth\\\":3,\\\"value\\\":\\\"3. rules\\\"},{\\\"slug\\\":\\\"4-formsetconfigconfig\\\",\\\"depth\\\":3,\\\"value\\\":\\\"4. Form.setConfig(config)\\\"}]}},{\\\"key\\\":\\\"site/site/Index.mdx\\\",\\\"value\\\":{\\\"name\\\":\\\"快速开始\\\",\\\"route\\\":\\\"/\\\",\\\"id\\\":\\\"68836f4ebfe09f4f6edbfb57725e0639\\\",\\\"filepath\\\":\\\"site/site/Index.mdx\\\",\\\"fullpath\\\":\\\"/Users/Lee/Works/ant-plus/site/Index.mdx\\\",\\\"link\\\":\\\"https://github.com/nanxiaobei/ant-plus/edit/master/site/site/site/Index.mdx\\\",\\\"hidden\\\":false,\\\"slug\\\":\\\"site-site-index\\\",\\\"menu\\\":\\\"\\\",\\\"headings\\\":[{\\\"slug\\\":\\\"快速开始\\\",\\\"depth\\\":1,\\\"value\\\":\\\"快速开始\\\"},{\\\"slug\\\":\\\"介绍\\\",\\\"depth\\\":2,\\\"value\\\":\\\"介绍\\\"},{\\\"slug\\\":\\\"对比\\\",\\\"depth\\\":2,\\\"value\\\":\\\"对比\\\"},{\\\"slug\\\":\\\"特性\\\",\\\"depth\\\":2,\\\"value\\\":\\\"特性\\\"},{\\\"slug\\\":\\\"安装\\\",\\\"depth\\\":2,\\\"value\\\":\\\"安装\\\"},{\\\"slug\\\":\\\"示例\\\",\\\"depth\\\":2,\\\"value\\\":\\\"示例\\\"},{\\\"slug\\\":\\\"使用\\\",\\\"depth\\\":2,\\\"value\\\":\\\"使用\\\"},{\\\"slug\\\":\\\"github\\\",\\\"depth\\\":2,\\\"value\\\":\\\"GitHub\\\"},{\\\"slug\\\":\\\"协议\\\",\\\"depth\\\":2,\\\"value\\\":\\\"协议\\\"}]}},{\\\"key\\\":\\\"site/site/Input.mdx\\\",\\\"value\\\":{\\\"name\\\":\\\"Input 输入框\\\",\\\"route\\\":\\\"/input\\\",\\\"id\\\":\\\"cc935010d3f83db424866f3395064760\\\",\\\"filepath\\\":\\\"site/site/Input.mdx\\\",\\\"fullpath\\\":\\\"/Users/Lee/Works/ant-plus/site/Input.mdx\\\",\\\"link\\\":\\\"https://github.com/nanxiaobei/ant-plus/edit/master/site/site/site/Input.mdx\\\",\\\"hidden\\\":false,\\\"slug\\\":\\\"site-site-input\\\",\\\"menu\\\":\\\"\\\",\\\"headings\\\":[{\\\"slug\\\":\\\"input-输入框\\\",\\\"depth\\\":1,\\\"value\\\":\\\"Input 输入框\\\"},{\\\"slug\\\":\\\"使用\\\",\\\"depth\\\":2,\\\"value\\\":\\\"使用\\\"},{\\\"slug\\\":\\\"示例\\\",\\\"depth\\\":2,\\\"value\\\":\\\"示例\\\"},{\\\"slug\\\":\\\"input\\\",\\\"depth\\\":4,\\\"value\\\":\\\"Input\\\"},{\\\"slug\\\":\\\"textarea\\\",\\\"depth\\\":4,\\\"value\\\":\\\"Textarea\\\"},{\\\"slug\\\":\\\"api\\\",\\\"depth\\\":2,\\\"value\\\":\\\"API\\\"}]}},{\\\"key\\\":\\\"site/site/Migrate.mdx\\\",\\\"value\\\":{\\\"name\\\":\\\"从 v1 迁移到 v4\\\",\\\"route\\\":\\\"/migrate\\\",\\\"id\\\":\\\"cd06782f792ae300dc28d543d25e61c3\\\",\\\"filepath\\\":\\\"site/site/Migrate.mdx\\\",\\\"fullpath\\\":\\\"/Users/Lee/Works/ant-plus/site/Migrate.mdx\\\",\\\"link\\\":\\\"https://github.com/nanxiaobei/ant-plus/edit/master/site/site/site/Migrate.mdx\\\",\\\"hidden\\\":false,\\\"slug\\\":\\\"site-site-migrate\\\",\\\"menu\\\":\\\"\\\",\\\"headings\\\":[{\\\"slug\\\":\\\"全局\\\",\\\"depth\\\":1,\\\"value\\\":\\\"全局\\\"},{\\\"slug\\\":\\\"变更-props\\\",\\\"depth\\\":2,\\\"value\\\":\\\"变更 Props\\\"},{\\\"slug\\\":\\\"form\\\",\\\"depth\\\":1,\\\"value\\\":\\\"Form\\\"},{\\\"slug\\\":\\\"废弃-props\\\",\\\"depth\\\":2,\\\"value\\\":\\\"废弃 Props\\\"},{\\\"slug\\\":\\\"废弃方法\\\",\\\"depth\\\":2,\\\"value\\\":\\\"废弃方法\\\"},{\\\"slug\\\":\\\"其它变更\\\",\\\"depth\\\":2,\\\"value\\\":\\\"其它变更\\\"},{\\\"slug\\\":\\\"treeselect\\\",\\\"depth\\\":1,\\\"value\\\":\\\"TreeSelect\\\"},{\\\"slug\\\":\\\"变更-props-1\\\",\\\"depth\\\":2,\\\"value\\\":\\\"变更 Props\\\"}]}},{\\\"key\\\":\\\"site/site/Select.mdx\\\",\\\"value\\\":{\\\"name\\\":\\\"Select 选择器\\\",\\\"route\\\":\\\"/select\\\",\\\"id\\\":\\\"b5736239e929037121a4c9530c4135a6\\\",\\\"filepath\\\":\\\"site/site/Select.mdx\\\",\\\"fullpath\\\":\\\"/Users/Lee/Works/ant-plus/site/Select.mdx\\\",\\\"link\\\":\\\"https://github.com/nanxiaobei/ant-plus/edit/master/site/site/site/Select.mdx\\\",\\\"hidden\\\":false,\\\"slug\\\":\\\"site-site-select\\\",\\\"menu\\\":\\\"\\\",\\\"headings\\\":[{\\\"slug\\\":\\\"select-选择器\\\",\\\"depth\\\":1,\\\"value\\\":\\\"Select 选择器\\\"},{\\\"slug\\\":\\\"使用\\\",\\\"depth\\\":2,\\\"value\\\":\\\"使用\\\"},{\\\"slug\\\":\\\"示例\\\",\\\"depth\\\":2,\\\"value\\\":\\\"示例\\\"},{\\\"slug\\\":\\\"api\\\",\\\"depth\\\":2,\\\"value\\\":\\\"API\\\"}]}},{\\\"key\\\":\\\"site/site/Transfer.mdx\\\",\\\"value\\\":{\\\"name\\\":\\\"Transfer 穿梭框\\\",\\\"route\\\":\\\"/transfer\\\",\\\"id\\\":\\\"5f31159a654099710885891b01525022\\\",\\\"filepath\\\":\\\"site/site/Transfer.mdx\\\",\\\"fullpath\\\":\\\"/Users/Lee/Works/ant-plus/site/Transfer.mdx\\\",\\\"link\\\":\\\"https://github.com/nanxiaobei/ant-plus/edit/master/site/site/site/Transfer.mdx\\\",\\\"hidden\\\":false,\\\"slug\\\":\\\"site-site-transfer\\\",\\\"menu\\\":\\\"\\\",\\\"headings\\\":[{\\\"slug\\\":\\\"transfer-穿梭框\\\",\\\"depth\\\":1,\\\"value\\\":\\\"Transfer 穿梭框\\\"},{\\\"slug\\\":\\\"使用\\\",\\\"depth\\\":2,\\\"value\\\":\\\"使用\\\"},{\\\"slug\\\":\\\"示例\\\",\\\"depth\\\":2,\\\"value\\\":\\\"示例\\\"},{\\\"slug\\\":\\\"api\\\",\\\"depth\\\":2,\\\"value\\\":\\\"API\\\"}]}},{\\\"key\\\":\\\"site/site/TreeSelect.mdx\\\",\\\"value\\\":{\\\"name\\\":\\\"TreeSelect 树选择\\\",\\\"route\\\":\\\"/tree-select\\\",\\\"id\\\":\\\"575d5678a517bd16a0f4bde5094cc3ea\\\",\\\"filepath\\\":\\\"site/site/TreeSelect.mdx\\\",\\\"fullpath\\\":\\\"/Users/Lee/Works/ant-plus/site/TreeSelect.mdx\\\",\\\"link\\\":\\\"https://github.com/nanxiaobei/ant-plus/edit/master/site/site/site/TreeSelect.mdx\\\",\\\"hidden\\\":false,\\\"slug\\\":\\\"site-site-tree-select\\\",\\\"menu\\\":\\\"\\\",\\\"headings\\\":[{\\\"slug\\\":\\\"treeselect-树选择\\\",\\\"depth\\\":1,\\\"value\\\":\\\"TreeSelect 树选择\\\"},{\\\"slug\\\":\\\"使用\\\",\\\"depth\\\":2,\\\"value\\\":\\\"使用\\\"},{\\\"slug\\\":\\\"示例\\\",\\\"depth\\\":2,\\\"value\\\":\\\"示例\\\"},{\\\"slug\\\":\\\"api\\\",\\\"depth\\\":2,\\\"value\\\":\\\"API\\\"}]}}],\\\"props\\\":[{\\\"key\\\":\\\"src/index.jsx\\\",\\\"value\\\":[{\\\"description\\\":\\\"Form - Ant Design Form 组件增强版本\\\\nhttps://ant.design/fns/form-cn/\\\",\\\"displayName\\\":\\\"Form\\\",\\\"methods\\\":[],\\\"actualName\\\":\\\"Form\\\",\\\"props\\\":{\\\"data\\\":{\\\"type\\\":{\\\"name\\\":\\\"object\\\"},\\\"required\\\":false,\\\"description\\\":\\\"initialValues 简写。e.g. { name1: value1, name2: value2 }\\\"},\\\"config\\\":{\\\"type\\\":{\\\"name\\\":\\\"object\\\"},\\\"required\\\":false,\\\"description\\\":\\\"placeholder 与校验提示，详见下文 config 表格。e.g. { required: 'Oops, {label} is needed' }\\\"},\\\"disabledFields\\\":{\\\"type\\\":{\\\"name\\\":\\\"array\\\"},\\\"required\\\":false,\\\"description\\\":\\\"禁用的表单域，传入 name 组成的数组。全部禁用传入字符串 \\\\\\\"all\\\\\\\"\\\"}}},{\\\"description\\\":\\\"Input - Ant Design Input (TextArea) 组件增强版本\\\\nhttps://ant.design/fns/input-cn/\\\",\\\"displayName\\\":\\\"Input\\\",\\\"methods\\\":[],\\\"actualName\\\":\\\"Input\\\",\\\"props\\\":{\\\"max\\\":{\\\"type\\\":{\\\"name\\\":\\\"number\\\"},\\\"required\\\":false,\\\"description\\\":\\\"最大可输入字符数（传入则显示字符计数器）\\\"},\\\"tip\\\":{\\\"type\\\":{\\\"name\\\":\\\"string\\\"},\\\"required\\\":false,\\\"description\\\":\\\"placeholder 简写，可传入 \\\\\\\"short\\\\\\\" 或 \\\\\\\"full\\\\\\\"（AntPlus Form 内有效）。转义：\\\\\\\"short\\\\\\\" => \\\\\\\"请输入\\\\\\\", \\\\\\\"full\\\\\\\" => \\\\\\\"请输入XX\\\\\\\", \\\\\\\"其它\\\\\\\" => \\\\\\\"其它\\\\\\\"\\\"},\\\"auto\\\":{\\\"type\\\":{\\\"name\\\":\\\"string\\\"},\\\"required\\\":false,\\\"description\\\":\\\"autoComplete 简写（关闭需传入 \\\\\\\"off\\\\\\\"）\\\"},\\\"textarea\\\":{\\\"type\\\":{\\\"name\\\":\\\"bool\\\"},\\\"required\\\":false,\\\"description\\\":\\\"默认为 Input 组件，若传入 textarea，则为 TextArea 组件\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"false\\\",\\\"computed\\\":false}},\\\"rows\\\":{\\\"type\\\":{\\\"name\\\":\\\"number\\\"},\\\"required\\\":false,\\\"description\\\":\\\"TextArea 的输入框行高\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"2\\\",\\\"computed\\\":false}}}},{\\\"description\\\":\\\"AutoComplete - Ant Design AutoComplete 组件增强版本\\\\nhttps://ant.design/fns/auto-complete-cn/\\\",\\\"displayName\\\":\\\"AutoComplete\\\",\\\"methods\\\":[],\\\"actualName\\\":\\\"AutoComplete\\\",\\\"props\\\":{\\\"data\\\":{\\\"type\\\":{\\\"name\\\":\\\"array\\\"},\\\"required\\\":false,\\\"description\\\":\\\"options 简写\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"[]\\\",\\\"computed\\\":false}},\\\"tip\\\":{\\\"type\\\":{\\\"name\\\":\\\"string\\\"},\\\"required\\\":false,\\\"description\\\":\\\"placeholder 简写，可传入 \\\\\\\"short\\\\\\\" 或 \\\\\\\"full\\\\\\\"（AntPlus Form 内有效）。转义：\\\\\\\"short\\\\\\\" => \\\\\\\"请输入\\\\\\\", \\\\\\\"full\\\\\\\" => \\\\\\\"请输入XX\\\\\\\", \\\\\\\"其它\\\\\\\" => \\\\\\\"其它\\\\\\\"\\\"},\\\"search\\\":{\\\"type\\\":{\\\"name\\\":\\\"bool\\\"},\\\"required\\\":false,\\\"description\\\":\\\"是否可搜索\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"true\\\",\\\"computed\\\":false}},\\\"clear\\\":{\\\"type\\\":{\\\"name\\\":\\\"bool\\\"},\\\"required\\\":false,\\\"description\\\":\\\"allowClear 简写\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"false\\\",\\\"computed\\\":false}}}},{\\\"description\\\":\\\"Select - Ant Design Select 组件增强版本\\\\nhttps://ant.design/fns/select-cn/\\\",\\\"displayName\\\":\\\"Select\\\",\\\"methods\\\":[],\\\"actualName\\\":\\\"Select\\\",\\\"props\\\":{\\\"data\\\":{\\\"type\\\":{\\\"name\\\":\\\"array\\\"},\\\"required\\\":false,\\\"description\\\":\\\"列表数据源\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"[]\\\",\\\"computed\\\":false}},\\\"keys\\\":{\\\"type\\\":{\\\"name\\\":\\\"array\\\"},\\\"required\\\":false,\\\"description\\\":\\\"当数据源的键不是 \\\\\\\"value\\\\\\\" (值) \\\\\\\"label\\\\\\\" (名称) 时传入。e.g. 数据源 [{ val: 1, text: 'A'}, { val: 2, text: 'B'}]，则传入 ['val', 'text']\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"['value', 'label']\\\",\\\"computed\\\":false}},\\\"tip\\\":{\\\"type\\\":{\\\"name\\\":\\\"string\\\"},\\\"required\\\":false,\\\"description\\\":\\\"placeholder 简写，可传入 \\\\\\\"short\\\\\\\" 或 \\\\\\\"full\\\\\\\"（AntPlus Form 内有效）。转义：\\\\\\\"short\\\\\\\" => \\\\\\\"请选择\\\\\\\", \\\\\\\"full\\\\\\\" => \\\\\\\"请选择XX\\\\\\\", \\\\\\\"其它\\\\\\\" => \\\\\\\"其它\\\\\\\"\\\"},\\\"search\\\":{\\\"type\\\":{\\\"name\\\":\\\"bool\\\"},\\\"required\\\":false,\\\"description\\\":\\\"是否可搜索\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"false\\\",\\\"computed\\\":false}},\\\"clear\\\":{\\\"type\\\":{\\\"name\\\":\\\"bool\\\"},\\\"required\\\":false,\\\"description\\\":\\\"allowClear 简写\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"false\\\",\\\"computed\\\":false}},\\\"empty\\\":{\\\"type\\\":{\\\"name\\\":\\\"string\\\"},\\\"required\\\":false,\\\"description\\\":\\\"notFoundContent 简写\\\"}}},{\\\"description\\\":\\\"Transfer - Ant Design Transfer 组件增强版本\\\\nhttps://ant.design/fns/transfer-cn/\\\",\\\"displayName\\\":\\\"Transfer\\\",\\\"methods\\\":[],\\\"actualName\\\":\\\"Transfer\\\",\\\"props\\\":{\\\"data\\\":{\\\"type\\\":{\\\"name\\\":\\\"array\\\"},\\\"required\\\":false,\\\"description\\\":\\\"dataSource 简写\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"[]\\\",\\\"computed\\\":false}},\\\"title\\\":{\\\"type\\\":{\\\"name\\\":\\\"string\\\"},\\\"required\\\":false,\\\"description\\\":\\\"\\\\\\\"未选择XX\\\\\\\" \\\\\\\"已选择XX\\\\\\\" 的 \\\\\\\"XX\\\\\\\" 文案\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"''\\\",\\\"computed\\\":false}},\\\"search\\\":{\\\"type\\\":{\\\"name\\\":\\\"bool\\\"},\\\"required\\\":false,\\\"description\\\":\\\"是否可搜索\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"false\\\",\\\"computed\\\":false}},\\\"unit\\\":{\\\"type\\\":{\\\"name\\\":\\\"string\\\"},\\\"required\\\":false,\\\"description\\\":\\\"local.itemUnit 与 local.itemsUnits 简写，默认：'项'\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"'项'\\\",\\\"computed\\\":false}},\\\"searchTip\\\":{\\\"type\\\":{\\\"name\\\":\\\"string\\\"},\\\"required\\\":false,\\\"description\\\":\\\"locale.searchPlaceholder 简写（不支持 \\\\\\\"short\\\\\\\" \\\\\\\"full\\\\\\\"）\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"'搜索'\\\",\\\"computed\\\":false}},\\\"empty\\\":{\\\"type\\\":{\\\"name\\\":\\\"string\\\"},\\\"required\\\":false,\\\"description\\\":\\\"locale.notFoundContent 简写\\\"},\\\"render\\\":{\\\"defaultValue\\\":{\\\"value\\\":\\\"(item) => item.title\\\",\\\"computed\\\":false},\\\"required\\\":false}}},{\\\"description\\\":\\\"Cascader - Ant Design Cascader 组件增强版本\\\\nhttps://ant.design/fns/cascader-cn/\\\",\\\"displayName\\\":\\\"Cascader\\\",\\\"methods\\\":[],\\\"actualName\\\":\\\"Cascader\\\",\\\"props\\\":{\\\"data\\\":{\\\"type\\\":{\\\"name\\\":\\\"array\\\"},\\\"required\\\":false,\\\"description\\\":\\\"options 简写\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"[]\\\",\\\"computed\\\":false}},\\\"keys\\\":{\\\"type\\\":{\\\"name\\\":\\\"array\\\"},\\\"required\\\":false,\\\"description\\\":\\\"当数据源的键不是 \\\\\\\"value\\\\\\\" \\\\\\\"label\\\\\\\" \\\\\\\"children\\\\\\\" 时传入\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"['value', 'label', 'children']\\\",\\\"computed\\\":false}},\\\"tip\\\":{\\\"type\\\":{\\\"name\\\":\\\"string\\\"},\\\"required\\\":false,\\\"description\\\":\\\"placeholder 简写（不支持 \\\\\\\"short\\\\\\\" \\\\\\\"full\\\\\\\"）\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"'请选择'\\\",\\\"computed\\\":false}},\\\"search\\\":{\\\"type\\\":{\\\"name\\\":\\\"bool\\\"},\\\"required\\\":false,\\\"description\\\":\\\"是否可搜索\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"false\\\",\\\"computed\\\":false}},\\\"clear\\\":{\\\"type\\\":{\\\"name\\\":\\\"bool\\\"},\\\"required\\\":false,\\\"description\\\":\\\"allowClear 简写\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"true\\\",\\\"computed\\\":false}},\\\"empty\\\":{\\\"type\\\":{\\\"name\\\":\\\"string\\\"},\\\"required\\\":false,\\\"description\\\":\\\"notFoundContent 简写\\\"},\\\"last\\\":{\\\"type\\\":{\\\"name\\\":\\\"bool\\\"},\\\"required\\\":false,\\\"description\\\":\\\"value 取数组最后一个值，默认为整体数组（AntPlus Form 内有效）\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"false\\\",\\\"computed\\\":false}}}},{\\\"description\\\":\\\"TreeSelect - Ant Design TreeSelect 组件增强版本\\\\nhttps://ant.design/fns/tree-select-cn/\\\",\\\"displayName\\\":\\\"TreeSelect\\\",\\\"methods\\\":[],\\\"actualName\\\":\\\"TreeSelect\\\",\\\"props\\\":{\\\"data\\\":{\\\"type\\\":{\\\"name\\\":\\\"array\\\"},\\\"required\\\":false,\\\"description\\\":\\\"treeData 简写\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"[]\\\",\\\"computed\\\":false}},\\\"keys\\\":{\\\"type\\\":{\\\"name\\\":\\\"array\\\"},\\\"required\\\":false,\\\"description\\\":\\\"当数据源的键不是 \\\\\\\"value\\\\\\\" \\\\\\\"title\\\\\\\" \\\\\\\"children\\\\\\\" 时传入\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"['value', 'title', 'children']\\\",\\\"computed\\\":false}},\\\"tip\\\":{\\\"type\\\":{\\\"name\\\":\\\"string\\\"},\\\"required\\\":false,\\\"description\\\":\\\"placeholder 简写（不支持 \\\\\\\"short\\\\\\\" \\\\\\\"full\\\\\\\"）\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"'请选择'\\\",\\\"computed\\\":false}},\\\"search\\\":{\\\"type\\\":{\\\"name\\\":\\\"bool\\\"},\\\"required\\\":false,\\\"description\\\":\\\"是否可搜索\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"false\\\",\\\"computed\\\":false}},\\\"clear\\\":{\\\"type\\\":{\\\"name\\\":\\\"bool\\\"},\\\"required\\\":false,\\\"description\\\":\\\"allowClear 简写\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"false\\\",\\\"computed\\\":false}},\\\"empty\\\":{\\\"type\\\":{\\\"name\\\":\\\"string\\\"},\\\"required\\\":false,\\\"description\\\":\\\"notFoundContent 简写\\\"},\\\"checkbox\\\":{\\\"type\\\":{\\\"name\\\":\\\"bool\\\"},\\\"required\\\":false,\\\"description\\\":\\\"treeCheckable 简写\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"false\\\",\\\"computed\\\":false}},\\\"expandAll\\\":{\\\"type\\\":{\\\"name\\\":\\\"bool\\\"},\\\"required\\\":false,\\\"description\\\":\\\"treeDefaultExpandAll 简写\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"false\\\",\\\"computed\\\":false}},\\\"expandKeys\\\":{\\\"type\\\":{\\\"name\\\":\\\"array\\\"},\\\"required\\\":false,\\\"description\\\":\\\"treeDefaultExpandedKeys 简写\\\"},\\\"showType\\\":{\\\"type\\\":{\\\"name\\\":\\\"enum\\\",\\\"value\\\":[{\\\"value\\\":\\\"Ant.TreeSelect.SHOW_ALL\\\",\\\"computed\\\":true},{\\\"value\\\":\\\"Ant.TreeSelect.SHOW_PARENT\\\",\\\"computed\\\":true},{\\\"value\\\":\\\"Ant.TreeSelect.SHOW_CHILD\\\",\\\"computed\\\":true}]},\\\"required\\\":false,\\\"description\\\":\\\"showCheckedStrategy 简写\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"Ant.TreeSelect.SHOW_CHILD\\\",\\\"computed\\\":true}}}}]}]}\"}}}");
+module.exports = JSON.parse("{\"data\":{\"doczDb\":{\"id\":\"ace00e2b-9c46-5e24-a19a-5ed242ca9c64\",\"db\":\"{\\\"config\\\":{\\\"title\\\":\\\"Ant Plus 4\\\",\\\"description\\\":\\\"Simplified Ant Design Form\\\",\\\"menu\\\":[\\\"开始\\\",\\\"使用\\\",\\\"Form 表单\\\",\\\"Input 输入框\\\",\\\"AutoComplete 自动完成\\\",\\\"Select 选择器\\\",\\\"Transfer 穿梭框\\\",\\\"Cascader 级联选择\\\",\\\"TreeSelect 树选择\\\",\\\"从 v1 迁移到 v4\\\"],\\\"version\\\":\\\"4.0.0-alpha.0\\\",\\\"repository\\\":\\\"https://github.com/nanxiaobei/ant-plus\\\",\\\"native\\\":false,\\\"themeConfig\\\":{\\\"showDarkModeSwitch\\\":false,\\\"showMarkdownEditButton\\\":false},\\\"separator\\\":\\\"-\\\",\\\"base\\\":\\\"/ant-plus/\\\",\\\"src\\\":\\\"src\\\",\\\"dest\\\":\\\"docs\\\",\\\"docgenConfig\\\":{\\\"searchPath\\\":\\\"lib\\\"}},\\\"entries\\\":[{\\\"key\\\":\\\"src/src/AutoComplete.mdx\\\",\\\"value\\\":{\\\"name\\\":\\\"AutoComplete 自动完成\\\",\\\"route\\\":\\\"/auto-complete\\\",\\\"id\\\":\\\"4b1161814f16cdb8ab2c880ce15117be\\\",\\\"filepath\\\":\\\"src/src/AutoComplete.mdx\\\",\\\"fullpath\\\":\\\"/Users/Lee/Works/ant-plus/src/AutoComplete.mdx\\\",\\\"link\\\":\\\"https://github.com/nanxiaobei/ant-plus/edit/master/src/src/src/AutoComplete.mdx\\\",\\\"hidden\\\":false,\\\"slug\\\":\\\"src-src-auto-complete\\\",\\\"menu\\\":\\\"\\\",\\\"headings\\\":[{\\\"slug\\\":\\\"autocomplete-自动完成\\\",\\\"depth\\\":1,\\\"value\\\":\\\"AutoComplete 自动完成\\\"},{\\\"slug\\\":\\\"演示\\\",\\\"depth\\\":2,\\\"value\\\":\\\"演示\\\"},{\\\"slug\\\":\\\"api\\\",\\\"depth\\\":2,\\\"value\\\":\\\"API\\\"}]}},{\\\"key\\\":\\\"src/src/Cascader.mdx\\\",\\\"value\\\":{\\\"name\\\":\\\"Cascader 级联选择\\\",\\\"route\\\":\\\"/cascader\\\",\\\"id\\\":\\\"c296fab6201de8020467ef1d7b495c55\\\",\\\"filepath\\\":\\\"src/src/Cascader.mdx\\\",\\\"fullpath\\\":\\\"/Users/Lee/Works/ant-plus/src/Cascader.mdx\\\",\\\"link\\\":\\\"https://github.com/nanxiaobei/ant-plus/edit/master/src/src/src/Cascader.mdx\\\",\\\"hidden\\\":false,\\\"slug\\\":\\\"src-src-cascader\\\",\\\"menu\\\":\\\"\\\",\\\"headings\\\":[{\\\"slug\\\":\\\"cascader-级联选择\\\",\\\"depth\\\":1,\\\"value\\\":\\\"Cascader 级联选择\\\"},{\\\"slug\\\":\\\"演示\\\",\\\"depth\\\":2,\\\"value\\\":\\\"演示\\\"},{\\\"slug\\\":\\\"api\\\",\\\"depth\\\":2,\\\"value\\\":\\\"API\\\"}]}},{\\\"key\\\":\\\"src/src/Form.mdx\\\",\\\"value\\\":{\\\"name\\\":\\\"Form 表单\\\",\\\"route\\\":\\\"/form\\\",\\\"id\\\":\\\"3ff4bea35ffb342813223cb3eefcfd94\\\",\\\"filepath\\\":\\\"src/src/Form.mdx\\\",\\\"fullpath\\\":\\\"/Users/Lee/Works/ant-plus/src/Form.mdx\\\",\\\"link\\\":\\\"https://github.com/nanxiaobei/ant-plus/edit/master/src/src/src/Form.mdx\\\",\\\"hidden\\\":false,\\\"slug\\\":\\\"src-src-form\\\",\\\"menu\\\":\\\"\\\",\\\"headings\\\":[{\\\"slug\\\":\\\"form-表单\\\",\\\"depth\\\":1,\\\"value\\\":\\\"Form 表单\\\"},{\\\"slug\\\":\\\"演示\\\",\\\"depth\\\":2,\\\"value\\\":\\\"演示\\\"},{\\\"slug\\\":\\\"api\\\",\\\"depth\\\":2,\\\"value\\\":\\\"API\\\"},{\\\"slug\\\":\\\"config\\\",\\\"depth\\\":3,\\\"value\\\":\\\"config\\\"}]}},{\\\"key\\\":\\\"src/src/Input.mdx\\\",\\\"value\\\":{\\\"name\\\":\\\"Input 输入框\\\",\\\"route\\\":\\\"/input\\\",\\\"id\\\":\\\"eee0b6e5168944eab24acdefd865f820\\\",\\\"filepath\\\":\\\"src/src/Input.mdx\\\",\\\"fullpath\\\":\\\"/Users/Lee/Works/ant-plus/src/Input.mdx\\\",\\\"link\\\":\\\"https://github.com/nanxiaobei/ant-plus/edit/master/src/src/src/Input.mdx\\\",\\\"hidden\\\":false,\\\"slug\\\":\\\"src-src-input\\\",\\\"menu\\\":\\\"\\\",\\\"headings\\\":[{\\\"slug\\\":\\\"input-输入框\\\",\\\"depth\\\":1,\\\"value\\\":\\\"Input 输入框\\\"},{\\\"slug\\\":\\\"演示\\\",\\\"depth\\\":2,\\\"value\\\":\\\"演示\\\"},{\\\"slug\\\":\\\"api\\\",\\\"depth\\\":2,\\\"value\\\":\\\"API\\\"}]}},{\\\"key\\\":\\\"src/src/Migrate.mdx\\\",\\\"value\\\":{\\\"name\\\":\\\"从 v1 迁移到 v4\\\",\\\"route\\\":\\\"/migrate\\\",\\\"id\\\":\\\"0af001a182a571d9d393b225592aa0f6\\\",\\\"filepath\\\":\\\"src/src/Migrate.mdx\\\",\\\"fullpath\\\":\\\"/Users/Lee/Works/ant-plus/src/Migrate.mdx\\\",\\\"link\\\":\\\"https://github.com/nanxiaobei/ant-plus/edit/master/src/src/src/Migrate.mdx\\\",\\\"hidden\\\":false,\\\"slug\\\":\\\"src-src-migrate\\\",\\\"menu\\\":\\\"\\\",\\\"headings\\\":[{\\\"slug\\\":\\\"从-v1-迁移到-v4\\\",\\\"depth\\\":1,\\\"value\\\":\\\"从 v1 迁移到 v4\\\"},{\\\"slug\\\":\\\"全局\\\",\\\"depth\\\":2,\\\"value\\\":\\\"全局\\\"},{\\\"slug\\\":\\\"form\\\",\\\"depth\\\":2,\\\"value\\\":\\\"Form\\\"},{\\\"slug\\\":\\\"formitem\\\",\\\"depth\\\":2,\\\"value\\\":\\\"Form.Item\\\"},{\\\"slug\\\":\\\"treeselect\\\",\\\"depth\\\":2,\\\"value\\\":\\\"TreeSelect\\\"}]}},{\\\"key\\\":\\\"src/src/Select.mdx\\\",\\\"value\\\":{\\\"name\\\":\\\"Select 选择器\\\",\\\"route\\\":\\\"/select\\\",\\\"id\\\":\\\"fff8fbf58b17c70a9470940bd22ee6cf\\\",\\\"filepath\\\":\\\"src/src/Select.mdx\\\",\\\"fullpath\\\":\\\"/Users/Lee/Works/ant-plus/src/Select.mdx\\\",\\\"link\\\":\\\"https://github.com/nanxiaobei/ant-plus/edit/master/src/src/src/Select.mdx\\\",\\\"hidden\\\":false,\\\"slug\\\":\\\"src-src-select\\\",\\\"menu\\\":\\\"\\\",\\\"headings\\\":[{\\\"slug\\\":\\\"select-选择器\\\",\\\"depth\\\":1,\\\"value\\\":\\\"Select 选择器\\\"},{\\\"slug\\\":\\\"演示\\\",\\\"depth\\\":2,\\\"value\\\":\\\"演示\\\"},{\\\"slug\\\":\\\"api\\\",\\\"depth\\\":2,\\\"value\\\":\\\"API\\\"}]}},{\\\"key\\\":\\\"src/src/Start.mdx\\\",\\\"value\\\":{\\\"name\\\":\\\"开始\\\",\\\"route\\\":\\\"/\\\",\\\"id\\\":\\\"36b7bc41f318f062ae43cde03e6f903e\\\",\\\"filepath\\\":\\\"src/src/Start.mdx\\\",\\\"fullpath\\\":\\\"/Users/Lee/Works/ant-plus/src/Start.mdx\\\",\\\"link\\\":\\\"https://github.com/nanxiaobei/ant-plus/edit/master/src/src/src/Start.mdx\\\",\\\"hidden\\\":false,\\\"slug\\\":\\\"src-src-start\\\",\\\"menu\\\":\\\"\\\",\\\"headings\\\":[{\\\"slug\\\":\\\"开始\\\",\\\"depth\\\":1,\\\"value\\\":\\\"开始\\\"},{\\\"slug\\\":\\\"介绍\\\",\\\"depth\\\":2,\\\"value\\\":\\\"介绍\\\"},{\\\"slug\\\":\\\"安装\\\",\\\"depth\\\":2,\\\"value\\\":\\\"安装\\\"},{\\\"slug\\\":\\\"引入\\\",\\\"depth\\\":2,\\\"value\\\":\\\"引入\\\"}]}},{\\\"key\\\":\\\"src/src/Transfer.mdx\\\",\\\"value\\\":{\\\"name\\\":\\\"Transfer 穿梭框\\\",\\\"route\\\":\\\"/transfer\\\",\\\"id\\\":\\\"c43d5fefd0c36b765162c9b18cd41970\\\",\\\"filepath\\\":\\\"src/src/Transfer.mdx\\\",\\\"fullpath\\\":\\\"/Users/Lee/Works/ant-plus/src/Transfer.mdx\\\",\\\"link\\\":\\\"https://github.com/nanxiaobei/ant-plus/edit/master/src/src/src/Transfer.mdx\\\",\\\"hidden\\\":false,\\\"slug\\\":\\\"src-src-transfer\\\",\\\"menu\\\":\\\"\\\",\\\"headings\\\":[{\\\"slug\\\":\\\"transfer-穿梭框\\\",\\\"depth\\\":1,\\\"value\\\":\\\"Transfer 穿梭框\\\"},{\\\"slug\\\":\\\"演示\\\",\\\"depth\\\":2,\\\"value\\\":\\\"演示\\\"},{\\\"slug\\\":\\\"api\\\",\\\"depth\\\":2,\\\"value\\\":\\\"API\\\"}]}},{\\\"key\\\":\\\"src/src/TreeSelect.mdx\\\",\\\"value\\\":{\\\"name\\\":\\\"TreeSelect 树选择\\\",\\\"route\\\":\\\"/tree-select\\\",\\\"id\\\":\\\"8e7e74c408a029277ce3ef1ba9f4d66c\\\",\\\"filepath\\\":\\\"src/src/TreeSelect.mdx\\\",\\\"fullpath\\\":\\\"/Users/Lee/Works/ant-plus/src/TreeSelect.mdx\\\",\\\"link\\\":\\\"https://github.com/nanxiaobei/ant-plus/edit/master/src/src/src/TreeSelect.mdx\\\",\\\"hidden\\\":false,\\\"slug\\\":\\\"src-src-tree-select\\\",\\\"menu\\\":\\\"\\\",\\\"headings\\\":[{\\\"slug\\\":\\\"treeselect-树选择\\\",\\\"depth\\\":1,\\\"value\\\":\\\"TreeSelect 树选择\\\"},{\\\"slug\\\":\\\"演示\\\",\\\"depth\\\":2,\\\"value\\\":\\\"演示\\\"},{\\\"slug\\\":\\\"api\\\",\\\"depth\\\":2,\\\"value\\\":\\\"API\\\"}]}},{\\\"key\\\":\\\"src/src/Usage.mdx\\\",\\\"value\\\":{\\\"name\\\":\\\"使用\\\",\\\"route\\\":\\\"/usage\\\",\\\"id\\\":\\\"bc278aed055bfb92cb2343aaa307a3d1\\\",\\\"filepath\\\":\\\"src/src/Usage.mdx\\\",\\\"fullpath\\\":\\\"/Users/Lee/Works/ant-plus/src/Usage.mdx\\\",\\\"link\\\":\\\"https://github.com/nanxiaobei/ant-plus/edit/master/src/src/src/Usage.mdx\\\",\\\"hidden\\\":false,\\\"slug\\\":\\\"src-src-usage\\\",\\\"menu\\\":\\\"\\\",\\\"headings\\\":[{\\\"slug\\\":\\\"使用\\\",\\\"depth\\\":1,\\\"value\\\":\\\"使用\\\"},{\\\"slug\\\":\\\"表单控件-props\\\",\\\"depth\\\":2,\\\"value\\\":\\\"表单控件 Props\\\"},{\\\"slug\\\":\\\"formitem-可传入-props\\\",\\\"depth\\\":3,\\\"value\\\":\\\"Form.Item 可传入 Props\\\"},{\\\"slug\\\":\\\"其它可传入-props\\\",\\\"depth\\\":3,\\\"value\\\":\\\"其它可传入 Props\\\"},{\\\"slug\\\":\\\"简化版-rules\\\",\\\"depth\\\":2,\\\"value\\\":\\\"简化版 rules\\\"}]}}],\\\"props\\\":[{\\\"key\\\":\\\"lib/index.jsx\\\",\\\"value\\\":[{\\\"description\\\":\\\"Form - Ant Design Form 组件增强版本\\\\nhttps://ant.design/fns/form-cn/\\\",\\\"displayName\\\":\\\"Form\\\",\\\"methods\\\":[],\\\"props\\\":{\\\"data\\\":{\\\"type\\\":{\\\"name\\\":\\\"object\\\"},\\\"required\\\":false,\\\"description\\\":\\\"`initialValues` 简写\\\"},\\\"config\\\":{\\\"type\\\":{\\\"name\\\":\\\"object\\\"},\\\"required\\\":false,\\\"description\\\":\\\"设置统一的 `placeholder` 信息与 `rules` 校验提示信息。详见下文 **`config`**\\\"},\\\"disabledNames\\\":{\\\"type\\\":{\\\"name\\\":\\\"array\\\"},\\\"required\\\":false,\\\"description\\\":\\\"禁用的表单域，传入 `name` 组成的数组。全部禁用传入字符串 `'all'`\\\"}}},{\\\"description\\\":\\\"Input - Ant Design Input (TextArea) 组件增强版本\\\\nhttps://ant.design/fns/input-cn/\\\",\\\"displayName\\\":\\\"Input\\\",\\\"methods\\\":[],\\\"props\\\":{\\\"max\\\":{\\\"type\\\":{\\\"name\\\":\\\"number\\\"},\\\"required\\\":false,\\\"description\\\":\\\"最大可输入字符数（传入则显示字符计数器）\\\"},\\\"tip\\\":{\\\"type\\\":{\\\"name\\\":\\\"string\\\"},\\\"required\\\":false,\\\"description\\\":\\\"`placeholder` 简写（在 Ant Plus Form 内时，可传入 `'short'` 或 `'full'`。转义：`'short'` → `'请输入'`, `'full'` → `'请输入XX'`, `'其它'` → `'其它'`）\\\"},\\\"auto\\\":{\\\"type\\\":{\\\"name\\\":\\\"string\\\"},\\\"required\\\":false,\\\"description\\\":\\\"`autoComplete` 简写（关闭需传入 `'off'`）\\\"},\\\"textarea\\\":{\\\"type\\\":{\\\"name\\\":\\\"bool\\\"},\\\"required\\\":false,\\\"description\\\":\\\"默认为 `Input` 组件，若传入 `textarea`，则为 `Input.TextArea` 组件\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"false\\\",\\\"computed\\\":false}},\\\"rows\\\":{\\\"type\\\":{\\\"name\\\":\\\"number\\\"},\\\"required\\\":false,\\\"description\\\":\\\"`Input.TextArea` 的输入框行高\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"2\\\",\\\"computed\\\":false}}}},{\\\"description\\\":\\\"AutoComplete - Ant Design AutoComplete 组件增强版本\\\\nhttps://ant.design/fns/auto-complete-cn/\\\",\\\"displayName\\\":\\\"AutoComplete\\\",\\\"methods\\\":[],\\\"props\\\":{\\\"data\\\":{\\\"type\\\":{\\\"name\\\":\\\"array\\\"},\\\"required\\\":false,\\\"description\\\":\\\"`options` 简写\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"[]\\\",\\\"computed\\\":false}},\\\"tip\\\":{\\\"type\\\":{\\\"name\\\":\\\"string\\\"},\\\"required\\\":false,\\\"description\\\":\\\"`placeholder` 简写（在 Ant Plus Form 内时，可传入 `'short'` 或 `'full'`。转义：`'short'` → `'请输入'`, `'full'` → `'请输入XX'`, `'其它'` → `'其它'`）\\\"},\\\"search\\\":{\\\"type\\\":{\\\"name\\\":\\\"bool\\\"},\\\"required\\\":false,\\\"description\\\":\\\"是否可搜索\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"true\\\",\\\"computed\\\":false}},\\\"clear\\\":{\\\"type\\\":{\\\"name\\\":\\\"bool\\\"},\\\"required\\\":false,\\\"description\\\":\\\"`allowClear` 简写\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"false\\\",\\\"computed\\\":false}}}},{\\\"description\\\":\\\"Select - Ant Design Select 组件增强版本\\\\nhttps://ant.design/fns/select-cn/\\\",\\\"displayName\\\":\\\"Select\\\",\\\"methods\\\":[],\\\"props\\\":{\\\"data\\\":{\\\"type\\\":{\\\"name\\\":\\\"array\\\"},\\\"required\\\":false,\\\"description\\\":\\\"列表数据源\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"[]\\\",\\\"computed\\\":false}},\\\"keys\\\":{\\\"type\\\":{\\\"name\\\":\\\"array\\\"},\\\"required\\\":false,\\\"description\\\":\\\"当数据源的键不是 `'value'` `'label'` 时传入。e.g. 数据源 `[{ val: 1, text: 'A'}, { val: 2, text: 'B'}]，则传入 ['val', 'text']`\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"['value', 'label']\\\",\\\"computed\\\":false}},\\\"tip\\\":{\\\"type\\\":{\\\"name\\\":\\\"string\\\"},\\\"required\\\":false,\\\"description\\\":\\\"`placeholder` 简写（在 Ant Plus Form 内时，可传入 `'short'` 或 `'full'`。转义：`'short'` → `'请输入'`, `'full'` → `'请输入XX'`, `'其它'` → `'其它'`）\\\"},\\\"search\\\":{\\\"type\\\":{\\\"name\\\":\\\"bool\\\"},\\\"required\\\":false,\\\"description\\\":\\\"是否可搜索\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"false\\\",\\\"computed\\\":false}},\\\"clear\\\":{\\\"type\\\":{\\\"name\\\":\\\"bool\\\"},\\\"required\\\":false,\\\"description\\\":\\\"`allowClear` 简写\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"false\\\",\\\"computed\\\":false}},\\\"empty\\\":{\\\"type\\\":{\\\"name\\\":\\\"string\\\"},\\\"required\\\":false,\\\"description\\\":\\\"`notFoundContent` 简写\\\"}}},{\\\"description\\\":\\\"Transfer - Ant Design Transfer 组件增强版本\\\\nhttps://ant.design/fns/transfer-cn/\\\",\\\"displayName\\\":\\\"Transfer\\\",\\\"methods\\\":[],\\\"props\\\":{\\\"data\\\":{\\\"type\\\":{\\\"name\\\":\\\"array\\\"},\\\"required\\\":false,\\\"description\\\":\\\"`dataSource` 简写\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"[]\\\",\\\"computed\\\":false}},\\\"title\\\":{\\\"type\\\":{\\\"name\\\":\\\"string\\\"},\\\"required\\\":false,\\\"description\\\":\\\"`'未选择XX'` `'已选择XX'` 的 `'XX'` 文案\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"''\\\",\\\"computed\\\":false}},\\\"search\\\":{\\\"type\\\":{\\\"name\\\":\\\"bool\\\"},\\\"required\\\":false,\\\"description\\\":\\\"是否可搜索\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"false\\\",\\\"computed\\\":false}},\\\"unit\\\":{\\\"type\\\":{\\\"name\\\":\\\"string\\\"},\\\"required\\\":false,\\\"description\\\":\\\"`local.itemUnit` 与 `local.itemsUnits` 简写，默认：`'项'`\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"'项'\\\",\\\"computed\\\":false}},\\\"searchTip\\\":{\\\"type\\\":{\\\"name\\\":\\\"string\\\"},\\\"required\\\":false,\\\"description\\\":\\\"`locale.searchPlaceholder` 简写（不支持 `'short'` `'full'`）\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"'搜索'\\\",\\\"computed\\\":false}},\\\"empty\\\":{\\\"type\\\":{\\\"name\\\":\\\"string\\\"},\\\"required\\\":false,\\\"description\\\":\\\"`locale.notFoundContent` 简写\\\"},\\\"render\\\":{\\\"defaultValue\\\":{\\\"value\\\":\\\"(item) => item.title\\\",\\\"computed\\\":false},\\\"required\\\":false}}},{\\\"description\\\":\\\"Cascader - Ant Design Cascader 组件增强版本\\\\nhttps://ant.design/fns/cascader-cn/\\\",\\\"displayName\\\":\\\"Cascader\\\",\\\"methods\\\":[],\\\"props\\\":{\\\"data\\\":{\\\"type\\\":{\\\"name\\\":\\\"array\\\"},\\\"required\\\":false,\\\"description\\\":\\\"`options` 简写\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"[]\\\",\\\"computed\\\":false}},\\\"keys\\\":{\\\"type\\\":{\\\"name\\\":\\\"array\\\"},\\\"required\\\":false,\\\"description\\\":\\\"当数据源的键不是 `'value'` `'label'` `'children'` 时传入\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"['value', 'label', 'children']\\\",\\\"computed\\\":false}},\\\"tip\\\":{\\\"type\\\":{\\\"name\\\":\\\"string\\\"},\\\"required\\\":false,\\\"description\\\":\\\"`placeholder` 简写（不支持 `'short'` `'full'`）\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"'请选择'\\\",\\\"computed\\\":false}},\\\"search\\\":{\\\"type\\\":{\\\"name\\\":\\\"bool\\\"},\\\"required\\\":false,\\\"description\\\":\\\"是否可搜索\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"false\\\",\\\"computed\\\":false}},\\\"clear\\\":{\\\"type\\\":{\\\"name\\\":\\\"bool\\\"},\\\"required\\\":false,\\\"description\\\":\\\"`allowClear` 简写\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"true\\\",\\\"computed\\\":false}},\\\"empty\\\":{\\\"type\\\":{\\\"name\\\":\\\"string\\\"},\\\"required\\\":false,\\\"description\\\":\\\"`notFoundContent` 简写\\\"},\\\"last\\\":{\\\"type\\\":{\\\"name\\\":\\\"bool\\\"},\\\"required\\\":false,\\\"description\\\":\\\"`value` 取数组最后一个值，默认为整体数组\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"false\\\",\\\"computed\\\":false}}}},{\\\"description\\\":\\\"TreeSelect - Ant Design TreeSelect 组件增强版本\\\\nhttps://ant.design/fns/tree-select-cn/\\\",\\\"displayName\\\":\\\"TreeSelect\\\",\\\"methods\\\":[],\\\"props\\\":{\\\"data\\\":{\\\"type\\\":{\\\"name\\\":\\\"array\\\"},\\\"required\\\":false,\\\"description\\\":\\\"`treeData` 简写\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"[]\\\",\\\"computed\\\":false}},\\\"keys\\\":{\\\"type\\\":{\\\"name\\\":\\\"array\\\"},\\\"required\\\":false,\\\"description\\\":\\\"当数据源的键不是 `'value'` `'title'` `'children'` 时传入\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"['value', 'title', 'children']\\\",\\\"computed\\\":false}},\\\"tip\\\":{\\\"type\\\":{\\\"name\\\":\\\"string\\\"},\\\"required\\\":false,\\\"description\\\":\\\"`placeholder` 简写（不支持 `'short'` `'full'`）\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"'请选择'\\\",\\\"computed\\\":false}},\\\"search\\\":{\\\"type\\\":{\\\"name\\\":\\\"bool\\\"},\\\"required\\\":false,\\\"description\\\":\\\"是否可搜索\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"false\\\",\\\"computed\\\":false}},\\\"clear\\\":{\\\"type\\\":{\\\"name\\\":\\\"bool\\\"},\\\"required\\\":false,\\\"description\\\":\\\"`allowClear` 简写\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"false\\\",\\\"computed\\\":false}},\\\"empty\\\":{\\\"type\\\":{\\\"name\\\":\\\"string\\\"},\\\"required\\\":false,\\\"description\\\":\\\"`notFoundContent` 简写\\\"},\\\"checkbox\\\":{\\\"type\\\":{\\\"name\\\":\\\"bool\\\"},\\\"required\\\":false,\\\"description\\\":\\\"`treeCheckable` 简写\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"false\\\",\\\"computed\\\":false}},\\\"expandAll\\\":{\\\"type\\\":{\\\"name\\\":\\\"bool\\\"},\\\"required\\\":false,\\\"description\\\":\\\"`treeDefaultExpandAll` 简写\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"false\\\",\\\"computed\\\":false}},\\\"expandKeys\\\":{\\\"type\\\":{\\\"name\\\":\\\"array\\\"},\\\"required\\\":false,\\\"description\\\":\\\"`treeDefaultExpandedKeys` 简写\\\"},\\\"showType\\\":{\\\"type\\\":{\\\"name\\\":\\\"enum\\\",\\\"value\\\":[{\\\"value\\\":\\\"Ant.TreeSelect.SHOW_ALL\\\",\\\"computed\\\":true},{\\\"value\\\":\\\"Ant.TreeSelect.SHOW_PARENT\\\",\\\"computed\\\":true},{\\\"value\\\":\\\"Ant.TreeSelect.SHOW_CHILD\\\",\\\"computed\\\":true}]},\\\"required\\\":false,\\\"description\\\":\\\"`showCheckedStrategy` 简写\\\",\\\"defaultValue\\\":{\\\"value\\\":\\\"Ant.TreeSelect.SHOW_CHILD\\\",\\\"computed\\\":true}}}}]}]}\"}}}");
+
+/***/ }),
+
+/***/ "./src/gatsby-theme-docz/components/Logo/index.js":
+/*!********************************************************!*\
+  !*** ./src/gatsby-theme-docz/components/Logo/index.js ***!
+  \********************************************************/
+/*! exports provided: Logo */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Logo", function() { return Logo; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var root_brand_logo_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! root/brand/logo.svg */ "../brand/logo.svg");
+/* harmony import */ var root_brand_logo_svg__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(root_brand_logo_svg__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var docz__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! docz */ "../node_modules/docz/dist/index.esm.js");
+/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @emotion/core */ "../node_modules/@emotion/core/dist/core.esm.js");
+const Logo=()=>{const config=Object(docz__WEBPACK_IMPORTED_MODULE_2__["useConfig"])();return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_3__["jsx"])("a",{className:"css-2daqhl-Logo",href:"/"},Object(_emotion_core__WEBPACK_IMPORTED_MODULE_3__["jsx"])("img",{src:root_brand_logo_svg__WEBPACK_IMPORTED_MODULE_1___default.a,alt:"logo"}),Object(_emotion_core__WEBPACK_IMPORTED_MODULE_3__["jsx"])("h1",null,config.title));};
+
+/***/ }),
+
+/***/ "./src/gatsby-theme-docz/wrapper.js":
+/*!******************************************!*\
+  !*** ./src/gatsby-theme-docz/wrapper.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_helmet_async__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-helmet-async */ "../node_modules/react-helmet-async/lib/index.module.js");
+/* harmony import */ var root_brand_favicon_ico__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! root/brand/favicon.ico */ "../brand/favicon.ico");
+/* harmony import */ var root_brand_favicon_ico__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(root_brand_favicon_ico__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @emotion/core */ "../node_modules/@emotion/core/dist/core.esm.js");
+const Wrapper=({children})=>Object(_emotion_core__WEBPACK_IMPORTED_MODULE_3__["jsx"])(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment,null,Object(_emotion_core__WEBPACK_IMPORTED_MODULE_3__["jsx"])(react_helmet_async__WEBPACK_IMPORTED_MODULE_1__["Helmet"],null,Object(_emotion_core__WEBPACK_IMPORTED_MODULE_3__["jsx"])("link",{rel:"icon",type:"image/png",href:root_brand_favicon_ico__WEBPACK_IMPORTED_MODULE_2___default.a})),children);/* harmony default export */ __webpack_exports__["default"] = (Wrapper);
 
 /***/ }),
 
