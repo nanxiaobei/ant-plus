@@ -1,4 +1,6 @@
 if (typeof window !== 'undefined') {
+  let path = window.location.pathname;
+
   const pathMap = {
     transfer: () => {
       setTimeout(() => {
@@ -22,12 +24,9 @@ if (typeof window !== 'undefined') {
     },
   };
 
-  const setPrefix = () => {
-    const path = window.location.pathname;
+  const setPathMap = () => {
     const [empty, one, two] = path.split('/'); // eslint-disable-line
     const base = two !== undefined ? `/${one}/` : '/';
-
-    console.log('base', base);
 
     Object.entries(pathMap).forEach(([key, fn]) => {
       if (key === 'all') return;
@@ -44,18 +43,16 @@ if (typeof window !== 'undefined') {
     });
   };
 
-  setPrefix();
+  setPathMap();
+
+  const onEnter = () => {
+    Object.entries(pathMap).forEach(([key, fn]) => {
+      if (key === 'all') return fn();
+      if (key.includes(path)) return fn();
+    });
+  };
 
   window.onload = function() {
-    let path = window.location.pathname;
-
-    const onEnter = () => {
-      Object.entries(pathMap).forEach(([key, fn]) => {
-        if (key === 'all') return fn();
-        if (key.includes(path)) return fn();
-      });
-    };
-
     onEnter();
 
     const body = document.querySelector('body');
