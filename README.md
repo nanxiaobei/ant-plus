@@ -59,7 +59,7 @@ const Demo = () => {
   };
   return (
     <Form data={{ name: 'Emily' }} onFinish={onFinish}>
-      <Input label="用户名" name="name" rules={['required', 'max=10']} max={10} tip="full" />
+      <Input label="用户名" name="name" rules={['required', 'max=10']} tip="full" />
       <Button label="" htmlType="submit">
         提交
       </Button>
@@ -70,7 +70,7 @@ const Demo = () => {
 export default Demo;
 ```
 
-[`Form.Item`](https://ant.design/components/form-cn/#Form.Item) Props 中的项，均可直接用于表单控件的 Props，如 `label`、`name`、`rules` 等。
+`Form.Item` Props 中的项，均可直接用于表单控件的 Props，如 `label`、`name`、`rules` 等。
 
 此外，Ant Plus 还对 `rules` 进行了简化，可直接使用字符串短语来设置。
 
