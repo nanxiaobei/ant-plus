@@ -1,4 +1,4 @@
-<img src="brand/logo.svg" alt="logo" height="160" />
+<img src="brand/logo.svg" alt="logo" width="140" />
 
 # Ant Plus 4
 
@@ -16,13 +16,15 @@ Ant Plus 是 Ant Design 表单相关组件的简化版，以最符合 html 直�
 [![npm bundle size](https://img.shields.io/bundlephobia/minzip/antx?style=flat-square)](https://bundlephobia.com/result?p=antx)
 [![GitHub](https://img.shields.io/github/license/nanxiaobei/ant-plus.svg?style=flat-square)](https://github.com/nanxiaobei/ant-plus/blob/master/LICENSE)
 
+---
+
+Ant Plus 去除了对 `Form.Item` 包裹的依赖，同时提供了全新的 `rules` 设置方式与表单相关组件 API，可大幅简化开发，消灭繁琐样板代码，轻松构建起简洁清晰、利于维护的表单代码。
+
 ## 文档
 
 [https://nanxiaobei.github.io/ant-plus](https://nanxiaobei.github.io/ant-plus)
 
-## 介绍
-
-Ant Plus 去除了对 `Form.Item` 包裹的依赖，同时提供了全新的 `rules` 设置方式与表单相关组件 API，可大幅简化开发，消灭繁琐的样板代码，从而轻松构建起简洁清晰、利于维护的表单代码。
+## 特点
 
 - 极其简便，告别繁琐的 `Form.Item`、`rules` 等。
 - 可全局定义 `placeholder` 信息与 `rules` 校验提示。
