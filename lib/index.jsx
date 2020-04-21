@@ -284,7 +284,7 @@ const Form = forwardRef((props, ref) => {
 Form.propTypes = {
   /** `initialValues` 简写 */
   data: PropTypes.object,
-  /** 设置统一的 `placeholder` 信息与 `rules` 校验提示信息。详见下文 **`config`** */
+  /** 设置统一的 `placeholder` 信息与 `rules` 校验提示信息。详见下文 **config** */
   config: PropTypes.object,
   /** 禁用的表单域，传入 `name` 组成的数组。全部禁用传入字符串 `'all'` */
   disabledNames: PropTypes.array,
@@ -348,9 +348,9 @@ const Input = forwardRef((props, ref) => {
 });
 
 Input.propTypes = {
-  /** 最大可输入字符数（传入则显示字符计数器） */
+  /** 最大可输入字符数（若传入则显示字符计数器） */
   max: PropTypes.number,
-  /** `placeholder` 简写（在 Ant Plus Form 内时，可传入 `'short'` 或 `'full'`。转义：`'short'` → `'请输入'`, `'full'` → `'请输入XX'`, `'其它'` → `'其它'`） */
+  /** `placeholder` 简写（在 Ant Plus `Form` 内时，可传入 `'short'` 或 `'full'`。转义：`'short'` → `'请输入'`, `'full'` → `'请输入XX'`, `'其它'` → `'其它'`） */
   tip: PropTypes.string,
   /** `autoComplete` 简写（关闭需传入 `'off'`） */
   auto: PropTypes.string,
@@ -394,7 +394,7 @@ const AutoComplete = forwardRef((props, ref) => {
 AutoComplete.propTypes = {
   /** `options` 简写 */
   data: PropTypes.array,
-  /** `placeholder` 简写（在 Ant Plus Form 内时，可传入 `'short'` 或 `'full'`。转义：`'short'` → `'请输入'`, `'full'` → `'请输入XX'`, `'其它'` → `'其它'`） */
+  /** `placeholder` 简写（在 Ant Plus `Form` 内时，可传入 `'short'` 或 `'full'`。转义：`'short'` → `'请输入'`, `'full'` → `'请输入XX'`, `'其它'` → `'其它'`） */
   tip: PropTypes.string,
   /** 是否可搜索 */
   search: PropTypes.bool,
@@ -450,7 +450,7 @@ Select.propTypes = {
   data: PropTypes.array,
   /** 当数据源的键不是 `'value'` `'label'` 时传入。e.g. 数据源 `[{ val: 1, text: 'A'}, { val: 2, text: 'B'}]，则传入 ['val', 'text']` */
   keys: PropTypes.array,
-  /** `placeholder` 简写（在 Ant Plus Form 内时，可传入 `'short'` 或 `'full'`。转义：`'short'` → `'请输入'`, `'full'` → `'请输入XX'`, `'其它'` → `'其它'`） */
+  /** `placeholder` 简写（在 Ant Plus `Form` 内时，可传入 `'short'` 或 `'full'`。转义：`'short'` → `'请输入'`, `'full'` → `'请输入XX'`, `'其它'` → `'其它'`） */
   tip: PropTypes.string,
   /** 是否可搜索 */
   search: PropTypes.bool,
