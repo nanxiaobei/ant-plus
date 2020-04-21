@@ -18,7 +18,7 @@
   "module": "dist/ant-plus.esm.js",
   "files": [
     "dist",
-    "src"
+    "lib"
   ],
   "scripts": {
     "dev": "rimraf .docz && docz dev",
