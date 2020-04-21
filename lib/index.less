@@ -18,16 +18,18 @@
   // error reminder
   .ant-plus-form-item {
     .ant-form-item-explain,
-    .ant-form-item-split div {
-      position: relative;
-      display: inline-block;
-      + div {
-        margin-left: 4px;
-      }
-      &::before {
-        content: '↑';
-        margin-left: -1px;
-        margin-right: 3px;
+    .ant-form-item-split {
+      div {
+        position: relative;
+        display: inline-block;
+        + div {
+          margin-left: 4px;
+        }
+        &::before {
+          content: '↑';
+          margin-left: -1px;
+          margin-right: 3px;
+        }
       }
     }
   }
