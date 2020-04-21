@@ -3,21 +3,31 @@
 @radius: 2px;
 
 .ant-plus-form {
-  // Error reminder
-  .ant-form-item {
+  // horizontal layout
+  &.ant-form-horizontal {
+    .ant-form-item-label {
+      width: 20%;
+    }
+    .ant-form-item-control {
+      width: 80%;
+      &:only-child {
+        margin-left: 20%;
+      }
+    }
+  }
+  // error reminder
+  .ant-plus-form-item {
     .ant-form-item-explain,
-    .ant-form-item-split {
-      div {
-        position: relative;
-        display: inline-block;
-        + div {
-          margin-left: 4px;
-        }
-        &::before {
-          content: '↑';
-          margin-left: -1px;
-          margin-right: 3px;
-        }
+    .ant-form-item-split div {
+      position: relative;
+      display: inline-block;
+      + div {
+        margin-left: 4px;
+      }
+      &::before {
+        content: '↑';
+        margin-left: -1px;
+        margin-right: 3px;
       }
     }
   }
@@ -83,6 +93,7 @@
     }
   }
 }
+
 // Min width
 .ant-plus-select,
 .ant-plus-auto-complete,
