@@ -1,52 +1,51 @@
-const pathMap = {
-  transfer: () => {
-    setTimeout(() => {
-      const defaultValues = document.querySelectorAll('[data-testid=prop-default-value]');
-      defaultValues.forEach((el) => {
-        if (el.innerText === '[Empty string]') el.innerText = '""';
-      });
-    }, 100);
-  },
-  'tree-select': () => {
-    setTimeout(() => {
-      const defaultValues = document.querySelectorAll('[data-testid=prop-default-value]');
-      defaultValues.forEach((el) => {
-        if (el.innerText.includes('Ant.')) el.innerText = el.innerText.replace(/Ant\./g, '');
-      });
-      const types = document.querySelectorAll('[data-testid=prop-type]');
-      types.forEach((el) => {
-        if (el.innerText.includes('Ant.')) el.innerText = el.innerText.replace(/Ant\./g, '');
-      });
-    }, 100);
-  },
-};
-
-const setPrefix = () => {
-  const path = window.location.pathname;
-  const [empty, one, two] = path.split('/'); // eslint-disable-line
-  const base = two !== undefined ? `/${one}/` : '/';
-
-  console.log('base', base);
-
-  Object.entries(pathMap).forEach(([key, fn]) => {
-    if (key === 'all') return;
-
-    let newKey;
-    if (key.includes(',')) {
-      const list = key.split(',').map((e) => `${base}${e}`);
-      newKey = list.join(',');
-    } else {
-      newKey = `${base}${key}`;
-    }
-    pathMap[newKey] = fn;
-    delete pathMap[key];
-  });
-};
-
-setPrefix();
-
-console.log('pathMap', pathMap);
 if (typeof window !== 'undefined') {
+  const pathMap = {
+    transfer: () => {
+      setTimeout(() => {
+        const defaultValues = document.querySelectorAll('[data-testid=prop-default-value]');
+        defaultValues.forEach((el) => {
+          if (el.innerText === '[Empty string]') el.innerText = '""';
+        });
+      }, 100);
+    },
+    'tree-select': () => {
+      setTimeout(() => {
+        const defaultValues = document.querySelectorAll('[data-testid=prop-default-value]');
+        defaultValues.forEach((el) => {
+          if (el.innerText.includes('Ant.')) el.innerText = el.innerText.replace(/Ant\./g, '');
+        });
+        const types = document.querySelectorAll('[data-testid=prop-type]');
+        types.forEach((el) => {
+          if (el.innerText.includes('Ant.')) el.innerText = el.innerText.replace(/Ant\./g, '');
+        });
+      }, 100);
+    },
+  };
+
+  const setPrefix = () => {
+    const path = window.location.pathname;
+    const [empty, one, two] = path.split('/'); // eslint-disable-line
+    const base = two !== undefined ? `/${one}/` : '/';
+
+    console.log('base', base);
+
+    Object.entries(pathMap).forEach(([key, fn]) => {
+      if (key === 'all') return;
+
+      let newKey;
+      if (key.includes(',')) {
+        const list = key.split(',').map((e) => `${base}${e}`);
+        newKey = list.join(',');
+      } else {
+        newKey = `${base}${key}`;
+      }
+      pathMap[newKey] = fn;
+      delete pathMap[key];
+    });
+  };
+
+  setPrefix();
+
   window.onload = function() {
     let path = window.location.pathname;
 
