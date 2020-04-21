@@ -1,6 +1,4 @@
-<img src="brand/logo.svg" height="100" />
-
-# Ant Plus 4
+# <img src="brand/logo.svg" height="100" /> Ant Plus 4
 
 > Ant Plus 4.0 发布！🎉
 >
@@ -33,7 +31,7 @@ Ant Plus 去除了对 `Form.Item` 包裹的依赖，同时提供了全新的 `ru
 
 Ant Plus 与 Ant Design 表单代码对比：
 
-![view](./demo/view.png)
+![view](demo/view.png)
 
 ## 安装
 
