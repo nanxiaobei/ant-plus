@@ -8,6 +8,8 @@
 > ◆ React Hooks 重写，大幅优化性能  
 > ◆ 全新文档设计，优化内容与排版  
 > ◆ antd Form 所有示例的 antx 实现
+>
+> 以及 ... 全新 logo！
 
 Ant Plus 是 Ant Design 表单相关组件的简化版，以最符合 html 直觉的方式来搭建表单代码。
 
