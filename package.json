@@ -22,7 +22,7 @@
   ],
   "scripts": {
     "dev": "rimraf .docz && docz dev",
-    "docs": "docz build && sh docs.sh",
+    "site": "docz build && sh site.sh",
     "build": "rimraf dist && rollup -c"
   },
   "dependencies": {
