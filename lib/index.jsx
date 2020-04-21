@@ -34,8 +34,8 @@ const getSettings = (customConfig) => {
     input: '请输入',
     select: '请选择',
 
-    required: '{label} 不得为空',
-    type: '{label} 格式有误',
+    required: '{label}不得为空',
+    type: '{label}格式有误',
     max: '不得超过 {max} 个字',
     min: '不得少于 {min} 个字',
     ...customConfig,
@@ -163,9 +163,9 @@ const Form = forwardRef((props, ref) => {
     // `tip`
     if (shortTip) {
       const { tip } = nodeProps;
-      if (tip === `'short'`) {
+      if (tip === 'short') {
         nodeProps.tip = shortTip;
-      } else if (tip === `'full'`) {
+      } else if (tip === 'full') {
         nodeProps.tip = `${shortTip}${label}`;
       }
     }
