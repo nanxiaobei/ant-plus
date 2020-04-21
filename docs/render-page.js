@@ -221,7 +221,7 @@ const{onChange}=restProps;restProps.onChange=event=>{const{value}=event.target;i
  * Button - 未做任何封装，方便表单使用
  */const Button=antd_es_button__WEBPACK_IMPORTED_MODULE_1__["default"];/**
  * sync component keys, add displayName
- */const outMap={Form,Input,AutoComplete,Select,Transfer,Cascader,TreeSelect};const omitKeys=['$$typeof','render','propTypes','defaultProps'];const copyOriginalKeys=()=>{const{Form,Input,AutoComplete,Select,Transfer,Cascader,TreeSelect}=Ant;const inMap={Form,Input,AutoComplete,Select,Transfer,Cascader,TreeSelect};Object.entries(outMap).forEach(([name,out])=>{const obj=inMap[name];Object.entries(obj).forEach(([key,val])=>{if(!omitKeys.includes(key))out[key]=val;});out.displayName=`${namePrefix}.${name}`;});};copyOriginalKeys();formSubs.forEach(name=>{Form[name].displayName=`${namePrefix}.${name}`;});/**
+ */const copyOriginalKeys=()=>{const fromMap={Form:antd_es_form__WEBPACK_IMPORTED_MODULE_15__["default"],Input:antd_es_input__WEBPACK_IMPORTED_MODULE_13__["default"],AutoComplete:antd_es_auto_complete__WEBPACK_IMPORTED_MODULE_11__["default"],Select:antd_es_select__WEBPACK_IMPORTED_MODULE_9__["default"],Transfer:antd_es_transfer__WEBPACK_IMPORTED_MODULE_7__["default"],Cascader:antd_es_cascader__WEBPACK_IMPORTED_MODULE_5__["default"],TreeSelect:antd_es_tree_select__WEBPACK_IMPORTED_MODULE_3__["default"]};const toMap={Form,Input,AutoComplete,Select,Transfer,Cascader,TreeSelect};const omitKeys=['$$typeof','render','propTypes','defaultProps'];Object.entries(fromMap).forEach(([name,fromFn])=>{const toFn=toMap[name];Object.entries(fromFn).forEach(([key,val])=>{if(!omitKeys.includes(key))toFn[key]=val;});toFn.displayName=`${namePrefix}.${name}`;});};copyOriginalKeys();formSubs.forEach(name=>{Form[name].displayName=`${namePrefix}.${name}`;});/**
  * exports
  */if(typeof Button!=='undefined'&&Button&&Button===Object(Button)&&Object.isExtensible(Button)&&!Button.hasOwnProperty('__filemeta')){Object.defineProperty(Button,'__filemeta',{configurable:true,value:{name:"Button",filename:"lib/index.jsx"}});}if(typeof TreeSelect!=='undefined'&&TreeSelect&&TreeSelect===Object(TreeSelect)&&Object.isExtensible(TreeSelect)&&!TreeSelect.hasOwnProperty('__filemeta')){Object.defineProperty(TreeSelect,'__filemeta',{configurable:true,value:{name:"TreeSelect",filename:"lib/index.jsx"}});}if(typeof Cascader!=='undefined'&&Cascader&&Cascader===Object(Cascader)&&Object.isExtensible(Cascader)&&!Cascader.hasOwnProperty('__filemeta')){Object.defineProperty(Cascader,'__filemeta',{configurable:true,value:{name:"Cascader",filename:"lib/index.jsx"}});}if(typeof Transfer!=='undefined'&&Transfer&&Transfer===Object(Transfer)&&Object.isExtensible(Transfer)&&!Transfer.hasOwnProperty('__filemeta')){Object.defineProperty(Transfer,'__filemeta',{configurable:true,value:{name:"Transfer",filename:"lib/index.jsx"}});}if(typeof Select!=='undefined'&&Select&&Select===Object(Select)&&Object.isExtensible(Select)&&!Select.hasOwnProperty('__filemeta')){Object.defineProperty(Select,'__filemeta',{configurable:true,value:{name:"Select",filename:"lib/index.jsx"}});}if(typeof AutoComplete!=='undefined'&&AutoComplete&&AutoComplete===Object(AutoComplete)&&Object.isExtensible(AutoComplete)&&!AutoComplete.hasOwnProperty('__filemeta')){Object.defineProperty(AutoComplete,'__filemeta',{configurable:true,value:{name:"AutoComplete",filename:"lib/index.jsx"}});}if(typeof Input!=='undefined'&&Input&&Input===Object(Input)&&Object.isExtensible(Input)&&!Input.hasOwnProperty('__filemeta')){Object.defineProperty(Input,'__filemeta',{configurable:true,value:{name:"Input",filename:"lib/index.jsx"}});}if(typeof Form!=='undefined'&&Form&&Form===Object(Form)&&Object.isExtensible(Form)&&!Form.hasOwnProperty('__filemeta')){Object.defineProperty(Form,'__filemeta',{configurable:true,value:{name:"Form",filename:"lib/index.jsx"}});}
 
@@ -30390,21 +30390,19 @@ var scope_0 = __webpack_require__(/*! ./.cache/caches/gatsby-plugin-mdx/mdx-scop
 
 var scope_1 = __webpack_require__(/*! ./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/340696bcc75b89ae83bdb84729ef74f1.js */ "./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/340696bcc75b89ae83bdb84729ef74f1.js").default;
 
-var scope_2 = __webpack_require__(/*! ./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/5a023c93db667062cfddc4eb18ef95bc.js */ "./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/5a023c93db667062cfddc4eb18ef95bc.js").default;
+var scope_2 = __webpack_require__(/*! ./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/5b0b6036507ae58ac37fbed4a76941d8.js */ "./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/5b0b6036507ae58ac37fbed4a76941d8.js").default;
 
-var scope_3 = __webpack_require__(/*! ./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/5b0b6036507ae58ac37fbed4a76941d8.js */ "./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/5b0b6036507ae58ac37fbed4a76941d8.js").default;
+var scope_3 = __webpack_require__(/*! ./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/86d72cb291677d926f6374695ddb3521.js */ "./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/86d72cb291677d926f6374695ddb3521.js").default;
 
-var scope_4 = __webpack_require__(/*! ./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/86d72cb291677d926f6374695ddb3521.js */ "./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/86d72cb291677d926f6374695ddb3521.js").default;
+var scope_4 = __webpack_require__(/*! ./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/88f72723aab549a120e44c21ab3a31d5.js */ "./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/88f72723aab549a120e44c21ab3a31d5.js").default;
 
-var scope_5 = __webpack_require__(/*! ./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/88f72723aab549a120e44c21ab3a31d5.js */ "./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/88f72723aab549a120e44c21ab3a31d5.js").default;
+var scope_5 = __webpack_require__(/*! ./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/8951138568a211e18c494491ad1e095f.js */ "./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/8951138568a211e18c494491ad1e095f.js").default;
 
-var scope_6 = __webpack_require__(/*! ./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/8951138568a211e18c494491ad1e095f.js */ "./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/8951138568a211e18c494491ad1e095f.js").default;
+var scope_6 = __webpack_require__(/*! ./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/a70fd55cdbfb58324addb3862ee1c93a.js */ "./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/a70fd55cdbfb58324addb3862ee1c93a.js").default;
 
-var scope_7 = __webpack_require__(/*! ./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/a70fd55cdbfb58324addb3862ee1c93a.js */ "./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/a70fd55cdbfb58324addb3862ee1c93a.js").default;
+var scope_7 = __webpack_require__(/*! ./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/e92f8988d65cf25c087d226e6c0ef06f.js */ "./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/e92f8988d65cf25c087d226e6c0ef06f.js").default;
 
-var scope_8 = __webpack_require__(/*! ./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/e92f8988d65cf25c087d226e6c0ef06f.js */ "./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/e92f8988d65cf25c087d226e6c0ef06f.js").default;
-
-const __DOCZ_DUMMY_EXPORT_DEFAULT = Object.assign({}, scope_0, scope_1, scope_2, scope_3, scope_4, scope_5, scope_6, scope_7, scope_8);
+const __DOCZ_DUMMY_EXPORT_DEFAULT = Object.assign({}, scope_0, scope_1, scope_2, scope_3, scope_4, scope_5, scope_6, scope_7);
 
 /* harmony default export */ __webpack_exports__["default"] = (__DOCZ_DUMMY_EXPORT_DEFAULT);
 
@@ -81480,11 +81478,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mdx-js/react */ "../node_modules/@mdx-js/react/dist/esm.js");
 /* harmony import */ var _Users_Lee_Works_ant_plus_node_modules_gatsby_theme_docz_src_base_Layout_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../node_modules/gatsby-theme-docz/src/base/Layout.js */ "../node_modules/gatsby-theme-docz/src/base/Layout.js");
-/* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./index.less */ "../src/index.less");
-/* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_index_less__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _index_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./index.js */ "../src/index.js");
-/* harmony import */ var _index_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_index_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @emotion/core */ "../node_modules/@emotion/core/dist/core.esm.js");
+/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @emotion/core */ "../node_modules/@emotion/core/dist/core.esm.js");
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
@@ -81496,8 +81490,6 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 
 /* @jsx mdx */
-
-
 
 
 
@@ -81553,7 +81545,7 @@ function MDXContent(_ref) {
   }, `介绍`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `Ant Plus 是 Ant Design 表单系统的简化版，提供了全新的表单开发方式。`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `若需了解 Ant Plus 核心开发方式，请查看 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("a", _extends({
     parentName: "p"
   }, {
-    "href": "./usage"
+    "href": "./ant-plus/usage"
   }), `使用`), `。组件页面为组件使用示例、以及组件的简化版 Props。`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `Ant Plus 提供了 7 个表单相关组件的封装：`, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
     parentName: "p"
   }, `Form`), ` `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
@@ -82281,7 +82273,7 @@ function MDXContent(_ref) {
   }, `Form`), ` 组件的 `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("a", _extends({
     parentName: "p"
   }, {
-    "href": "./form#config"
+    "href": "./ant-plus/form#config"
   }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
     parentName: "a"
   }, `config`)), ` 属性自定义提示文案。`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("table", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("thead", {
@@ -82493,28 +82485,6 @@ if (typeof MDXContent !== 'undefined' && MDXContent && MDXContent === Object(MDX
 
 ;
 MDXContent.isMDXComponent = true;
-
-/***/ }),
-
-/***/ "../src/index.js":
-/*!***********************!*\
-  !*** ../src/index.js ***!
-  \***********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-const pathMap={'/transfer':()=>{setTimeout(()=>{const defaultValues=document.querySelectorAll('[data-testid=prop-default-value]');defaultValues.forEach(el=>{if(el.innerText==='[Empty string]')el.innerText='""';});},100);},'/tree-select':()=>{setTimeout(()=>{const defaultValues=document.querySelectorAll('[data-testid=prop-default-value]');defaultValues.forEach(el=>{if(el.innerText.includes('Ant.'))el.innerText=el.innerText.replace(/Ant\./g,'');});const types=document.querySelectorAll('[data-testid=prop-type]');types.forEach(el=>{if(el.innerText.includes('Ant.'))el.innerText=el.innerText.replace(/Ant\./g,'');});},100);}};if(typeof window!=='undefined'){window.onload=function(){let path=window.location.pathname;const onEnter=()=>{Object.entries(pathMap).forEach(([key,fn])=>{if(key==='all')return fn();if(key.includes(path))return fn();});};onEnter();const body=document.querySelector('body');const observer=new MutationObserver(()=>{const newPath=window.location.pathname;if(path===newPath)return;path=newPath;onEnter();});observer.observe(body,{childList:true,subtree:true});};}
-
-/***/ }),
-
-/***/ "../src/index.less":
-/*!*************************!*\
-  !*** ../src/index.less ***!
-  \*************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-
 
 /***/ }),
 
@@ -82768,25 +82738,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony default export */ __webpack_exports__["default"] = ({Playground: docz__WEBPACK_IMPORTED_MODULE_0__["Playground"],Props: docz__WEBPACK_IMPORTED_MODULE_0__["Props"],Input: antx__WEBPACK_IMPORTED_MODULE_1__["Input"],React: react__WEBPACK_IMPORTED_MODULE_2__});
-
-/***/ }),
-
-/***/ "./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/5a023c93db667062cfddc4eb18ef95bc.js":
-/*!********************************************************************************************!*\
-  !*** ./.cache/caches/gatsby-plugin-mdx/mdx-scopes-dir/5a023c93db667062cfddc4eb18ef95bc.js ***!
-  \********************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _src_index_less__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../src/index.less */ "../src/index.less");
-/* harmony import */ var _src_index_less__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_src_index_less__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _src_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../src/index.js */ "../src/index.js");
-/* harmony import */ var _src_index_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_src_index_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony default export */ __webpack_exports__["default"] = ({React: react__WEBPACK_IMPORTED_MODULE_2__});
 
 /***/ }),
 
@@ -83265,11 +83216,34 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Logo", function() { return Logo; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var root_brand_logo_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! root/brand/logo.svg */ "../brand/logo.svg");
-/* harmony import */ var root_brand_logo_svg__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(root_brand_logo_svg__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _brand_logo_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ~/brand/logo.svg */ "../brand/logo.svg");
+/* harmony import */ var _brand_logo_svg__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_brand_logo_svg__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var docz__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! docz */ "../node_modules/docz/dist/index.esm.js");
 /* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @emotion/core */ "../node_modules/@emotion/core/dist/core.esm.js");
-const Logo=()=>{const config=Object(docz__WEBPACK_IMPORTED_MODULE_2__["useConfig"])();return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_3__["jsx"])("a",{className:"css-2daqhl-Logo",href:"/"},Object(_emotion_core__WEBPACK_IMPORTED_MODULE_3__["jsx"])("img",{src:root_brand_logo_svg__WEBPACK_IMPORTED_MODULE_1___default.a,alt:"logo"}),Object(_emotion_core__WEBPACK_IMPORTED_MODULE_3__["jsx"])("h1",null,config.title));};
+const Logo=()=>{const config=Object(docz__WEBPACK_IMPORTED_MODULE_2__["useConfig"])();return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_3__["jsx"])("a",{className:"css-2daqhl-Logo",href:"/"},Object(_emotion_core__WEBPACK_IMPORTED_MODULE_3__["jsx"])("img",{src:_brand_logo_svg__WEBPACK_IMPORTED_MODULE_1___default.a,alt:"logo"}),Object(_emotion_core__WEBPACK_IMPORTED_MODULE_3__["jsx"])("h1",null,config.title));};
+
+/***/ }),
+
+/***/ "./src/gatsby-theme-docz/main.js":
+/*!***************************************!*\
+  !*** ./src/gatsby-theme-docz/main.js ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+const pathMap={transfer:()=>{setTimeout(()=>{const defaultValues=document.querySelectorAll('[data-testid=prop-default-value]');defaultValues.forEach(el=>{if(el.innerText==='[Empty string]')el.innerText='""';});},100);},'tree-select':()=>{setTimeout(()=>{const defaultValues=document.querySelectorAll('[data-testid=prop-default-value]');defaultValues.forEach(el=>{if(el.innerText.includes('Ant.'))el.innerText=el.innerText.replace(/Ant\./g,'');});const types=document.querySelectorAll('[data-testid=prop-type]');types.forEach(el=>{if(el.innerText.includes('Ant.'))el.innerText=el.innerText.replace(/Ant\./g,'');});},100);}};const setPrefix=()=>{const path=window.location.pathname;const[empty,one,two]=path.split('/');// eslint-disable-line
+const base=two!==undefined?`/${one}/`:'/';console.log('base',base);Object.entries(pathMap).forEach(([key,fn])=>{if(key==='all')return;let newKey;if(key.includes(',')){const list=key.split(',').map(e=>`${base}${e}`);newKey=list.join(',');}else{newKey=`${base}${key}`;}pathMap[newKey]=fn;delete pathMap[key];});};setPrefix();console.log('pathMap',pathMap);if(typeof window!=='undefined'){window.onload=function(){let path=window.location.pathname;const onEnter=()=>{Object.entries(pathMap).forEach(([key,fn])=>{if(key==='all')return fn();if(key.includes(path))return fn();});};onEnter();const body=document.querySelector('body');const observer=new MutationObserver(()=>{const newPath=window.location.pathname;if(path===newPath)return;path=newPath;onEnter();});observer.observe(body,{childList:true,subtree:true});};}
+
+/***/ }),
+
+/***/ "./src/gatsby-theme-docz/styles.less":
+/*!*******************************************!*\
+  !*** ./src/gatsby-theme-docz/styles.less ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
 
 /***/ }),
 
@@ -83285,10 +83259,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_helmet_async__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-helmet-async */ "../node_modules/react-helmet-async/lib/index.module.js");
-/* harmony import */ var root_brand_favicon_ico__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! root/brand/favicon.ico */ "../brand/favicon.ico");
-/* harmony import */ var root_brand_favicon_ico__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(root_brand_favicon_ico__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @emotion/core */ "../node_modules/@emotion/core/dist/core.esm.js");
-const Wrapper=({children})=>Object(_emotion_core__WEBPACK_IMPORTED_MODULE_3__["jsx"])(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment,null,Object(_emotion_core__WEBPACK_IMPORTED_MODULE_3__["jsx"])(react_helmet_async__WEBPACK_IMPORTED_MODULE_1__["Helmet"],null,Object(_emotion_core__WEBPACK_IMPORTED_MODULE_3__["jsx"])("link",{rel:"icon",type:"image/png",href:root_brand_favicon_ico__WEBPACK_IMPORTED_MODULE_2___default.a})),children);/* harmony default export */ __webpack_exports__["default"] = (Wrapper);
+/* harmony import */ var _brand_favicon_ico__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ~/brand/favicon.ico */ "../brand/favicon.ico");
+/* harmony import */ var _brand_favicon_ico__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_brand_favicon_ico__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _styles_less__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles.less */ "./src/gatsby-theme-docz/styles.less");
+/* harmony import */ var _styles_less__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_less__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _main_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./main.js */ "./src/gatsby-theme-docz/main.js");
+/* harmony import */ var _main_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_main_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @emotion/core */ "../node_modules/@emotion/core/dist/core.esm.js");
+const Wrapper=({children})=>Object(_emotion_core__WEBPACK_IMPORTED_MODULE_5__["jsx"])(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment,null,Object(_emotion_core__WEBPACK_IMPORTED_MODULE_5__["jsx"])(react_helmet_async__WEBPACK_IMPORTED_MODULE_1__["Helmet"],null,Object(_emotion_core__WEBPACK_IMPORTED_MODULE_5__["jsx"])("link",{rel:"icon",type:"image/png",href:_brand_favicon_ico__WEBPACK_IMPORTED_MODULE_2___default.a})),children);/* harmony default export */ __webpack_exports__["default"] = (Wrapper);
 
 /***/ }),
 
