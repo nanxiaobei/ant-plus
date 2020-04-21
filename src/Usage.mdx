@@ -47,7 +47,7 @@ Ant Plus 最核心的使用方式，便是可以在表单控件 Props 中，直�
 </Form.Item>
 ```
 
-则 Ant Plus 对应代码为：
+则 Ant Plus 对应代码应为：
 
 ```jsx
 <Button label="" labelCol={{ span: 8 }} wrapperCol={{ span: 16 }}>
@@ -55,9 +55,9 @@ Ant Plus 最核心的使用方式，便是可以在表单控件 Props 中，直�
 </Button>
 ```
 
-因为 Ant Plus 以 `label` 或 `name` 至少存在一个来识别节点是否为 `Form.Item`，而纯布局时 `name` 不存在，所以应传入 `label=""` 以被识别为 `Form.Item`。
+因为 Ant Plus 以 `label` 或 `name` 至少存在一个来识别节点是否为 `Form.Item`，而纯布局时 `name` 不存在，所以应传入 `label=""` 以供识别。
 
-同时，`label=""` 也代表当前元素在表单布局中，为 `label` 文字为空一个表单条目。
+同时，`label=""` 也代表当前元素在表单布局中，为 `label` 文字为空的一个条目。
 
 ### 其它可传入 Props
 
@@ -94,7 +94,7 @@ Ant Plus 最核心的使用方式，便是可以在表单控件 Props 中，直�
 <Input name="name" rules={['required', 'string', 'max=10']} />
 ```
 
-Ant Plus 提供了以下短语形式的规则，可通过 Ant Plus `Form` 组件的 [`config`](./ant-plus/form#config) 属性自定义提示文案。
+Ant Plus 提供了以下短语形式的规则，可通过 Ant Plus `Form` 组件的 [`config`](/ant-plus/form#config) 属性自定义提示文案。
 
 | 短语       | 对应规则 | 规则说明     | 默认错误提示                              |
 | ---------- | -------- | ------------ | ----------------------------------------- |
