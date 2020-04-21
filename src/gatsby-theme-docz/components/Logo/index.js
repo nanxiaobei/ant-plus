@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from 'root/brand/logo.svg';
+import logo from '~/brand/logo.svg';
 import { useConfig } from 'docz';
 
 export const Logo = () => {

@@ -15,7 +15,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
       alias: {
-        root: path.resolve(__dirname, '../'),
+        '~': path.resolve(__dirname, '../'),
         antx: path.resolve(__dirname, '../lib'),
       },
     },
