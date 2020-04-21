@@ -3,11 +3,11 @@ import logo from '~/brand/logo.svg';
 import { useConfig } from 'docz';
 
 export const Logo = () => {
-  const config = useConfig();
+  const { base, title } = useConfig();
   return (
-    <a className="css-2daqhl-Logo" href="/">
+    <a href={base}>
       <img src={logo} alt="logo" />
-      <h1>{config.title}</h1>
+      <h1>{title}</h1>
     </a>
   );
 };
