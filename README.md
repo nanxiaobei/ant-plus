@@ -1,4 +1,4 @@
-# <img src="brand/logo.svg" height="106" align="left" /> Ant Plus 4
+# <img src="brand/logo.svg" height="104" align="left" /> Ant Plus 4
 
 > Ant Plus 4.0 发布！🎉
 >
