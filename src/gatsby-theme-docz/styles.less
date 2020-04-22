@@ -1,4 +1,4 @@
-@border-color: rgba(#000, 0.1);
+@border-color: #e9e9e9;
 @link-color: #0074de;
 @code-color: #c229f6;
 @header-height: 64px;
@@ -260,7 +260,6 @@
           box-shadow: 0 2px 0 rgba(@code-color, 0.8);
         }
         table {
-          table-layout: fixed;
           margin-top: 0;
           margin-bottom: 24px;
           th,
@@ -278,7 +277,6 @@
             }
           }
           td {
-            overflow: auto;
             &:nth-of-type(1) {
               .code-font();
               color: @code-color;
