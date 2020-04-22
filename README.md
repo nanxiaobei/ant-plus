@@ -7,11 +7,11 @@
 > ◆ 全面适配 Ant Design 4.0  
 > ◆ React Hooks 重写，大幅优化性能  
 > ◆ 全新文档设计，优化内容与排版  
-> ◆ 所有 antd Form 示例的 antx 对比实现
+> ◆ 所有 `antd` Form 官网示例的 `antx` 实现
 >
 > 以及 ... 全新 Logo 🦮
 
-Ant Plus 是 Ant Design 表单相关组件的简化版，以最符合 html 直觉的方式来搭建表单代码。
+Ant Plus 是 Ant Design 表单系统的简化版，以最符合 html 直觉的方式来搭建表单。
 
 [![npm version](https://img.shields.io/npm/v/antx.svg?style=flat-square)](https://www.npmjs.com/package/antx)
 [![npm downloads](https://img.shields.io/npm/dt/antx.svg?style=flat-square)](http://www.npmtrends.com/antx)
@@ -20,17 +20,18 @@ Ant Plus 是 Ant Design 表单相关组件的简化版，以最符合 html 直�
 
 ---
 
-Ant Plus 去除了对 `Form.Item` 包裹的依赖，同时提供了全新的 `rules` 设置方式与表单相关组件 API，可大幅简化开发，消灭繁琐样板代码，轻松构建起简洁清晰、利于维护的表单代码。
+Ant Plus 去除了对 `Form.Item` 的依赖，同时提供了全新的 `rules` 与组件 Props，可大幅简化开发，消灭繁琐样板代码，轻松构建起简洁清晰、利于维护的表单结构。
 
 ## 文档
 
-[https://nanxiaobei.github.io/ant-plus](https://nanxiaobei.github.io/ant-plus)
+- [文档网站](https://nanxiaobei.github.io/ant-plus) - 查看使用方式与组件 API
+- [在线示例](https://codesandbox.io/s/antx-mqxxzrj87j?fontsize=14) - 查看 Ant Design 所有 Form 官网示例的 Ant Plus 对比实现
 
 ## 特点
 
-- 极其简便，告别繁琐的 `Form.Item`、`rules` 等。
-- 可全局定义 `placeholder` 信息与 `rules` 校验提示。
-- 简化的 `rules` 设置方式，简化的表单组件常用 Props。
+- 极其简便，告别繁琐的 `Form.Item`、`rules` 等
+- 简化的 `rules` 设置方式，简化的表单组件 Props
+- 可统一定义 `placeholder` 信息与 `rules` 校验提示
 
 ## 对比
 
@@ -75,12 +76,6 @@ export default Demo;
 `Form.Item` Props 中的项，均可直接用于表单控件的 Props，如 `label`、`name`、`rules` 等。
 
 此外，Ant Plus 还对 `rules` 进行了简化，可直接使用字符串短语来设置。
-
-## 示例
-
-查看 Ant Design 文档中所有 Form 示例的 Ant Plus 版本对比代码。
-
-[![Edit antx](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/antx-mqxxzrj87j?fontsize=14)
 
 ## 协议
 
