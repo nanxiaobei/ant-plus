@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="700">
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="700" viewBox="0 0 100 70">
   <title>Ant Plus Logo</title>
-  <path fill="currentColor" fill-opacity="0.85" d="m0,380 a320,320 0 1 1 0,1 z" />
-  <path fill="currentColor" fill-opacity="0.85" d="m660,0 l340,581 l-680,0 z" />
+  <circle fill="currentColor" fill-opacity="0.85" cx="32" cy="38" r="32" />
+  <path fill="currentColor" fill-opacity="0.85" d="m66,0 l34,58.1 l-68,0 z"/>
 </svg>
