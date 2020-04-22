@@ -21,7 +21,7 @@
     "lib"
   ],
   "scripts": {
-    "dev": "rimraf .docz && docz dev",
+    "dev": "rimraf .docz && docz dev --host=0.0.0.0",
     "site": "docz build && sh site.sh",
     "build": "rimraf dist && rollup -c"
   },
