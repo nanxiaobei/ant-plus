@@ -260,6 +260,7 @@
           box-shadow: 0 2px 0 rgba(@code-color, 0.8);
         }
         table {
+          table-layout: fixed;
           margin-top: 0;
           margin-bottom: 24px;
           th,
@@ -277,6 +278,7 @@
             }
           }
           td {
+            overflow: auto;
             &:nth-of-type(1) {
               .code-font();
               color: @code-color;
