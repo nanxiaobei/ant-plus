@@ -14,10 +14,11 @@ Ant Plus 最核心的使用方式，便是可以在表单控件 Props 中，直�
   <Input
     label="用户名"
     name="name"
-    colon
-    after={<span>请输入正确信息</span>}
+    labelCol={{ span: 6 }}
+    wrapperCol={{ span: 18 }}
     rules={['required', 'string']}
     tip="请输入用户名"
+    colon
   />
 </Form>
 ```
