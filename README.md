@@ -8,6 +8,8 @@ Ant Plus 是 Ant Design 表单系统的简化版，以最符合 html 直觉的�
 [![npm downloads](https://img.shields.io/npm/dt/antx.svg?style=flat-square)](http://www.npmtrends.com/antx)
 [![npm bundle size](https://img.shields.io/bundlephobia/minzip/antx?style=flat-square)](https://bundlephobia.com/result?p=antx)
 [![GitHub](https://img.shields.io/github/license/nanxiaobei/ant-plus.svg?style=flat-square)](https://github.com/nanxiaobei/ant-plus/blob/master/LICENSE)
+![npm peer dependency version](https://img.shields.io/npm/dependency-version/antx/peer/react?style=flat-square)
+![npm peer dependency version](https://img.shields.io/npm/dependency-version/antx/peer/antd?style=flat-square)
 
 ---
 
