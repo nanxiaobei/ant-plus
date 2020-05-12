@@ -2,15 +2,6 @@
 
 # Ant Plus 4
 
-> Ant Plus 4.0 发布！🎉
->
-> ◆ 全面适配 Ant Design 4.0  
-> ◆ React Hooks 重写，大幅优化性能  
-> ◆ 全新文档设计，优化内容与排版  
-> ◆ 所有 `antd` Form 官网示例的 `antx` 实现
->
-> 以及 ... 全新 Logo 🦮
-
 Ant Plus 是 Ant Design 表单系统的简化版，以最符合 html 直觉的方式来搭建表单。
 
 [![npm version](https://img.shields.io/npm/v/antx.svg?style=flat-square)](https://www.npmjs.com/package/antx)
