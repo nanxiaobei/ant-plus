@@ -436,9 +436,9 @@ const Select = forwardRef((props, ref) => {
       ref={ref}
     >
       {children ||
-        data.map((item) => (
-          <Ant.Select.Option key={item[label]} value={item[value]} disabled={item.disabled}>
-            {item[label]}
+        data.map(({ [value]: val, [label]: text, ...restItem }) => (
+          <Ant.Select.Option key={val} value={val} {...restItem}>
+            {text}
           </Ant.Select.Option>
         ))}
     </Ant.Select>
