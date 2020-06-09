@@ -1,10 +1,9 @@
 import babel from 'rollup-plugin-babel';
-import less from 'rollup-plugin-less';
+import copy from 'rollup-plugin-copy';
 import pkg from './package.json';
 
 const input = 'lib/index.jsx';
-const deps = Object.keys(pkg.peerDependencies);
-const external = (id) => deps.includes(id) || /antd\/|@babel\/runtime\//.test(id);
+const external = () => true;
 const plugins = (isEsm) => [
   babel({
     presets: [
@@ -17,7 +16,7 @@ const plugins = (isEsm) => [
     ],
     runtimeHelpers: true,
   }),
-  less({ insert: true, output: false }),
+  copy({ targets: [{ src: 'lib/index.less', dest: 'dist' }] }),
 ];
 
 export default [
