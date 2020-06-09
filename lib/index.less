@@ -1,6 +1,4 @@
-@error: #ff4d4f;
-@border: #d9d9d9;
-@radius: 2px;
+@import '~antd/es/style/themes/default';
 
 .ant-plus-form {
   // error reminder
@@ -10,7 +8,7 @@
       div {
         position: relative;
         display: inline-block;
-        + div {
+        ~ div {
           margin-left: 4px;
         }
         &::before {
@@ -25,14 +23,14 @@
 
 // Input
 .ant-form-item-has-error .ant-plus-input-wrapper .ant-plus-input {
-  + .count {
-    color: @error;
+  ~ .count {
+    color: @error-color;
   }
   &:not(textarea) {
-    + .count {
-      border-color: @error;
+    ~ .count {
+      border-color: @error-color;
     }
-    &.ant-input-group-wrapper + .count {
+    &.ant-input-group-wrapper ~ .count {
       background: transparent;
     }
   }
@@ -43,25 +41,28 @@
     &[value=''] + label {
       top: 50%;
       transform: translateY(-50%);
-      color: #888;
+      color: @text-color-secondary;
     }
     &:focus + label {
       top: 0;
-      transform: scale(0.9) translateY(-50%);
-      color: currentColor;
+      transform: scale(0.8) translate(1px, -55%);
+      color: @primary-color;
     }
   }
   > label {
-    position: absolute;
-    left: 7px;
     top: 0;
-    transform: scale(0.9) translateY(-50%);
-    transform-origin: left top;
-    transition: 150ms;
+    transform: scale(0.8) translate(1px, -55%);
+    color: @text-color-secondary;
+
+    position: absolute;
+    left: 8px;
     padding-left: 4px;
     padding-right: 4px;
-    color: currentColor;
+    font-size: @font-size-base;
+    line-height: 1;
     background: #fff;
+    transform-origin: left top;
+    transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
     cursor: text;
   }
   &.has-count {
@@ -70,9 +71,9 @@
       padding-left: 8px;
       padding-right: 8px;
       color: #bbb;
-      font-size: 12px;
+      font-size: @font-size-sm;
       &.red {
-        color: @error;
+        color: @error-color;
       }
     }
     .ant-plus-input:not(textarea) {
@@ -82,23 +83,23 @@
         .ant-input-group-addon {
           border-radius: 0;
         }
-        + .count {
+        ~ .count {
           margin-left: -1px;
           background: #fafafa;
         }
       }
-      + .count {
+      ~ .count {
         flex-shrink: 0;
         display: flex;
         align-items: center;
-        border: solid @border;
+        border: solid @border-color-base;
         border-width: 1px 1px 1px 0;
-        border-radius: 0 @radius @radius 0;
+        border-radius: 0 @border-radius-base @border-radius-base 0;
         transition: 0.3s;
       }
     }
     textarea.ant-plus-input {
-      + .count {
+      ~ .count {
         position: absolute;
         right: 1px;
         bottom: 1px;
