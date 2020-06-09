@@ -304,7 +304,7 @@ Form.propTypes = {
   data: t.object,
   /** 设置统一的 `placeholder` 信息与 `rules` 校验提示信息。详见下文 **config** */
   config: t.object,
-  /** labelCol 与 wrapperCol span 的数值。e.g. cols={[8, 16]} → labelCol={{ span: 8 }}, wrapperCol={{ span: 16 }} **/
+  /** labelCol 与 wrapperCol span 的数值。e.g. cols=[8, 16] → labelCol={ span: 8 } wrapperCol={ span: 16 } */
   cols: t.arrayOf(t.number),
   /** 禁用的表单域，传入 `name` 组成的数组。全部禁用传入字符串 `'all'` */
   disabledNames: t.array,
@@ -383,6 +383,8 @@ Input.propTypes = {
   tip: t.string,
   /** `autoComplete` 简写（关闭需传入 `'off'`） */
   auto: t.string,
+  /** 展示为 Material Design 风格输入框，传入的字符串将为动态 label */
+  floatingLabel: t.string,
   /** 默认为 `Input` 组件，若传入 `textarea`，则为 `Input.TextArea` 组件 */
   textarea: t.bool,
   /** `Input.TextArea` 的输入框行高 */
