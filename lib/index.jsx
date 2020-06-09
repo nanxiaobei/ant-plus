@@ -719,10 +719,10 @@ TreeSelect.defaultProps = {
   showType: Ant.TreeSelect.SHOW_CHILD,
 };
 
-/**
- * Button - 未做任何封装，方便表单使用
- */
-const Button = Ant.Button;
+const Button = () => {
+  console.error('Button is removed from antx since 4.1, please import it from antd now');
+  return null;
+};
 
 /**
  * sync component keys, add displayName

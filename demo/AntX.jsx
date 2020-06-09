@@ -1,5 +1,6 @@
 import React from 'react';
-import { Form, Input, Select, Button } from 'antx';
+import { Button } from 'antd';
+import { Form, Input, Select } from 'antx';
 
 const data = [
   { value: 1, label: '男' },
