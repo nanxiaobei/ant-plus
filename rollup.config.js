@@ -12,7 +12,7 @@ const plugins = (isEsm) => [
       ['@babel/preset-react', { useBuiltIns: true }],
     ],
     plugins: [
-      ['import', { libraryName: 'antd', libraryDirectory: isEsm ? 'es' : 'lib', style: 'css' }],
+      ['import', { libraryName: 'antd', libraryDirectory: isEsm ? 'es' : 'lib', style: true }],
       ['@babel/plugin-transform-runtime', { useESModules: isEsm }],
     ],
     runtimeHelpers: true,
