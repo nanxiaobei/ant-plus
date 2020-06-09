@@ -21,7 +21,7 @@ import { Form } from 'antx';
       console.log(values);
     };
     return (
-      <Form data={{ name: 'Emily', sex: 2 }} onFinish={onFinish}>
+      <Form cols={[4, 20]} data={{ name: 'Emily', sex: 2 }} onFinish={onFinish}>
         <Input
           label="用户名"
           name="name"
