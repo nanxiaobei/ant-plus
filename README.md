@@ -17,8 +17,8 @@ Ant Plus 去除了对 `Form.Item` 的依赖，同时提供了全新的 `rules` �
 
 ## 文档
 
-- [文档网站](https://nanxiaobei.github.io/ant-plus) - 使用方式及组件 API
-- [在线示例](https://codesandbox.io/s/antx-mqxxzrj87j?fontsize=14) - 所有 Ant Design Form 官网示例的 Ant Plus 对比实现
+- [文档网站](https://nanxiaobei.github.io/ant-plus) 使用方式及组件 API
+- [在线示例](https://codesandbox.io/s/antx-mqxxzrj87j?fontsize=14) 所有 Ant Design Form 官网示例的 Ant Plus 对比实现
 
 ## 特点
 
