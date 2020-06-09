@@ -54,7 +54,7 @@ const Demo = () => {
     console.log(values);
   };
   return (
-    <Form data={{ name: 'Emily' }} onFinish={onFinish}>
+    <Form cols={[8, 16]} data={{ name: 'Emily' }} onFinish={onFinish}>
       <Input label="用户名" name="name" rules={['required', 'max=10']} tip="full" />
       <Button label="" htmlType="submit">
         提交
