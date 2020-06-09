@@ -23,7 +23,7 @@
   }
 }
 
-// Input with count
+// Input
 .ant-form-item-has-error .ant-plus-input-wrapper .ant-plus-input {
   + .count {
     color: @error;
@@ -39,47 +39,88 @@
 }
 .ant-plus-input-wrapper {
   position: relative;
-  display: flex;
-  .count {
-    padding-left: 8px;
-    padding-right: 8px;
-    color: #bbb;
-    font-size: 12px;
-    &.red {
-      color: @error;
+  > .ant-plus-input {
+    &[value=''] + label {
+      top: 50%;
+      transform: translateY(-50%);
+      color: #888;
+    }
+    &:focus + label {
+      top: 0;
+      transform: scale(0.9) translateY(-50%);
+      color: currentColor;
     }
   }
-  .ant-plus-input:not(textarea) {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    &.ant-input-group-wrapper {
-      .ant-input-group-addon {
-        border-radius: 0;
+  > label {
+    position: absolute;
+    left: 7px;
+    top: 0;
+    transform: scale(0.9) translateY(-50%);
+    transform-origin: left top;
+    transition: 150ms;
+    padding-left: 4px;
+    padding-right: 4px;
+    color: currentColor;
+    background: #fff;
+    cursor: text;
+  }
+  &.has-count {
+    display: flex;
+    .count {
+      padding-left: 8px;
+      padding-right: 8px;
+      color: #bbb;
+      font-size: 12px;
+      &.red {
+        color: @error;
+      }
+    }
+    .ant-plus-input:not(textarea) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      &.ant-input-group-wrapper {
+        .ant-input-group-addon {
+          border-radius: 0;
+        }
+        + .count {
+          margin-left: -1px;
+          background: #fafafa;
+        }
       }
       + .count {
-        margin-left: -1px;
-        background: #fafafa;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        border: solid @border;
+        border-width: 1px 1px 1px 0;
+        border-radius: 0 @radius @radius 0;
+        transition: 0.3s;
       }
     }
-    + .count {
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      border: solid @border;
-      border-width: 1px 1px 1px 0;
-      border-radius: 0 @radius @radius 0;
-      transition: 0.3s;
+    textarea.ant-plus-input {
+      + .count {
+        position: absolute;
+        right: 1px;
+        bottom: 1px;
+        line-height: 28px;
+        white-space: nowrap;
+        background: #fff;
+        border-bottom-right-radius: 20px;
+      }
     }
   }
-  textarea.ant-plus-input {
-    + .count {
-      position: absolute;
-      right: 1px;
-      bottom: 1px;
-      line-height: 28px;
-      white-space: nowrap;
-      background: #fff;
-      border-bottom-right-radius: 20px;
+}
+.ant-plus-input {
+  &:-webkit-autofill {
+    -webkit-animation-delay: 1s;
+    -webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both;
+  }
+  @-webkit-keyframes autofill {
+    0%,
+    100% {
+      color: inherit;
+      background: transparent;
     }
   }
 }

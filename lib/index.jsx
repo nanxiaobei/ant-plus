@@ -1,5 +1,5 @@
 import React, { forwardRef, useRef, useState } from 'react';
-import PropTypes from 'prop-types';
+import t from 'prop-types';
 import * as Ant from 'antd';
 import './index.less';
 
@@ -7,7 +7,7 @@ import './index.less';
  * Namespace
  */
 const namePrefix = 'AntPlus';
-const classPrefix = 'ant-plus';
+const clxPrefix = 'ant-plus';
 const fullName = (name) => `${namePrefix}.${name}`;
 
 /**
@@ -23,7 +23,7 @@ const hasItem = (arr, key) => Array.isArray(arr) && arr.includes(key);
 const hasLength = (arr) => Array.isArray(arr) && arr.length > 0;
 const addUniqueClass = (restProps, name) => {
   const { className = '' } = restProps;
-  restProps.className = `${classPrefix}-${name} ${className}`;
+  restProps.className = `${clxPrefix}-${name} ${className}`;
 };
 
 /**
@@ -128,17 +128,17 @@ const ownPropMap = {
   ownStyle: 'style',
   ownName: 'name',
 };
-const splitProps = (allProps) => {
+const splitProps = (mixedProps) => {
   const itemProps = {};
-  const ownProps = { ...allProps };
+  const ownProps = { ...mixedProps };
 
   itemPropList.forEach((key) => {
-    const val = allProps[key];
+    const val = mixedProps[key];
     if (val !== undefined) itemProps[key] = val;
     delete ownProps[key];
   });
   Object.entries(ownPropMap).forEach(([key, realKey]) => {
-    const val = allProps[key];
+    const val = mixedProps[key];
     if (val !== undefined) ownProps[realKey] = val;
     delete ownProps[key];
   });
@@ -150,8 +150,16 @@ const splitProps = (allProps) => {
  * https://ant.design/fns/form-cn/
  */
 const Form = forwardRef((props, ref) => {
-  const { data, config, disabledNames, children: formChildren, ...restFormProps } = props;
+  const { data, config, cols, disabledNames, children: formChildren, ...restFormProps } = props;
+
   const settings = useRef(getSettings(config)).current;
+  let layout;
+  let tailLayout;
+  if (cols && cols.length === 2) {
+    const [leftSpan, rightSpan] = cols;
+    layout = { labelCol: { span: leftSpan }, wrapperCol: { span: rightSpan } };
+    tailLayout = { wrapperCol: { offset: leftSpan, span: rightSpan } };
+  }
 
   /**
    * 转换 `tip`，包装 addon
@@ -234,30 +242,40 @@ const Form = forwardRef((props, ref) => {
     }
 
     /**
-     * Ant Plus Form.Item style node
+     * Ant Plus Form.Item
      */
     const { rules, validateTrigger: rawVt, hide, ...restAllProps } = restNodeProps;
     if (hide === true) restAllProps.style = { display: 'none' };
     const validateTrigger = rawVt || hasItem(rules, 'phone') ? 'onBlur' : 'onChange';
-    const allProps = { ...restAllProps, rules: getRules(rules, label), validateTrigger };
+    const mixedProps = { ...restAllProps, rules: getRules(rules, label), validateTrigger };
+    const mixedLayout = !label && tailLayout;
 
     // render props
     if (typeof children === 'function') {
-      addUniqueClass(allProps, 'form-item');
+      addUniqueClass(mixedProps, 'form-item');
       const renderNode = (...args) => launch(children(...args));
-      return <Ant.Form.Item {...allProps}>{renderNode}</Ant.Form.Item>;
+      return (
+        <Ant.Form.Item {...mixedLayout} {...mixedProps}>
+          {renderNode}
+        </Ant.Form.Item>
+      );
     }
 
     // object
-    const { itemProps, ownProps } = splitProps(allProps);
+    const { itemProps, ownProps } = splitProps(mixedProps);
     addUniqueClass(itemProps, `form-item ${hasName ? `form-item-${name}` : ''}`);
 
     setTipAddon(isValid, displayName, ownProps, label);
     const disabled = disabledNames === 'all' || (hasName && hasItem(disabledNames, name));
     if (disabled) ownProps.disabled = true;
+    const itemLayout = !label && tailLayout;
 
     const ownNode = { ...node, props: { ...ownProps, children: launch(children) } };
-    return <Ant.Form.Item {...itemProps}>{ownNode}</Ant.Form.Item>;
+    return (
+      <Ant.Form.Item {...itemLayout} {...itemProps}>
+        {ownNode}
+      </Ant.Form.Item>
+    );
   };
 
   /**
@@ -275,7 +293,7 @@ const Form = forwardRef((props, ref) => {
   addUniqueClass(restFormProps, 'form');
 
   return (
-    <Ant.Form initialValues={data} {...restFormProps} ref={ref}>
+    <Ant.Form initialValues={data} {...layout} {...restFormProps} ref={ref}>
       {launch(formChildren)}
     </Ant.Form>
   );
@@ -283,11 +301,13 @@ const Form = forwardRef((props, ref) => {
 
 Form.propTypes = {
   /** `initialValues` 简写 */
-  data: PropTypes.object,
+  data: t.object,
   /** 设置统一的 `placeholder` 信息与 `rules` 校验提示信息。详见下文 **config** */
-  config: PropTypes.object,
+  config: t.object,
+  /** labelCol 与 wrapperCol span 的数值。e.g. cols={[8, 16]} → labelCol={{ span: 8 }}, wrapperCol={{ span: 16 }} **/
+  cols: t.arrayOf(t.number),
   /** 禁用的表单域，传入 `name` 组成的数组。全部禁用传入字符串 `'all'` */
-  disabledNames: PropTypes.array,
+  disabledNames: t.array,
 };
 
 Form.defaultProps = {};
@@ -297,67 +317,76 @@ Form.defaultProps = {};
  * https://ant.design/fns/input-cn/
  */
 const Input = forwardRef((props, ref) => {
-  const { max, tip, auto, textarea, rows, ...restProps } = props;
+  const { max, tip, auto, textarea, rows, id, floatingLabel, ...restProps } = props;
   const { disabled } = restProps;
 
   addUniqueClass(restProps, 'input');
 
-  const renderInput = (inputProps) => {
-    if (textarea !== true) {
-      return <Ant.Input placeholder={tip} autoComplete={auto} {...inputProps} ref={ref} />;
-    }
-    return (
-      <Ant.Input.TextArea
-        placeholder={tip}
-        autoSize={{ minRows: rows }}
-        {...inputProps}
-        ref={ref}
-      />
-    );
-  };
-
-  const noCount = typeof max !== 'number' || disabled === true;
+  const hasCount = typeof max === 'number' && disabled !== true;
 
   const [count, setCount] = useState(() => {
-    if (noCount) return null;
+    if (!hasCount) return null;
     const { defaultValue, value } = restProps;
     if (typeof value === 'string') return value.length;
     if (typeof defaultValue === 'string') return defaultValue.length;
     return 0;
   });
 
-  // no count
-  if (noCount) return renderInput(restProps);
-
   // has count
-  const { onChange } = restProps;
-  restProps.onChange = (event) => {
-    const { value } = event.target;
-    if (typeof value === 'string') setCount(value.length);
-    if (typeof onChange === 'function') return onChange(event);
-  };
+  if (hasCount) {
+    const { onChange } = restProps;
+    restProps.onChange = (event) => {
+      const { value } = event.target;
+      if (typeof value === 'string') setCount(value.length);
+      if (typeof onChange === 'function') return onChange(event);
+    };
+  }
 
   return (
-    <div className={`${classPrefix}-input-wrapper`}>
-      {renderInput(restProps)}
-      <span className={`count ${count <= max ? '' : 'red'}`}>
-        {count} | {max}
-      </span>
+    <div className={`${clxPrefix}-input-wrapper ${hasCount ? 'has-count' : ''}`}>
+      {textarea !== true ? (
+        !floatingLabel ? (
+          <Ant.Input placeholder={tip} autoComplete={auto} {...restProps} ref={ref} />
+        ) : (
+          <>
+            <Ant.Input
+              placeholder={tip}
+              autoComplete={auto}
+              {...restProps}
+              ref={ref}
+              id={id || floatingLabel}
+            />
+            <label htmlFor={id || floatingLabel}>{floatingLabel}</label>
+          </>
+        )
+      ) : (
+        <Ant.Input.TextArea
+          placeholder={tip}
+          autoSize={{ minRows: rows }}
+          {...restProps}
+          ref={ref}
+        />
+      )}
+      {hasCount && (
+        <span className={`count ${count <= max ? '' : 'red'}`}>
+          {count} | {max}
+        </span>
+      )}
     </div>
   );
 });
 
 Input.propTypes = {
   /** 最大可输入字符数（若传入则显示字符计数器） */
-  max: PropTypes.number,
+  max: t.number,
   /** `placeholder` 简写（在 Ant Plus `Form` 内时，可传入 `'short'` 或 `'full'`。转义：`'short'` → `'请输入'`, `'full'` → `'请输入XX'`, `'其它'` → `'其它'`） */
-  tip: PropTypes.string,
+  tip: t.string,
   /** `autoComplete` 简写（关闭需传入 `'off'`） */
-  auto: PropTypes.string,
+  auto: t.string,
   /** 默认为 `Input` 组件，若传入 `textarea`，则为 `Input.TextArea` 组件 */
-  textarea: PropTypes.bool,
+  textarea: t.bool,
   /** `Input.TextArea` 的输入框行高 */
-  rows: PropTypes.number,
+  rows: t.number,
 };
 
 Input.defaultProps = {
@@ -393,13 +422,13 @@ const AutoComplete = forwardRef((props, ref) => {
 
 AutoComplete.propTypes = {
   /** `options` 简写 */
-  data: PropTypes.array,
+  data: t.array,
   /** `placeholder` 简写（在 Ant Plus `Form` 内时，可传入 `'short'` 或 `'full'`。转义：`'short'` → `'请输入'`, `'full'` → `'请输入XX'`, `'其它'` → `'其它'`） */
-  tip: PropTypes.string,
+  tip: t.string,
   /** 是否可搜索 */
-  search: PropTypes.bool,
+  search: t.bool,
   /** `allowClear` 简写 */
-  clear: PropTypes.bool,
+  clear: t.bool,
 };
 
 AutoComplete.defaultProps = {
@@ -447,17 +476,17 @@ const Select = forwardRef((props, ref) => {
 
 Select.propTypes = {
   /** 列表数据源 */
-  data: PropTypes.array,
+  data: t.array,
   /** 当数据源的键不是 `'value'` `'label'` 时传入。e.g. 数据源 `[{ val: 1, text: 'A'}, { val: 2, text: 'B'}]，则传入 ['val', 'text']` */
-  keys: PropTypes.array,
+  keys: t.array,
   /** `placeholder` 简写（在 Ant Plus `Form` 内时，可传入 `'short'` 或 `'full'`。转义：`'short'` → `'请输入'`, `'full'` → `'请输入XX'`, `'其它'` → `'其它'`） */
-  tip: PropTypes.string,
+  tip: t.string,
   /** 是否可搜索 */
-  search: PropTypes.bool,
+  search: t.bool,
   /** `allowClear` 简写 */
-  clear: PropTypes.bool,
+  clear: t.bool,
   /** `notFoundContent` 简写 */
-  empty: PropTypes.string,
+  empty: t.string,
 };
 
 Select.defaultProps = {
@@ -506,17 +535,17 @@ const Transfer = forwardRef((props, ref) => {
 
 Transfer.propTypes = {
   /** `dataSource` 简写 */
-  data: PropTypes.array,
+  data: t.array,
   /** `'未选择XX'` `'已选择XX'` 的 `'XX'` 文案 */
-  title: PropTypes.string,
+  title: t.string,
   /** 是否可搜索 */
-  search: PropTypes.bool,
+  search: t.bool,
   /** `local.itemUnit` 与 `local.itemsUnits` 简写，默认：`'项'` */
-  unit: PropTypes.string,
+  unit: t.string,
   /** `locale.searchPlaceholder` 简写（不支持 `'short'` `'full'`） */
-  searchTip: PropTypes.string,
+  searchTip: t.string,
   /** `locale.notFoundContent` 简写 */
-  empty: PropTypes.string,
+  empty: t.string,
 };
 
 Transfer.defaultProps = {
@@ -590,19 +619,19 @@ const Cascader = forwardRef((props, ref) => {
 
 Cascader.propTypes = {
   /** `options` 简写 */
-  data: PropTypes.array,
+  data: t.array,
   /** 当数据源的键不是 `'value'` `'label'` `'children'` 时传入 */
-  keys: PropTypes.array,
+  keys: t.array,
   /** `placeholder` 简写（不支持 `'short'` `'full'`） */
-  tip: PropTypes.string,
+  tip: t.string,
   /** 是否可搜索 */
-  search: PropTypes.bool,
+  search: t.bool,
   /** `allowClear` 简写 */
-  clear: PropTypes.bool,
+  clear: t.bool,
   /** `notFoundContent` 简写 */
-  empty: PropTypes.string,
+  empty: t.string,
   /** `value` 取数组最后一个值，默认为整体数组 */
-  last: PropTypes.bool,
+  last: t.bool,
 };
 
 Cascader.defaultProps = {
@@ -683,25 +712,25 @@ const TreeSelect = forwardRef((props, ref) => {
 
 TreeSelect.propTypes = {
   /** `treeData` 简写 */
-  data: PropTypes.array,
+  data: t.array,
   /** 当数据源的键不是 `'value'` `'title'` `'children'` 时传入 */
-  keys: PropTypes.array,
+  keys: t.array,
   /** `placeholder` 简写（不支持 `'short'` `'full'`） */
-  tip: PropTypes.string,
+  tip: t.string,
   /** 是否可搜索 */
-  search: PropTypes.bool,
+  search: t.bool,
   /** `allowClear` 简写 */
-  clear: PropTypes.bool,
+  clear: t.bool,
   /** `notFoundContent` 简写 */
-  empty: PropTypes.string,
+  empty: t.string,
   /** `treeCheckable` 简写 */
-  checkbox: PropTypes.bool,
+  checkbox: t.bool,
   /** `treeDefaultExpandAll` 简写 */
-  expandAll: PropTypes.bool,
+  expandAll: t.bool,
   /** `treeDefaultExpandedKeys` 简写 */
-  expandKeys: PropTypes.array,
+  expandKeys: t.array,
   /** `showCheckedStrategy` 简写 */
-  showType: PropTypes.oneOf([
+  showType: t.oneOf([
     Ant.TreeSelect.SHOW_ALL,
     Ant.TreeSelect.SHOW_PARENT,
     Ant.TreeSelect.SHOW_CHILD,
