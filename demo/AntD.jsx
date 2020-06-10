@@ -1,13 +1,16 @@
 import React from 'react';
 import { Form, Input, Select, Button } from 'antd';
 
-const data = [
+const layout = { labelCol: { span: 8 }, wrapperCol: { span: 16 } };
+const tailLayout = { wrapperCol: { offset: 8, span: 16 } };
+
+const options = [
   { value: 1, label: '男' },
   { value: 2, label: '女' },
 ];
 
 const Demo = () => (
-  <Form initialValues={{ username: 'Emily', sex: 2 }}>
+  <Form {...layout} initialValues={{ username: 'Emily', sex: 2 }}>
     <Form.Item
       label="用户名"
       name="username"
@@ -24,14 +27,14 @@ const Demo = () => (
       rule={[{ pattern: /^\d+$/, whitespace: true, message: '性别格式有误' }]}
     >
       <Select placeholder="请选择性别">
-        {data.map(({ value, label }) => (
+        {options.map(({ value, label }) => (
           <Select.Option value={value} key={value}>
             {label}
           </Select.Option>
         ))}
       </Select>
     </Form.Item>
-    <Form.Item>
+    <Form.Item {...tailLayout}>
       <Button type="primary" htmlType="submit">
         提交
       </Button>
