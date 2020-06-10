@@ -1,13 +1,15 @@
 {
   "name": "antx",
   "version": "4.1.0",
-  "description": "Simplified Ant Design Form",
+  "description": "Ant Design Form Next",
   "keywords": [
     "react",
     "form",
     "antd",
     "ant-design",
-    "ant-plus"
+    "ant-plus",
+    "input",
+    "select"
   ],
   "license": "MIT",
   "author": "nanxiaobei <nanxiaobei@gmail.com> (https://github.com/nanxiaobei)",

@@ -4,7 +4,7 @@ export default {
   dest: 'docs',
   docgenConfig: { searchPath: 'lib' },
   title: 'Ant Plus 4',
-  description: 'Simplified Ant Design Form',
+  description: 'Ant Design Form Next',
   themeConfig: {
     showDarkModeSwitch: false,
     showMarkdownEditButton: false,
