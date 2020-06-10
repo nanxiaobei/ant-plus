@@ -736,15 +736,17 @@ TreeSelect.defaultProps = {
   showType: Ant.TreeSelect.SHOW_CHILD,
 };
 
+/**
+ * Button
+ */
 const Button = () => {
-  console.error('Button is removed from antx since 4.1, please import it from antd now');
+  console.error('Button is removed from antx since 4.1.0, please import it from antd now');
   return null;
 };
 
 /**
  * sync component keys, add displayName
  */
-
 const copyOriginalKeys = () => {
   const fromMap = {
     Form: Ant.Form,
