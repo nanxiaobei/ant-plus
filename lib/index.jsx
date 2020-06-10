@@ -322,42 +322,47 @@ const Input = forwardRef((props, ref) => {
 
   addUniqueClass(restProps, 'input');
 
-  if (floatingLabel) restProps.id = id || floatingLabel;
-  const inputComponent =
-    textarea !== true ? (
-      <Ant.Input placeholder={tip} autoComplete={auto} {...restProps} ref={ref} />
-    ) : (
-      <Ant.Input.TextArea placeholder={tip} autoSize={{ minRows: rows }} {...restProps} ref={ref} />
-    );
-
-  const noCount = typeof max !== 'number' || disabled === true;
-
-  // no count
+  // count
+  const hasCount = typeof max === 'number' && disabled !== true;
   const [count, setCount] = useState(() => {
-    if (noCount) return null;
+    if (!hasCount) return null;
     const { defaultValue, value } = restProps;
     if (typeof value === 'string') return value.length;
     if (typeof defaultValue === 'string') return defaultValue.length;
     return 0;
   });
 
-  if (noCount && !floatingLabel) return inputComponent;
+  // floatingLabel
+  if (floatingLabel) restProps.id = id || floatingLabel;
 
-  // has count
-  const { onChange } = restProps;
-  restProps.onChange = (event) => {
-    const { value } = event.target;
-    if (typeof value === 'string') setCount(value.length);
-    if (typeof onChange === 'function') return onChange(event);
-  };
+  // shared
+  const renderInput = () =>
+    textarea !== true ? (
+      <Ant.Input placeholder={tip} autoComplete={auto} {...restProps} ref={ref} />
+    ) : (
+      <Ant.Input.TextArea placeholder={tip} autoSize={{ minRows: rows }} {...restProps} ref={ref} />
+    );
+
+  if (!hasCount && !floatingLabel) return renderInput();
+
+  if (hasCount) {
+    const { onChange } = restProps;
+    restProps.onChange = (event) => {
+      const { value } = event.target;
+      if (typeof value === 'string') setCount(value.length);
+      if (typeof onChange === 'function') return onChange(event);
+    };
+  }
 
   return (
-    <div className={`${clxPrefix}-input-wrapper`}>
-      {inputComponent}
+    <div className={`${clxPrefix}-input-wrapper ${hasCount ? 'has-count' : ''}`}>
+      {renderInput()}
       {floatingLabel && <label htmlFor={restProps.id}>{floatingLabel}</label>}
-      <span className={`count ${count <= max ? '' : 'red'}`}>
-        {count} | {max}
-      </span>
+      {hasCount && (
+        <span className={`count ${count <= max ? '' : 'red'}`}>
+          {count} | {max}
+        </span>
+      )}
     </div>
   );
 });
@@ -740,7 +745,7 @@ TreeSelect.defaultProps = {
  * Button
  */
 const Button = () => {
-  console.error('Button is removed from antx since 4.1.0, please import it from antd now');
+  console.error('Button is removed from antx since 4.2.2, please import it from antd now');
   return null;
 };
 
