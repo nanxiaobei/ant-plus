@@ -1,4 +1,4 @@
-import React, { forwardRef, useRef, useState } from 'react';
+import React, { Children, forwardRef, useRef, useState } from 'react';
 import t from 'prop-types';
 import * as Ant from 'antd';
 import './index.less';
@@ -154,11 +154,11 @@ const Form = forwardRef((props, ref) => {
 
   const settings = useRef(getSettings(config)).current;
   let layout;
-  let tailLayout;
+  let offsetLayout;
   if (cols && cols.length === 2) {
     const [leftSpan, rightSpan] = cols;
     layout = { labelCol: { span: leftSpan }, wrapperCol: { span: rightSpan } };
-    tailLayout = { wrapperCol: { offset: leftSpan, span: rightSpan } };
+    offsetLayout = { wrapperCol: { offset: leftSpan, span: rightSpan } };
   }
 
   /**
@@ -214,7 +214,7 @@ const Form = forwardRef((props, ref) => {
   /**
    * 核心渲染工厂
    */
-  const factory = (node) => {
+  const factory = (node, isOuter) => {
     if (typeof node !== 'object' || node === null || !node.props) return node;
 
     const { children, ...restNodeProps } = node.props;
@@ -248,7 +248,7 @@ const Form = forwardRef((props, ref) => {
     if (hide === true) restMixedProps.style = { display: 'none' };
     const validateTrigger = rawVt || hasItem(rules, 'phone') ? 'onBlur' : 'onChange';
     const mixedProps = { ...restMixedProps, rules: getRules(rules, label), validateTrigger };
-    const mixedLayout = !label && tailLayout;
+    const mixedLayout = isOuter && !label && offsetLayout;
 
     // render props
     if (typeof children === 'function') {
@@ -268,7 +268,7 @@ const Form = forwardRef((props, ref) => {
     setTipAddon(isValid, displayName, ownProps, label);
     const disabled = disabledNames === 'all' || (hasName && hasItem(disabledNames, name));
     if (disabled) ownProps.disabled = true;
-    const itemLayout = !label && tailLayout;
+    const itemLayout = isOuter && !label && offsetLayout;
 
     const ownNode = { ...node, props: { ...ownProps, children: launch(children) } };
     return (
@@ -281,10 +281,10 @@ const Form = forwardRef((props, ref) => {
   /**
    * 渲染工厂入口
    */
-  const launch = (node) => {
+  const launch = (node, isOuter) => {
     if (typeof node !== 'object' || node === null) return node;
-    if (hasLength(node)) return React.Children.map(node, factory);
-    return factory(node);
+    if (hasLength(node)) return Children.map(node, (one) => factory(one, isOuter));
+    return factory(node, isOuter);
   };
 
   /**
@@ -294,7 +294,7 @@ const Form = forwardRef((props, ref) => {
 
   return (
     <Ant.Form initialValues={data} {...layout} {...restFormProps} ref={ref}>
-      {launch(formChildren)}
+      {launch(formChildren, true)}
     </Ant.Form>
   );
 });
