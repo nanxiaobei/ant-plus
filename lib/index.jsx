@@ -244,10 +244,10 @@ const Form = forwardRef((props, ref) => {
     /**
      * Ant Plus Form.Item
      */
-    const { rules, validateTrigger: rawVt, hide, ...restAllProps } = restNodeProps;
-    if (hide === true) restAllProps.style = { display: 'none' };
+    const { rules, validateTrigger: rawVt, hide, ...restMixedProps } = restNodeProps;
+    if (hide === true) restMixedProps.style = { display: 'none' };
     const validateTrigger = rawVt || hasItem(rules, 'phone') ? 'onBlur' : 'onChange';
-    const mixedProps = { ...restAllProps, rules: getRules(rules, label), validateTrigger };
+    const mixedProps = { ...restMixedProps, rules: getRules(rules, label), validateTrigger };
     const mixedLayout = !label && tailLayout;
 
     // render props
@@ -322,56 +322,42 @@ const Input = forwardRef((props, ref) => {
 
   addUniqueClass(restProps, 'input');
 
-  const hasCount = typeof max === 'number' && disabled !== true;
+  if (floatingLabel) restProps.id = id || floatingLabel;
+  const inputComponent =
+    textarea !== true ? (
+      <Ant.Input placeholder={tip} autoComplete={auto} {...restProps} ref={ref} />
+    ) : (
+      <Ant.Input.TextArea placeholder={tip} autoSize={{ minRows: rows }} {...restProps} ref={ref} />
+    );
 
+  const noCount = typeof max !== 'number' || disabled === true;
+
+  // no count
   const [count, setCount] = useState(() => {
-    if (!hasCount) return null;
+    if (noCount) return null;
     const { defaultValue, value } = restProps;
     if (typeof value === 'string') return value.length;
     if (typeof defaultValue === 'string') return defaultValue.length;
     return 0;
   });
 
+  if (noCount && !floatingLabel) return inputComponent;
+
   // has count
-  if (hasCount) {
-    const { onChange } = restProps;
-    restProps.onChange = (event) => {
-      const { value } = event.target;
-      if (typeof value === 'string') setCount(value.length);
-      if (typeof onChange === 'function') return onChange(event);
-    };
-  }
+  const { onChange } = restProps;
+  restProps.onChange = (event) => {
+    const { value } = event.target;
+    if (typeof value === 'string') setCount(value.length);
+    if (typeof onChange === 'function') return onChange(event);
+  };
 
   return (
-    <div className={`${clxPrefix}-input-wrapper ${hasCount ? 'has-count' : ''}`}>
-      {textarea !== true ? (
-        !floatingLabel ? (
-          <Ant.Input placeholder={tip} autoComplete={auto} {...restProps} ref={ref} />
-        ) : (
-          <>
-            <Ant.Input
-              placeholder={tip}
-              autoComplete={auto}
-              {...restProps}
-              ref={ref}
-              id={id || floatingLabel}
-            />
-            <label htmlFor={id || floatingLabel}>{floatingLabel}</label>
-          </>
-        )
-      ) : (
-        <Ant.Input.TextArea
-          placeholder={tip}
-          autoSize={{ minRows: rows }}
-          {...restProps}
-          ref={ref}
-        />
-      )}
-      {hasCount && (
-        <span className={`count ${count <= max ? '' : 'red'}`}>
-          {count} | {max}
-        </span>
-      )}
+    <div className={`${clxPrefix}-input-wrapper`}>
+      {inputComponent}
+      {floatingLabel && <label htmlFor={restProps.id}>{floatingLabel}</label>}
+      <span className={`count ${count <= max ? '' : 'red'}`}>
+        {count} | {max}
+      </span>
     </div>
   );
 });
