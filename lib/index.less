@@ -1,28 +1,7 @@
 @import '~antd/es/style/themes/default';
 
-.ant-plus-form {
-  // error reminder
-  .ant-plus-form-item {
-    .ant-form-item-explain,
-    .ant-form-item-split {
-      div {
-        position: relative;
-        display: inline-block;
-        ~ div {
-          margin-left: 4px;
-        }
-        &::before {
-          content: '↑';
-          margin-left: -1px;
-          margin-right: 3px;
-        }
-      }
-    }
-  }
-}
-
-// Input
-.ant-form-item-has-error .ant-plus-input-wrapper .ant-plus-input {
+// input
+.ant-form-item-has-error .ant-plus-input-wrapper.has-count .ant-plus-input {
   ~ .count {
     color: @error-color;
   }
@@ -98,35 +77,19 @@
         transition: 0.3s;
       }
     }
-    textarea.ant-plus-input {
-      ~ .count {
-        position: absolute;
-        right: 1px;
-        bottom: 1px;
-        line-height: 28px;
-        white-space: nowrap;
-        background: #fff;
-        border-bottom-right-radius: 20px;
-      }
-    }
-  }
-}
-.ant-plus-input {
-  &:-webkit-autofill {
-    -webkit-animation-delay: 1s;
-    -webkit-animation-name: autofill;
-    -webkit-animation-fill-mode: both;
-  }
-  @-webkit-keyframes autofill {
-    0%,
-    100% {
-      color: inherit;
-      background: transparent;
+    textarea.ant-plus-input ~ .count {
+      position: absolute;
+      right: 1px;
+      bottom: 1px;
+      line-height: 28px;
+      white-space: nowrap;
+      background: #fff;
+      border-bottom-right-radius: 20px;
     }
   }
 }
 
-// Min width
+// min width
 .ant-plus-select,
 .ant-plus-auto-complete,
 .ant-plus-tree-select {
