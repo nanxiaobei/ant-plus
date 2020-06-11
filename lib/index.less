@@ -1,38 +1,49 @@
 @import '~antd/es/style/themes/default';
 
 // input
-.ant-form-item-has-error .ant-plus-input-wrapper.has-count .ant-plus-input {
-  ~ .count {
-    color: @error-color;
+.ant-form-item-has-error .ant-plus-input-wrapper {
+  .ant-plus-input + label {
+    color: @error-color !important;
   }
-  &:not(textarea) {
+  &.has-count .ant-plus-input {
     ~ .count {
-      border-color: @error-color;
+      color: @error-color;
     }
-    &.ant-input-group-wrapper ~ .count {
-      background: transparent;
+    &:not(textarea) {
+      ~ .count {
+        border-color: @error-color;
+      }
+      &.ant-input-group-wrapper ~ .count {
+        background: transparent;
+      }
     }
   }
 }
 .ant-plus-input-wrapper {
   position: relative;
-  > .ant-plus-input {
-    &[value=''] + label {
-      top: 50%;
-      transform: translateY(-50%);
-      color: @text-color-secondary;
-    }
-    &:focus + label {
-      top: 0;
-      transform: scale(0.8) translate(1px, -55%);
-      color: @primary-color;
-    }
+  // no focus, no text, normal|hover
+  .ant-plus-input:not(:focus)[value=''] + label {
+    top: 50%;
+    transform: translateY(-50%);
+    color: @text-color-secondary;
   }
-  > label {
+  // no focus, has text, normal
+  .ant-plus-input:not(:focus):not([value='']) + label {
     top: 0;
     transform: scale(0.8) translate(1px, -55%);
     color: @text-color-secondary;
-
+  }
+  // no focus, has text, hover
+  .ant-plus-input:not(:focus):not([value='']):hover + label {
+    color: @primary-color;
+  }
+  // focus
+  .ant-plus-input:focus + label {
+    top: 0;
+    transform: scale(0.8) translate(1px, -55%);
+    color: @primary-color;
+  }
+  .ant-plus-input + label {
     position: absolute;
     left: 8px;
     padding-left: 4px;
