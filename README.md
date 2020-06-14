@@ -15,10 +15,10 @@ Ant Plus 是 Ant Design 表单系统的简化版，以最符合 html 直觉的�
 
 Ant Plus 去除了对 `Form.Item` 的依赖，同时提供了全新的 `rules` 与组件 Props，可大幅简化开发，消灭繁琐样板代码，轻松构建起简洁清晰、利于维护的表单结构。
 
-## 文档
+## 导航
 
-- [文档网站](https://nanxiaobei.github.io/ant-plus) 使用方式及组件 API
-- [在线示例](https://codesandbox.io/s/antx-mqxxzrj87j?fontsize=14) 所有 Ant Design Form 官网示例的 Ant Plus 对比实现
+- [Ant Plus 文档](https://nanxiaobei.github.io/ant-plus) 介绍了使用方式及组件 API。
+- [在线对比示例](https://codesandbox.io/s/antx-mqxxzrj87j?fontsize=14) 包含 Ant Design 官网所有 Form 示例的 Ant Plus 对比实现。
 
 ## 特点
 
