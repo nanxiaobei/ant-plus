@@ -67,12 +67,13 @@ const getSettings = (customConfig) => {
   const ruleMap = {
     required: { required: true },
 
-    string: { type: 'string', whitespace: true },
-    number: { pattern: /^\d+$/, whitespace: true },
+    whitespace: { whitespace: true },
+    string: { type: 'string' },
+    number: { pattern: /^\d+$/ },
     array: { type: 'array' },
-    email: { type: 'email', whitespace: true },
-    phone: { pattern: /^1[3456789]\d{9}$/, whitespace: true },
-    id: { pattern: /^\d+x?$/i, whitespace: true },
+    email: { type: 'email' },
+    phone: { pattern: /^1[3456789]\d{9}$/ },
+    id: { pattern: /^\d+x?$/i },
   };
   const typeRules = Object.keys(ruleMap);
   const numRules = ['max', 'min'];
