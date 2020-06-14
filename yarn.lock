@@ -12136,9 +12136,9 @@ react-docgen-external-proptypes-handler@^1.0.3:
   integrity sha512-jWFA7NCdSnNs9Yr7xAhcUJEwH7qhIKxsyXF5yzzriFiBBfGIlkdzslGWRW4GFD5B8Fu24MTDM1G5q8M3L8+Qdw==
 
 react-docgen-typescript@^1.12.5:
-  version "1.17.0"
-  resolved "https://registry.yarnpkg.com/react-docgen-typescript/-/react-docgen-typescript-1.17.0.tgz#c3d9d12b83fb7b6cd295ea95d9592c17a8d69d68"
-  integrity sha512-9/HKEoVFRfhQgvxMDylmmgU8ouImt2LfI5eS9ZbSIlCPk1IZTetYY+nWli4lPw2mH2Two/iRiKwlydyx6FafgQ==
+  version "1.17.1"
+  resolved "https://registry.yarnpkg.com/react-docgen-typescript/-/react-docgen-typescript-1.17.1.tgz#6df6a5bf9b340e45ed3f1590515013ba71d3078b"
+  integrity sha512-JahR6AvNOQ2+HC+jIzMuFw6VctUnComz84W5AlRVF53wOq2yRR0xosQ3NShjU7mC27McgfzoFKKzL5UBN86FXw==
 
 react-docgen@^4.1.1:
   version "4.1.1"

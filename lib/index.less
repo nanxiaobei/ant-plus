@@ -38,6 +38,9 @@
     left: @input-padding-horizontal-lg - 4px + 1px;
     top: @input-height-lg / 2;
   }
+  .ant-input:not(textarea) + .floating-label {
+    top: 50%;
+  }
   .floating-label {
     position: absolute;
     left: @input-padding-horizontal-base - 4px + 1px;
