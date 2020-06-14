@@ -2,10 +2,10 @@
 
 // input
 .ant-form-item-has-error .ant-plus-input-wrapper {
-  .ant-plus-input + label {
+  .floating-label {
     color: @error-color !important;
   }
-  &.has-count .ant-plus-input {
+  &.has-count .ant-input {
     ~ .count {
       color: @error-color;
     }
@@ -21,33 +21,31 @@
 }
 .ant-plus-input-wrapper {
   position: relative;
-  // no focus, no text, normal|hover
-  .ant-plus-input:not(:focus)[value=''] + label {
-    top: 50%;
-    transform: translateY(-50%);
-    color: @text-color-secondary;
-  }
-  // no focus, has text, normal
-  .ant-plus-input:not(:focus):not([value='']) + label {
+  &.is-floating .floating-label,
+  .ant-input:focus + .floating-label {
     top: 0;
     transform: scale(0.8) translate(1px, -55%);
-    color: @text-color-secondary;
   }
-  // no focus, has text, hover
-  .ant-plus-input:not(:focus):not([value='']):hover + label {
+  &.is-floating .ant-input:hover + .floating-label,
+  .ant-input:focus + .floating-label {
     color: @primary-color;
   }
-  // focus
-  .ant-plus-input:focus + label {
-    top: 0;
-    transform: scale(0.8) translate(1px, -55%);
-    color: @primary-color;
+  .ant-input-sm + .floating-label {
+    left: @input-padding-horizontal-sm - 4px + 1px;
+    top: @input-height-sm / 2;
   }
-  .ant-plus-input + label {
+  .ant-input-lg + .floating-label {
+    left: @input-padding-horizontal-lg - 4px + 1px;
+    top: @input-height-lg / 2;
+  }
+  .floating-label {
     position: absolute;
-    left: 8px;
+    left: @input-padding-horizontal-base - 4px + 1px;
+    top: @input-height-base / 2;
+    transform: translateY(-50%);
     padding-left: 4px;
     padding-right: 4px;
+    color: @text-color-secondary;
     font-size: @font-size-base;
     line-height: 1;
     background: #fff;
@@ -66,7 +64,7 @@
         color: @error-color;
       }
     }
-    .ant-plus-input:not(textarea) {
+    .ant-input:not(textarea) {
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
       &.ant-input-group-wrapper {
@@ -88,7 +86,7 @@
         transition: 0.3s;
       }
     }
-    textarea.ant-plus-input ~ .count {
+    textarea.ant-input ~ .count {
       position: absolute;
       right: 1px;
       bottom: 1px;

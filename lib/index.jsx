@@ -23,7 +23,7 @@ const hasItem = (arr, key) => Array.isArray(arr) && arr.includes(key);
 const hasLength = (arr) => Array.isArray(arr) && arr.length > 0;
 const addUniqueClass = (restProps, name) => {
   const { className = '' } = restProps;
-  restProps.className = `${clxPrefix}-${name} ${className}`;
+  restProps.className = `${clxPrefix}-${name} ${className}`.trimEnd();
 };
 
 /**
@@ -322,47 +322,72 @@ const Input = forwardRef((props, ref) => {
 
   addUniqueClass(restProps, 'input');
 
-  // count
   const hasCount = typeof max === 'number' && disabled !== true;
+  const hasFloating = typeof floatingLabel === 'string';
+  const isPureInput = !hasCount && !hasFloating;
+
   const [count, setCount] = useState(() => {
-    if (!hasCount) return null;
+    if (isPureInput) return null;
     const { defaultValue, value } = restProps;
     if (typeof value === 'string') return value.length;
     if (typeof defaultValue === 'string') return defaultValue.length;
     return 0;
   });
 
-  // floatingLabel
-  if (floatingLabel) restProps.id = id || floatingLabel;
-
-  // shared
-  const renderInput = () =>
-    textarea !== true ? (
-      <Ant.Input placeholder={tip} autoComplete={auto} {...restProps} ref={ref} />
-    ) : (
-      <Ant.Input.TextArea placeholder={tip} autoSize={{ minRows: rows }} {...restProps} ref={ref} />
+  const renderInput = (extraProps) => {
+    if (textarea !== true) {
+      return (
+        <Ant.Input placeholder={tip} autoComplete={auto} {...restProps} {...extraProps} ref={ref} />
+      );
+    }
+    return (
+      <Ant.Input.TextArea
+        placeholder={tip}
+        autoSize={{ minRows: rows }}
+        {...restProps}
+        {...extraProps}
+        ref={ref}
+      />
     );
+  };
 
-  if (!hasCount && !floatingLabel) return renderInput();
+  if (isPureInput) return renderInput();
 
-  if (hasCount) {
-    const { onChange } = restProps;
-    restProps.onChange = (event) => {
-      const { value } = event.target;
-      if (typeof value === 'string') setCount(value.length);
+  let wrapperClass = `${clxPrefix}-input-wrapper`;
+  const extraProps = {
+    onChange: (event) => {
+      setCount(event.target.value.length);
+      const { onChange } = restProps;
       if (typeof onChange === 'function') return onChange(event);
-    };
+    },
+  };
+
+  let countNode;
+  if (hasCount) {
+    wrapperClass += ' has-count';
+    countNode = (
+      <span className={`count ${count > max ? 'red' : ''}`.trimEnd()}>
+        {count} | {max}
+      </span>
+    );
+  }
+
+  let floatingNode;
+  if (hasFloating) {
+    if (count > 0) wrapperClass += ' is-floating';
+    extraProps.id = id || floatingLabel;
+    floatingNode = (
+      <label className="floating-label" htmlFor={extraProps.id}>
+        {floatingLabel}
+      </label>
+    );
   }
 
   return (
-    <div className={`${clxPrefix}-input-wrapper ${hasCount ? 'has-count' : ''}`}>
-      {renderInput()}
-      {floatingLabel && <label htmlFor={restProps.id}>{floatingLabel}</label>}
-      {hasCount && (
-        <span className={`count ${count <= max ? '' : 'red'}`}>
-          {count} | {max}
-        </span>
-      )}
+    <div className={wrapperClass}>
+      {renderInput(extraProps)}
+      {floatingNode}
+      {countNode}
     </div>
   );
 });
