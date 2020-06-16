@@ -191,26 +191,30 @@ const Form = forwardRef((props, ref) => {
   /**
    * 生成校验信息
    */
-  const getRules = (rules, label = '') => {
-    if (!Array.isArray(rules)) return rules;
-
-    return rules.map((rule) => {
+  const getRules = (rules, label = '', hasPhone) =>
+    rules.map((rule) => {
       if (typeof rule !== 'string') return rule;
+
+      let ruleObj;
 
       // e.g. 'max=10'
       if (rule.includes('=')) {
         const [key, val] = rule.split('=');
         const getRule = settings.ruleNumMap[key];
-        if (getRule) return getRule(val);
+        if (getRule) ruleObj = getRule(val);
+      } else {
+        // e.g. 'required'
+        const getRule = settings.ruleTypeMap[rule];
+        if (getRule) ruleObj = getRule(label);
       }
 
-      // e.g. 'required'
-      const getRule = settings.ruleTypeMap[rule];
-      if (getRule) return getRule(label);
+      if (ruleObj) {
+        if (hasPhone && !ruleObj.validateTrigger) ruleObj.validateTrigger = 'onChange';
+        return ruleObj;
+      }
 
       return rule;
     });
-  };
 
   /**
    * 核心渲染工厂
@@ -247,7 +251,11 @@ const Form = forwardRef((props, ref) => {
      */
     const { hide, rules, ...mixedProps } = restNodeProps;
     if (hide === true) mixedProps.style = { display: 'none' };
-    mixedProps.rules = getRules(rules, label);
+    if (Array.isArray(rules)) {
+      const hasPhone = rules.includes('phone');
+      mixedProps.rules = getRules(rules, label, hasPhone);
+      if (hasPhone) mixedProps.validateTrigger = ['onChange', 'onBlur'];
+    }
     const mixedLayout = isOuter && !label && offsetLayout;
 
     // render props
