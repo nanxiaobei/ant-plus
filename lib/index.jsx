@@ -72,7 +72,7 @@ const getSettings = (customConfig) => {
     number: { pattern: /^\d+$/ },
     array: { type: 'array' },
     email: { type: 'email' },
-    phone: { pattern: /^1[3456789]\d{9}$/ },
+    phone: { pattern: /^1[3456789]\d{9}$/, validateTrigger: 'onBlur' },
     id: { pattern: /^\d+x?$/i },
   };
   const typeRules = Object.keys(ruleMap);
@@ -245,10 +245,9 @@ const Form = forwardRef((props, ref) => {
     /**
      * Ant Plus Form.Item
      */
-    const { rules, validateTrigger: rawVt, hide, ...restMixedProps } = restNodeProps;
-    if (hide === true) restMixedProps.style = { display: 'none' };
-    const validateTrigger = rawVt || (hasItem(rules, 'phone') ? 'onBlur' : 'onChange');
-    const mixedProps = { ...restMixedProps, rules: getRules(rules, label), validateTrigger };
+    const { hide, rules, ...mixedProps } = restNodeProps;
+    if (hide === true) mixedProps.style = { display: 'none' };
+    mixedProps.rules = getRules(rules, label);
     const mixedLayout = isOuter && !label && offsetLayout;
 
     // render props
