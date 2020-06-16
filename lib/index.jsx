@@ -247,7 +247,7 @@ const Form = forwardRef((props, ref) => {
      */
     const { rules, validateTrigger: rawVt, hide, ...restMixedProps } = restNodeProps;
     if (hide === true) restMixedProps.style = { display: 'none' };
-    const validateTrigger = rawVt || hasItem(rules, 'phone') ? 'onBlur' : 'onChange';
+    const validateTrigger = rawVt || (hasItem(rules, 'phone') ? 'onBlur' : 'onChange');
     const mixedProps = { ...restMixedProps, rules: getRules(rules, label), validateTrigger };
     const mixedLayout = isOuter && !label && offsetLayout;
 
