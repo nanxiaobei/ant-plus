@@ -15,10 +15,9 @@ Ant Plus 是 Ant Design 表单系统的简化版，以最符合 html 直觉的�
 
 Ant Plus 去除了对 `Form.Item` 的依赖，同时提供了全新的 `rules` 与组件 Props，可大幅简化开发，消灭繁琐样板代码，轻松构建起简洁清晰、利于维护的表单结构。
 
-## 导航
+## 文档
 
-- [Ant Plus 文档](https://nanxiaobei.github.io/ant-plus) 介绍了使用方式及组件 API。
-- [在线对比示例](https://codesandbox.io/s/antx-mqxxzrj87j?fontsize=14) 包含 Ant Design 官网所有 Form 示例的 Ant Plus 对比实现。
+[Ant Plus 文档](https://nanxiaobei.github.io/ant-plus) 介绍了使用方式及组件 API。
 
 ## 特点
 
@@ -47,28 +46,36 @@ npm install antx
 ## 使用
 
 ```jsx
-import { Form, Input, Button } from 'antx';
+import React from 'react';
+import { Form, Input } from 'antx';
+import { Button } from 'antd';
 
-const Demo = () => {
+const App = () => {
   const onFinish = (values) => {
     console.log(values);
   };
+
   return (
     <Form cols={[8, 16]} data={{ name: 'Emily' }} onFinish={onFinish}>
       <Input label="用户名" name="name" rules={['required', 'max=10']} tip="full" />
-      <Button label="" htmlType="submit">
+      <Button label="" type="primary" htmlType="submit">
         提交
       </Button>
     </Form>
   );
 };
 
-export default Demo;
+export default App;
 ```
 
 `Form.Item` Props 中的项，均可直接用于表单控件的 Props，如 `label`、`name`、`rules` 等。
 
 此外，Ant Plus 还对 `rules` 进行了简化，可直接使用字符串短语来设置。
+
+## 示例
+
+- [使用示例](https://codesandbox.io/s/antx-v4hqw) 查看上文代码的在线版本。
+- [对比示例](https://codesandbox.io/s/antd-to-antx-mqxxzrj87j) 包含 Ant Design 官网所有 Form 示例的 Ant Plus 对比实现。
 
 ## 协议
 
