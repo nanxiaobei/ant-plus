@@ -17,7 +17,7 @@ Ant Plus 去除了对 `Form.Item` 的依赖，同时提供了全新的 `rules` �
 
 ## 文档
 
-[Ant Plus 文档](https://nanxiaobei.github.io/ant-plus) 介绍了使用方式及组件 API。
+[https://nanxiaobei.github.io/ant-plus](https://nanxiaobei.github.io/ant-plus) 文档中介绍了使用方式及组件 API。
 
 ## 特点
 
