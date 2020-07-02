@@ -67,14 +67,14 @@ Ant Plus 最核心的使用方式，便是可以在表单控件 Props 中，直�
 
 ### 其它可传入 Props
 
-| 属性      | 说明                                                                                   |
-| --------- | -------------------------------------------------------------------------------------- |
-| className | 将传给 `Form.Item`，如 `<Input className="form-item-class">`                           |
-| style     | 将传给 `Form.Item`，如 `<Input style="form-item-style">`                               |  |
-| ownClass  | 将传给自身 `className`，如 `<Input ownClass="input-class">`                            |
-| ownStyle  | 将传给自身 `style`，如 `<Input ownClass="input-style">`                                |
-| ownName   | 自身存在 `name` 属性时，如 `Upload`，则为 `<Upload name="field-name" ownName="files">` |
-| hide      | 是否隐藏表单域                                                                         |
+| 属性      | 说明                                                                                            |
+| --------- | ----------------------------------------------------------------------------------------------- |
+| className | `Form.Item` 的 `className` 属性                                                                 |
+| style     | `Form.Item` 的 `style` 属性                                                                     |  |
+| ownClass  | `Form.Item` 内组件自身的 `className` 属性                                                       |
+| ownStyle  | `Form.Item` 内组件自身的 `style` 属性                                                           |
+| ownName   | 组件本身存在的 `name` 属性，为防止冲突，如 `Upload`，则为 `<Upload name="key" ownName="files">` |
+| hide      | 是否隐藏表单域                                                                                  |
 
 ## 简化版 rules
 
