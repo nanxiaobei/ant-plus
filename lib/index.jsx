@@ -1,4 +1,12 @@
-import React, { Children, forwardRef, useRef, useState } from 'react';
+import React, {
+  Children,
+  forwardRef,
+  useRef,
+  useState,
+  useCallback,
+  useMemo,
+  useLayoutEffect,
+} from 'react';
 import t from 'prop-types';
 import * as Ant from 'antd';
 import './index.less';
@@ -7,7 +15,6 @@ import './index.less';
  * Namespace
  */
 const namePrefix = 'AntPlus';
-const clxPrefix = 'ant-plus';
 const fullName = (name) => `${namePrefix}.${name}`;
 
 /**
@@ -21,10 +28,6 @@ const subs = formSubs.map(fullName);
  */
 const hasItem = (arr, key) => Array.isArray(arr) && arr.includes(key);
 const hasLength = (arr) => Array.isArray(arr) && arr.length > 0;
-const addUniqueClass = (restProps, name) => {
-  const { className = '' } = restProps;
-  restProps.className = `${clxPrefix}-${name} ${className}`.trimEnd();
-};
 
 /**
  * Settings
@@ -153,155 +156,171 @@ const splitProps = (mixedProps) => {
 const Form = forwardRef((props, ref) => {
   const { data, config, cols, disabledNames, children: formChildren, ...restFormProps } = props;
 
-  const settings = useRef(getSettings(config)).current;
-  let layout;
-  let offsetLayout;
-  if (cols && cols.length === 2) {
-    const [leftSpan, rightSpan] = cols;
-    layout = { labelCol: { span: leftSpan }, wrapperCol: { span: rightSpan } };
-    offsetLayout = { wrapperCol: { offset: leftSpan, span: rightSpan } };
-  }
+  const settings = useMemo(() => getSettings(config), [config]);
+  const ui = useMemo(() => {
+    let layout;
+    let offsetLayout;
+    if (cols && cols.length === 2) {
+      const [leftSpan, rightSpan] = cols;
+      layout = { labelCol: { span: leftSpan }, wrapperCol: { span: rightSpan } };
+      offsetLayout = { wrapperCol: { offset: leftSpan, span: rightSpan } };
+    }
+    return { layout, offsetLayout };
+  }, [cols]);
 
   /**
    * 转换 `tip`，包装 addon
    */
-  const setTipAddon = (isValid, displayName, nodeProps, label = '') => {
-    if (!isValid) return;
-    const { shortTip, addonList } = settings.roleMap[displayName];
+  const setTipAddon = useCallback(
+    (isValid, displayName, nodeProps, label = '') => {
+      if (!isValid) return;
+      const { shortTip, addonList } = settings.roleMap[displayName];
 
-    // `tip`
-    if (shortTip) {
-      const { tip } = nodeProps;
-      if (tip === 'short') {
-        nodeProps.tip = shortTip;
-      } else if (tip === 'full') {
-        nodeProps.tip = `${shortTip}${label}`;
+      // `tip`
+      if (shortTip) {
+        const { tip } = nodeProps;
+        if (tip === 'short') {
+          nodeProps.tip = shortTip;
+        } else if (tip === 'full') {
+          nodeProps.tip = `${shortTip}${label}`;
+        }
       }
-    }
 
-    // addon
-    if (addonList) {
-      addonList.forEach((key) => {
-        const val = nodeProps[key];
-        if (val !== undefined) nodeProps[key] = launch(val);
-      });
-    }
-  };
+      // addon
+      if (addonList) {
+        addonList.forEach((key) => {
+          const val = nodeProps[key];
+          if (val !== undefined) nodeProps[key] = launch(val);
+        });
+      }
+    },
+    [launch, settings.roleMap]
+  );
 
   /**
    * 生成校验信息
    */
-  const getRules = (rules, label = '', hasPhone) =>
-    rules.map((rule) => {
-      if (typeof rule !== 'string') return rule;
+  const getRules = useCallback(
+    (rules, label = '', hasPhone) =>
+      rules.map((rule) => {
+        if (typeof rule !== 'string') return rule;
 
-      let ruleObj;
+        let ruleObj;
 
-      // e.g. 'max=10'
-      if (rule.includes('=')) {
-        const [key, val] = rule.split('=');
-        const getRule = settings.ruleNumMap[key];
-        if (getRule) ruleObj = getRule(val);
-      } else {
-        // e.g. 'required'
-        const getRule = settings.ruleTypeMap[rule];
-        if (getRule) ruleObj = getRule(label);
-      }
+        // e.g. 'max=10'
+        if (rule.includes('=')) {
+          const [key, val] = rule.split('=');
+          const getRule = settings.ruleNumMap[key];
+          if (getRule) ruleObj = getRule(val);
+        } else {
+          // e.g. 'required'
+          const getRule = settings.ruleTypeMap[rule];
+          if (getRule) ruleObj = getRule(label);
+        }
 
-      if (ruleObj) {
-        if (hasPhone && !ruleObj.validateTrigger) ruleObj.validateTrigger = 'onChange';
-        return ruleObj;
-      }
+        if (ruleObj) {
+          if (hasPhone && !ruleObj.validateTrigger) ruleObj.validateTrigger = 'onChange';
+          return ruleObj;
+        }
 
-      return rule;
-    });
+        return rule;
+      }),
+    [settings.ruleNumMap, settings.ruleTypeMap]
+  );
 
   /**
    * 核心渲染工厂
    */
-  const factory = (node, isOuter) => {
-    if (typeof node !== 'object' || node === null || !node.props) return node;
+  const factory = useCallback(
+    (node, isOuter) => {
+      if (typeof node !== 'object' || node === null || !node.props) return node;
 
-    const { children, ...restNodeProps } = node.props;
-    const { label, name } = restNodeProps;
-    const hasName = name !== undefined;
+      const { children, ...restNodeProps } = node.props;
+      const { label, name } = restNodeProps;
+      const hasName = name !== undefined;
 
-    const displayName = node.type?.displayName;
-    const isValid = typeof displayName === 'string' && displayName.includes(`${namePrefix}.`);
+      const displayName = node.type?.displayName;
+      const isValid = typeof displayName === 'string' && displayName.includes(`${namePrefix}.`);
 
-    /**
-     * normal node
-     */
-    if (label === undefined && !hasName) {
-      setTipAddon(isValid, displayName, restNodeProps);
-      return { ...node, props: { ...restNodeProps, children: launch(children) } };
-    }
+      /**
+       * normal node
+       */
+      if (label === undefined && !hasName) {
+        setTipAddon(isValid, displayName, restNodeProps);
+        return { ...node, props: { ...restNodeProps, children: launch(children) } };
+      }
 
-    /**
-     * original <Form.XX> component
-     */
-    if (isValid && subs.includes(displayName)) {
-      const isRenderProps = typeof children === 'function';
-      const newChildren = isRenderProps ? (...args) => launch(children(...args)) : launch(children);
-      return { ...node, props: { ...restNodeProps, children: newChildren } };
-    }
+      /**
+       * original <Form.XX> component
+       */
+      if (isValid && subs.includes(displayName)) {
+        const isRenderProps = typeof children === 'function';
+        const newChildren = isRenderProps
+          ? (...args) => launch(children(...args))
+          : launch(children);
+        return { ...node, props: { ...restNodeProps, children: newChildren } };
+      }
 
-    /**
-     * Ant Plus Form.Item
-     */
-    const { hide, rules, ...mixedProps } = restNodeProps;
-    if (hide === true) mixedProps.style = { display: 'none' };
-    if (Array.isArray(rules)) {
-      const hasPhone = rules.includes('phone');
-      mixedProps.rules = getRules(rules, label, hasPhone);
-      if (hasPhone) mixedProps.validateTrigger = ['onChange', 'onBlur'];
-    }
-    const mixedLayout = isOuter && !label && offsetLayout;
+      /**
+       * Ant Plus Form.Item
+       */
+      const { hide, rules, ...mixedProps } = restNodeProps;
+      if (hide === true) mixedProps.style = { display: 'none' };
+      if (Array.isArray(rules)) {
+        const hasPhone = rules.includes('phone');
+        mixedProps.rules = getRules(rules, label, hasPhone);
+        if (hasPhone) mixedProps.validateTrigger = ['onChange', 'onBlur'];
+      }
+      const mixedLayout = isOuter && !label && ui.offsetLayout;
 
-    // render props
-    if (typeof children === 'function') {
-      addUniqueClass(mixedProps, 'form-item');
-      const renderNode = (...args) => launch(children(...args));
+      // render props
+      if (typeof children === 'function') {
+        const renderNode = (...args) => launch(children(...args));
+        return (
+          <Ant.Form.Item {...mixedLayout} {...mixedProps}>
+            {renderNode}
+          </Ant.Form.Item>
+        );
+      }
+
+      // object
+      const { itemProps, ownProps } = splitProps(mixedProps);
+
+      setTipAddon(isValid, displayName, ownProps, label);
+      const disabled = disabledNames === 'all' || (hasName && hasItem(disabledNames, name));
+      if (disabled) ownProps.disabled = true;
+      const itemLayout = isOuter && !label && ui.offsetLayout;
+
+      const ownNode = { ...node, props: { ...ownProps, children: launch(children) } };
       return (
-        <Ant.Form.Item {...mixedLayout} {...mixedProps}>
-          {renderNode}
+        <Ant.Form.Item {...itemLayout} {...itemProps}>
+          {ownNode}
         </Ant.Form.Item>
       );
-    }
-
-    // object
-    const { itemProps, ownProps } = splitProps(mixedProps);
-    addUniqueClass(itemProps, `form-item ${hasName ? `form-item-${name}` : ''}`);
-
-    setTipAddon(isValid, displayName, ownProps, label);
-    const disabled = disabledNames === 'all' || (hasName && hasItem(disabledNames, name));
-    if (disabled) ownProps.disabled = true;
-    const itemLayout = isOuter && !label && offsetLayout;
-
-    const ownNode = { ...node, props: { ...ownProps, children: launch(children) } };
-    return (
-      <Ant.Form.Item {...itemLayout} {...itemProps}>
-        {ownNode}
-      </Ant.Form.Item>
-    );
-  };
+    },
+    [disabledNames, getRules, launch, setTipAddon, ui.offsetLayout]
+  );
 
   /**
    * 渲染工厂入口
    */
-  const launch = (node, isOuter) => {
-    if (typeof node !== 'object' || node === null) return node;
-    if (hasLength(node)) return Children.map(node, (one) => factory(one, isOuter));
-    return factory(node, isOuter);
-  };
+  const launch = useMemo(() => {
+    const fn = (node, isOuter) => {
+      if (typeof node !== 'object' || node === null) return node;
+      if (hasLength(node)) return Children.map(node, (one) => factory(one, isOuter));
+      return factory(node, isOuter);
+    };
+
+    Form.item = fn;
+
+    return fn;
+  }, [factory]);
 
   /**
    * Form
    */
-  addUniqueClass(restFormProps, 'form');
-
   return (
-    <Ant.Form initialValues={data} {...layout} {...restFormProps} ref={ref}>
+    <Ant.Form initialValues={data} {...ui.layout} {...restFormProps} ref={ref}>
       {launch(formChildren, true)}
     </Ant.Form>
   );
@@ -328,11 +347,9 @@ const Input = forwardRef((props, ref) => {
   const { max, tip, auto, textarea, rows, id, floatingLabel, ...restProps } = props;
   const { disabled } = restProps;
 
-  addUniqueClass(restProps, 'input');
-
-  const hasCount = typeof max === 'number' && disabled !== true;
-  const hasFloating = typeof floatingLabel === 'string';
-  const isPureInput = !hasCount && !hasFloating;
+  const hasCount = useMemo(() => typeof max === 'number' && disabled !== true, [disabled, max]);
+  const hasFloating = useMemo(() => typeof floatingLabel === 'string', [floatingLabel]);
+  const isPureInput = useMemo(() => !hasCount && !hasFloating, [hasCount, hasFloating]);
 
   const [count, setCount] = useState(() => {
     if (isPureInput) return null;
@@ -342,57 +359,72 @@ const Input = forwardRef((props, ref) => {
     return 0;
   });
 
-  const renderInput = (extraProps) => {
-    if (textarea !== true) {
+  const renderInput = useCallback(
+    (extraProps) => {
+      if (textarea !== true) {
+        return (
+          <Ant.Input
+            placeholder={tip}
+            autoComplete={auto}
+            {...restProps}
+            {...extraProps}
+            ref={ref}
+          />
+        );
+      }
       return (
-        <Ant.Input placeholder={tip} autoComplete={auto} {...restProps} {...extraProps} ref={ref} />
+        <Ant.Input.TextArea
+          placeholder={tip}
+          autoSize={{ minRows: rows }}
+          {...restProps}
+          {...extraProps}
+          ref={ref}
+        />
       );
-    }
-    return (
-      <Ant.Input.TextArea
-        placeholder={tip}
-        autoSize={{ minRows: rows }}
-        {...restProps}
-        {...extraProps}
-        ref={ref}
-      />
-    );
-  };
-
-  if (isPureInput) return renderInput();
-
-  let wrapperClass = `${clxPrefix}-input-wrapper`;
-  const extraProps = {
-    onChange: (event) => {
-      setCount(event.target.value.length);
-      const { onChange } = restProps;
-      if (typeof onChange === 'function') return onChange(event);
     },
-  };
+    [auto, ref, restProps, rows, textarea, tip]
+  );
 
-  let countNode;
-  if (hasCount) {
-    wrapperClass += ' has-count';
-    countNode = (
+  const wrapperClass = useRef('ant-plus-input-wrapper');
+
+  const extraProps = useMemo(() => {
+    if (isPureInput) return null;
+    return {
+      onChange: (event) => {
+        setCount(event.target.value.length);
+        const { onChange } = restProps;
+        if (typeof onChange === 'function') return onChange(event);
+      },
+    };
+  }, [isPureInput, restProps]);
+
+  const countNode = useMemo(() => {
+    if (isPureInput || !hasCount) return null;
+
+    wrapperClass.current += ' has-count';
+    return (
       <span className={`count ${count > max ? 'red' : ''}`.trimEnd()}>
         {count} | {max}
       </span>
     );
-  }
+  }, [count, hasCount, isPureInput, max]);
 
-  let floatingNode;
-  if (hasFloating) {
-    if (count > 0) wrapperClass += ' is-floating';
+  const floatingNode = useMemo(() => {
+    if (isPureInput || !hasFloating) return null;
+
+    if (count > 0) wrapperClass.current += ' is-floating';
     extraProps.id = id || floatingLabel;
-    floatingNode = (
+    return (
       <label className="floating-label" htmlFor={extraProps.id}>
         {floatingLabel}
       </label>
     );
-  }
+  }, [count, extraProps.id, floatingLabel, hasFloating, id, isPureInput]);
+
+  if (isPureInput) return renderInput(null);
 
   return (
-    <div className={wrapperClass}>
+    <div className={wrapperClass.current}>
       {renderInput(extraProps)}
       {floatingNode}
       {countNode}
@@ -427,12 +459,10 @@ Input.defaultProps = {
 const AutoComplete = forwardRef((props, ref) => {
   const { data, tip, search, clear, ...restProps } = props;
 
-  let searchProps;
-  if (search === true) {
-    searchProps = { filterOption: (val, option) => option.value.includes(val) };
-  }
-
-  addUniqueClass(restProps, 'auto-complete');
+  const searchProps = useMemo(() => {
+    if (search !== true) return null;
+    return { filterOption: (val, option) => option.value.includes(val) };
+  }, [search]);
 
   return (
     <Ant.AutoComplete
@@ -471,15 +501,13 @@ const Select = forwardRef((props, ref) => {
   const { data, keys, tip, search, clear, empty, children, ...restProps } = props;
   const [value = 'value', label = 'label'] = keys;
 
-  let searchProps;
-  if (search === true) {
-    searchProps = {
+  const searchProps = useMemo(() => {
+    if (search !== true) return null;
+    return {
       showSearch: true,
       filterOption: (val, option) => option.children.includes(val),
     };
-  }
-
-  addUniqueClass(restProps, 'select');
+  }, [search]);
 
   return (
     <Ant.Select
@@ -528,19 +556,19 @@ Select.defaultProps = {
  */
 const Transfer = forwardRef((props, ref) => {
   const { data, title, search, unit, searchTip, empty, ...restProps } = props;
+  const { targetKeys, value } = restProps;
 
-  let searchProps;
-  if (search === true) {
-    searchProps = {
+  const searchProps = useMemo(() => {
+    if (search !== true) return null;
+    return {
       showSearch: true,
       filterOption: (val, option) => `${option.title}${option.description || ''}`.includes(val),
     };
-  }
+  }, [search]);
 
-  addUniqueClass(restProps, 'transfer');
-
-  const { targetKeys, value } = restProps;
-  restProps.targetKeys = targetKeys || value;
+  restProps.targetKeys = useMemo(() => {
+    return targetKeys || value;
+  }, [targetKeys, value]);
 
   return (
     <Ant.Transfer
@@ -594,7 +622,9 @@ const Cascader = forwardRef((props, ref) => {
   const valPathMap = useRef({});
   const prevLength = useRef(0);
 
-  if (last === true) {
+  useLayoutEffect(() => {
+    if (last !== true) return;
+
     if (prevLength.current !== data.length) {
       prevLength.current = data.length;
 
@@ -618,16 +648,14 @@ const Cascader = forwardRef((props, ref) => {
     if (typeof onChange === 'function') {
       restProps.onChange = (val) => onChange(val[val.length - 1]);
     }
-  }
+  }, [childrenKey, data, last, restProps, valueKey]);
 
-  let searchProps;
-  if (search === true) {
-    searchProps = {
+  const searchProps = useMemo(() => {
+    if (search !== true) return null;
+    return {
       showSearch: { filter: (val, path) => path.some((option) => option[labelKey].includes(val)) },
     };
-  }
-
-  addUniqueClass(restProps, 'cascader');
+  }, [labelKey, search]);
 
   return (
     <Ant.Cascader
@@ -691,33 +719,33 @@ const TreeSelect = forwardRef((props, ref) => {
 
   const treeData = useRef([]);
 
-  if (treeData.current.length !== data.length) {
-    if (valueKey === 'value' && titleKey === 'title' && childrenKey === 'children') {
-      treeData.current = data;
-    } else {
-      const getNewData = (data) => {
-        return data.map((item) => {
-          const { [valueKey]: value, [titleKey]: title, [childrenKey]: children } = item;
-          const newItem = { value, title };
-          if (hasLength(children)) newItem.children = getNewData(children);
-          return newItem;
-        });
-      };
-      treeData.current = getNewData(data);
+  useLayoutEffect(() => {
+    if (treeData.current.length !== data.length) {
+      if (valueKey === 'value' && titleKey === 'title' && childrenKey === 'children') {
+        treeData.current = data;
+      } else {
+        const getNewData = (data) => {
+          return data.map((item) => {
+            const { [valueKey]: value, [titleKey]: title, [childrenKey]: children } = item;
+            const newItem = { value, title };
+            if (hasLength(children)) newItem.children = getNewData(children);
+            return newItem;
+          });
+        };
+        treeData.current = getNewData(data);
+      }
     }
-  }
 
-  if (treeData.length === 0) delete restProps.value;
+    if (treeData.length === 0) delete restProps.value;
+  }, [childrenKey, data, restProps.value, titleKey, valueKey]);
 
-  let searchProps;
-  if (search === true) {
-    searchProps = {
+  const searchProps = useMemo(() => {
+    if (search !== true) return null;
+    return {
       showSearch: true,
       filterTreeNode: (val, node) => new RegExp(val, 'i').test(`${node.value}${node.title}`),
     };
-  }
-
-  addUniqueClass(restProps, 'tree-select');
+  }, [search]);
 
   return (
     <Ant.TreeSelect
@@ -775,14 +803,6 @@ TreeSelect.defaultProps = {
 };
 
 /**
- * Button
- */
-const Button = () => {
-  console.error('Button is removed from antx since 4.2.2, please import it from antd now');
-  return null;
-};
-
-/**
  * sync component keys, add displayName
  */
 const copyOriginalKeys = () => {
@@ -816,4 +836,4 @@ formSubs.forEach((name) => {
 /**
  * exports
  */
-export { Form, Input, AutoComplete, Select, Transfer, Cascader, TreeSelect, Button };
+export { Form, Input, AutoComplete, Select, Transfer, Cascader, TreeSelect };
