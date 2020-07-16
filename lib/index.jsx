@@ -345,61 +345,35 @@ Form.defaultProps = {};
  */
 const Input = forwardRef((props, ref) => {
   const { max, tip, auto, textarea, rows, id, floatingLabel, ...restProps } = props;
-  const { disabled } = restProps;
+  const { onChange, disabled } = restProps;
 
-  const hasCount = useMemo(() => typeof max === 'number' && disabled !== true, [disabled, max]);
-  const hasFloating = useMemo(() => typeof floatingLabel === 'string', [floatingLabel]);
-  const isPureInput = useMemo(() => !hasCount && !hasFloating, [hasCount, hasFloating]);
+  const hasCount = useRef(typeof max === 'number' && disabled !== true);
+  const hasFloating = useRef(typeof floatingLabel === 'string');
+  const isPureInput = useRef(!hasCount.current && !hasFloating.current);
+  const floatingId = useRef(null);
 
   const [count, setCount] = useState(() => {
-    if (isPureInput) return null;
+    if (isPureInput.current) return null;
     const { defaultValue, value } = restProps;
     if (typeof value === 'string') return value.length;
     if (typeof defaultValue === 'string') return defaultValue.length;
     return 0;
   });
 
-  const renderInput = useCallback(
-    (extraProps) => {
-      if (textarea !== true) {
-        return (
-          <Ant.Input
-            placeholder={tip}
-            autoComplete={auto}
-            {...restProps}
-            {...extraProps}
-            ref={ref}
-          />
-        );
-      }
-      return (
-        <Ant.Input.TextArea
-          placeholder={tip}
-          autoSize={{ minRows: rows }}
-          {...restProps}
-          {...extraProps}
-          ref={ref}
-        />
-      );
-    },
-    [auto, ref, restProps, rows, textarea, tip]
-  );
-
   const wrapperClass = useRef('ant-plus-input-wrapper');
 
   const extraProps = useMemo(() => {
-    if (isPureInput) return null;
+    if (isPureInput.current) return null;
     return {
       onChange: (event) => {
         setCount(event.target.value.length);
-        const { onChange } = restProps;
         if (typeof onChange === 'function') return onChange(event);
       },
     };
-  }, [isPureInput, restProps]);
+  }, [onChange]);
 
   const countNode = useMemo(() => {
-    if (isPureInput || !hasCount) return null;
+    if (isPureInput.current || !hasCount.current) return null;
 
     wrapperClass.current += ' has-count';
     return (
@@ -407,25 +381,46 @@ const Input = forwardRef((props, ref) => {
         {count} | {max}
       </span>
     );
-  }, [count, hasCount, isPureInput, max]);
+  }, [count, max]);
 
   const floatingNode = useMemo(() => {
-    if (isPureInput || !hasFloating) return null;
+    if (isPureInput.current || !hasFloating.current) return null;
 
     if (count > 0) wrapperClass.current += ' is-floating';
-    extraProps.id = id || floatingLabel;
+    floatingId.current = id || floatingLabel;
     return (
-      <label className="floating-label" htmlFor={extraProps.id}>
+      <label className="floating-label" htmlFor={floatingId.current}>
         {floatingLabel}
       </label>
     );
-  }, [count, extraProps.id, floatingLabel, hasFloating, id, isPureInput]);
+  }, [count, floatingLabel, id]);
 
-  if (isPureInput) return renderInput(null);
+  const inputComponent = useMemo(() => {
+    if (floatingId.current !== null) {
+      extraProps.id = floatingId.current;
+    }
+
+    if (textarea !== true) {
+      return (
+        <Ant.Input placeholder={tip} autoComplete={auto} {...restProps} {...extraProps} ref={ref} />
+      );
+    }
+    return (
+      <Ant.Input.TextArea
+        placeholder={tip}
+        autoSize={{ minRows: rows }}
+        {...restProps}
+        {...extraProps}
+        ref={ref}
+      />
+    );
+  }, [auto, extraProps, ref, restProps, rows, textarea, tip]);
+
+  if (isPureInput.current) return inputComponent;
 
   return (
     <div className={wrapperClass.current}>
-      {renderInput(extraProps)}
+      {inputComponent}
       {floatingNode}
       {countNode}
     </div>
