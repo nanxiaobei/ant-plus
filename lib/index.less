@@ -1,20 +1,23 @@
 @import '~antd/es/style/themes/default';
 
 // input
-.ant-form-item-has-error .ant-plus-input-wrapper {
-  .floating-label {
-    color: @error-color !important;
-  }
-  &.has-count .ant-input {
-    ~ .count {
-      color: @error-color;
+.ant-form-item-with-help,
+.ant-form-item-has-error {
+  .ant-plus-input-wrapper {
+    .floating-label {
+      color: @error-color !important;
     }
-    &:not(textarea) {
+    &.has-count .ant-input {
       ~ .count {
-        border-color: @error-color;
+        color: @error-color;
       }
-      &.ant-input-group-wrapper ~ .count {
-        background: transparent;
+      &:not(textarea) {
+        ~ .count {
+          border-color: @error-color;
+        }
+        &.ant-input-group-wrapper ~ .count {
+          background: transparent;
+        }
       }
     }
   }
