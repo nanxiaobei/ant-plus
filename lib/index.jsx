@@ -347,62 +347,58 @@ const Input = forwardRef((props, ref) => {
   const { max, tip, auto, textarea, rows, id, floatingLabel, ...restProps } = props;
   const { onChange, disabled } = restProps;
 
-  const hasCount = useRef(typeof max === 'number' && disabled !== true);
-  const hasFloating = useRef(typeof floatingLabel === 'string');
-  const isPureInput = useRef(!hasCount.current && !hasFloating.current);
-  const floatingId = useRef(null);
+  const hasCount = useMemo(() => typeof max === 'number' && disabled !== true, [disabled, max]);
+  const hasFloating = useMemo(() => typeof floatingLabel === 'string', [floatingLabel]);
+  const floatingFor = useMemo(() => id || floatingLabel, [floatingLabel, id]);
 
   const [count, setCount] = useState(() => {
-    if (isPureInput.current) return null;
+    if (!hasCount && !hasFloating) return null;
     const { defaultValue, value } = restProps;
     if (typeof value === 'string') return value.length;
     if (typeof defaultValue === 'string') return defaultValue.length;
     return 0;
   });
 
-  const wrapperClass = useRef('ant-plus-input-wrapper');
+  const countNode = useMemo(() => {
+    if (!hasCount) return null;
+    return (
+      <span className={`count ${count > max ? 'red' : ''}`.trimEnd()}>
+        {count} | {max}
+      </span>
+    );
+  }, [count, hasCount, max]);
 
-  const extraProps = useMemo(() => {
-    if (isPureInput.current) return null;
+  const floatingNode = useMemo(() => {
+    if (!hasFloating) return null;
+    return (
+      <label className="floating-label" htmlFor={floatingFor}>
+        {floatingLabel}
+      </label>
+    );
+  }, [floatingFor, floatingLabel, hasFloating]);
+
+  const onChangeProps = useMemo(() => {
+    if (!hasCount && !hasFloating) return null;
     return {
       onChange: (event) => {
         setCount(event.target.value.length);
         if (typeof onChange === 'function') return onChange(event);
       },
     };
-  }, [onChange]);
-
-  const countNode = useMemo(() => {
-    if (isPureInput.current || !hasCount.current) return null;
-
-    wrapperClass.current += ' has-count';
-    return (
-      <span className={`count ${count > max ? 'red' : ''}`.trimEnd()}>
-        {count} | {max}
-      </span>
-    );
-  }, [count, max]);
-
-  const floatingNode = useMemo(() => {
-    if (isPureInput.current || !hasFloating.current) return null;
-
-    if (count > 0) wrapperClass.current += ' is-floating';
-    floatingId.current = id || floatingLabel;
-    return (
-      <label className="floating-label" htmlFor={floatingId.current}>
-        {floatingLabel}
-      </label>
-    );
-  }, [count, floatingLabel, id]);
+  }, [hasCount, hasFloating, onChange]);
 
   const inputComponent = useMemo(() => {
-    if (floatingId.current !== null) {
-      extraProps.id = floatingId.current;
-    }
+    if (hasFloating) onChangeProps.id = floatingFor;
 
     if (textarea !== true) {
       return (
-        <Ant.Input placeholder={tip} autoComplete={auto} {...restProps} {...extraProps} ref={ref} />
+        <Ant.Input
+          placeholder={tip}
+          autoComplete={auto}
+          {...restProps}
+          {...onChangeProps}
+          ref={ref}
+        />
       );
     }
     return (
@@ -410,16 +406,23 @@ const Input = forwardRef((props, ref) => {
         placeholder={tip}
         autoSize={{ minRows: rows }}
         {...restProps}
-        {...extraProps}
+        {...onChangeProps}
         ref={ref}
       />
     );
-  }, [auto, extraProps, ref, restProps, rows, textarea, tip]);
+  }, [auto, onChangeProps, floatingFor, hasFloating, ref, restProps, rows, textarea, tip]);
 
-  if (isPureInput.current) return inputComponent;
+  const wrapperClass = useMemo(() => {
+    let clx = 'ant-plus-input-wrapper';
+    if (hasCount) clx += ' has-count';
+    if (hasFloating && count > 0) clx += ' is-floating';
+    return clx;
+  }, [count, hasCount, hasFloating]);
+
+  if (!hasCount && !hasFloating) return inputComponent;
 
   return (
-    <div className={wrapperClass.current}>
+    <div className={wrapperClass}>
       {inputComponent}
       {floatingNode}
       {countNode}
