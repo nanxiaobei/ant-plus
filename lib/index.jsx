@@ -28,6 +28,7 @@ const subs = formSubs.map(fullName);
  */
 const hasItem = (arr, key) => Array.isArray(arr) && arr.includes(key);
 const hasLength = (arr) => Array.isArray(arr) && arr.length > 0;
+const noop = () => {};
 
 /**
  * Settings
@@ -168,6 +169,8 @@ const Form = forwardRef((props, ref) => {
     return { layout, offsetLayout };
   }, [cols]);
 
+  let launch = noop;
+
   /**
    * 转换 `tip`，包装 addon
    */
@@ -304,7 +307,7 @@ const Form = forwardRef((props, ref) => {
   /**
    * 渲染工厂入口
    */
-  const launch = useMemo(() => {
+  launch = useMemo(() => {
     const fn = (node, isOuter) => {
       if (typeof node !== 'object' || node === null) return node;
       if (hasLength(node)) return Children.map(node, (one) => factory(one, isOuter));
