@@ -98,30 +98,31 @@ const getSettings = (customConfig) => {
  */
 const itemPropList = [
   'colon',
+  'dependencies',
+  'extra',
+  'getValueFromEvent',
+  'getValueProps',
+  'hasFeedback',
+  'help',
   'htmlFor',
+  'initialValue',
   'noStyle',
   'label',
   'labelAlign',
   'labelCol',
-  'shouldUpdate',
-  'wrapperCol',
-
-  'dependencies',
-  'extra',
-  'getValueFromEvent',
-  'hasFeedback',
-  'help',
   'name',
+  'preserve',
   'normalize',
   'required',
   'rules',
+  'shouldUpdate',
   'trigger',
   'validateFirst',
   'validateStatus',
   'validateTrigger',
   'valuePropName',
-  'getValueProps', // rc-field-form
-  'initialValue', // rc-field-form
+  'wrapperCol',
+  'hidden',
 
   'className',
   'style',
@@ -238,7 +239,9 @@ const Form = forwardRef((props, ref) => {
     (node, isOuter) => {
       if (typeof node !== 'object' || node === null || !node.props) return node;
 
-      const { children, ...restNodeProps } = node.props;
+      const { deep, children, ...restNodeProps } = node.props;
+      const type = deep === true ? (...args) => launch(node.type(...args)) : node.type;
+
       const { label, name } = restNodeProps;
       const hasName = name !== undefined;
 
@@ -250,25 +253,22 @@ const Form = forwardRef((props, ref) => {
        */
       if (label === undefined && !hasName) {
         setTipAddon(isValid, displayName, restNodeProps);
-        return { ...node, props: { ...restNodeProps, children: launch(children) } };
+        return { ...node, type, props: { ...restNodeProps, children: launch(children) } };
       }
 
       /**
        * original <Form.XX> component
        */
       if (isValid && subs.includes(displayName)) {
-        const isRenderProps = typeof children === 'function';
-        const newChildren = isRenderProps
-          ? (...args) => launch(children(...args))
-          : launch(children);
-        return { ...node, props: { ...restNodeProps, children: newChildren } };
+        const renderProps = typeof children === 'function';
+        const newChildren = renderProps ? (...args) => launch(children(...args)) : launch(children);
+        return { ...node, type, props: { ...restNodeProps, children: newChildren } };
       }
 
       /**
        * Ant Plus Form.Item
        */
-      const { hide, rules, ...mixedProps } = restNodeProps;
-      if (hide === true) mixedProps.style = { display: 'none' };
+      const { rules, ...mixedProps } = restNodeProps;
       if (Array.isArray(rules)) {
         const hasPhone = rules.includes('phone');
         mixedProps.rules = getRules(rules, label, hasPhone);
@@ -286,15 +286,14 @@ const Form = forwardRef((props, ref) => {
         );
       }
 
-      // object
+      // element
       const { itemProps, ownProps } = splitProps(mixedProps);
-
       setTipAddon(isValid, displayName, ownProps, label);
       const disabled = disabledNames === 'all' || (hasName && hasItem(disabledNames, name));
       if (disabled) ownProps.disabled = true;
       const itemLayout = isOuter && !label && ui.offsetLayout;
 
-      const ownNode = { ...node, props: { ...ownProps, children: launch(children) } };
+      const ownNode = { ...node, type, props: { ...ownProps, children: launch(children) } };
       return (
         <Ant.Form.Item {...itemLayout} {...itemProps}>
           {ownNode}
@@ -307,17 +306,14 @@ const Form = forwardRef((props, ref) => {
   /**
    * 渲染工厂入口
    */
-  launch = useMemo(() => {
-    const fn = (node, isOuter) => {
+  launch = useMemo(
+    () => (node, isOuter) => {
       if (typeof node !== 'object' || node === null) return node;
       if (hasLength(node)) return Children.map(node, (one) => factory(one, isOuter));
       return factory(node, isOuter);
-    };
-
-    Form.item = fn;
-
-    return fn;
-  }, [factory]);
+    },
+    [factory]
+  );
 
   /**
    * Form

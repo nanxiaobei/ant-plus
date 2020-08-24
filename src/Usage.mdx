@@ -31,19 +31,21 @@ Ant Plus 最核心的使用方式，便是可以在表单控件 Props 中，直�
 
 ### Form.Item 可传入 Props
 
-|                |                   |
-| -------------- | ----------------- |
-| colon          | dependencies      |
-| extra          | getValueFromEvent |
-| hasFeedback    | help              |
-| htmlFor        | noStyle           |
-| label          | labelAlign        |
-| labelCol       | name              |
-| normalize      | required          |
-| rules          | shouldUpdate      |
-| trigger        | validateFirst     |
-| validateStatus | validateTrigger   |
-| valuePropName  | wrapperCol        |
+|                 |                   |
+| --------------- | ----------------- |
+| colon           | dependencies      |
+| extra           | getValueFromEvent |
+| getValueProps   | hasFeedback       |
+| help            | htmlFor           |
+| initialValue    | noStyle           |
+| label           | labelAlign        |
+| labelCol        | name              |
+| preserve        | normalize         |
+| required        | rules             |
+| shouldUpdate    | trigger           |
+| validateFirst   | validateStatus    |
+| validateTrigger | valuePropName     |
+| wrapperCol      | hidden            |
 
 若需用 `Form.Item` 来布局，如 Ant Design 代码：
 
@@ -67,14 +69,14 @@ Ant Plus 最核心的使用方式，便是可以在表单控件 Props 中，直�
 
 ### 其它可传入 Props
 
-| 属性      | 说明                                                                                            |
-| --------- | ----------------------------------------------------------------------------------------------- |
-| className | `Form.Item` 的 `className` 属性                                                                 |
-| style     | `Form.Item` 的 `style` 属性                                                                     |  |
-| ownClass  | `Form.Item` 内组件自身的 `className` 属性                                                       |
-| ownStyle  | `Form.Item` 内组件自身的 `style` 属性                                                           |
-| ownName   | 组件本身存在的 `name` 属性，为防止冲突，如 `Upload`，则为 `<Upload name="key" ownName="files">` |
-| hide      | 是否隐藏表单域                                                                                  |
+| 属性      | 说明                                                                                                              |
+| --------- | ----------------------------------------------------------------------------------------------------------------- |
+| className | `Form.Item` 的 `className` 属性                                                                                   |
+| style     | `Form.Item` 的 `style` 属性                                                                                       |  |
+| ownClass  | `Form.Item` 内组件自身的 `className` 属性                                                                         |
+| ownStyle  | `Form.Item` 内组件自身的 `style` 属性                                                                             |
+| ownName   | 组件自身存在 `name` 属性，则自身 `name` 需改为 `ownName`。如 `Upload`，即为 `<Upload name="key" ownName="files">` |
+| deep      | 继续渲染组件内部节点（主要用于自定义表单控件组件，如组件内部存在嵌套表单字段结构时）                              |
 
 ## 简化版 rules
 
