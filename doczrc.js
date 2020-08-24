@@ -19,6 +19,5 @@ export default {
     'Transfer 穿梭框',
     'Cascader 级联选择',
     'TreeSelect 树选择',
-    '从 v1 迁移到 v4',
   ],
 };
