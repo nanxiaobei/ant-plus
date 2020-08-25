@@ -124,11 +124,13 @@ const itemPropList = [
   'wrapperCol',
   'hidden',
 
-  'className',
-  'style',
   'prefixCls',
+  'style',
+  'className',
+  'id',
   'fieldKey',
 ];
+
 const ownPropMap = {
   ownClass: 'className',
   ownStyle: 'style',
@@ -343,52 +345,36 @@ Form.defaultProps = {};
  * https://ant.design/fns/input-cn/
  */
 const Input = forwardRef((props, ref) => {
-  const { max, tip, auto, textarea, rows, id, floatingLabel, ...restProps } = props;
+  const { max, tip, auto, textarea, rows, floatingLabel, ...restProps } = props;
   const { onChange, disabled } = restProps;
 
   const hasCount = useMemo(() => typeof max === 'number' && disabled !== true, [disabled, max]);
-  const hasFloating = useMemo(() => typeof floatingLabel === 'string', [floatingLabel]);
-  const floatingFor = useMemo(() => id || floatingLabel, [floatingLabel, id]);
+  const floatingId = useMemo(() => {
+    if (typeof floatingLabel !== 'string') return null;
+    if (restProps.id !== undefined) return restProps.id;
+    restProps.id = floatingLabel;
+    return floatingLabel;
+  }, [floatingLabel, restProps.id]);
 
   const [count, setCount] = useState(() => {
-    if (!hasCount && !hasFloating) return null;
+    if (!hasCount && !floatingId) return null;
     const { defaultValue, value } = restProps;
     if (typeof value === 'string') return value.length;
     if (typeof defaultValue === 'string') return defaultValue.length;
     return 0;
   });
 
-  const countNode = useMemo(() => {
-    if (!hasCount) return null;
-    return (
-      <span className={`count ${count > max ? 'red' : ''}`.trimEnd()}>
-        {count} | {max}
-      </span>
-    );
-  }, [count, hasCount, max]);
-
-  const floatingNode = useMemo(() => {
-    if (!hasFloating) return null;
-    return (
-      <label className="floating-label" htmlFor={floatingFor}>
-        {floatingLabel}
-      </label>
-    );
-  }, [floatingFor, floatingLabel, hasFloating]);
-
   const onChangeProps = useMemo(() => {
-    if (!hasCount && !hasFloating) return null;
+    if (!hasCount && !floatingId) return null;
     return {
       onChange: (event) => {
         setCount(event.target.value.length);
         if (typeof onChange === 'function') return onChange(event);
       },
     };
-  }, [hasCount, hasFloating, onChange]);
+  }, [hasCount, floatingId, onChange]);
 
   const inputComponent = useMemo(() => {
-    if (hasFloating) onChangeProps.id = floatingFor;
-
     if (textarea !== true) {
       return (
         <Ant.Input
@@ -409,22 +395,27 @@ const Input = forwardRef((props, ref) => {
         ref={ref}
       />
     );
-  }, [auto, onChangeProps, floatingFor, hasFloating, ref, restProps, rows, textarea, tip]);
+  }, [auto, onChangeProps, ref, restProps, rows, textarea, tip]);
 
-  const wrapperClass = useMemo(() => {
-    let clx = 'ant-plus-input-wrapper';
-    if (hasCount) clx += ' has-count';
-    if (hasFloating && count > 0) clx += ' is-floating';
-    return clx;
-  }, [count, hasCount, hasFloating]);
-
-  if (!hasCount && !hasFloating) return inputComponent;
+  if (!hasCount && !floatingId) return inputComponent;
 
   return (
-    <div className={wrapperClass}>
+    <div
+      className={`ant-plus-input-wrapper ${hasCount ? 'has-count' : ''} ${
+        floatingId && count > 0 ? 'is-floating' : ''
+      }`}
+    >
       {inputComponent}
-      {floatingNode}
-      {countNode}
+      {floatingId && (
+        <label className="floating-label" htmlFor={floatingId}>
+          {floatingLabel}
+        </label>
+      )}
+      {hasCount && (
+        <span className={`count ${count > max ? 'red' : ''}`}>
+          {count} | {max}
+        </span>
+      )}
     </div>
   );
 });
