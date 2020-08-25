@@ -346,68 +346,59 @@ Form.defaultProps = {};
  */
 const Input = forwardRef((props, ref) => {
   const { max, tip, auto, textarea, rows, floatingLabel, ...restProps } = props;
-  const { onChange, disabled } = restProps;
+  const { id, onChange, disabled } = restProps;
 
   const hasCount = useMemo(() => typeof max === 'number' && disabled !== true, [disabled, max]);
-  const floatingId = useMemo(() => {
-    if (typeof floatingLabel !== 'string') return null;
-    if (restProps.id !== undefined) return restProps.id;
-    restProps.id = floatingLabel;
-    return floatingLabel;
-  }, [floatingLabel, restProps.id]);
+  const hasFloating = useMemo(() => typeof floatingLabel === 'string', [floatingLabel]);
+  const isRawInput = useMemo(() => !hasCount && !hasFloating, [hasCount, hasFloating]);
 
   const [count, setCount] = useState(() => {
-    if (!hasCount && !floatingId) return null;
+    if (isRawInput) return null;
     const { defaultValue, value } = restProps;
     if (typeof value === 'string') return value.length;
     if (typeof defaultValue === 'string') return defaultValue.length;
     return 0;
   });
 
-  const onChangeProps = useMemo(() => {
-    if (!hasCount && !floatingId) return null;
-    return {
+  const extraProps = useMemo(() => {
+    if (isRawInput) return null;
+    const obj = {
       onChange: (event) => {
         setCount(event.target.value.length);
         if (typeof onChange === 'function') return onChange(event);
       },
     };
-  }, [hasCount, floatingId, onChange]);
+    if (hasFloating && !id) obj.id = floatingLabel;
+    return obj;
+  }, [floatingLabel, hasFloating, id, isRawInput, onChange]);
 
-  const inputComponent = useMemo(() => {
-    if (textarea !== true) {
-      return (
-        <Ant.Input
+  const inputComponent = useMemo(
+    () =>
+      textarea !== true ? (
+        <Ant.Input placeholder={tip} autoComplete={auto} {...restProps} {...extraProps} ref={ref} />
+      ) : (
+        <Ant.Input.TextArea
           placeholder={tip}
-          autoComplete={auto}
+          autoSize={{ minRows: rows }}
           {...restProps}
-          {...onChangeProps}
+          {...extraProps}
           ref={ref}
         />
-      );
-    }
-    return (
-      <Ant.Input.TextArea
-        placeholder={tip}
-        autoSize={{ minRows: rows }}
-        {...restProps}
-        {...onChangeProps}
-        ref={ref}
-      />
-    );
-  }, [auto, onChangeProps, ref, restProps, rows, textarea, tip]);
+      ),
+    [auto, extraProps, ref, restProps, rows, textarea, tip]
+  );
 
-  if (!hasCount && !floatingId) return inputComponent;
+  if (isRawInput) return inputComponent;
 
   return (
     <div
       className={`ant-plus-input-wrapper ${hasCount ? 'has-count' : ''} ${
-        floatingId && count > 0 ? 'is-floating' : ''
+        hasFloating && count > 0 ? 'is-floating' : ''
       }`}
     >
       {inputComponent}
-      {floatingId && (
-        <label className="floating-label" htmlFor={floatingId}>
+      {hasFloating && (
+        <label className="floating-label" htmlFor={id || floatingLabel}>
           {floatingLabel}
         </label>
       )}
