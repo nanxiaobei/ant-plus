@@ -241,24 +241,11 @@ const Form = forwardRef((props, ref) => {
     (node, isOuter) => {
       if (typeof node !== 'object' || node === null || !node.props) return node;
 
-      const { deep, children, ...restNodeProps } = node.props;
-
-      const nodeType = node.type;
-      let type;
-      if (deep === true) {
-        if (typeof nodeType === 'function') {
-          type = (...args) => launch(nodeType(...args));
-        } else if (typeof nodeType.type === 'function') {
-          type = { ...nodeType, type: (...args) => launch(nodeType.type(...args)) };
-        }
-      } else {
-        type = nodeType;
-      }
-
+      const { children, ...restNodeProps } = node.props;
       const { label, name } = restNodeProps;
-      const hasName = name !== undefined;
 
-      const displayName = nodeType?.displayName;
+      const hasName = name !== undefined;
+      const displayName = node.type?.displayName;
       const isValid = typeof displayName === 'string' && displayName.includes(`${namePrefix}.`);
 
       /**
@@ -266,7 +253,7 @@ const Form = forwardRef((props, ref) => {
        */
       if (label === undefined && !hasName) {
         setTipAddon(isValid, displayName, restNodeProps);
-        return { ...node, type, props: { ...restNodeProps, children: launch(children) } };
+        return { ...node, props: { ...restNodeProps, children: launch(children) } };
       }
 
       /**
@@ -275,7 +262,7 @@ const Form = forwardRef((props, ref) => {
       if (isValid && subs.includes(displayName)) {
         const renderProps = typeof children === 'function';
         const newChildren = renderProps ? (...args) => launch(children(...args)) : launch(children);
-        return { ...node, type, props: { ...restNodeProps, children: newChildren } };
+        return { ...node, props: { ...restNodeProps, children: newChildren } };
       }
 
       /**
@@ -306,7 +293,7 @@ const Form = forwardRef((props, ref) => {
       if (disabled) ownProps.disabled = true;
       const itemLayout = isOuter && !label && ui.offsetLayout;
 
-      const ownNode = { ...node, type, props: { ...ownProps, children: launch(children) } };
+      const ownNode = { ...node, props: { ...ownProps, children: launch(children) } };
       return (
         <Ant.Form.Item {...itemLayout} {...itemProps}>
           {ownNode}
