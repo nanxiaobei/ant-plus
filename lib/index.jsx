@@ -242,12 +242,23 @@ const Form = forwardRef((props, ref) => {
       if (typeof node !== 'object' || node === null || !node.props) return node;
 
       const { deep, children, ...restNodeProps } = node.props;
-      const type = deep === true ? (...args) => launch(node.type(...args)) : node.type;
+
+      const nodeType = node.type;
+      let type;
+      if (deep === true) {
+        if (typeof nodeType === 'function') {
+          type = (...args) => launch(nodeType(...args));
+        } else if (typeof nodeType.type === 'function') {
+          type = { ...nodeType, type: (...args) => launch(nodeType.type(...args)) };
+        }
+      } else {
+        type = nodeType;
+      }
 
       const { label, name } = restNodeProps;
       const hasName = name !== undefined;
 
-      const displayName = node.type?.displayName;
+      const displayName = nodeType?.displayName;
       const isValid = typeof displayName === 'string' && displayName.includes(`${namePrefix}.`);
 
       /**
