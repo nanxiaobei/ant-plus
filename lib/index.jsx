@@ -131,6 +131,10 @@ const itemPropList = [
   'fieldKey',
 ];
 
+const itemPropMap = itemPropList.reduce((obj, prop) => {
+  obj[prop] = true;
+  return obj;
+}, {});
 const ownPropMap = {
   ownClass: 'className',
   ownStyle: 'style',
@@ -138,18 +142,19 @@ const ownPropMap = {
 };
 const splitProps = (mixedProps) => {
   const itemProps = {};
-  const ownProps = { ...mixedProps };
+  const ownProps = {};
 
-  itemPropList.forEach((key) => {
+  Object.keys(mixedProps).forEach((key) => {
     const val = mixedProps[key];
-    if (val !== undefined) itemProps[key] = val;
-    delete ownProps[key];
+    if (key in itemPropMap) {
+      itemProps[key] = val;
+    } else if (key in ownPropMap) {
+      ownProps[ownPropMap[key]] = val;
+    } else {
+      ownProps[key] = val;
+    }
   });
-  Object.entries(ownPropMap).forEach(([key, realKey]) => {
-    const val = mixedProps[key];
-    if (val !== undefined) ownProps[realKey] = val;
-    delete ownProps[key];
-  });
+
   return { itemProps, ownProps };
 };
 
@@ -278,10 +283,9 @@ const Form = forwardRef((props, ref) => {
 
       // render props
       if (typeof children === 'function') {
-        const renderNode = (...args) => launch(children(...args));
         return (
           <Ant.Form.Item {...mixedLayout} {...mixedProps}>
-            {renderNode}
+            {(...args) => launch(children(...args))}
           </Ant.Form.Item>
         );
       }
