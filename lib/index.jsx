@@ -50,7 +50,7 @@ const getSettings = (customConfig) => {
   const ruleNumMap = {};
 
   // tip, addon
-  const inputs = ['Input', 'AutoComplete', 'Transfer'];
+  const inputs = ['Input', 'InputNumber', 'AutoComplete', 'Transfer'];
   const selects = ['Select', 'Cascader', 'TreeSelect'];
   const addonMap = {
     Input: ['addonBefore', 'addonAfter', 'prefix', 'suffix'],
@@ -348,22 +348,23 @@ Form.defaultProps = {};
  */
 const Input = forwardRef((props, ref) => {
   const { max, tip, auto, textarea, rows, floatingLabel, ...restProps } = props;
-  const { id, onChange, disabled } = restProps;
+  const { id, onChange, disabled, readOnly } = restProps;
 
-  const hasCount = useMemo(() => typeof max === 'number' && disabled !== true, [disabled, max]);
-  const hasFloating = useMemo(() => typeof floatingLabel === 'string', [floatingLabel]);
-  const isRawInput = useMemo(() => !hasCount && !hasFloating, [hasCount, hasFloating]);
+  const isDisabled = disabled === true || readOnly === true;
+  const hasCount = typeof max === 'number' && !isDisabled;
+  const hasFloating = typeof floatingLabel === 'string' && !isDisabled;
+  const isPureInput = !hasCount && !hasFloating;
 
   const [count, setCount] = useState(() => {
-    if (isRawInput) return null;
-    const { defaultValue, value } = restProps;
+    if (isPureInput) return null;
+    const { value, defaultValue } = restProps;
     if (typeof value === 'string') return value.length;
     if (typeof defaultValue === 'string') return defaultValue.length;
     return 0;
   });
 
   const extraProps = useMemo(() => {
-    if (isRawInput) return null;
+    if (isPureInput) return null;
     const obj = {
       onChange: (event) => {
         setCount(event.target.value.length);
@@ -372,7 +373,7 @@ const Input = forwardRef((props, ref) => {
     };
     if (hasFloating && !id) obj.id = floatingLabel;
     return obj;
-  }, [floatingLabel, hasFloating, id, isRawInput, onChange]);
+  }, [floatingLabel, hasFloating, id, isPureInput, onChange]);
 
   const inputComponent = useMemo(
     () =>
@@ -390,7 +391,7 @@ const Input = forwardRef((props, ref) => {
     [auto, extraProps, ref, restProps, rows, textarea, tip]
   );
 
-  if (isRawInput) return inputComponent;
+  if (isPureInput) return inputComponent;
 
   return (
     <div
@@ -431,6 +432,72 @@ Input.propTypes = {
 Input.defaultProps = {
   textarea: false,
   rows: 2,
+};
+
+/**
+ * InputNumber - Ant Design InputNumber 组件增强版本
+ * https://ant.design/components/input-number-cn/
+ */
+const InputNumber = forwardRef((props, ref) => {
+  const { tip, auto, floatingLabel, ...restProps } = props;
+  const { id, onChange, disabled, readOnly } = restProps;
+
+  const isDisabled = disabled === true || readOnly === true;
+  const isPureInput = typeof floatingLabel !== 'string' || isDisabled;
+
+  const [count, setCount] = useState(() => {
+    if (isPureInput) return null;
+    const { value, defaultValue } = restProps;
+    if (typeof value === 'number') return `${value}`.length;
+    if (typeof defaultValue === 'number') return `${defaultValue}`.length;
+    return 0;
+  });
+
+  const extraProps = useMemo(() => {
+    if (isPureInput) return null;
+    const obj = {
+      onChange: (value) => {
+        setCount(typeof value === 'number' ? `${value}`.length : 0);
+        if (typeof onChange === 'function') return onChange(value);
+      },
+    };
+    if (!id) obj.id = floatingLabel;
+
+    return obj;
+  }, [floatingLabel, id, isPureInput, onChange]);
+
+  const inputNumberComponent = useMemo(
+    () => (
+      <Ant.InputNumber
+        placeholder={tip}
+        autoComplete={auto}
+        {...restProps}
+        {...extraProps}
+        ref={ref}
+      />
+    ),
+    [auto, extraProps, ref, restProps, tip]
+  );
+
+  if (isPureInput) return inputNumberComponent;
+
+  return (
+    <div className={`ant-plus-input-wrapper ${count > 0 ? 'is-floating' : ''}`}>
+      {inputNumberComponent}
+      <label className="floating-label" htmlFor={id || floatingLabel}>
+        {floatingLabel}
+      </label>
+    </div>
+  );
+});
+
+InputNumber.propTypes = {
+  /** `placeholder` 简写（在 Ant Plus `Form` 内时，可传入 `'short'` 或 `'full'`。转义：`'short'` → `'请输入'`, `'full'` → `'请输入XX'`, `'其它'` → `'其它'`） */
+  tip: t.string,
+  /** `autoComplete` 简写（关闭需传入 `'off'`） */
+  auto: t.string,
+  /** 展示为 Material Design 风格输入框，传入的字符串将为动态 label */
+  floatingLabel: t.string,
 };
 
 /**
@@ -547,9 +614,7 @@ const Transfer = forwardRef((props, ref) => {
     };
   }, [search]);
 
-  restProps.targetKeys = useMemo(() => {
-    return targetKeys || value;
-  }, [targetKeys, value]);
+  restProps.targetKeys = targetKeys || value;
 
   return (
     <Ant.Transfer
@@ -790,13 +855,14 @@ const copyOriginalKeys = () => {
   const fromMap = {
     Form: Ant.Form,
     Input: Ant.Input,
+    InputNumber: Ant.InputNumber,
     AutoComplete: Ant.AutoComplete,
     Select: Ant.Select,
     Transfer: Ant.Transfer,
     Cascader: Ant.Cascader,
     TreeSelect: Ant.TreeSelect,
   };
-  const toMap = { Form, Input, AutoComplete, Select, Transfer, Cascader, TreeSelect };
+  const toMap = { Form, Input, InputNumber, AutoComplete, Select, Transfer, Cascader, TreeSelect };
   const omitKeys = ['$$typeof', 'render', 'propTypes', 'defaultProps'];
 
   Object.entries(fromMap).forEach(([name, fromFn]) => {
@@ -817,4 +883,4 @@ formSubs.forEach((name) => {
 /**
  * exports
  */
-export { Form, Input, AutoComplete, Select, Transfer, Cascader, TreeSelect };
+export { Form, Input, InputNumber, AutoComplete, Select, Transfer, Cascader, TreeSelect };

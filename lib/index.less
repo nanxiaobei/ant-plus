@@ -1,6 +1,6 @@
 @import '~antd/es/style/themes/default';
 
-// input
+// input, input-number
 .ant-form-item-with-help,
 .ant-form-item-has-error {
   .ant-plus-input-wrapper {
@@ -24,24 +24,35 @@
 }
 .ant-plus-input-wrapper {
   position: relative;
+  // input
   &.is-floating .ant-input + .floating-label,
-  .ant-input:focus + .floating-label {
+  &.is-floating .ant-input-number + .floating-label,
+  // input-number
+  .ant-input:focus + .floating-label,
+  .ant-input-number.ant-input-number-focused + .floating-label {
     top: 0;
     transform: scale(0.8) translate(1px, -55%);
   }
+  // input
   &.is-floating .ant-input:hover + .floating-label,
-  .ant-input:focus + .floating-label {
+  &.is-floating .ant-input-number:hover + .floating-label,
+    // input-number
+  .ant-input:focus + .floating-label,
+  .ant-input-number.ant-input-number-focused + .floating-label {
     color: @primary-color;
   }
-  .ant-input-sm + .floating-label {
+  .ant-input-sm + .floating-label,
+  .ant-input-number-sm + .floating-label {
     left: @input-padding-horizontal-sm - 4px + 1px;
     top: @input-height-sm / 2;
   }
-  .ant-input-lg + .floating-label {
+  .ant-input-lg + .floating-label,
+  .ant-input-number-lg + .floating-label {
     left: @input-padding-horizontal-lg - 4px + 1px;
     top: @input-height-lg / 2;
   }
-  .ant-input:not(textarea) + .floating-label {
+  .ant-input:not(textarea) + .floating-label,
+  .ant-input-number + .floating-label {
     top: 50%;
   }
   .floating-label {
