@@ -438,6 +438,8 @@ Input.defaultProps = {
  * InputNumber - Ant Design InputNumber 组件增强版本
  * https://ant.design/components/input-number-cn/
  */
+const numOrStr = (val) => typeof val === 'number' || typeof val === 'string';
+
 const InputNumber = forwardRef((props, ref) => {
   const { tip, auto, floatingLabel, ...restProps } = props;
   const { id, onChange, disabled, readOnly } = restProps;
@@ -448,8 +450,8 @@ const InputNumber = forwardRef((props, ref) => {
   const [count, setCount] = useState(() => {
     if (isPureInput) return null;
     const { value, defaultValue } = restProps;
-    if (typeof value === 'number') return `${value}`.length;
-    if (typeof defaultValue === 'number') return `${defaultValue}`.length;
+    if (numOrStr(value)) return `${value}`.length;
+    if (numOrStr(defaultValue)) return `${defaultValue}`.length;
     return 0;
   });
 
