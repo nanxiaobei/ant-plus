@@ -25,7 +25,7 @@ declare module 'antx' {
     /**
      * labelCol 与 wrapperCol span 的数值。e.g. cols=[8, 16] → labelCol={ span: 8 } wrapperCol={ span: 16 }
      */
-    cols?: any[];
+    cols?: number[];
     /**
      * 禁用的表单域，传入 `name` 组成的数组。全部禁用传入字符串 `'all'`
      */
