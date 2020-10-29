@@ -7,7 +7,7 @@ import React, {
   useMemo,
   useLayoutEffect,
 } from 'react';
-import t from 'prop-types';
+import PropTypes from 'prop-types';
 import * as Ant from 'antd';
 import './index.less';
 
@@ -331,13 +331,13 @@ const Form = forwardRef((props, ref) => {
 
 Form.propTypes = {
   /** `initialValues` 简写 */
-  data: t.object,
+  data: PropTypes.object,
   /** 设置统一的 `placeholder` 信息与 `rules` 校验提示信息。详见下文 **config** */
-  config: t.object,
+  config: PropTypes.object,
   /** labelCol 与 wrapperCol span 的数值。e.g. cols=[8, 16] → labelCol={ span: 8 } wrapperCol={ span: 16 } */
-  cols: t.arrayOf(t.number),
+  cols: PropTypes.arrayOf(t.number),
   /** 禁用的表单域，传入 `name` 组成的数组。全部禁用传入字符串 `'all'` */
-  disabledNames: t.array,
+  disabledNames: PropTypes.array,
 };
 
 Form.defaultProps = {};
@@ -416,17 +416,17 @@ const Input = forwardRef((props, ref) => {
 
 Input.propTypes = {
   /** 最大可输入字符数（若传入则显示字符计数器） */
-  max: t.number,
+  max: PropTypes.number,
   /** `placeholder` 简写（在 Ant Plus `Form` 内时，可传入 `'short'` 或 `'full'`。转义：`'short'` → `'请输入'`, `'full'` → `'请输入XX'`, `'其它'` → `'其它'`） */
-  tip: t.string,
+  tip: PropTypes.string,
   /** `autoComplete` 简写（关闭需传入 `'off'`） */
-  auto: t.string,
+  auto: PropTypes.string,
   /** 展示为 Material Design 风格输入框，传入的字符串将为动态 label */
-  floatingLabel: t.string,
+  floatingLabel: PropTypes.string,
   /** 默认为 `Input` 组件，若传入 `textarea`，则为 `Input.TextArea` 组件 */
-  textarea: t.bool,
+  textarea: PropTypes.bool,
   /** `Input.TextArea` 的输入框行高 */
-  rows: t.number,
+  rows: PropTypes.number,
 };
 
 Input.defaultProps = {
@@ -495,11 +495,11 @@ const InputNumber = forwardRef((props, ref) => {
 
 InputNumber.propTypes = {
   /** `placeholder` 简写（在 Ant Plus `Form` 内时，可传入 `'short'` 或 `'full'`。转义：`'short'` → `'请输入'`, `'full'` → `'请输入XX'`, `'其它'` → `'其它'`） */
-  tip: t.string,
+  tip: PropTypes.string,
   /** `autoComplete` 简写（关闭需传入 `'off'`） */
-  auto: t.string,
+  auto: PropTypes.string,
   /** 展示为 Material Design 风格输入框，传入的字符串将为动态 label */
-  floatingLabel: t.string,
+  floatingLabel: PropTypes.string,
 };
 
 /**
@@ -528,13 +528,13 @@ const AutoComplete = forwardRef((props, ref) => {
 
 AutoComplete.propTypes = {
   /** `options` 简写 */
-  data: t.array,
+  data: PropTypes.array,
   /** `placeholder` 简写（在 Ant Plus `Form` 内时，可传入 `'short'` 或 `'full'`。转义：`'short'` → `'请输入'`, `'full'` → `'请输入XX'`, `'其它'` → `'其它'`） */
-  tip: t.string,
+  tip: PropTypes.string,
   /** 是否可搜索 */
-  search: t.bool,
+  search: PropTypes.bool,
   /** `allowClear` 简写 */
-  clear: t.bool,
+  clear: PropTypes.bool,
 };
 
 AutoComplete.defaultProps = {
@@ -580,17 +580,17 @@ const Select = forwardRef((props, ref) => {
 
 Select.propTypes = {
   /** 列表数据源 */
-  data: t.array,
+  data: PropTypes.array,
   /** 当数据源的键不是 `'value'` `'label'` 时传入。e.g. 数据源 `[{ val: 1, text: 'A'}, { val: 2, text: 'B'}]，则传入 ['val', 'text']` */
-  keys: t.array,
+  keys: PropTypes.array,
   /** `placeholder` 简写（在 Ant Plus `Form` 内时，可传入 `'short'` 或 `'full'`。转义：`'short'` → `'请输入'`, `'full'` → `'请输入XX'`, `'其它'` → `'其它'`） */
-  tip: t.string,
+  tip: PropTypes.string,
   /** 是否可搜索 */
-  search: t.bool,
+  search: PropTypes.bool,
   /** `allowClear` 简写 */
-  clear: t.bool,
+  clear: PropTypes.bool,
   /** `notFoundContent` 简写 */
-  empty: t.string,
+  empty: PropTypes.string,
 };
 
 Select.defaultProps = {
@@ -637,17 +637,17 @@ const Transfer = forwardRef((props, ref) => {
 
 Transfer.propTypes = {
   /** `dataSource` 简写 */
-  data: t.array,
+  data: PropTypes.array,
   /** `'未选择XX'` `'已选择XX'` 的 `'XX'` 文案 */
-  title: t.string,
+  title: PropTypes.string,
   /** 是否可搜索 */
-  search: t.bool,
+  search: PropTypes.bool,
   /** `local.itemUnit` 与 `local.itemsUnits` 简写，默认：`'项'` */
-  unit: t.string,
+  unit: PropTypes.string,
   /** `locale.searchPlaceholder` 简写（不支持 `'short'` `'full'`） */
-  searchTip: t.string,
+  searchTip: PropTypes.string,
   /** `locale.notFoundContent` 简写 */
-  empty: t.string,
+  empty: PropTypes.string,
 };
 
 Transfer.defaultProps = {
@@ -721,19 +721,19 @@ const Cascader = forwardRef((props, ref) => {
 
 Cascader.propTypes = {
   /** `options` 简写 */
-  data: t.array,
+  data: PropTypes.array,
   /** 当数据源的键不是 `'value'` `'label'` `'children'` 时传入 */
-  keys: t.array,
+  keys: PropTypes.array,
   /** `placeholder` 简写（不支持 `'short'` `'full'`） */
-  tip: t.string,
+  tip: PropTypes.string,
   /** 是否可搜索 */
-  search: t.bool,
+  search: PropTypes.bool,
   /** `allowClear` 简写 */
-  clear: t.bool,
+  clear: PropTypes.bool,
   /** `notFoundContent` 简写 */
-  empty: t.string,
+  empty: PropTypes.string,
   /** `value` 取数组最后一个值，默认为整体数组 */
-  last: t.bool,
+  last: PropTypes.bool,
 };
 
 Cascader.defaultProps = {
@@ -814,25 +814,25 @@ const TreeSelect = forwardRef((props, ref) => {
 
 TreeSelect.propTypes = {
   /** `treeData` 简写 */
-  data: t.array,
+  data: PropTypes.array,
   /** 当数据源的键不是 `'value'` `'title'` `'children'` 时传入 */
-  keys: t.array,
+  keys: PropTypes.array,
   /** `placeholder` 简写（不支持 `'short'` `'full'`） */
-  tip: t.string,
+  tip: PropTypes.string,
   /** 是否可搜索 */
-  search: t.bool,
+  search: PropTypes.bool,
   /** `allowClear` 简写 */
-  clear: t.bool,
+  clear: PropTypes.bool,
   /** `notFoundContent` 简写 */
-  empty: t.string,
+  empty: PropTypes.string,
   /** `treeCheckable` 简写 */
-  checkbox: t.bool,
+  checkbox: PropTypes.bool,
   /** `treeDefaultExpandAll` 简写 */
-  expandAll: t.bool,
+  expandAll: PropTypes.bool,
   /** `treeDefaultExpandedKeys` 简写 */
-  expandKeys: t.array,
+  expandKeys: PropTypes.array,
   /** `showCheckedStrategy` 简写 */
-  showType: t.oneOf([
+  showType: PropTypes.oneOf([
     Ant.TreeSelect.SHOW_ALL,
     Ant.TreeSelect.SHOW_PARENT,
     Ant.TreeSelect.SHOW_CHILD,
