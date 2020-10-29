@@ -18,9 +18,11 @@
   "bugs": "https://github.com/nanxiaobei/ant-plus/issues",
   "main": "dist/ant-plus.cjs.js",
   "module": "dist/ant-plus.esm.js",
+  "types": "index.d.ts",
   "files": [
     "dist",
-    "lib"
+    "lib",
+    "index.d.ts"
   ],
   "scripts": {
     "dev": "rimraf .docz && docz dev --host=0.0.0.0",
@@ -50,6 +52,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
+    "react-to-typescript-definitions": "^2.0.0",
     "rollup": "^2.30.0",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-copy": "^3.3.0"
