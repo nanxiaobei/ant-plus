@@ -335,7 +335,7 @@ Form.propTypes = {
   /** 设置统一的 `placeholder` 信息与 `rules` 校验提示信息。详见下文 **config** */
   config: PropTypes.object,
   /** labelCol 与 wrapperCol span 的数值。e.g. cols=[8, 16] → labelCol={ span: 8 } wrapperCol={ span: 16 } */
-  cols: PropTypes.arrayOf(t.number),
+  cols: PropTypes.arrayOf(PropTypes.number),
   /** 禁用的表单域，传入 `name` 组成的数组。全部禁用传入字符串 `'all'` */
   disabledNames: PropTypes.array,
 };
@@ -708,7 +708,11 @@ const Cascader = forwardRef((props, ref) => {
   return (
     <Ant.Cascader
       options={data}
-      fieldNames={{ value: valueKey, label: labelKey, children: childrenKey }}
+      fieldNames={{
+        value: valueKey,
+        label: labelKey,
+        children: childrenKey,
+      }}
       placeholder={tip}
       {...searchProps}
       allowClear={clear}
