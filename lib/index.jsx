@@ -38,10 +38,10 @@ const getSettings = (customConfig) => {
     input: '请输入',
     select: '请选择',
 
-    required: '{label}不得为空',
+    required: '{label}不可为空',
     type: '{label}格式有误',
-    max: '不得超过 {max} 个字',
-    min: '不得少于 {min} 个字',
+    max: '不可超过 {max} 个字',
+    min: '不可少于 {min} 个字',
     ...customConfig,
   };
 
