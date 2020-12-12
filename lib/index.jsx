@@ -250,7 +250,7 @@ const Form = forwardRef((props, ref) => {
       const { label, name } = restNodeProps;
 
       const hasName = name !== undefined;
-      const displayName = node.type?.displayName;
+      const displayName = node.type && node.type.displayName;
       const isValid = typeof displayName === 'string' && displayName.includes(`${namePrefix}.`);
 
       /**
