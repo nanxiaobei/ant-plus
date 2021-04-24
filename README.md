@@ -80,3 +80,9 @@ export default App;
 ## 协议
 
 [MIT License](https://github.com/nanxiaobei/ant-plus/blob/master/LICENSE) (c) [nanxiaobei](https://mrlee.me/)
+
+## 无情的小广告
+
+如果你使用微信，请试试 "**FUTAKE**"。这是一个微信小程序，为你的灵感瞬间。🌈
+
+![FUTAKE](https://s3.jpg.cm/2021/04/22/TDQuS.png)
