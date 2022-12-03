@@ -1,5 +1,6 @@
-.docz
-node_modules
+node_modules/
+example/
+dist/
 
-dist
-yarn-error.log
+index.html
+vite.config.ts

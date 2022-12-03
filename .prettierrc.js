@@ -1,4 +1,16 @@
 module.exports = {
-  printWidth: 100,
   singleQuote: true,
+
+  plugins: [require.resolve('@trivago/prettier-plugin-sort-imports')],
+  importOrder: [
+    '^react',
+    '^@rollup',
+    '^rollup',
+    '^antd',
+    '<THIRD_PARTY_MODULES>',
+    '^[./]',
+  ],
+  importOrderSortSpecifiers: true,
+  importOrderGroupNamespaceSpecifiers: true,
+  importOrderCaseInsensitive: true,
 };
