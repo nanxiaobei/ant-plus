@@ -6,6 +6,8 @@ module.exports = {
     '^react',
     '^@rollup',
     '^rollup',
+    '^@vite',
+    '^vite',
     '^antd',
     '<THIRD_PARTY_MODULES>',
     '^[./]',
