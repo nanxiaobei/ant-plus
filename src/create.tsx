@@ -46,7 +46,7 @@ export type PlusShortRule =
   | `min>${number}` // min > val
   | FormRule;
 
-const metaRuleMap = {
+const metaRuleMap: Record<string, FormRule> = {
   required: { required: true },
   warningOnly: { warningOnly: true },
   whitespace: { whitespace: true },
@@ -58,7 +58,7 @@ const metaRuleMap = {
   email: { type: 'email' },
 };
 
-const getShortRule = memoize((rule: string) => {
+const getShortRule = memoize((rule: string): FormRule => {
   if (rule in metaRuleMap) {
     return metaRuleMap[rule as keyof typeof metaRuleMap];
   }
@@ -102,29 +102,10 @@ const getShortRule = memoize((rule: string) => {
   return {};
 });
 
-const createRules = (rules: PlusShortRule[]): FormItemProps['rules'] => {
-  const requiredRule = {};
-  const otherRule = {};
-  const ruleList = [];
-
-  rules.forEach((rule) => {
-    if (typeof rule === 'string') {
-      const ruleObj = rule === 'required' ? requiredRule : otherRule;
-      Object.assign(ruleObj, getShortRule(rule));
-    } else {
-      ruleList.push(rule);
-    }
+const createRules = (rules: PlusShortRule[]): FormRule[] => {
+  return rules.map((rule) => {
+    return typeof rule === 'string' ? getShortRule(rule) : rule;
   });
-
-  if (Object.keys(otherRule).length > 0) {
-    ruleList.unshift(otherRule);
-  }
-
-  if (Object.keys(requiredRule).length > 0) {
-    ruleList.unshift(requiredRule);
-  }
-
-  return ruleList;
 };
 
 // ─── Form.Item & Field ↓↓↓ ───────────────────────────────────────────────────
