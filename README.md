@@ -1,6 +1,6 @@
-![Ant Plus](public/ant_plus_logo.svg)
+<img src="public/ant_plus_logo.svg" alt="Ant Plus" height="122" />
 
-Ant Design Form 简化版，以最简便的方式来搭建表单。
+Ant Design Form 简化版，以最简单的方式来搭建表单。
 
 [![npm version](https://img.shields.io/npm/v/antx.svg?style=flat-square)](https://www.npmjs.com/package/antx)
 [![npm downloads](https://img.shields.io/npm/dt/antx.svg?style=flat-square)](http://www.npmtrends.com/antx)
@@ -37,15 +37,19 @@ const App = () => {
     <Form labelCol={{ span: 8 }} wrapperCol={{ span: 16 }}>
       <Input label="Name" name="name" rules={['required', 'max=10']} />
       <Select
-        label="Sex"
-        name="sex"
+        label="Gender"
+        name="gender"
         rules={['required']}
         options={[
           { value: 1, label: 'Male' },
           { value: 2, label: 'Female' },
         ]}
       />
-      <InputNumber label="Age" name="age" rules={['required', 'min=0']} />
+      <InputNumber
+        label="Age"
+        name="age"
+        rules={['required', 'number', 'min=0']}
+      />
       <WrapperCol>
         <Button type="primary" htmlType="submit">
           Submit
