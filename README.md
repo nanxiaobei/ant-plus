@@ -1,4 +1,4 @@
-# Ant Plus
+![Ant Plus](public/logo.svg)
 
 Ant Design Form 简化版，以最简便的方式来搭建表单。
 
@@ -32,21 +32,23 @@ npm i antx
 ```tsx
 import { Button, Form, Input, Select, WrapperCol } from 'antx';
 
-const options = [
-  { value: 1, label: '男' },
-  { value: 2, label: '女' },
-];
-
 const App = () => {
   return (
     <Form labelCol={{ span: 8 }} wrapperCol={{ span: 16 }}>
-      <Input label="姓名" name="name" rules={['required', 'strMax=10']} />
-      <Select label="性别" name="sex" rules={['required']} options={options} />
-      <InputNumber label="年龄" name="age" rules={['required', 'min=0']} />
-
+      <Input label="Name" name="name" rules={['required', 'max=10']} />
+      <Select
+        label="Sex"
+        name="sex"
+        rules={['required']}
+        options={[
+          { value: 1, label: 'Male' },
+          { value: 2, label: 'Female' },
+        ]}
+      />
+      <InputNumber label="Age" name="age" rules={['required', 'min=0']} />
       <WrapperCol>
         <Button type="primary" htmlType="submit">
-          提交
+          Submit
         </Button>
       </WrapperCol>
     </Form>
