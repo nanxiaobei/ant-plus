@@ -79,7 +79,7 @@ export default App;
 
 ### 1. 增强表单组件
 
-一级表单组件：
+> 一级表单组件：
 
 - **AutoComplete**
 - **Cascader**
@@ -98,7 +98,7 @@ export default App;
 - **TreeSelect**
 - **Upload**
 
-二级表单组件，`antd` 中使用方式为 `AAA.BBB`，`antx` 中可直接引入 `BBB`：
+> 二级表单组件，`antd` 中使用方式为 `AAA.BBB`，`antx` 中可直接引入 `BBB`：
 
 - **CheckboxGroup** `Checkbox.Group`
 - **DateRange** `DatePicker.RangePicker`
@@ -111,7 +111,7 @@ export default App;
 
 ### 2. 基础组件
 
-Form、Button、Item 均为 `antd` 原始组件，为方便使用而提供。Watch、WrapperCol 为自定义组件。
+> Form、Button、Item 均为 `antd` 原始组件，为方便使用而提供。Watch、WrapperCol 为自定义组件。
 
 - **Form**
 - **Button**
