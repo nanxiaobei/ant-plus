@@ -1,4 +1,4 @@
-![Ant Plus](public/AntPlus.svg)
+![Ant Plus](public/ant_plus_logo.svg)
 
 Ant Design Form 简化版，以最简便的方式来搭建表单。
 
@@ -217,7 +217,7 @@ const MyCustomInputPlus = create(MyCustomInput);
 
 Ant Plus 与 Ant Design 表单代码对比：
 
-![view](public/view.png)
+![view](public/antx_vs_antd.png)
 
 ## 协议
 
