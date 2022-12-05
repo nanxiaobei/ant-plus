@@ -50,7 +50,7 @@ export const Form: typeof AntForm = AntForm;
 export const Button = AntButton;
 export const Item: typeof AntForm.Item = AntForm.Item;
 
-/* new
+/* custom
  ---------------------------------------------------------------------- */
 export { default as Watch } from './Watch';
 export { default as WrapperCol } from './WrapperCol';
