@@ -142,7 +142,7 @@ import { Watch } from 'antx';
 
 <Form>
   <Input label="Song" name="song" />
-  <Input label="Singer" name="artist" />
+  <Input label="Artist" name="artist" />
 
   <Watch name="song">
     {(song) => {
