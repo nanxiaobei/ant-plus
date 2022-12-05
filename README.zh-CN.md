@@ -2,7 +2,7 @@
 
 <img src="public/ant_plus_logo.svg" alt="Ant Plus" height="122" />
 
-Ant Design Form Simplified, build Form in the simplest way.
+Ant Design Form 简化版，以最简单的方式来搭建表单。
 
 [![npm version](https://img.shields.io/npm/v/antx.svg?style=flat-square)](https://www.npmjs.com/package/antx)
 [![npm downloads](https://img.shields.io/npm/dt/antx.svg?style=flat-square)](http://www.npmtrends.com/antx)
@@ -11,19 +11,19 @@ Ant Design Form Simplified, build Form in the simplest way.
 ![npm peer dependency version](https://img.shields.io/npm/dependency-version/antx/peer/react?style=flat-square)
 ![npm peer dependency version](https://img.shields.io/npm/dependency-version/antx/peer/antd?style=flat-square)
 
-English · [简体中文](./README.zh-CN.md)
+[English](./README.md) · 简体中文
 
 </div>
 
 ---
 
-## Feature
+## 特点
 
-- Say goodbye to cumbersome `<Form.Item>` and `rules`
-- Full TypeScript hinting support
-- Easily extend existing form components
+- 告别繁琐的 `<Form.Item>` 与 `rules`
+- 完整 TypeScript 提示支持
+- 轻松拓展已有表单组件
 
-## Installation
+## 安装
 
 ```sh
 pnpm add antx
@@ -33,7 +33,7 @@ yarn add antx
 npm i antx
 ```
 
-## Usage
+## 使用
 
 ```tsx
 import { Button, Form, Input, Select, WrapperCol } from 'antx';
@@ -70,26 +70,26 @@ export default App;
 
 [![Edit antx](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/antx-v4hqw?fontsize=14&hidenavigation=1&theme=dark)
 
-## Introduction
+## 介绍
 
-`antx` provides a set of `antd` enhanced form field components, features of enhanced components:
+`antx` 提供一套 `antd` 增强表单组件的集合，增强表单组件的特点：
 
-**1. No need to write `<Form.Item>`**  
- Directly mix `Form.Item` props with the original field component props (full TypeScript hints), which greatly simplifies the code.
+**1. 不写 <Form.Item>**  
+直接混写 `Form.Item` props 与原表单组件 props（完整 TypeScript 提示），显著简化代码。
 
-**2. Simplified `rules` (only enhanced, original `rules` is also supported)**  
- Provide rules in string phrase, for example `rules={['required', 'max=10']}` represents for `rules={[{ required: true }, { max: 10 }]}`.
+**2. 简化 rules 写法 (仅增强，原 rules 写法同样支持)**  
+提供 string 短语形式 rules，例如 `rules={['required', 'max=10'']}` 即 `rules={[{ required: true }, { max: 10 }]}`。
 
-**3. Not add any other props**  
- All props are `antd` original props, without adding any other props and APIs, reducing mental burden.
+**3. 未新增任何其它 props**  
+所有 props 均为 `antd` 原有 props，未新增任何其它 props 及 API，减少心智负担
 
-In addition, `antx` also provides 3 original components (`Form`, `Button`, `Item`), 2 custom components (`WrapperCol`, `Watch`), and a tool function `create`.
+此外 `antx` 还提供了 3 个原始组件（`Form`、`Button`、`Item`），2 个自定义组件（`WrapperCol`、`Watch`），以及一个工具函数 `create`。
 
 ## API
 
-### 1. Enhanced field components
+### 1. 增强表单组件
 
-> 1st-level field components:
+> 一级表单组件：
 
 - **AutoComplete**
 - **Cascader**
@@ -108,7 +108,7 @@ In addition, `antx` also provides 3 original components (`Form`, `Button`, `Item
 - **TreeSelect**
 - **Upload**
 
-> 2nd-level field components, in `antd` is `AAA.BBB`, and in `antx` can directly import `BBB`:
+> 二级表单组件，`antd` 中使用方式为 `AAA.BBB`，`antx` 中可直接引入 `BBB`：
 
 - **CheckboxGroup** `Checkbox.Group`
 - **DateRange** `DatePicker.RangePicker`
@@ -119,34 +119,34 @@ In addition, `antx` also provides 3 original components (`Form`, `Button`, `Item
 - **TimeRange** `TimePicker.RangePicker`
 - **Dragger** `Upload.Dragger`
 
-### 2. Base components
+### 2. 基础组件
 
-> `Form`, `Button`, and `Item` are `antd` original components, provided for convenience. `Watch` and `WrapperCol` are custom components.
+> `Form`、`Button`、`Item` 均为 `antd` 原始组件，为方便使用而提供。`Watch`、`WrapperCol` 为自定义组件。
 
 - **Form**
 - **Button**
 - **Item** `Form.Item`
-- **Watch** used to monitor the changes of form fields, which can be only partial re-render, more refined and better performance
+- **Watch** 用于监听表单字段变化，可实现仅局部 re-render，更精细、性能更好
 
-| Props       | Description                                                                                 | Type                                                      | Default |
-| ----------- | ------------------------------------------------------------------------------------------- | --------------------------------------------------------- | ------- |
-| `name`      | Field to monitor                                                                            | [`NamePath`](https:ant.designcomponentsform-cnNamePath)   | -       |
-| `list`      | List of fields to monitor (mutually exclusive with `name`)                                  | `NamePath[]`                                              | -       |
-| `children`  | Render props. Get the monitored value (or list), return UI                                  | `(next: any, prev: any, form: FormInstance) => ReactNode` | -       |
-| `onlyValid` | Only trigger `children` rendering when the monitored value is not `undefined`               | `boolean`                                                 | `false` |
-| `onChange`  | Get the monitored value (or list), handle side effects (mutually exclusive with `children`) | ` (next: any, prev: any, form: FormInstance) => void`     | -       |
+| Props       | 说明                                                      | 类型                                                         | 默认值  |
+| ----------- | --------------------------------------------------------- | ------------------------------------------------------------ | ------- |
+| `name`      | 需监听的字段                                              | [`NamePath`](https://ant.design/components/form-cn#NamePath) | -       |
+| `list`      | 需监听的字段列表 (与 `name` 互斥)                         | `NamePath[]`                                                 | -       |
+| `children`  | Render props 形式。获取被监听的值（或列表），返回 UI      | `(next: any, prev: any, form: FormInstance) => ReactNode`    | -       |
+| `onlyValid` | 被监听的值非 `undefined` 时，才触发 `children` 渲染       | `boolean`                                                    | `false` |
+| `onChange`  | 获取被监听的值（或列表），处理副作用 (与 `children` 互斥) | ` (next: any, prev: any, form: FormInstance) => void`        | -       |
 
 ```tsx
-// Watch usage example
+// Watch 使用示例
 import { Watch } from 'antx';
 
 <Form>
-  <Input label="Song" name="song" />
-  <Input label="Singer" name="artist" />
+  <Input label="歌曲" name="song" />
+  <Input label="歌手" name="artist" />
 
   <Watch name="song">
     {(song) => {
-      return <div>song: {song}</div>;
+      return <div>歌曲：{song}</div>;
     }}
   </Watch>
 
@@ -154,7 +154,7 @@ import { Watch } from 'antx';
     {([song, artist]) => {
       return (
         <div>
-          Song: {song}, Artist: {artist}
+          歌曲：{song}，歌手：{artist}
         </div>
       );
     }}
@@ -162,43 +162,43 @@ import { Watch } from 'antx';
 </Form>;
 ```
 
-- **WrapperCol** simplify the layout code, the same props as `Form.Item`, used when the UI needs to be aligned with the input box.
+- **WrapperCol** 简化布局代码，props 与` Form.Item` 完全一致，用于 UI 需与输入框对齐的情况
 
 ```tsx
-// WrapperCol usage example
+// WrapperCol 使用示例
 import { WrapperCol } from 'antx';
 
 <Form>
-  <Input label="Song" name="song" />
-  <WrapperCol>This is a hint that aligns with the input box</WrapperCol>
+  <Input label="歌曲" name="song" />
+  <WrapperCol>这是一条与输入框对齐的提示</WrapperCol>
 </Form>;
 ```
 
-### 3. `create` tool function
+### 3. `create` 工具函数
 
-- **create** convert existing form field components into components that support `Form.Item` props mix-in, easily extend existing components.
+- **create** 将已有表单组件，包装为支持 `Form.Item` props 混写的组件，轻松拓展现有组件
 
 ```tsx
 import { create } from 'antx';
 
-// Before expansion
+// 拓展前
 <Form>
-  <Form.Item label="Song" name="song" rules={{ required: true }}>
+  <Form.Item label="歌曲" name="song" rules={{ required: true }}>
     <MyCustomInput />
   </Form.Item>
 </Form>;
 
-// After expansion (TypeScript hints support)
+// 拓展后 (TypeScript 提示支持)
 const MyCustomInputPlus = create(MyCustomInput);
 
 <Form>
-  <MyCustomInputPlus label="Song" name="song" rules={['required']} />
+  <MyCustomInputPlus label="歌曲" name="song" rules={['required']} />
 </Form>;
 ```
 
-### 4. Simplified `rules`
+### 4. 简化版 `rules`
 
-| Phrase          | Correspondence                                                | Description  |
+| 短语            | 对应                                                          | 说明         |
 | --------------- | ------------------------------------------------------------- | ------------ |
 | `'required'`    | `{ required: true }`                                          |              |
 | `'warningOnly'` | `{ warningOnly: true }`                                       |              |
@@ -212,29 +212,29 @@ const MyCustomInputPlus = create(MyCustomInput);
 | `'len=10'`      | `{ len: 10 }`                                                 | `len === 10` |
 | `'max=100'`     | `{ max:100 }`                                                 | `max <= 100` |
 | `'min=0'`       | `{ min: 0 }`                                                  | `min >= 0`   |
-| `'max<100'`     | Custom validator                                              | ` max < 100` |
-| `'min>0'`       | Custom validator                                              | `min > 0`    |
+| `'max<100'`     | 自定义 validator                                              | ` max < 100` |
+| `'min>0'`       | 自定义 validator                                              | `min > 0`    |
 
 ```tsx
-// Simplified rules usage example
+// 简化版 rules 使用示例
 
 <Form>
-  <Input label="Song" name="song" rules={['required', 'min>0', 'max=50']} />
+  <Input label="歌曲" name="song" rules={['required', 'min>0', 'max=50']} />
 </Form>
 ```
 
-## Comparison
+## 对比
 
-Ant Plus and Ant Design form code comparison:
+Ant Plus 与 Ant Design 表单代码对比：
 
 ![Comparison](public/antx_vs_antd.png)
 
-## License
+## 协议
 
 [MIT License](https://github.com/nanxiaobei/ant-plus/blob/main/LICENSE) (c) [nanxiaobei](https://lee.so/)
 
 ## FUTAKE
 
-Try [**FUTAKE**](https://sotake.com/f) in WeChat. A mini app for your inspiration moments. 🌈
+试试 [**FUTAKE**](https://sotake.com/f) 小程序，你的灵感相册。🌈
 
 ![FUTAKE](https://s3.bmp.ovh/imgs/2022/07/21/452dd47aeb790abd.png)
