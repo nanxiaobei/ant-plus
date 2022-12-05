@@ -1,4 +1,4 @@
-![Ant Plus](public/logo.svg)
+![Ant Plus](public/AntPlus.svg)
 
 Ant Design Form 简化版，以最简便的方式来搭建表单。
 
