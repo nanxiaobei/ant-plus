@@ -20,35 +20,26 @@ import {
 } from 'antd';
 import create from './create';
 
+/* create
+ ---------------------------------------------------------------------- */
 export { default as create } from './create';
 export type { PlusShortRule, PlusFieldProps } from './create';
 
-/*
- * Ant Plus
- * 提供 4 个基础组件 Form、Item、Button、Watch（除 Watch 外均为 antd 原组件）
- * 与一套增强表单组件的集合
- *
- * 增强表单组件是为了实现：
- *
- * 1. 不写 <Form.Item>
- * 直接在一个组件上混写 Form.Item 的 props 与原表单组件的 props，简化代码结构
- *
- * 2. 简化 rules 写法 (仅增强，原 rules 写法同样支持)
- * 提供的 string 短语形式 rules，详见 create.tsx 中的 shortRules
- * 例如 rules={[{ required: true }]}，可写为 rules={['required']}
- */
-
+/* raw
+ ---------------------------------------------------------------------- */
 export const Form = AntForm;
 export const Button = AntButton;
 export const Item = AntForm.Item;
 
+/* new
+ ---------------------------------------------------------------------- */
 export { default as Watch } from './Watch';
-export type { WatchProps } from './Watch';
-
 export { default as WrapperCol } from './WrapperCol';
+export type { WatchProps } from './Watch';
+export type { WrapperColProps } from './WrapperCol';
 
 /* 1st
- ------------------------------------------------------------*/
+ ---------------------------------------------------------------------- */
 export const AutoComplete = create(AntAutoComplete);
 export const Cascader = create(AntCascader);
 export const Checkbox = create(AntCheckbox);
@@ -67,23 +58,12 @@ export const TreeSelect = create(AntTreeSelect);
 export const Upload = create(AntUpload);
 
 /* 2nd
- ------------------------------------------------------------*/
-// Checkbox
+ ---------------------------------------------------------------------- */
 export const CheckboxGroup = create(AntCheckbox.Group);
-
-// DatePicker
 export const DateRange = create(AntDatePicker.RangePicker);
-
-// Input
 export const TextArea = create(AntInput.TextArea);
 export const Search = create(AntInput.Search);
 export const Password = create(AntInput.Password);
-
-// Radio
 export const RadioGroup = create(AntRadio.Group);
-
-// TimePicker
 export const TimeRange = create(AntTimePicker.RangePicker);
-
-// Upload
 export const Dragger = create(AntUpload.Dragger);

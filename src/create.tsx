@@ -31,50 +31,43 @@ const memoize = <T extends (...args: any[]) => any>(func: T) => {
 // ─── rules ↓↓↓ ───────────────────────────────────────────────────────────────
 export type PlusShortRule =
   | 'required'
-  | `required=${string}`
+  | 'warningOnly'
+  | 'whitespace'
   | 'string'
   | 'number'
-  // string
-  | `strLen=${number}` // string length === len
-  | `strMax=${number}` // string length <= max
-  | `strMin=${number}` // string length >= min
-  // number
-  | `len=${number}` // number === val
-  | `max=${number}` // number max <= val
-  | `min=${number}` // number min >= val
+  | 'boolean'
+  | 'url'
+  | 'email'
+  | `len=${number}` // len === val
+  | `max=${number}` // max <= val
+  | `min=${number}` // min >= val
   // number custom
-  | `max<${number}` // number max < val
-  | `min>${number}` // number min > val
+  | `max<${number}` // max < val
+  | `min>${number}` // min > val
   | FormRule;
 
-// 自定义短语 rules
-// 使用示例：rules={['required', 'required=X is required', 'strMax=50']}
-const ruleMap = {
+const metaRuleMap = {
   required: { required: true },
-  string: { type: 'string', whitespace: true },
+  warningOnly: { warningOnly: true },
+  whitespace: { whitespace: true },
+
+  string: { type: 'string' },
   number: { type: 'number' },
+  boolean: { type: 'boolean' },
   url: { type: 'url' },
   email: { type: 'email' },
 };
 
 const getShortRule = memoize((rule: string) => {
-  if (rule in ruleMap) {
-    return ruleMap[rule as keyof typeof ruleMap];
+  if (rule in metaRuleMap) {
+    return metaRuleMap[rule as keyof typeof metaRuleMap];
   }
 
   if (rule.includes('=')) {
     const [key, val] = rule.split('=');
-    if (key === 'required') {
-      return { required: true, message: val };
-    }
-
-    if (key === 'strLen' || key === 'strMax' || key === 'strMin') {
-      const newKey = key.replace('str', '').toLowerCase();
-      return { type: 'string', whitespace: true, [newKey]: +val };
-    }
 
     if (key === 'len' || key === 'min' || key === 'max') {
-      return { type: 'number', [key]: +val };
+      return { [key]: +val };
     }
   }
 
@@ -109,23 +102,22 @@ const getShortRule = memoize((rule: string) => {
   return {};
 });
 
-// createRules - 处理自定义短语 rules
 const createRules = (rules: PlusShortRule[]): FormItemProps['rules'] => {
   const requiredRule = {};
-  const otherRules = {};
+  const otherRule = {};
   const ruleList = [];
 
   rules.forEach((rule) => {
     if (typeof rule === 'string') {
-      const ruleObj = rule.startsWith('required') ? requiredRule : otherRules;
+      const ruleObj = rule === 'required' ? requiredRule : otherRule;
       Object.assign(ruleObj, getShortRule(rule));
     } else {
       ruleList.push(rule);
     }
   });
 
-  if (Object.keys(otherRules).length > 0) {
-    ruleList.unshift(otherRules);
+  if (Object.keys(otherRule).length > 0) {
+    ruleList.unshift(otherRule);
   }
 
   if (Object.keys(requiredRule).length > 0) {
@@ -135,7 +127,7 @@ const createRules = (rules: PlusShortRule[]): FormItemProps['rules'] => {
   return ruleList;
 };
 
-// ─── Form.Item & field ↓↓↓ ───────────────────────────────────────────────────
+// ─── Form.Item & Field ↓↓↓ ───────────────────────────────────────────────────
 type FixFieldProps = {
   selfClass?: string;
   selfStyle?: CSSProperties;
@@ -213,9 +205,8 @@ const create = <T extends JSXElementConstructor<any>>(
           const { [key]: val } = props;
 
           if (key in formItemProps) {
-            const itemKey = key as keyof FormItemProps;
-            itemProps[itemKey] =
-              val && key === 'rules' ? createRules(val) : val;
+            const itemVal = key === 'rules' && val ? createRules(val) : val;
+            itemProps[key as keyof FormItemProps] = itemVal;
           } else {
             const fieldKey = fixFieldProps[key as keyof FixFieldProps] || key;
             fieldProps[fieldKey as keyof P] = val;

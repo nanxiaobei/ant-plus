@@ -49,16 +49,10 @@ export type WatchProps =
  * Watch - 用于监听其它字段的值
  */
 const Watch = (props: WatchProps) => {
-  const {
-    name, // 需监听的字段
-    list = [], // 需监听的字段列表 (与 name 互斥)
-    children, // 渲染函数 render props
-    onlyValid = false, // 只在值非 undefined 时，触发 children 渲染
-    onChange, // 变化时的回调，用于字段不在组件内的情况 (与 children 互斥)
-  } = props;
+  const { name, list, children, onlyValid = false, onChange } = props;
 
-  const hasName = 'name' in props;
-  const prevVal = useRef(hasName ? undefined : list.map(() => undefined));
+  const hasName = !Array.isArray(list);
+  const prev = useRef(hasName ? undefined : list.map(() => undefined));
 
   return (
     <Item
@@ -73,7 +67,7 @@ const Watch = (props: WatchProps) => {
       {(rawForm) => {
         const form = rawForm as FormInstance;
 
-        const curVal = hasName
+        const next = hasName
           ? name && form.getFieldValue(name)
           : list.map((key) => key && form.getFieldValue(key));
 
@@ -82,23 +76,23 @@ const Watch = (props: WatchProps) => {
         let changeEffect = null;
 
         if (hasName) {
-          hasChange = curVal !== prevVal.current;
-          hasValidValue = curVal !== undefined;
+          hasChange = next !== prev.current;
+          hasValidValue = next !== undefined;
         } else {
-          hasChange = curVal.some((val: any, index: number) => {
+          hasChange = next.some((val: any, index: number) => {
             hasValidValue = val !== undefined;
-            return val !== prevVal.current?.[index];
+            return val !== prev.current?.[index];
           });
         }
 
-        const prev = prevVal.current;
+        const cachePrev = prev.current;
 
         if (hasChange) {
-          prevVal.current = curVal;
+          prev.current = next;
 
           if (onChange) {
             const ChangeEffect = () => {
-              useEffect(() => onChange(curVal, prev, form), []);
+              useEffect(() => onChange(next, cachePrev, form), []);
               return null;
             };
             changeEffect = <ChangeEffect />;
@@ -108,7 +102,7 @@ const Watch = (props: WatchProps) => {
         if (!onlyValid || (onlyValid && hasValidValue)) {
           return (
             <>
-              {children?.(curVal, prev, form)}
+              {children?.(next, cachePrev, form)}
               {changeEffect}
             </>
           );
