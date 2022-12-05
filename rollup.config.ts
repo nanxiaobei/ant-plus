@@ -10,7 +10,9 @@ const cjsOutput = { file: pkg.main, format: 'cjs', exports: 'auto' } as const;
 const esmOutput = { file: pkg.module, format: 'es' } as const;
 const dtsOutput = { file: pkg.types, format: 'es' } as const;
 const plugins = [typescript()];
-const external = () => true;
+
+const deps = Object.keys({ ...pkg.peerDependencies, ...pkg.dependencies });
+const external = (id: string) => new RegExp(`^(${deps.join('|')})`).test(id);
 
 const config: RollupOptions[] = [
   { input, output: cjsOutput, plugins, external },
