@@ -41,11 +41,11 @@ import { Button, Form, Input, Select, WrapperCol } from 'antx';
 const App = () => {
   return (
     <Form labelCol={{ span: 8 }} wrapperCol={{ span: 16 }}>
-      <Input label="Name" name="name" rules={['required', 'max=10']} />
+      <Input label="Name" name="name" rules={['required', 'string']} />
       <Select
         label="Gender"
         name="gender"
-        rules={['required']}
+        rules={['required', 'number']}
         options={[
           { value: 1, label: 'Male' },
           { value: 2, label: 'Female' },
