@@ -198,28 +198,25 @@ const MyCustomInputPlus = create(MyCustomInput);
 
 ### 4. 简化版 `rules`
 
-| 短语            | 对应                                                          | 说明         |
-| --------------- | ------------------------------------------------------------- | ------------ |
-| `'required'`    | `{ required: true }`                                          |              |
-| `'warningOnly'` | `{ warningOnly: true }`                                       |              |
-| `'whitespace'`  | `{ whitespace: true }`                                        |              |
-| `'string'`      | `{ type: 'string' }`                                          |              |
-| `'number'`      | `{ type: 'number' }`                                          |              |
-| `'boolean'`     | `{ type: 'boolean' }`                                         |              |
-| `'url'`         | `{ type: 'url' }`                                             |              |
-| `'email'`       | `{ type: 'email' }`                                           |              |
-| `'phone'`       | `{ pattern: /^1[3456789]\d{9}$/, validateTrigger: 'onBlur' }` |              |
-| `'len=10'`      | `{ len: 10 }`                                                 | `len === 10` |
-| `'max=100'`     | `{ max:100 }`                                                 | `max <= 100` |
-| `'min=0'`       | `{ min: 0 }`                                                  | `min >= 0`   |
-| `'max<100'`     | 自定义 validator                                              | ` max < 100` |
-| `'min>0'`       | 自定义 validator                                              | `min > 0`    |
+| 短语            | 对应                                | 说明         |
+| --------------- | ----------------------------------- | ------------ |
+| `'required'`    | `{ required: true }`                |              |
+| `'required=xx'` | `{ required: true, message: 'xx' }` |              |
+| `'string'`      | `{ type: 'string' }`                |              |
+| `'number'`      | `{ type: 'number' }`                |              |
+| `'array'`       | `{ type: 'array' }`                 |              |
+| `'boolean'`     | `{ type: 'boolean' }`               |              |
+| `'url'`         | `{ type: 'url' }`                   |              |
+| `'email'`       | `{ type: 'email' }`                 |              |
+| `'len=20'`      | `{ len: 20 }`                       | `len === 20` |
+| `'max=100'`     | `{ max: 100 }`                      | `max <= 100` |
+| `'min=10'`      | `{ min: 10 }`                       | `min >= 10`  |
 
 ```tsx
 // 简化版 rules 使用示例
 
 <Form>
-  <Input label="歌曲" name="song" rules={['required', 'min>0', 'max=50']} />
+  <Input label="歌曲" name="song" rules={['required', 'min=0', 'max=50']} />
 </Form>
 ```
 
