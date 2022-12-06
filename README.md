@@ -2,7 +2,7 @@
 
 <img src="public/ant_plus_logo.svg" alt="Ant Plus" height="122" />
 
-Ant Design Form Simplified, build Form in the simplest way.
+Ant Design Form Simplified, build forms in the simplest way.
 
 [![npm version](https://img.shields.io/npm/v/antx.svg?style=flat-square)](https://www.npmjs.com/package/antx)
 [![npm downloads](https://img.shields.io/npm/dt/antx.svg?style=flat-square)](http://www.npmtrends.com/antx)
@@ -21,7 +21,7 @@ English · [简体中文](./README.zh-CN.md)
 
 - Say goodbye to cumbersome `<Form.Item>` and `rules`
 - Full TypeScript hinting support
-- Easily extend existing form components
+- Easily extend existing field components
 
 ## Installation
 
@@ -146,7 +146,7 @@ import { Watch } from 'antx';
 
   <Watch name="song">
     {(song) => {
-      return <div>song: {song}</div>;
+      return <div>Song: {song}</div>;
     }}
   </Watch>
 
