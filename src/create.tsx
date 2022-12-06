@@ -11,101 +11,85 @@ import type { FormItemProps, FormRule } from 'antd';
 
 const { Item } = Form;
 
-// https://github.com/lodash/lodash/blob/master/memoize.js
-const memoize = <T extends (...args: any[]) => any>(func: T) => {
-  const cache = new Map();
-
-  return ((...args) => {
-    const key = args[0];
-
-    if (cache.has(key)) {
-      return cache.get(key);
-    }
-
-    const result = func(...args);
-    cache.set(key, result);
-    return result;
-  }) as T;
-};
-
 // ─── rules ↓↓↓ ───────────────────────────────────────────────────────────────
 export type PlusShortRule =
   | 'required'
-  | 'warningOnly'
-  | 'whitespace'
+  | `required=${string}`
   | 'string'
   | 'number'
+  | 'array'
   | 'boolean'
   | 'url'
   | 'email'
   | `len=${number}` // len === val
   | `max=${number}` // max <= val
   | `min=${number}` // min >= val
-  // number custom
-  | `max<${number}` // max < val
-  | `min>${number}` // min > val
   | FormRule;
 
-const metaRuleMap: Record<string, FormRule> = {
-  required: { required: true },
-  warningOnly: { warningOnly: true },
-  whitespace: { whitespace: true },
-
-  string: { type: 'string' },
-  number: { type: 'number' },
+const miscTypeMap: Record<string, FormRule> = {
   boolean: { type: 'boolean' },
   url: { type: 'url' },
   email: { type: 'email' },
 };
 
-const getShortRule = memoize((rule: string): FormRule => {
-  if (rule in metaRuleMap) {
-    return metaRuleMap[rule as keyof typeof metaRuleMap];
-  }
+const numTypeMap: Record<string, FormRule> = {
+  string: { type: 'string', whitespace: true },
+  number: { type: 'number' },
+  array: { type: 'array' },
+};
 
-  if (rule.includes('=')) {
+const getRules = (rules: PlusShortRule[]): FormRule[] => {
+  const ruleList: FormRule[] = [];
+  let numTypeRule: FormRule | null = null;
+  let numValRules: FormRule[] = [];
+
+  rules.forEach((rule) => {
+    if (typeof rule !== 'string') {
+      ruleList.push(rule);
+      return;
+    }
+
+    if (rule === 'required') {
+      ruleList.push({ required: true });
+      return;
+    }
+
+    if (rule in miscTypeMap) {
+      ruleList.push(miscTypeMap[rule]);
+      return;
+    }
+
+    if (rule in numTypeMap) {
+      numTypeRule = numTypeMap[rule];
+      return;
+    }
+
     const [key, val] = rule.split('=');
 
-    if (key === 'len' || key === 'min' || key === 'max') {
-      return { [key]: +val };
+    if (val === undefined) {
+      return;
     }
-  }
 
-  if (rule.includes('min>')) {
-    const [, val] = rule.split('min>');
-    return {
-      type: 'number',
-      validator: (_, value) => {
-        if (typeof value !== 'number' || value > +val) {
-          return Promise.resolve();
-        }
-        return Promise.reject(new Error(`Must be greater than ${val}`));
-      },
-    } as FormRule;
-  }
+    if (key === 'required') {
+      ruleList.push({ required: true, message: val });
+      return;
+    }
 
-  if (rule.includes('max<')) {
-    const [, rawVal] = rule.split('max<');
-    const val = +rawVal;
-
-    return {
-      type: 'number',
-      validator: (_, value) => {
-        if (typeof value !== 'number' || value < val) {
-          return Promise.resolve();
-        }
-        return Promise.reject(new Error(`Must be less than ${val}`));
-      },
-    } as FormRule;
-  }
-
-  return {};
-});
-
-const createRules = (rules: PlusShortRule[]): FormRule[] => {
-  return rules.map((rule) => {
-    return typeof rule === 'string' ? getShortRule(rule) : rule;
+    if (key === 'len' || key === 'min' || key === 'max') {
+      numValRules.push({ [key]: +val });
+      return;
+    }
   });
+
+  if (numTypeRule && numValRules.length > 0) {
+    ruleList.push(...numValRules.map((obj) => ({ ...numTypeRule, ...obj })));
+  } else if (numTypeRule) {
+    ruleList.push(numTypeRule);
+  } else if (numValRules.length > 0) {
+    ruleList.push(...numValRules);
+  }
+
+  return ruleList;
 };
 
 // ─── Form.Item & Field ↓↓↓ ───────────────────────────────────────────────────
@@ -186,8 +170,8 @@ const create = <T extends JSXElementConstructor<any>>(
           const { [key]: val } = props;
 
           if (key in formItemProps) {
-            const itemVal = key === 'rules' && val ? createRules(val) : val;
-            itemProps[key as keyof FormItemProps] = itemVal;
+            const itemKey = key as keyof FormItemProps;
+            itemProps[itemKey] = key === 'rules' && val ? getRules(val) : val;
           } else {
             const fieldKey = fixFieldProps[key as keyof FixFieldProps] || key;
             fieldProps[fieldKey as keyof P] = val;
