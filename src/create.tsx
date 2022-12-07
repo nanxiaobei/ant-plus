@@ -16,6 +16,7 @@ export type PlusShortRule =
   | 'required'
   | `required=${string}`
   | 'string'
+  | 'pureString'
   | 'number'
   | 'array'
   | 'boolean'
@@ -34,6 +35,7 @@ const miscTypeMap: Record<string, FormRule> = {
 
 const numTypeMap: Record<string, FormRule> = {
   string: { type: 'string', whitespace: true },
+  pureString: { type: 'string' },
   number: { type: 'number' },
   array: { type: 'array' },
 };

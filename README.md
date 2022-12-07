@@ -198,19 +198,20 @@ const MyCustomInputPlus = create(MyCustomInput);
 
 ### 4. Simplified `rules`
 
-| Phrase          | Correspondence                      | Description  |
-| --------------- | ----------------------------------- | ------------ |
-| `'required'`    | `{ required: true }`                |              |
-| `'required=xx'` | `{ required: true, message: 'xx' }` |              |
-| `'string'`      | `{ type: 'string' }`                |              |
-| `'number'`      | `{ type: 'number' }`                |              |
-| `'array'`       | `{ type: 'array' }`                 |              |
-| `'boolean'`     | `{ type: 'boolean' }`               |              |
-| `'url'`         | `{ type: 'url' }`                   |              |
-| `'email'`       | `{ type: 'email' }`                 |              |
-| `'len=20'`      | `{ len: 20 }`                       | `len === 20` |
-| `'max=100'`     | `{ max: 100 }`                      | `max <= 100` |
-| `'min=10'`      | `{ min: 10 }`                       | `min >= 10`  |
+| Phrase          | Correspondence                         | Description  |
+| --------------- | -------------------------------------- | ------------ |
+| `'required'`    | `{ required: true }`                   |              |
+| `'required=xx'` | `{ required: true, message: 'xx' }`    |              |
+| `'string'`      | `{ type: 'string', whitespace: true }` |              |
+| `'pureString'`  | `{ type: 'string' }`                   |              |
+| `'number'`      | `{ type: 'number' }`                   |              |
+| `'array'`       | `{ type: 'array' }`                    |              |
+| `'boolean'`     | `{ type: 'boolean' }`                  |              |
+| `'url'`         | `{ type: 'url' }`                      |              |
+| `'email'`       | `{ type: 'email' }`                    |              |
+| `'len=20'`      | `{ len: 20 }`                          | `len === 20` |
+| `'max=100'`     | `{ max: 100 }`                         | `max <= 100` |
+| `'min=10'`      | `{ min: 10 }`                          | `min >= 10`  |
 
 ```tsx
 // Simplified rules usage example
