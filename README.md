@@ -75,13 +75,13 @@ export default App;
 `antx` provides a set of `antd` enhanced form field components, features of enhanced components:
 
 **1. No need to write `<Form.Item>`**  
- Directly mix `Form.Item` props with the original field component props (full TypeScript hints), which greatly simplifies the code.
+Directly mix `Form.Item` props with the original field component props (full TypeScript hints), which greatly simplifies the code.
 
 **2. Simplified `rules` (only enhanced, original `rules` is also supported)**  
- Provide rules in string phrase, for example `rules={['required', 'max=10']}` represents for `rules={[{ required: true }, { max: 10 }]}`.
+`rules` in string phrase, for example `rules={['required', 'max=10']}` represents for `rules={[{ required: true }, { max: 10 }]}`.
 
-**3. Not add any other props**  
- All props are `antd` original props, without adding any other props and APIs, reducing mental burden.
+**3. Not add any new props**  
+All props are `antd` original props, without add any other new props or APIs, reducing mental burden.
 
 In addition, `antx` also provides 3 original components (`Form`, `Button`, `Item`), 2 custom components (`WrapperCol`, `Watch`), and a tool function `create`.
 
