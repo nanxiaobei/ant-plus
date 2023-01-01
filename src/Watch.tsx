@@ -83,7 +83,7 @@ const Watch = (props: WatchProps) => {
   return (
     <Item
       noStyle
-      shouldUpdate={(prev, next) => {
+      shouldUpdate={(prev: Record<string, any>, next: Record<string, any>) => {
         if (hasName) {
           return name ? valOf(prev, name) !== valOf(next, name) : true;
         }
@@ -91,7 +91,7 @@ const Watch = (props: WatchProps) => {
       }}
     >
       {(rawForm) => {
-        const form = rawForm as FormInstance;
+        const form = rawForm as FormInstance & Record<string, any>;
 
         const next = hasName
           ? name && form.getFieldValue(name)
