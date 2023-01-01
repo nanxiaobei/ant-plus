@@ -3,13 +3,39 @@ import type { ReactNode } from 'react';
 import { Form } from 'antd';
 import type { FormInstance } from 'antd/es/form';
 import type { NamePath, Store } from 'antd/es/form/interface';
-import { getNamePath, getValue } from 'rc-field-form/es/utils/valueUtil';
 
 const { Item } = Form;
 
+// https://github.com/react-component/field-form/blob/master/src/utils/typeUtil.ts
+function toArray<T>(value?: T | T[] | null): T[] {
+  if (value === undefined || value === null) {
+    return [];
+  }
+
+  return Array.isArray(value) ? value : [value];
+}
+
+// https://github.com/react-component/util/blob/master/src/utils/get.ts
+function get(
+  entity: any,
+  path: (string | number)[] | readonly (string | number)[]
+) {
+  let current = entity;
+
+  for (let i = 0; i < path.length; i += 1) {
+    if (current === null || current === undefined) {
+      return undefined;
+    }
+
+    current = current[path[i]];
+  }
+
+  return current;
+}
+
 const valOf = (values: Store, name: NamePath) => {
-  const namePath = getNamePath(name);
-  return getValue(values, namePath);
+  const namePath = toArray(name);
+  return get(values, namePath);
 };
 
 type OnChange = (next: any, prev: any, form: FormInstance) => void;
