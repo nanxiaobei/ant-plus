@@ -30,9 +30,6 @@
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
   },
-  "dependencies": {
-    "tslib": "^2.4.1"
-  },
   "devDependencies": {
     "@rollup/plugin-typescript": "^10.0.1",
     "@trivago/prettier-plugin-sort-imports": "^4.0.0",

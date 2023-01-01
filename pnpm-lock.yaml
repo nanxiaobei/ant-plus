@@ -16,15 +16,11 @@ specifiers:
   react-dom: ^18.2.0
   rollup: ^3.9.0
   rollup-plugin-dts: ^5.1.0
-  tslib: ^2.4.1
   typescript: ^4.9.4
   vite: ^4.0.3
 
-dependencies:
-  tslib: 2.4.1
-
 devDependencies:
-  '@rollup/plugin-typescript': 10.0.1_n7sjvtseqmjofq3m6bbajkjsdi
+  '@rollup/plugin-typescript': 10.0.1_fjmngzu5qr6xzjooxkpjm6imha
   '@trivago/prettier-plugin-sort-imports': 4.0.0_prettier@2.8.1
   '@types/node': 18.11.18
   '@types/react': 18.0.26
@@ -1892,7 +1888,7 @@ packages:
       react-dom: 18.2.0_react@18.2.0
     dev: true
 
-  /@rollup/plugin-typescript/10.0.1_n7sjvtseqmjofq3m6bbajkjsdi:
+  /@rollup/plugin-typescript/10.0.1_fjmngzu5qr6xzjooxkpjm6imha:
     resolution: {integrity: sha512-wBykxRLlX7EzL8BmUqMqk5zpx2onnmRMSw/l9M1sVfkJvdwfxogZQVNUM9gVMJbjRLDR5H6U0OMOrlDGmIV45A==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -1908,7 +1904,6 @@ packages:
       '@rollup/pluginutils': 5.0.2_rollup@3.9.0
       resolve: 1.22.1
       rollup: 3.9.0
-      tslib: 2.4.1
       typescript: 4.9.4
     dev: true
 
@@ -4694,9 +4689,6 @@ packages:
   /tslib/1.14.1:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
     dev: true
-
-  /tslib/2.4.1:
-    resolution: {integrity: sha512-tGyy4dAjRIEwI7BzsB0lynWgOpfqjUdq91XXAlIWD2OwKBH7oCl/GZG/HT4BOHrTlPMOASlMQ7veyTqpmRcrNA==}
 
   /tsutils/3.21.0_typescript@4.9.4:
     resolution: {integrity: sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==}
