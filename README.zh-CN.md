@@ -233,6 +233,6 @@ Ant Plus 与 Ant Design 表单代码对比：
 
 ## FUTAKE
 
-试试 [**FUTAKE**](https://sotake.com/f) 小程序，你的灵感相册。🌈
+试试 [**FUTAKE**](https://sotake.com/futake) 小程序，你的灵感相册。🌈
 
 ![FUTAKE](https://s3.bmp.ovh/imgs/2022/07/21/452dd47aeb790abd.png)
