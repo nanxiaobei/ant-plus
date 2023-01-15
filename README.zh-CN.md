@@ -91,42 +91,42 @@ export default App;
 
 > 一级表单组件：
 
-- **AutoComplete**
-- **Cascader**
-- **Checkbox**
-- **DatePicker**
-- **Input**
-- **InputNumber**
-- **Mentions**
-- **Radio**
-- **Rate**
-- **Select**
-- **Slider**
-- **Switch**
-- **TimePicker**
-- **Transfer**
-- **TreeSelect**
-- **Upload**
+1. **AutoComplete**
+1. **Cascader**
+1. **Checkbox**
+1. **DatePicker**
+1. **Input**
+1. **InputNumber**
+1. **Mentions**
+1. **Radio**
+1. **Rate**
+1. **Select**
+1. **Slider**
+1. **Switch**
+1. **TimePicker**
+1. **Transfer**
+1. **TreeSelect**
+1. **Upload**
 
 > 二级表单组件，`antd` 中使用方式为 `AAA.BBB`，`antx` 中可直接引入 `BBB`：
 
-- **CheckboxGroup** `Checkbox.Group`
-- **DateRange** `DatePicker.RangePicker`
-- **TextArea** `Input.TextArea`
-- **Search** `Input.Search`
-- **Password** `Input.Password`
-- **RadioGroup** `Radio.Group`
-- **TimeRange** `TimePicker.RangePicker`
-- **Dragger** `Upload.Dragger`
+1. **CheckboxGroup** `Checkbox.Group`
+1. **DateRange** `DatePicker.RangePicker`
+1. **TextArea** `Input.TextArea`
+1. **Search** `Input.Search`
+1. **Password** `Input.Password`
+1. **RadioGroup** `Radio.Group`
+1. **TimeRange** `TimePicker.RangePicker`
+1. **Dragger** `Upload.Dragger`
 
 ### 2. 基础组件
 
 > `Form`、`Button`、`Item` 均为 `antd` 原始组件，为方便使用而提供。`Watch`、`WrapperCol` 为自定义组件。
 
-- **Form**
-- **Button**
-- **Item** `Form.Item`
-- **Watch** 用于监听表单字段变化，可实现仅局部 re-render，更精细、性能更好
+1. **Form**
+1. **Button**
+1. **Item** `Form.Item`
+1. **Watch** 用于监听表单字段变化，可实现仅局部 re-render，更精细、性能更好
 
 | Props       | 说明                                                      | 类型                                                         | 默认值  |
 | ----------- | --------------------------------------------------------- | ------------------------------------------------------------ | ------- |
@@ -162,7 +162,7 @@ import { Watch } from 'antx';
 </Form>;
 ```
 
-- **WrapperCol** 简化布局代码，props 与` Form.Item` 完全一致，用于 UI 需与输入框对齐的情况
+5. **WrapperCol** 简化布局代码，props 与` Form.Item` 完全一致，用于 UI 需与输入框对齐的情况
 
 ```tsx
 // WrapperCol 使用示例

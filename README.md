@@ -91,42 +91,42 @@ In addition, `antx` also provides 3 original components (`Form`, `Button`, `Item
 
 > 1st-level field components:
 
-- **AutoComplete**
-- **Cascader**
-- **Checkbox**
-- **DatePicker**
-- **Input**
-- **InputNumber**
-- **Mentions**
-- **Radio**
-- **Rate**
-- **Select**
-- **Slider**
-- **Switch**
-- **TimePicker**
-- **Transfer**
-- **TreeSelect**
-- **Upload**
+1. **AutoComplete**
+1. **Cascader**
+1. **Checkbox**
+1. **DatePicker**
+1. **Input**
+1. **InputNumber**
+1. **Mentions**
+1. **Radio**
+1. **Rate**
+1. **Select**
+1. **Slider**
+1. **Switch**
+1. **TimePicker**
+1. **Transfer**
+1. **TreeSelect**
+1. **Upload**
 
 > 2nd-level field components, in `antd` is `AAA.BBB`, and in `antx` can directly import `BBB`:
 
-- **CheckboxGroup** `Checkbox.Group`
-- **DateRange** `DatePicker.RangePicker`
-- **TextArea** `Input.TextArea`
-- **Search** `Input.Search`
-- **Password** `Input.Password`
-- **RadioGroup** `Radio.Group`
-- **TimeRange** `TimePicker.RangePicker`
-- **Dragger** `Upload.Dragger`
+1. **CheckboxGroup** `Checkbox.Group`
+1. **DateRange** `DatePicker.RangePicker`
+1. **TextArea** `Input.TextArea`
+1. **Search** `Input.Search`
+1. **Password** `Input.Password`
+1. **RadioGroup** `Radio.Group`
+1. **TimeRange** `TimePicker.RangePicker`
+1. **Dragger** `Upload.Dragger`
 
 ### 2. Base components
 
 > `Form`, `Button`, and `Item` are `antd` original components, provided for convenience. `Watch` and `WrapperCol` are custom components.
 
-- **Form**
-- **Button**
-- **Item** `Form.Item`
-- **Watch** used to monitor the changes of form fields, which can be only partial re-render, more refined and better performance
+1. **Form**
+1. **Button**
+1. **Item** `Form.Item`
+1. **Watch** used to monitor the changes of form fields, which can be only partial re-render, more refined and better performance
 
 | Props       | Description                                                                                 | Type                                                      | Default |
 | ----------- | ------------------------------------------------------------------------------------------- | --------------------------------------------------------- | ------- |
@@ -162,7 +162,7 @@ import { Watch } from 'antx';
 </Form>;
 ```
 
-- **WrapperCol** simplify the layout code, the same props as `Form.Item`, used when the UI needs to be aligned with the input box.
+5. **WrapperCol** simplify the layout code, the same props as `Form.Item`, used when the UI needs to be aligned with the input box.
 
 ```tsx
 // WrapperCol usage example
