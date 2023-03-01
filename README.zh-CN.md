@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="public/ant_plus_logo.svg" alt="Ant Plus" height="122" />
+<img src="public/ant_plus_logo.svg" alt="Ant Plus" height="100" />
 
 Ant Design Form 简化版，以最简便的方式搭建表单。
 

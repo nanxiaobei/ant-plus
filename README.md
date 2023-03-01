@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="public/ant_plus_logo.svg" alt="Ant Plus" height="122" />
+<img src="public/ant_plus_logo.svg" alt="Ant Plus" height="100" />
 
 Ant Design Form Simplified, build forms in the simplest way.
 
