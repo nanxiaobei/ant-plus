@@ -17,7 +17,7 @@ English · [简体中文](./README.zh-CN.md)
 
 ---
 
-## Feature
+## Features
 
 - Say goodbye to cumbersome `<Form.Item>` and `rules`
 - Full TypeScript hinting support
