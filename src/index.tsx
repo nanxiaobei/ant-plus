@@ -46,9 +46,9 @@ export type { PlusShortRule, PlusFieldProps } from './create';
 
 /* raw
  ---------------------------------------------------------------------- */
-export const Form: typeof AntForm = AntForm;
+export const Form = AntForm;
 export const Button = AntButton;
-export const Item: typeof AntForm.Item = AntForm.Item;
+export const Item = AntForm.Item;
 
 /* custom
  ---------------------------------------------------------------------- */
