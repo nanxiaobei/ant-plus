@@ -17,7 +17,7 @@
   dependencies:
     "@ctrl/tinycolor" "^3.4.0"
 
-"@ant-design/cssinjs@^1.5.6":
+"@ant-design/cssinjs@^1.7.1":
   version "1.7.1"
   resolved "https://registry.yarnpkg.com/@ant-design/cssinjs/-/cssinjs-1.7.1.tgz#5a1bce3f18efc7d3d58d30a57966305c4a89704b"
   integrity sha512-7pwBx1ozVXDKLXKrORRCetIxIvDxZLVSzj8hTuD/SYGXDPkMzT0PxvJIyBPixAJ/eqejFARP0hrgk4XREOgGbA==
@@ -1668,13 +1668,13 @@ ansi-styles@^4.0.0, ansi-styles@^4.1.0:
   dependencies:
     color-convert "^2.0.1"
 
-antd@^5.3.2:
-  version "5.3.2"
-  resolved "https://registry.yarnpkg.com/antd/-/antd-5.3.2.tgz#6f225a3ae43c63c1003dc7af4d0045d3be612497"
-  integrity sha512-AOCZ+5krqvlLPR1v33K2PQtt9XBAC0gUdjxuHltUliE9u2zlZzGT+4DSHTNnw8CtotPV4lFKab3+K+FgdtyTlw==
+antd@^5.3.3:
+  version "5.3.3"
+  resolved "https://registry.yarnpkg.com/antd/-/antd-5.3.3.tgz#fff7edd39f69d1985f902e6c3b426d04099c9c38"
+  integrity sha512-QR4cGBTFiF+PFjnCgrUMvove60vc9LWv6fq8Rt/LMhFchvAu8yRuSow4RDCwAWoc1JNimUHMrs4+3TBW4uvqlA==
   dependencies:
     "@ant-design/colors" "^7.0.0"
-    "@ant-design/cssinjs" "^1.5.6"
+    "@ant-design/cssinjs" "^1.7.1"
     "@ant-design/icons" "^5.0.0"
     "@ant-design/react-slick" "~1.0.0"
     "@babel/runtime" "^7.18.3"
@@ -1697,7 +1697,7 @@ antd@^5.3.2:
     rc-input "~0.2.1"
     rc-input-number "~7.4.0"
     rc-mentions "~2.1.0"
-    rc-menu "~9.8.2"
+    rc-menu "~9.8.3"
     rc-motion "^2.6.1"
     rc-notification "~5.0.0"
     rc-pagination "~3.3.0"
@@ -3526,7 +3526,7 @@ rc-mentions@~2.1.0:
     rc-textarea "^1.0.0"
     rc-util "^5.22.5"
 
-rc-menu@~9.8.0, rc-menu@~9.8.2:
+rc-menu@~9.8.0, rc-menu@~9.8.3:
   version "9.8.3"
   resolved "https://registry.yarnpkg.com/rc-menu/-/rc-menu-9.8.3.tgz#8ba1d0825612e641c9f2fe7cbdc83a63236bfb76"
   integrity sha512-KCwiF+Z1hpf4c9Ww9P6J/tDnmk83x9zYKHkVmXrXiZlQP7RnMTJskQSUJa27CaQYDEwwfDqpek8+rBU8P79AxA==
