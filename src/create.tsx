@@ -95,21 +95,19 @@ const getRules = (rules: PlusShortRule[]): FormRule[] => {
 };
 
 // ─── Form.Item & Field ↓↓↓ ───────────────────────────────────────────────────
-type FixFieldProps = {
+type ConflictProps = 'className' | 'style' | 'name';
+
+type ReplaceProps = {
   selfClass?: string;
   selfStyle?: CSSProperties;
   selfName?: string;
 };
 
-type ConflictFieldProps = 'className' | 'style' | 'name';
+export type PlusProps<P> = Omit<P, ConflictProps> &
+  ReplaceProps &
+  Omit<FormItemProps, 'rules'> & { rules?: PlusShortRule[] };
 
-type NewFieldProps<P> = Omit<P, ConflictFieldProps> & FixFieldProps;
-
-type NewItemProps = Omit<FormItemProps, 'rules'> & { rules?: PlusShortRule[] };
-
-export type PlusFieldProps<P> = NewFieldProps<P> & NewItemProps;
-
-const fixFieldProps: Record<keyof FixFieldProps, ConflictFieldProps> = {
+const replaceMap: Record<keyof ReplaceProps, ConflictProps> = {
   selfClass: 'className',
   selfStyle: 'style',
   selfName: 'name',
@@ -162,7 +160,7 @@ const create = <T extends JSXElementConstructor<any>>(
   type P = ComponentProps<T>;
 
   const ItemField = forwardRef(
-    (props: PlusFieldProps<P>, ref: ForwardedRef<unknown>) => {
+    (props: PlusProps<P>, ref: ForwardedRef<unknown>) => {
       const itemProps: FormItemProps = {};
       const fieldProps: P = {} as P;
 
@@ -175,7 +173,7 @@ const create = <T extends JSXElementConstructor<any>>(
             const itemKey = key as keyof FormItemProps;
             itemProps[itemKey] = key === 'rules' && val ? getRules(val) : val;
           } else {
-            const fieldKey = fixFieldProps[key as keyof FixFieldProps] || key;
+            const fieldKey = replaceMap[key as keyof ReplaceProps] || key;
             fieldProps[fieldKey as keyof P] = val;
           }
         });

@@ -52,6 +52,7 @@ import type {
 import type { MentionsRef } from 'antd/es/mentions';
 import type { DraggerProps as AntDraggerProps } from 'antd/es/upload';
 import create from './create';
+import type { PlusProps } from './create';
 
 // fix mentions type
 interface MentionsConfig {
@@ -73,7 +74,7 @@ type CompoundedComponent = React.ForwardRefExoticComponent<
 /* create
  ---------------------------------------------------------------------- */
 export { default as create } from './create';
-export type { PlusShortRule, PlusFieldProps } from './create';
+export type { PlusShortRule, PlusProps } from './create';
 
 /* raw
  ---------------------------------------------------------------------- */
@@ -95,22 +96,22 @@ export { default as WrapperCol } from './WrapperCol';
 
 /* 1st
  ---------------------------------------------------------------------- */
-export type AutoCompleteProps = AntAutoCompleteProps & AntFormItemProps;
-export type CascaderProps = AntCascaderProps & AntFormItemProps;
-export type CheckboxProps = AntCheckboxProps & AntFormItemProps;
-export type DatePickerProps = AntDatePickerProps & AntFormItemProps;
-export type InputProps = AntInputProps & AntFormItemProps;
-export type InputNumberProps = AntInputNumberProps & AntFormItemProps;
-export type MentionProps = AntMentionProps & AntFormItemProps;
-export type RadioProps = AntRadioProps & AntFormItemProps;
-export type RateProps = AntRateProps & AntFormItemProps;
-export type SelectProps = AntSelectProps & AntFormItemProps;
-export type SliderProps = AntSliderSingleProps & AntFormItemProps;
-export type SwitchProps = AntSwitchProps & AntFormItemProps;
-export type TimePickerProps = AntTimePickerProps & AntFormItemProps;
-export type TransferProps = AntTransferProps<any> & AntFormItemProps;
-export type TreeSelectProps = AntTreeSelectProps & AntFormItemProps;
-export type UploadProps = AntUploadProps & AntFormItemProps;
+export type AutoCompleteProps = PlusProps<AntAutoCompleteProps>;
+export type CascaderProps = PlusProps<AntCascaderProps>;
+export type CheckboxProps = PlusProps<AntCheckboxProps>;
+export type DatePickerProps = PlusProps<AntDatePickerProps>;
+export type InputProps = PlusProps<AntInputProps>;
+export type InputNumberProps = PlusProps<AntInputNumberProps>;
+export type MentionProps = PlusProps<AntMentionProps>;
+export type RadioProps = PlusProps<AntRadioProps>;
+export type RateProps = PlusProps<AntRateProps>;
+export type SelectProps = PlusProps<AntSelectProps>;
+export type SliderProps = PlusProps<AntSliderSingleProps>;
+export type SwitchProps = PlusProps<AntSwitchProps>;
+export type TimePickerProps = PlusProps<AntTimePickerProps>;
+export type TransferProps = PlusProps<AntTransferProps<any>>;
+export type TreeSelectProps = PlusProps<AntTreeSelectProps>;
+export type UploadProps = PlusProps<AntUploadProps>;
 
 export const AutoComplete = create(AntAutoComplete);
 export const Cascader = create(AntCascader);
@@ -131,14 +132,14 @@ export const Upload = create(AntUpload);
 
 /* 2nd
  ---------------------------------------------------------------------- */
-export type CheckboxGroupProps = AntCheckboxGroupProps & AntFormItemProps;
-export type DateRangeProps = AntRangePickerProps & AntFormItemProps;
-export type TextAreaProps = AntTextAreaProps & AntFormItemProps;
-export type SearchProps = AntSearchProps & AntFormItemProps;
-export type PasswordProps = AntPasswordProps & AntFormItemProps;
-export type RadioGroupProps = AntRadioGroupProps & AntFormItemProps;
-export type TimeRangeProps = AntTimeRangePickerProps & AntFormItemProps;
-export type DraggerProps = AntDraggerProps & AntFormItemProps;
+export type CheckboxGroupProps = PlusProps<AntCheckboxGroupProps>;
+export type DateRangeProps = PlusProps<AntRangePickerProps>;
+export type TextAreaProps = PlusProps<AntTextAreaProps>;
+export type SearchProps = PlusProps<AntSearchProps>;
+export type PasswordProps = PlusProps<AntPasswordProps>;
+export type RadioGroupProps = PlusProps<AntRadioGroupProps>;
+export type TimeRangeProps = PlusProps<AntTimeRangePickerProps>;
+export type DraggerProps = PlusProps<AntDraggerProps>;
 
 export const CheckboxGroup = create(AntCheckbox.Group);
 export const DateRange = create(AntDatePicker.RangePicker);
