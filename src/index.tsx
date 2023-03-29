@@ -25,6 +25,7 @@ import type {
   CascaderProps as AntCascaderProps,
   CheckboxProps as AntCheckboxProps,
   DatePickerProps as AntDatePickerProps,
+  FormInstance as AntFormInstance,
   FormItemProps as AntFormItemProps,
   FormProps as AntFormProps,
   InputNumberProps as AntInputNumberProps,
@@ -79,6 +80,7 @@ export type { PlusShortRule, PlusProps } from './create';
 /* raw
  ---------------------------------------------------------------------- */
 export type FormProps = AntFormProps;
+export type FormInstance = AntFormInstance;
 export type ButtonProps = AntButtonProps;
 export type ItemProps = AntFormItemProps;
 
