@@ -1,7 +1,7 @@
 module.exports = {
   singleQuote: true,
 
-  plugins: [require.resolve('@trivago/prettier-plugin-sort-imports')],
+  plugins: ['@trivago/prettier-plugin-sort-imports'],
   importOrder: [
     '^react',
     '^rollup',
