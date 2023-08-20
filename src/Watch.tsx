@@ -18,7 +18,7 @@ function toArray<T>(value?: T | T[] | null): T[] {
 // https://github.com/react-component/util/blob/master/src/utils/get.ts
 function get(
   entity: any,
-  path: (string | number)[] | readonly (string | number)[]
+  path: (string | number)[] | readonly (string | number)[],
 ) {
   let current = entity;
 

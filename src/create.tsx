@@ -148,14 +148,17 @@ const formItemKeys = [
   'style',
 ] as (keyof FormItemProps)[];
 
-const formItemProps = formItemKeys.reduce((obj, key) => {
-  obj[key] = true;
-  return obj;
-}, {} as Record<keyof FormItemProps, boolean>);
+const formItemProps = formItemKeys.reduce(
+  (obj, key) => {
+    obj[key] = true;
+    return obj;
+  },
+  {} as Record<keyof FormItemProps, boolean>,
+);
 
 const create = <T extends JSXElementConstructor<any>>(
   Field: T,
-  getDefaultFieldProps?: (p: ComponentProps<T>) => Partial<ComponentProps<T>>
+  getDefaultFieldProps?: (p: ComponentProps<T>) => Partial<ComponentProps<T>>,
 ) => {
   type P = ComponentProps<T>;
 
@@ -197,7 +200,7 @@ const create = <T extends JSXElementConstructor<any>>(
           <RawField {...fieldProps} ref={ref} />
         </Item>
       );
-    }
+    },
   );
 
   Object.keys(Field).forEach((key) => {
