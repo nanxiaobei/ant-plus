@@ -1,11 +1,8 @@
 import type {
   AutoCompleteProps as AntAutoCompleteProps,
-  ButtonProps as AntButtonProps,
   CascaderProps as AntCascaderProps,
   CheckboxProps as AntCheckboxProps,
   DatePickerProps as AntDatePickerProps,
-  FormItemProps as AntFormItemProps,
-  FormProps as AntFormProps,
   InputNumberProps as AntInputNumberProps,
   InputProps as AntInputProps,
   MentionProps as AntMentionProps,
@@ -23,11 +20,9 @@ import type {
 } from 'antd';
 import {
   AutoComplete as AntAutoComplete,
-  Button as AntButton,
   Cascader as AntCascader,
   Checkbox as AntCheckbox,
   DatePicker as AntDatePicker,
-  Form as AntForm,
   Input as AntInput,
   InputNumber as AntInputNumber,
   Mentions as AntMentions,
@@ -75,16 +70,6 @@ type CompoundedComponent = React.ForwardRefExoticComponent<
  ---------------------------------------------------------------------- */
 export { default as create } from './create';
 export type { PlusProps, PlusShortRule } from './create';
-
-/* raw
- ---------------------------------------------------------------------- */
-export type FormProps = AntFormProps;
-export type ButtonProps = AntButtonProps;
-export type ItemProps = AntFormItemProps;
-
-export const Form = AntForm;
-export const Button = AntButton;
-export const Item = AntForm.Item;
 
 /* custom
  ---------------------------------------------------------------------- */

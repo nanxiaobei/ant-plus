@@ -45,7 +45,8 @@ npm i antx
 ## 使用
 
 ```tsx
-import { Button, Form, Input, Select, WrapperCol } from 'antx';
+import { Button, Form } from 'antd';
+import { Input, Select, WrapperCol } from 'antx';
 
 const App = () => {
   return (
@@ -92,7 +93,7 @@ export default App;
 **3. 未新增任何其它 props**  
 所有 props 均为 `antd` 原有 props，未新增任何其它 props 及 API，减少心智负担
 
-此外 `antx` 还提供了 3 个原始组件（`Form`、`Button`、`Item`），2 个自定义组件（`WrapperCol`、`Watch`），以及一个工具函数 `create`。
+此外 `antx` 还提供了 2 个自定义组件（`WrapperCol`、`Watch`），以及一个工具函数 `create`。
 
 ## API
 
@@ -130,11 +131,6 @@ export default App;
 
 ### 2. 基础组件
 
-> `Form`、`Button`、`Item` 均为 `antd` 原始组件，为方便使用而提供。`Watch`、`WrapperCol` 为自定义组件。
-
-1. **Form**
-1. **Button**
-1. **Item** `Form.Item`
 1. **Watch** 用于监听表单字段变化，可实现仅局部 re-render，更精细、性能更好
 
 | Props       | 说明                                                      | 类型                                                         | 默认值  |

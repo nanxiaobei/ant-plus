@@ -45,7 +45,8 @@ npm i antx
 ## Usage
 
 ```tsx
-import { Button, Form, Input, Select, WrapperCol } from 'antx';
+import { Button, Form } from 'antd';
+import { Input, Select, WrapperCol } from 'antx';
 
 const App = () => {
   return (
@@ -92,7 +93,7 @@ Directly mix `Form.Item` props with the original field component props (full Typ
 **3. Not add any new props**  
 All props are `antd` original props, without add any other new props or APIs, reducing mental burden.
 
-In addition, `antx` also provides 3 original components (`Form`, `Button`, `Item`), 2 custom components (`WrapperCol`, `Watch`), and a tool function `create`.
+In addition, `antx` also provides 2 custom components (`WrapperCol`, `Watch`), and a tool function `create`.
 
 ## API
 
@@ -130,11 +131,6 @@ In addition, `antx` also provides 3 original components (`Form`, `Button`, `Item
 
 ### 2. Base components
 
-> `Form`, `Button`, and `Item` are `antd` original components, provided for convenience. `Watch` and `WrapperCol` are custom components.
-
-1. **Form**
-1. **Button**
-1. **Item** `Form.Item`
 1. **Watch** used to monitor the changes of form fields, which can be only partial re-render, more refined and better performance
 
 | Props       | Description                                                                                 | Type                                                      | Default |
