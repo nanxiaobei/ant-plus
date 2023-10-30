@@ -32,7 +32,6 @@
   },
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.1.5",
-    "@trivago/prettier-plugin-sort-imports": "^4.2.1",
     "@types/node": "^20.8.9",
     "@types/react": "^18.2.33",
     "@types/react-dom": "^18.2.14",
@@ -42,6 +41,7 @@
     "eslint-config-prettier": "^9.0.0",
     "eslint-config-react-app": "^7.0.1",
     "prettier": "^3.0.3",
+    "prettier-plugin-organize-imports": "^3.2.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rollup": "^4.1.5",
