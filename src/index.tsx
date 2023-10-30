@@ -1,24 +1,3 @@
-import * as React from 'react';
-import {
-  AutoComplete as AntAutoComplete,
-  Button as AntButton,
-  Cascader as AntCascader,
-  Checkbox as AntCheckbox,
-  DatePicker as AntDatePicker,
-  Form as AntForm,
-  Input as AntInput,
-  InputNumber as AntInputNumber,
-  Mentions as AntMentions,
-  Radio as AntRadio,
-  Rate as AntRate,
-  Select as AntSelect,
-  Slider as AntSlider,
-  Switch as AntSwitch,
-  TimePicker as AntTimePicker,
-  Transfer as AntTransfer,
-  TreeSelect as AntTreeSelect,
-  Upload as AntUpload,
-} from 'antd';
 import type {
   AutoCompleteProps as AntAutoCompleteProps,
   ButtonProps as AntButtonProps,
@@ -42,6 +21,26 @@ import type {
   TreeSelectProps as AntTreeSelectProps,
   UploadProps as AntUploadProps,
 } from 'antd';
+import {
+  AutoComplete as AntAutoComplete,
+  Button as AntButton,
+  Cascader as AntCascader,
+  Checkbox as AntCheckbox,
+  DatePicker as AntDatePicker,
+  Form as AntForm,
+  Input as AntInput,
+  InputNumber as AntInputNumber,
+  Mentions as AntMentions,
+  Radio as AntRadio,
+  Rate as AntRate,
+  Select as AntSelect,
+  Slider as AntSlider,
+  Switch as AntSwitch,
+  TimePicker as AntTimePicker,
+  Transfer as AntTransfer,
+  TreeSelect as AntTreeSelect,
+  Upload as AntUpload,
+} from 'antd';
 import type { CheckboxGroupProps as AntCheckboxGroupProps } from 'antd/es/checkbox';
 import type { RangePickerProps as AntRangePickerProps } from 'antd/es/date-picker';
 import type {
@@ -51,8 +50,9 @@ import type {
 } from 'antd/es/input';
 import type { MentionsRef } from 'antd/es/mentions';
 import type { DraggerProps as AntDraggerProps } from 'antd/es/upload';
-import create from './create';
+import * as React from 'react';
 import type { PlusProps } from './create';
+import create from './create';
 
 // fix mentions type
 interface MentionsConfig {
@@ -74,7 +74,7 @@ type CompoundedComponent = React.ForwardRefExoticComponent<
 /* create
  ---------------------------------------------------------------------- */
 export { default as create } from './create';
-export type { PlusShortRule, PlusProps } from './create';
+export type { PlusProps, PlusShortRule } from './create';
 
 /* raw
  ---------------------------------------------------------------------- */

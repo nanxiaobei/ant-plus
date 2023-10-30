@@ -1,4 +1,5 @@
-import { forwardRef } from 'react';
+import type { FormItemProps, FormRule } from 'antd';
+import { Form } from 'antd';
 import type {
   ComponentProps,
   ComponentType,
@@ -6,8 +7,7 @@ import type {
   ForwardedRef,
   JSXElementConstructor,
 } from 'react';
-import { Form } from 'antd';
-import type { FormItemProps, FormRule } from 'antd';
+import { forwardRef } from 'react';
 
 const { Item } = Form;
 

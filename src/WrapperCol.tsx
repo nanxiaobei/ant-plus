@@ -1,5 +1,5 @@
-import { Form } from 'antd';
 import type { FormItemProps } from 'antd';
+import { Form } from 'antd';
 
 const { Item } = Form;
 
