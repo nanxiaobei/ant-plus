@@ -26,11 +26,20 @@ English · [简体中文](./README.zh-CN.md)
 
 ---
 
-## Features
+## Introduction
 
-- Say goodbye to cumbersome `<Form.Item>` and `rules`
-- Full TypeScript hinting support
-- Easily extend existing field components
+`antx` provides a set of `antd` mixed field components:
+
+**1. Say goodbye to cumbersome `<Form.Item>` and `rules`**  
+Directly write on field components (e.g. `Input`) with `Form.Item` props and field props (**Full TypeScript support**), which greatly simplifies the code.
+
+**2. String `rules` (only enhanced, original `rules` are also supported)**  
+`rules` in string, for example `rules={['required', 'max=10']}` represents for `rules={[{ required: true }, { max: 10 }]}`.
+
+**3. Not adding any new props**  
+All props are `antd` original props, without add any other new props, reducing mental burden.
+
+In the same time, `antx` provides 2 helper components (`WrapperCol`, `Watch`), and a tool function `create()` for easily enhancing existing field components.
 
 ## Installation
 
@@ -80,26 +89,9 @@ export default App;
 
 [![Edit antx](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/antx-v4hqw?fontsize=14&hidenavigation=1&theme=dark)
 
-## Introduction
-
-`antx` provides a set of `antd` enhanced form field components, features of enhanced components:
-
-**1. No need to write `<Form.Item>`**  
-Directly mix `Form.Item` props with the original field component props (full TypeScript hints), which greatly simplifies the code.
-
-**2. Simplified `rules` (only enhanced, original `rules` is also supported)**  
-`rules` in string phrase, for example `rules={['required', 'max=10']}` represents for `rules={[{ required: true }, { max: 10 }]}`.
-
-**3. Not add any new props**  
-All props are `antd` original props, without add any other new props or APIs, reducing mental burden.
-
-In addition, `antx` also provides 2 custom components (`WrapperCol`, `Watch`), and a tool function `create`.
-
 ## API
 
-### 1. Enhanced field components
-
-> 1st-level field components:
+### 1. Mixed components
 
 1. **AutoComplete**
 1. **Cascader**
@@ -117,9 +109,6 @@ In addition, `antx` also provides 2 custom components (`WrapperCol`, `Watch`), a
 1. **Transfer**
 1. **TreeSelect**
 1. **Upload**
-
-> 2nd-level field components, in `antd` is `AAA.BBB`, and in `antx` can directly import `BBB`:
-
 1. **CheckboxGroup** `Checkbox.Group`
 1. **DateRange** `DatePicker.RangePicker`
 1. **TextArea** `Input.TextArea`
@@ -129,9 +118,11 @@ In addition, `antx` also provides 2 custom components (`WrapperCol`, `Watch`), a
 1. **TimeRange** `TimePicker.RangePicker`
 1. **Dragger** `Upload.Dragger`
 
-### 2. Base components
+All the mixed components above, `className`, `style`, and `name` props will be passed to `Form.Item`. To pass to the inner field component, please use `selfClass`, `selfStyle`, and `selfName`.
 
-1. **Watch** used to monitor the changes of form fields, which can be only partial re-render, more refined and better performance
+### 2. Helper components
+
+1. **Watch**: used to monitor the changes of form values, which can be only partial re-render, more refined and better performance
 
 | Props       | Description                                                                                 | Type                                                      | Default |
 | ----------- | ------------------------------------------------------------------------------------------- | --------------------------------------------------------- | ------- |
@@ -142,7 +133,7 @@ In addition, `antx` also provides 2 custom components (`WrapperCol`, `Watch`), a
 | `onChange`  | Get the monitored value (or list), handle side effects (mutually exclusive with `children`) | ` (next: any, prev: any, form: FormInstance) => void`     | -       |
 
 ```tsx
-// Watch usage example
+// Watch example
 import { Watch } from 'antx';
 
 <Form>
@@ -167,10 +158,10 @@ import { Watch } from 'antx';
 </Form>;
 ```
 
-5. **WrapperCol** simplify the layout code, the same props as `Form.Item`, used when the UI needs to be aligned with the input box.
+2. **WrapperCol**: simplify the layout code, the same props as `Form.Item`, used when the UI needs to be aligned with the input box.
 
 ```tsx
-// WrapperCol usage example
+// WrapperCol example
 import { WrapperCol } from 'antx';
 
 <Form>
@@ -179,31 +170,32 @@ import { WrapperCol } from 'antx';
 </Form>;
 ```
 
-### 3. `create` tool function
+### 3. `create()` function
 
-- **create** convert existing form field components into components that support `Form.Item` props mix-in, easily extend existing components.
+- **create()**: convert existing custom field components into components that support `Form.Item` props mix-in.
 
 ```tsx
 import { create } from 'antx';
 
-// Before expansion
+// Before
 <Form>
   <Form.Item label="Song" name="song" rules={{ required: true }}>
     <MyCustomInput />
   </Form.Item>
 </Form>;
 
-// After expansion (TypeScript hints support)
+// enhancing with create()
 const MyCustomInputPlus = create(MyCustomInput);
 
+// After
 <Form>
   <MyCustomInputPlus label="Song" name="song" rules={['required']} />
 </Form>;
 ```
 
-### 4. Simplified `rules`
+### 4. String `rules`
 
-| Phrase          | Correspondence                         | Description  |
+| String          | Equals to                              | Description  |
 | --------------- | -------------------------------------- | ------------ |
 | `'required'`    | `{ required: true }`                   |              |
 | `'required=xx'` | `{ required: true, message: 'xx' }`    |              |
@@ -219,11 +211,8 @@ const MyCustomInputPlus = create(MyCustomInput);
 | `'min=10'`      | `{ min: 10 }`                          | `min >= 10`  |
 
 ```tsx
-// Simplified rules usage example
-
-<Form>
-  <Input label="Song" name="song" rules={['required', 'min=0', 'max=50']} />
-</Form>
+// String rules example
+<Input label="Song" name="song" rules={['required', 'min=0', 'max=50']} />
 ```
 
 ## Comparison

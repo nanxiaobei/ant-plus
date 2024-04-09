@@ -26,11 +26,20 @@ Ant Design Form 简化版，以最简便的方式搭建表单。
 
 ---
 
-## 特点
+## 介绍
 
-- 告别繁琐的 `<Form.Item>` 与 `rules`
-- 完整 TypeScript 提示支持
-- 轻松拓展已有表单组件
+`antx` 提供一套 `antd` 混合表单组件的集合：
+
+**1. 告别繁琐的 `<Form.Item>` 与 `rules`**  
+直接在表单组件 (如 `Input`) 上混写 `Form.Item` props 与组件 props (完整 TypeScript 支持)，显著简化代码。
+
+**2. 字符串 rules (仅增强，原 rules 写法同样支持)**  
+提供 string 形式 rules，例如 `rules={['required', 'max=10'']}` 即 `rules={[{ required: true }, { max: 10 }]}`。
+
+**3. 未新增任何 props**  
+所有 props 均为 `antd` 组件原有 props，未新增任何其它 props，减少心智负担。
+
+同时 `antx` 还提供了 2 个助手组件 (`WrapperCol`、`Watch`) ，以及一个工具函数 `create()` 用于轻松拓展已有表单组件。
 
 ## 安装
 
@@ -80,26 +89,9 @@ export default App;
 
 [![Edit antx](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/antx-v4hqw?fontsize=14&hidenavigation=1&theme=dark)
 
-## 介绍
-
-`antx` 提供一套 `antd` 增强表单组件的集合，增强表单组件的特点：
-
-**1. 不写 <Form.Item>**  
-直接混写 `Form.Item` props 与原表单组件 props（完整 TypeScript 提示），显著简化代码。
-
-**2. 简化 rules 写法 (仅增强，原 rules 写法同样支持)**  
-提供 string 短语形式 rules，例如 `rules={['required', 'max=10'']}` 即 `rules={[{ required: true }, { max: 10 }]}`。
-
-**3. 未新增任何其它 props**  
-所有 props 均为 `antd` 原有 props，未新增任何其它 props 及 API，减少心智负担
-
-此外 `antx` 还提供了 2 个自定义组件（`WrapperCol`、`Watch`），以及一个工具函数 `create`。
-
 ## API
 
-### 1. 增强表单组件
-
-> 一级表单组件：
+### 1. 混合组件
 
 1. **AutoComplete**
 1. **Cascader**
@@ -117,9 +109,6 @@ export default App;
 1. **Transfer**
 1. **TreeSelect**
 1. **Upload**
-
-> 二级表单组件，`antd` 中使用方式为 `AAA.BBB`，`antx` 中可直接引入 `BBB`：
-
 1. **CheckboxGroup** `Checkbox.Group`
 1. **DateRange** `DatePicker.RangePicker`
 1. **TextArea** `Input.TextArea`
@@ -129,20 +118,22 @@ export default App;
 1. **TimeRange** `TimePicker.RangePicker`
 1. **Dragger** `Upload.Dragger`
 
-### 2. 基础组件
+以上所有混合组件，`className`、`style`、`name` 3 个 props 将传给 `Form.Item`。如需传给内部表单组件，请使用 `selfClass`、`selfStyle`、`selfName`。
 
-1. **Watch** 用于监听表单字段变化，可实现仅局部 re-render，更精细、性能更好
+### 2. 助手组件
+
+1. **Watch**: 用于监听表单字段变化，可实现仅局部 re-render，更精细、性能更好
 
 | Props       | 说明                                                      | 类型                                                         | 默认值  |
 | ----------- | --------------------------------------------------------- | ------------------------------------------------------------ | ------- |
 | `name`      | 需监听的字段                                              | [`NamePath`](https://ant.design/components/form-cn#NamePath) | -       |
 | `list`      | 需监听的字段列表 (与 `name` 互斥)                         | `NamePath[]`                                                 | -       |
-| `children`  | Render props 形式。获取被监听的值（或列表），返回 UI      | `(next: any, prev: any, form: FormInstance) => ReactNode`    | -       |
+| `children`  | Render props 形式。获取被监听的值 (或列表) ，返回 UI      | `(next: any, prev: any, form: FormInstance) => ReactNode`    | -       |
 | `onlyValid` | 被监听的值非 `undefined` 时，才触发 `children` 渲染       | `boolean`                                                    | `false` |
-| `onChange`  | 获取被监听的值（或列表），处理副作用 (与 `children` 互斥) | ` (next: any, prev: any, form: FormInstance) => void`        | -       |
+| `onChange`  | 获取被监听的值 (或列表) ，处理副作用 (与 `children` 互斥) | ` (next: any, prev: any, form: FormInstance) => void`        | -       |
 
 ```tsx
-// Watch 使用示例
+// Watch 示例
 import { Watch } from 'antx';
 
 <Form>
@@ -167,10 +158,10 @@ import { Watch } from 'antx';
 </Form>;
 ```
 
-5. **WrapperCol** 简化布局代码，props 与` Form.Item` 完全一致，用于 UI 需与输入框对齐的情况
+2. **WrapperCol**: 简化布局代码，props 与` Form.Item` 完全一致，用于 UI 需与输入框对齐的情况
 
 ```tsx
-// WrapperCol 使用示例
+// WrapperCol 示例
 import { WrapperCol } from 'antx';
 
 <Form>
@@ -179,9 +170,9 @@ import { WrapperCol } from 'antx';
 </Form>;
 ```
 
-### 3. `create` 工具函数
+### 3. `create()` 工具函数
 
-- **create** 将已有表单组件，包装为支持 `Form.Item` props 混写的组件，轻松拓展现有组件
+- **create()**: 将已有表单组件，包装为支持 `Form.Item` props 混写的组件，轻松拓展现有组件
 
 ```tsx
 import { create } from 'antx';
@@ -193,17 +184,18 @@ import { create } from 'antx';
   </Form.Item>
 </Form>;
 
-// 拓展后 (TypeScript 提示支持)
+// 使用 create() 拓展
 const MyCustomInputPlus = create(MyCustomInput);
 
+// 拓展后
 <Form>
   <MyCustomInputPlus label="歌曲" name="song" rules={['required']} />
 </Form>;
 ```
 
-### 4. 简化版 `rules`
+### 4. 字符串 `rules`
 
-| 短语            | 对应                                   | 说明         |
+| 字符串          | 对应                                   | 说明         |
 | --------------- | -------------------------------------- | ------------ |
 | `'required'`    | `{ required: true }`                   |              |
 | `'required=xx'` | `{ required: true, message: 'xx' }`    |              |
@@ -219,8 +211,7 @@ const MyCustomInputPlus = create(MyCustomInput);
 | `'min=10'`      | `{ min: 10 }`                          | `min >= 10`  |
 
 ```tsx
-// 简化版 rules 使用示例
-
+// 字符串 rules 示例
 <Form>
   <Input label="歌曲" name="song" rules={['required', 'min=0', 'max=50']} />
 </Form>
