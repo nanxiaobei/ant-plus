@@ -31,7 +31,7 @@ English · [简体中文](./README.zh-CN.md)
 `antx` provides a set of `antd` mixed field components:
 
 **1. Say goodbye to cumbersome `<Form.Item>` and `rules`**  
-Directly write on field components (e.g. `Input`) with `Form.Item` props and field props (**Full TypeScript support**), which greatly simplifies the code.
+Directly write on field components (e.g. `Input`) with `Form.Item` props and field props (**fully TypeScript support**), which greatly simplifies the code.
 
 **2. String `rules` (only enhanced, original `rules` are also supported)**  
 `rules` in string, for example `rules={['required', 'max=10']}` represents for `rules={[{ required: true }, { max: 10 }]}`.
