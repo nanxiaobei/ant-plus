@@ -118,7 +118,9 @@ export default App;
 1. **TimeRange** `TimePicker.RangePicker`
 1. **Dragger** `Upload.Dragger`
 
-以上所有混合组件，`className`、`style`、`name` 3 个 props 将传给 `Form.Item`。如需传给内部表单组件，请使用 `selfClass`、`selfStyle`、`selfName`。
+对于以上所有混合组件，props `className`、`style`、`name`、`tooltip` 将传给 `Form.Item`。
+
+如需传给内部表单组件，请使用 `selfClass`、`selfStyle`、`selfName`、`selfTooltip`。
 
 ### 2. 助手组件
 

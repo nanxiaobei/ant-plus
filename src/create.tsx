@@ -1,11 +1,11 @@
-import type { FormItemProps, FormRule } from 'antd';
+import type { FormItemProps, FormRule, SliderSingleProps } from 'antd';
 import { Form } from 'antd';
 import type {
   ComponentProps,
   ComponentType,
-  CSSProperties,
   ForwardedRef,
   JSXElementConstructor,
+  PropsWithoutRef,
 } from 'react';
 import { forwardRef } from 'react';
 
@@ -95,12 +95,13 @@ const getRules = (rules: PlusShortRule[]): FormRule[] => {
 };
 
 // ─── Form.Item & Field ↓↓↓ ───────────────────────────────────────────────────
-type ConflictProps = 'className' | 'style' | 'name';
+type ConflictProps = 'className' | 'style' | 'name' | 'tooltip';
 
 type ReplaceProps = {
-  selfClass?: string;
-  selfStyle?: CSSProperties;
+  selfClass?: SliderSingleProps['className'];
+  selfStyle?: SliderSingleProps['style'];
   selfName?: string;
+  selfTooltip?: SliderSingleProps['tooltip'];
 };
 
 export type PlusProps<P> = Omit<P, ConflictProps> &
@@ -111,6 +112,7 @@ const replaceMap: Record<keyof ReplaceProps, ConflictProps> = {
   selfClass: 'className',
   selfStyle: 'style',
   selfName: 'name',
+  selfTooltip: 'tooltip',
 };
 
 const formItemKeys = [
@@ -161,47 +163,46 @@ const create = <T extends JSXElementConstructor<any>>(
   getDefaultFieldProps?: (p: ComponentProps<T>) => Partial<ComponentProps<T>>,
 ) => {
   type P = ComponentProps<T>;
+  type Props = PropsWithoutRef<PlusProps<P>>;
 
-  const ItemField = forwardRef(
-    (props: PlusProps<P>, ref: ForwardedRef<unknown>) => {
-      const itemProps: FormItemProps = {};
-      const fieldProps: P = {} as P;
+  const ItemField = forwardRef((props: Props, ref: ForwardedRef<unknown>) => {
+    const itemProps: FormItemProps = {};
+    const fieldProps: P = {} as P;
 
-      // split props
-      if (props) {
-        Object.keys(props).forEach((key) => {
-          const { [key]: val } = props;
+    // split props
+    if (props) {
+      Object.keys(props).forEach((key) => {
+        const val = props[key as keyof Props];
 
-          if (key in formItemProps) {
-            const itemKey = key as keyof FormItemProps;
-            itemProps[itemKey] = key === 'rules' && val ? getRules(val) : val;
-          } else {
-            const fieldKey = replaceMap[key as keyof ReplaceProps] || key;
-            fieldProps[fieldKey as keyof P] = val;
-          }
-        });
-      }
+        if (key in formItemProps) {
+          const itemKey = key as keyof FormItemProps;
+          itemProps[itemKey] = key === 'rules' && val ? getRules(val) : val;
+        } else {
+          const fieldKey = replaceMap[key as keyof ReplaceProps] || key;
+          fieldProps[fieldKey as keyof P] = val;
+        }
+      });
+    }
 
-      // default field props
-      if (getDefaultFieldProps) {
-        const extraFieldProps = getDefaultFieldProps(fieldProps);
+    // default field props
+    if (getDefaultFieldProps) {
+      const extraFieldProps = getDefaultFieldProps(fieldProps);
 
-        Object.keys(extraFieldProps).forEach((key) => {
-          if (!(key in fieldProps)) {
-            fieldProps[key as keyof P] = extraFieldProps[key] as P[keyof P];
-          }
-        });
-      }
+      Object.keys(extraFieldProps).forEach((key) => {
+        if (!(key in fieldProps)) {
+          fieldProps[key as keyof P] = extraFieldProps[key] as P[keyof P];
+        }
+      });
+    }
 
-      const RawField = Field as ComponentType<P>;
+    const RawField = Field as ComponentType<P>;
 
-      return (
-        <Item {...itemProps}>
-          <RawField {...fieldProps} ref={ref} />
-        </Item>
-      );
-    },
-  );
+    return (
+      <Item {...itemProps}>
+        <RawField {...fieldProps} ref={ref} />
+      </Item>
+    );
+  });
 
   Object.keys(Field).forEach((key) => {
     if (!(key in ItemField)) {

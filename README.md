@@ -118,7 +118,9 @@ export default App;
 1. **TimeRange** `TimePicker.RangePicker`
 1. **Dragger** `Upload.Dragger`
 
-All the mixed components above, `className`, `style`, and `name` props will be passed to `Form.Item`. To pass to the inner field component, please use `selfClass`, `selfStyle`, and `selfName`.
+For all the mixed components above, props like`className`, `style`, `name`, `tooltip` will be passed to `Form.Item`.
+
+To pass to the inner field component, please use `selfClass`, `selfStyle`, `selfName`, `selfTooltip`.
 
 ### 2. Helper components
 
