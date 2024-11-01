@@ -38,38 +38,13 @@ const valOf = (values: Store, name: NamePath) => {
   return get(values, namePath);
 };
 
-type OnChange = (next: any, prev: any, form: FormInstance) => void;
-type Children = (next: any, prev: any, form: FormInstance) => ReactNode;
-
-export type WatchProps =
-  | {
-      name: NamePath;
-      list?: never;
-      children: Children;
-      onlyValid?: boolean;
-      onChange?: never;
-    }
-  | {
-      name: NamePath;
-      list?: never;
-      children?: never;
-      onlyValid?: never;
-      onChange: OnChange;
-    }
-  | {
-      name?: never;
-      list: NamePath[];
-      children: Children;
-      onlyValid?: boolean;
-      onChange?: never;
-    }
-  | {
-      name?: never;
-      list: NamePath[];
-      children?: never;
-      onlyValid?: never;
-      onChange: OnChange;
-    };
+export type WatchProps = {
+  name?: NamePath;
+  list?: NamePath[];
+  children?: (next: any, prev: any, form: FormInstance) => ReactNode;
+  onlyValid?: boolean;
+  onChange?: (next: any, prev: any, form: FormInstance) => void;
+};
 
 /**
  * Watch - 用于监听其它字段的值
@@ -111,14 +86,14 @@ const Watch = (props: WatchProps) => {
           });
         }
 
-        const cachePrev = prev.current;
+        const cachedPrev = prev.current;
 
         if (hasChange) {
           prev.current = next;
 
           if (onChange) {
             const ChangeEffect = () => {
-              useEffect(() => onChange(next, cachePrev, form), []);
+              useEffect(() => onChange(next, cachedPrev, form), []);
               return null;
             };
             changeEffect = <ChangeEffect />;
@@ -128,7 +103,7 @@ const Watch = (props: WatchProps) => {
         if (!onlyValid || (onlyValid && hasValidValue)) {
           return (
             <>
-              {children?.(next, cachePrev, form)}
+              {children?.(next, cachedPrev, form)}
               {changeEffect}
             </>
           );

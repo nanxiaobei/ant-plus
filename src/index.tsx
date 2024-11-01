@@ -44,6 +44,7 @@ import type {
   TextAreaProps as AntTextAreaProps,
 } from 'antd/es/input';
 import type { MentionsRef } from 'antd/es/mentions';
+import type { DefaultOptionType as AntDefaultOptionType } from 'antd/es/select';
 import type { DraggerProps as AntDraggerProps } from 'antd/es/upload';
 import * as React from 'react';
 import type { PlusProps } from './create';
@@ -90,7 +91,9 @@ export type InputNumberProps = PlusProps<AntInputNumberProps>;
 export type MentionProps = PlusProps<AntMentionProps>;
 export type RadioProps = PlusProps<AntRadioProps>;
 export type RateProps = PlusProps<AntRateProps>;
-export type SelectProps = PlusProps<AntSelectProps>;
+export type SelectProps<V, O extends AntDefaultOptionType> = PlusProps<
+  AntSelectProps<V, O>
+>;
 export type SliderProps = PlusProps<AntSliderSingleProps>;
 export type SwitchProps = PlusProps<AntSwitchProps>;
 export type TimePickerProps = PlusProps<AntTimePickerProps>;
