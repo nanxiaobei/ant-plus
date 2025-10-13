@@ -41,6 +41,10 @@ All props are `antd` original props, without add any other new props, reducing m
 
 In the same time, `antx` provides 2 helper components (`WrapperCol`, `Watch`), and a tool function `create()` for easily enhancing existing field components.
 
+## Demo
+
+[![Edit antx](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/antx-v4hqw?fontsize=14&hidenavigation=1&theme=dark)
+
 ## Installation
 
 ```sh
@@ -86,8 +90,6 @@ const App = () => {
 
 export default App;
 ```
-
-[![Edit antx](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/antx-v4hqw?fontsize=14&hidenavigation=1&theme=dark)
 
 ## API
 

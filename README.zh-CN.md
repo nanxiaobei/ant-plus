@@ -34,12 +34,16 @@ Ant Design Form 简化版，以最简便的方式搭建表单。
 直接在表单组件 (如 `Input`) 上混写 `Form.Item` props 与组件 props (完整 TypeScript 支持)，显著简化代码。
 
 **2. 字符串 rules (仅增强，原 rules 写法同样支持)**  
-提供 string 形式 rules，例如 `rules={['required', 'max=10'']}` 即 `rules={[{ required: true }, { max: 10 }]}`。
+提供 string 形式 rules，例如 `rules={['required', 'max=10']}` 即 `rules={[{ required: true }, { max: 10 }]}`。
 
 **3. 未新增任何 props**  
 所有 props 均为 `antd` 组件原有 props，未新增任何其它 props，减少心智负担。
 
 同时 `antx` 还提供了 2 个助手组件 (`WrapperCol`、`Watch`) ，以及一个工具函数 `create()` 用于轻松拓展已有表单组件。
+
+## 示例
+
+[![Edit antx](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/antx-v4hqw?fontsize=14&hidenavigation=1&theme=dark)
 
 ## 安装
 
@@ -86,8 +90,6 @@ const App = () => {
 
 export default App;
 ```
-
-[![Edit antx](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/antx-v4hqw?fontsize=14&hidenavigation=1&theme=dark)
 
 ## API
 
