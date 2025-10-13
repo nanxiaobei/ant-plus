@@ -41,6 +41,12 @@ Ant Design Form 简化版，以最简便的方式搭建表单。
 
 同时 `antx` 还提供了 2 个助手组件 (`WrapperCol`、`Watch`) ，以及一个工具函数 `create()` 用于轻松拓展已有表单组件。
 
+## 对比
+
+Ant Plus 与 Ant Design 表单代码对比：
+
+![Comparison](public/antx_vs_antd.png)
+
 ## 示例
 
 [![Edit antx](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/antx-v4hqw?fontsize=14&hidenavigation=1&theme=dark)
@@ -95,34 +101,34 @@ export default App;
 
 ### 1. 混合组件
 
-1. **AutoComplete**
-1. **Cascader**
-1. **Checkbox**
-1. **DatePicker**
-1. **Input**
-1. **InputNumber**
-1. **Mentions**
-1. **Radio**
-1. **Rate**
-1. **Select**
-1. **Slider**
-1. **Switch**
-1. **TimePicker**
-1. **Transfer**
-1. **TreeSelect**
-1. **Upload**
-1. **CheckboxGroup** `Checkbox.Group`
-1. **DateRange** `DatePicker.RangePicker`
-1. **TextArea** `Input.TextArea`
-1. **Search** `Input.Search`
-1. **Password** `Input.Password`
-1. **RadioGroup** `Radio.Group`
-1. **TimeRange** `TimePicker.RangePicker`
-1. **Dragger** `Upload.Dragger`
+1. **`AutoComplete`**
+1. **`Cascader`**
+1. **`Checkbox`**
+1. **`DatePicker`**
+1. **`Input`**
+1. **`InputNumber`**
+1. **`Mentions`**
+1. **`Radio`**
+1. **`Rate`**
+1. **`Select`**
+1. **`Slider`**
+1. **`Switch`**
+1. **`TimePicker`**
+1. **`Transfer`**
+1. **`TreeSelect`**
+1. **`Upload`**
+1. **`CheckboxGroup`** －－－ (`Checkbox.Group`)
+1. **`DateRange`** －－－ (`DatePicker.RangePicker`)
+1. **`TextArea`** －－－ (`Input.TextArea`)
+1. **`Search`** －－－ (`Input.Search`)
+1. **`Password`** －－－ (`Input.Password`)
+1. **`RadioGroup`** －－－ (`Radio.Group`)
+1. **`TimeRange`** －－－ (`TimePicker.RangePicker`)
+1. **`Dragger`** －－－ (`Upload.Dragger`)
 
-对于以上所有混合组件，props `className`、`style`、`name`、`tooltip` 将传给 `Form.Item`。
+对于以上所有混合组件，`className` `style` `name` `tooltip` 等 props 将传给 `Form.Item`。
 
-如需传给内部表单组件，请使用 `selfClass`、`selfStyle`、`selfName`、`selfTooltip`。
+如需传给内部表单组件（如 `Input`），请使用 `selfClass` `selfStyle` `selfName` `selfTooltip`。
 
 ### 2. 助手组件
 
@@ -220,12 +226,6 @@ const MyCustomInputPlus = create(MyCustomInput);
   <Input label="歌曲" name="song" rules={['required', 'min=0', 'max=50']} />
 </Form>
 ```
-
-## 对比
-
-Ant Plus 与 Ant Design 表单代码对比：
-
-![Comparison](public/antx_vs_antd.png)
 
 ## 协议
 

@@ -41,6 +41,12 @@ All props are `antd` original props, without add any other new props, reducing m
 
 In the same time, `antx` provides 2 helper components (`WrapperCol`, `Watch`), and a tool function `create()` for easily enhancing existing field components.
 
+## Comparison
+
+Ant Plus and Ant Design form code comparison:
+
+![Comparison](public/antx_vs_antd.png)
+
 ## Demo
 
 [![Edit antx](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/antx-v4hqw?fontsize=14&hidenavigation=1&theme=dark)
@@ -95,34 +101,34 @@ export default App;
 
 ### 1. Mixed components
 
-1. **AutoComplete**
-1. **Cascader**
-1. **Checkbox**
-1. **DatePicker**
-1. **Input**
-1. **InputNumber**
-1. **Mentions**
-1. **Radio**
-1. **Rate**
-1. **Select**
-1. **Slider**
-1. **Switch**
-1. **TimePicker**
-1. **Transfer**
-1. **TreeSelect**
-1. **Upload**
-1. **CheckboxGroup** `Checkbox.Group`
-1. **DateRange** `DatePicker.RangePicker`
-1. **TextArea** `Input.TextArea`
-1. **Search** `Input.Search`
-1. **Password** `Input.Password`
-1. **RadioGroup** `Radio.Group`
-1. **TimeRange** `TimePicker.RangePicker`
-1. **Dragger** `Upload.Dragger`
+1. **`AutoComplete`**
+1. **`Cascader`**
+1. **`Checkbox`**
+1. **`DatePicker`**
+1. **`Input`**
+1. **`InputNumber`**
+1. **`Mentions`**
+1. **`Radio`**
+1. **`Rate`**
+1. **`Select`**
+1. **`Slider`**
+1. **`Switch`**
+1. **`TimePicker`**
+1. **`Transfer`**
+1. **`TreeSelect`**
+1. **`Upload`**
+1. **`CheckboxGroup`** －－－ (`Checkbox.Group`)
+1. **`DateRange`** －－－ (`DatePicker.RangePicker`)
+1. **`TextArea`** －－－ (`Input.TextArea`)
+1. **`Search`** －－－ (`Input.Search`)
+1. **`Password`** －－－ (`Input.Password`)
+1. **`RadioGroup`** －－－ (`Radio.Group`)
+1. **`TimeRange`** －－－ (`TimePicker.RangePicker`)
+1. **`Dragger`** －－－ (`Upload.Dragger`)
 
-For all the mixed components above, props like`className`, `style`, `name`, `tooltip` will be passed to `Form.Item`.
+For all the mixed components above, `className` `style` `name` `tooltip` props will be passed to `Form.Item`.
 
-To pass to the inner field component, please use `selfClass`, `selfStyle`, `selfName`, `selfTooltip`.
+To pass to the inner field component (like `Input`), please use `selfClass` `selfStyle` `selfName` `selfTooltip`.
 
 ### 2. Helper components
 
@@ -218,12 +224,6 @@ const MyCustomInputPlus = create(MyCustomInput);
 // String rules example
 <Input label="Song" name="song" rules={['required', 'min=0', 'max=50']} />
 ```
-
-## Comparison
-
-Ant Plus and Ant Design form code comparison:
-
-![Comparison](public/antx_vs_antd.png)
 
 ## License
 
